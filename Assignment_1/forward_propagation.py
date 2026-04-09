@@ -1,9 +1,13 @@
 import numpy as np
 
 
+
+
+
 def initialize_parameters(layer_dims):
     """
-    Initialize parameters for a fully connected neural network.
+    Initialize parameters for a fully connected neural network
+    
     Args:
         layer_dims (list): dimensions of each layer in the network.
     Returns:
@@ -27,6 +31,7 @@ def initialize_parameters(layer_dims):
 def linear_forward(A, W, b):
     """
     Compute the linear part of the forward propagation
+    
     Args:
         A (vector): the activations of the previous layer
         W (matrix): the weight matrix of the current layer
@@ -42,6 +47,7 @@ def linear_forward(A, W, b):
 def softmax(Z):
     """
     Compute the softmax activation function
+    
     Args:
         Z (vector): linear component of the activation function
         
@@ -60,6 +66,7 @@ def softmax(Z):
 def relu(Z):
     """
     Compute the ReLU activation function
+    
     Args:
         Z (vector): linear component of the activation function
         
@@ -75,6 +82,7 @@ def relu(Z):
 def linear_activation_forward(A_prev, W, B, activation):
     """
     Compute the forward propagation for the LINEAR->ACTIVATION layer
+    
     Args:
         A_prev (vector): activations of the previous layer
         W (matrix): weights matrix of the current layer
@@ -116,6 +124,7 @@ def l_model_forward(X, parameters, use_batchnorm):
     caches = []
     A = X
     L = len(parameters)  # Number of layers in the neural network
+    
     # Hidden layers with ReLU activation
     for l in range(1, L):
         A_prev = A
