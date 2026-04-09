@@ -1,4 +1,5 @@
 import numpy as np
+import forward_propagation as fp
 
 def linear_backward(dZ, cache):
     """
@@ -32,13 +33,19 @@ def linear_activation_backward(dA, cache, activation):
     
     Args:
         dA (vector): post-activation gradient for current layer l
-        cache (tuple): tuple contains both the linear cache and the activation cache
+        cache (tuple): tuple contains both the linear cache (cache[0]) and the activation cache (cache[1])
+        activation (string): the activation function used in this layer, stored as a text string: "softmax" or "relu"
         
     Returns:
         dA_prev (vector): Gradient of the cost with respect to the activation (of the previous layer l-1), same shape as A_prev
         dW (matrix): Gradient of the cost with respect to W (current layer l), same shape as W
         db (vector): Gradient of the cost with respect to b (current layer l), same shape as b
     """
+    
+    dZ = softmax_backward(dA, cache[1]) if activation == "softmax" else relu_backward(dA, cache[1])  # Compute dZ based on the activation function
+    dA_prev, dW, db = linear_backward(dZ, cache[0])
+    return dA_prev, dW, db
+    
     
     
 def relu_backward(dA, activation_cache):
@@ -53,40 +60,84 @@ def relu_backward(dA, activation_cache):
         dZ : gradient of the cost with respect to Z 
     """
     
+    Z = activation_cache
+    dZ = np.array(dA, copy=True)  # copy for not modifying dA while computing dZ 
+    dZ[Z <= 0] = 0  # When z <= 0
+    return dZ
+    
+    
+    
     
 def softmax_backward (dA, activation_cache):
     """
     Backward propagation for a softmax unit
     
     Args:
-        dA (vector): post-activation gradient for current layer l
+        dA (vector): ground truth labels Y
         activation_cache (vector): cache containing Z (stored in forward) for backpropagation
         
     Returns:
         dZ : gradient of the cost with respect to Z 
     """
     
+    Z = activation_cache
+    A, _ = fp.softmax(Z)  # Compute the softmax output using the cached Z
+    dZ = A - dA  # Compute the gradient with respect to Z
+    return dZ
+    
+    
+    
+    
     
 def l_model_backward(AL, Y, caches):
     """
-    Backward propagation process for the entire network
-    
+    Backward propagation process for the entire network.
+
     Args:
         AL (vector): probabilities vector, the output of the forward propagation (L_model_forward)
         Y (vector): the true labels vector
-        caches (list): list of caches containing for each layer: a) the linear cache; b) the activation cache
-        
+        caches (list): list of tuples caches containing for each layer:
+                    a) the linear cache
+                    b) the activation cache
+
     Returns:
-        Grads (dictionary): A dictionary with the gradients
-                     grads["dA" + str(l)] = ... 
-                     grads["dW" + str(l)] = ...
-                     grads["db" + str(l)] = ...
+        grads (dictionary): A dictionary with the gradients
+                    grads["dA" + str(l)] = ...
+                    grads["dW" + str(l)] = ...
+                    grads["db" + str(l)] = ...
+
+    Note:
+        dA_prev is stored as layer l-1 because it is the gradient with respect to the
+        input of the current layer, and that input is the activation of the previous layer.
     """
     
+    grads = {}
+    L = len(caches)  # Number of layers in the network
+    m = AL.shape[1]  # Number of examples in the batch
+    
+    # Initializing the backpropagation for the last layer
+    dA_prev_last, dW_last, db_last = linear_activation_backward(Y, caches[L - 1], activation="softmax")  # Backpropagation for the last layer
+    grads["dA" + str(L - 1)] = dA_prev_last
+    grads["dW" + str(L)] = dW_last
+    grads["db" + str(L)] = db_last
+
+    
+    # Initializing the backpropagation for the hidden layer
+    for l in range(L - 1, 0, -1):
+        dA_prev, dW, db = linear_activation_backward(grads["dA" + str(l)], caches[l - 1], activation="relu")  # Backpropagation for the hidden layer
+        grads["dA" + str(l - 1)] = dA_prev
+        grads["dW" + str(l)] = dW
+        grads["db" + str(l)] = db
+        
+    return grads
+
+
+
+
     
 def update_parameters(parameters, grads, learning_rate):
     """
-    Updates parameters using gradient descent
+    Updates parameters using gradient descent (lecture 1 page 21)
     
     Args:
         parameters (dictionary): containing the DNN architectures parameters
@@ -96,3 +147,11 @@ def update_parameters(parameters, grads, learning_rate):
     Returns:
         parameters : the updated values of the parameters object provided as input
     """
+    
+    L = len(parameters) // 2  # Number of layers in the network (there are 2 parameters for each layer: W and b)
+    
+    for l in range(1, L + 1):
+        parameters["W" + str(l)] = parameters["W" + str(l)] - learning_rate * grads["dW" + str(l)]  # Update W
+        parameters["b" + str(l)] = parameters["b" + str(l)] - learning_rate * grads["db" + str(l)]  # Update b
+        
+    return parameters
