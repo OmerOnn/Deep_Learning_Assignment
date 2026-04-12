@@ -3,7 +3,7 @@ import backward_propagation as bp
 import numpy as np
 
 
-def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size):
+def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, use_batchnorm=False):
     """
 
     Args:
@@ -33,13 +33,13 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size):
             Y_batch = Y[:, batch_start : batch_end]
             
             # Forward propagation, cost computation, backward propagation, and parameter update for the current batch
-            AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm=False)  # Forward propagation
-            costs = fp.compute_cost(AL, Y_batch)  # Compute the cost
+            AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)  # Forward propagation
+            cost = fp.compute_cost(AL, Y_batch)  # Compute the cost
             grads = bp.l_model_backward(AL, Y_batch, caches)  # Backward propagation
             parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
             
-            if i%100 == 0:
-                costs.append(costs)  # Store the cost every 100 iterations for plotting the learning curve
+            if i % 100 == 0:
+                costs.append(cost)  # Store the cost every 100 iterations for plotting the learning curve
                 
     
     return parameters, costs
