@@ -42,8 +42,12 @@ def linear_activation_backward(dA, cache, activation):
         db (vector): Gradient of the cost with respect to b (current layer l), same shape as b
     """
     
-    dZ = softmax_backward(dA, cache[1]) if activation == "softmax" else relu_backward(dA, cache[1])  # Compute dZ based on the activation function
-    dA_prev, dW, db = linear_backward(dZ, cache[0])
+    linear_cache = cache["linear_cache"]
+    activation_cache = cache["activation_cache"]
+    
+    
+    dZ = softmax_backward(dA, activation_cache) if activation == "softmax" else relu_backward(dA, activation_cache)  # Compute dZ based on the activation function
+    dA_prev, dW, db = linear_backward(dZ, linear_cache)
     return dA_prev, dW, db
     
     

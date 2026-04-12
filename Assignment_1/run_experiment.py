@@ -50,13 +50,6 @@ while steps_without_improvement < max_no_improvement:
 
     epochs += num_iterations
 
-    # print(
-    #     f"Iterations: {num_iterations}, "
-    #     f"Epochs so far: {epochs}, "
-    #     f"Validation Accuracy: {val_accuracy:.4f}, "
-    #     f"Steps without improvement: {steps_without_improvement}"
-    # )
-
     num_iterations += 1
 
 # Use best parameters

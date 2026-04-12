@@ -123,13 +123,13 @@ def l_model_forward(X, parameters, use_batchnorm):
     
     caches = []
     A = X
-    L = len(parameters)  # Number of layers in the neural network
+    L = len(parameters) // 2  # Number of layers in the neural network
     
     # Hidden layers with ReLU activation
     for l in range(1, L):
         A_prev = A
-        cur_W = parameters[f'W{l}']
-        cur_b = parameters[f'b{l}']
+        cur_W = parameters["W" + str(l)]
+        cur_b = parameters["b" + str(l)]
         
         A, cache = linear_activation_forward(A_prev, cur_W, cur_b, activation="relu")  # Compute the forward propagation for the current layer
         
@@ -165,8 +165,8 @@ def compute_cost(AL, Y):
     
     for i in range(m):
         for j in range(num_classes):
-            al_value = AL[i][j] if AL[i][j] >= 1e-12 else 1e-12  # Avoid log(0) by adding a small constant
-            cost_sum += Y[i][j] * np.log(al_value)
+            al_value = AL[j][i] if AL[j][i] >= 1e-12 else 1e-12  # Avoid log(0) by adding a small constant
+            cost_sum += Y[j][i] * np.log(al_value)
             
     cost = -(1 / m) * cost_sum  # Compute the average cost over all examples
     return cost
