@@ -3,7 +3,7 @@ import backward_propagation as bp
 import numpy as np
 
 
-def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, use_batchnorm=False):
+def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, use_batchnorm=False, l2_lambda=0.0):
     """
 
     Args:
@@ -34,8 +34,8 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
             
             # Forward propagation, cost computation, backward propagation, and parameter update for the current batch
             AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)  # Forward propagation
-            cost = fp.compute_cost(AL, Y_batch)  # Compute the cost
-            grads = bp.l_model_backward(AL, Y_batch, caches)  # Backward propagation
+            cost = fp.compute_cost(AL, Y_batch, l2_lambda)  # Compute the cost
+            grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)  # Backward propagation
             parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
             
             

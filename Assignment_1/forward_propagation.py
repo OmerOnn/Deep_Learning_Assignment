@@ -148,13 +148,14 @@ def l_model_forward(X, parameters, use_batchnorm):
     return AL, caches
     
     
-def compute_cost(AL, Y):
+def compute_cost(AL, Y, parameters=None,l2_lambda=0.0):
     """
     Implementation of a cost function, in this case -> cross-entropy loss
 
     Args:
         AL (vector): probability vector
         Y (vector): labels
+        l2_lambda (float): regularization parameter for L2 regularization (default is 0, meaning no regularization)
         
     Returns:
         cost (float): cross-entropy cost
@@ -168,7 +169,21 @@ def compute_cost(AL, Y):
             al_value = AL[j][i] if AL[j][i] >= 1e-12 else 1e-12  # Avoid log(0) by adding a small constant
             cost_sum += Y[j][i] * np.log(al_value)
             
-    cost = -(1 / m) * cost_sum  # Compute the average cost over all examples
+    cross_entropy_cost = -(1 / m) * cost_sum  # Compute the average cost over all examples
+    
+    # L2 regularization cost
+    l2_cost = 0.0
+    if parameters is not None and l2_lambda > 0:
+        L = len(parameters) // 2  # Number of layers in the network
+        weights_squared_sum = 0.0
+        
+        for l in range(1, L + 1):
+            W = parameters["W" + str(l)]
+            weights_squared_sum += np.sum(W ** 2)  # Sum of squares of the weights
+            
+        l2_cost = (l2_lambda / (2 * m)) * weights_squared_sum  # Compute the L2 regularization cost
+        
+    cost = cross_entropy_cost + l2_cost  # Total cost is the sum of cross-entropy cost and L2 regularization cost
     return cost
 
     

@@ -1,13 +1,14 @@
 import numpy as np
 import forward_propagation as fp
 
-def linear_backward(dZ, cache):
+def linear_backward(dZ, cache, l2_lambda=0.0):
     """
     linear part of the backward propagation process for a single layer
     
     Args:
         dZ (vector): Gradient of the cost with respect to the linear output (of current layer l)
         cache (tuple): tuple of values (A_prev, W, b) coming from the forward propagation in the current layer
+        l2_lambda (float): L2 regularization coefficient
         
     Returns:
         dA_prev (vector): Gradient of the cost with respect to the activation (of the previous layer l-1), same shape as A_prev
@@ -18,7 +19,7 @@ def linear_backward(dZ, cache):
     A_prev, W, b = cache
     m = A_prev.shape[1]  # Number of examples in the batch
     
-    dW = (1 / m) * np.dot(dZ, A_prev.T) # Compute the gradient with respect to W
+    dW = (1 / m) * np.dot(dZ, A_prev.T) + (l2_lambda / m) * W # Compute the gradient with respect to W
     db = (1 / m) * np.sum(dZ, axis=1, keepdims=True) # Compute the gradient with respect to b
     dA_prev = np.dot(W.T, dZ) # Compute the gradient with respect to the activation of the previous layer
     
@@ -27,7 +28,7 @@ def linear_backward(dZ, cache):
     
     
     
-def linear_activation_backward(dA, cache, activation):
+def linear_activation_backward(dA, cache, activation, l2_lambda=0.0):
     """
     Backward propagation for the LINEAR->ACTIVATION layer
     
@@ -35,6 +36,7 @@ def linear_activation_backward(dA, cache, activation):
         dA (vector): post-activation gradient for current layer l
         cache (tuple): tuple contains both the linear cache (cache[0]) and the activation cache (cache[1])
         activation (string): the activation function used in this layer, stored as a text string: "softmax" or "relu"
+        l2_lambda (float): L2 regularization coefficient
         
     Returns:
         dA_prev (vector): Gradient of the cost with respect to the activation (of the previous layer l-1), same shape as A_prev
@@ -47,7 +49,7 @@ def linear_activation_backward(dA, cache, activation):
     
     
     dZ = softmax_backward(dA, activation_cache) if activation == "softmax" else relu_backward(dA, activation_cache)  # Compute dZ based on the activation function
-    dA_prev, dW, db = linear_backward(dZ, linear_cache)
+    dA_prev, dW, db = linear_backward(dZ, linear_cache, l2_lambda)
     return dA_prev, dW, db
     
     
@@ -93,7 +95,7 @@ def softmax_backward (dA, activation_cache):
     
     
     
-def l_model_backward(AL, Y, caches):
+def l_model_backward(AL, Y, caches, l2_lambda=0.0):
     """
     Backward propagation process for the entire network.
 
@@ -120,7 +122,7 @@ def l_model_backward(AL, Y, caches):
     m = AL.shape[1]  # Number of examples in the batch
     
     # Initializing the backpropagation for the last layer
-    dA_prev_last, dW_last, db_last = linear_activation_backward(Y, caches[L - 1], activation="softmax")  # Backpropagation for the last layer
+    dA_prev_last, dW_last, db_last = linear_activation_backward(Y, caches[L - 1], activation="softmax", l2_lambda=l2_lambda)  # Backpropagation for the last layer
     grads["dA" + str(L - 1)] = dA_prev_last
     grads["dW" + str(L)] = dW_last
     grads["db" + str(L)] = db_last
@@ -128,7 +130,7 @@ def l_model_backward(AL, Y, caches):
     
     # Initializing the backpropagation for the hidden layer
     for l in range(L - 1, 0, -1):
-        dA_prev, dW, db = linear_activation_backward(grads["dA" + str(l)], caches[l - 1], activation="relu")  # Backpropagation for the hidden layer
+        dA_prev, dW, db = linear_activation_backward(grads["dA" + str(l)], caches[l - 1], activation="relu", l2_lambda=l2_lambda)  # Backpropagation for the hidden layer
         grads["dA" + str(l - 1)] = dA_prev
         grads["dW" + str(l)] = dW
         grads["db" + str(l)] = db

@@ -6,7 +6,7 @@ from train_and_predict import l_layer_model, predict
 
 
 
-def run_experiment(batch_size, use_batchnorm):
+def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
 
     # Load data
     X_train, Y_train, X_val, Y_val, X_test, Y_test = load_and_preprocess_mnist()
@@ -37,6 +37,8 @@ def run_experiment(batch_size, use_batchnorm):
     # Calculate samples and batches per epoch
     m = X_train.shape[1]
     batches_per_epoch = int(np.ceil(m / batch_size))
+    
+    is_l2 = l2_lambda > 0.0
 
     while True:
         print(f"\n ================ Running training with num_iterations = {num_iterations} ================")
@@ -54,7 +56,8 @@ def run_experiment(batch_size, use_batchnorm):
             learning_rate,
             num_iterations,
             batch_size,
-            use_batchnorm
+            use_batchnorm,
+            l2_lambda
         )
 
         # END TIMER
@@ -108,6 +111,7 @@ def run_experiment(batch_size, use_batchnorm):
     print(f"Learning rate:     {learning_rate}")
     print(f"Batch size:        {batch_size}")
     print(f"Batchnorm used:    {use_batchnorm}")
+    print(f"L2 Regularization: {is_l2}")
     print("-" * 40)
     print(f"Best Iterations:       {best_iteration}")
     print(f"Best Epochs:           {best_iteration / batches_per_epoch:.2f}")
