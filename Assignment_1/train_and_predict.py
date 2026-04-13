@@ -38,15 +38,60 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
             grads = bp.l_model_backward(AL, Y_batch, caches)  # Backward propagation
             parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
             
+            
             if i % 100 == 0:
-                costs.append(cost)  # Store the cost every 100 iterations for plotting the learning curve
+                costs.append(cost)  # Store the cost every 100 iterations of the outer loop
                 
     
     return parameters, costs
     
     
     
-def predict(X, Y, parameters):  
+    
+    # Initialize parameters once at the beginning
+    parameters = fp.initialize_parameters(layers_dims)
+    costs = []
+    training_step = 0
+    m = X.shape[1] # Number of examples in the training set
+    
+    # Loop until the required number of training steps (iterations) is reached
+    while training_step < num_iterations:
+        
+        # Iterate over the data in batches (one full epoch)
+        for i in range(0, m, batch_size):
+            
+            # Stop immediately if the requested number of iterations is reached mid-epoch
+            if training_step >= num_iterations:
+                break
+            
+            # Extract the current batch
+            X_batch = X[:, i : i + batch_size]
+            Y_batch = Y[:, i : i + batch_size]
+            
+            # Forward propagation
+            AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
+            
+            # Compute cost
+            cost = fp.compute_cost(AL, Y_batch)
+            
+            # Backward propagation
+            grads = bp.l_model_backward(AL, Y_batch, caches)
+            
+            # Update parameters
+            parameters = bp.update_parameters(parameters, grads, learning_rate)
+            
+            training_step += 1
+            
+            # Save cost every 100 iterations as requested
+            if training_step % 100 == 0:
+                costs.append(cost)
+                
+    return parameters, costs
+    
+    
+    
+    
+def predict(X, Y, parameters, use_batchnorm=False):  
     """
 
     Args:
@@ -61,7 +106,7 @@ def predict(X, Y, parameters):
         using the softmax function to normalize the output values
     """
     
-    AL, _ = fp.l_model_forward(X, parameters, use_batchnorm=False)  # Forward propagation to get the output probabilities
+    AL, _ = fp.l_model_forward(X, parameters, use_batchnorm)  # Forward propagation to get the output probabilities
     
     predictions = np.argmax(AL, axis=0) # Get the predicted class for each example by taking the index of the maximum probability
     true_labels = np.argmax(Y, axis=0) #
