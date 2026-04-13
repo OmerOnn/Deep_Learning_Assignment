@@ -17,7 +17,7 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
 
 
     # Redirect all print statements to a file
-    filename = f"training_report_batch_{batch_size}_use_batchnorm_{use_batchnorm}.txt"
+    filename = f"training_report_batch_{batch_size}_use_batchnorm_{use_batchnorm}_l2_{l2_lambda}.txt"
     output_file = open(filename, "w", buffering=1)
     sys.stdout = output_file
 
@@ -132,8 +132,9 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
     
     
 if __name__ == "__main__":
-    batch_size = [32]
+    batch_size = [16, 32, 64]
     use_batchnorm_options = [False]
+    l2_values = [0.001]
     for batch in batch_size:
-        for use_bn in use_batchnorm_options:
-            run_experiment(batch, use_bn)
+        for l2 in l2_values:
+            run_experiment(batch,False, l2_lambda=l2)
