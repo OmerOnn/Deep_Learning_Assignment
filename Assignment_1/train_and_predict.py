@@ -89,8 +89,6 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     return parameters, costs
     
     
-    
-    
 def predict(X, Y, parameters, use_batchnorm=False):  
     """
 

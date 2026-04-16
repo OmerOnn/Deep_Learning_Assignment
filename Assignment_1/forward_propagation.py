@@ -1,9 +1,6 @@
 import numpy as np
 
 
-
-
-
 def initialize_parameters(layer_dims):
     """
     Initialize parameters for a fully connected neural network
@@ -27,7 +24,6 @@ def initialize_parameters(layer_dims):
     return parameters
     
     
-    
 def linear_forward(A, W, b):
     """
     Compute the linear part of the forward propagation
@@ -39,11 +35,14 @@ def linear_forward(A, W, b):
 
     Returns:
         Z (vector): linear component of the activation function
+        linear_cache (tuple): cache containing A, W, b for backpropagation
     """
+
     if W.shape[1] == A.shape[0]:  # Check if the dimensions are compatible for matrix multiplication
         Z = np.dot(W, A) + b   # Compute the linear part of the forward propagation
-        return Z
+        return Z, (A, W, b)
     
+
 def softmax(Z):
     """
     Compute the softmax activation function
@@ -94,11 +93,10 @@ def linear_activation_forward(A_prev, W, B, activation):
         cache (dictionary): joint dictionary containing both linear_cache and activation_cache
 
     """
-    Z = linear_forward(A_prev, W, B)  # Compute the linear part of the forward propagation
+    Z, linear_cache = linear_forward(A_prev, W, B)  # Compute the linear part of the forward propagation
     
     A, activation_cache = softmax(Z) if activation == "softmax" else relu(Z)  # Compute the activation function
-    linear_cache = (A_prev, W, B)  # Cache for the linear part of the forward propagation
-    
+
     #cache = (linear_cache, activation_cache)  # Cache for the entire layer
     cache = {
         "linear_cache": linear_cache,
@@ -143,6 +141,8 @@ def l_model_forward(X, parameters, use_batchnorm):
     last_W = parameters[f'W{L}']
     last_b = parameters[f'b{L}']
     AL, cache = linear_activation_forward(A, last_W, last_b, activation="softmax")  # Compute the forward propagation for the last layer
+    if use_batchnorm:
+        AL = apply_batchnorm(AL)
     caches.append(cache)
     
     return AL, caches
@@ -186,8 +186,6 @@ def compute_cost(AL, Y, parameters=None,l2_lambda=0.0):
     cost = cross_entropy_cost + l2_cost  # Total cost is the sum of cross-entropy cost and L2 regularization cost
     return cost
 
-    
-    
     
 def apply_batchnorm(A):
     """

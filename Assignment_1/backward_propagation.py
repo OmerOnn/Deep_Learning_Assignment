@@ -1,6 +1,7 @@
 import numpy as np
 import forward_propagation as fp
 
+
 def linear_backward(dZ, cache, l2_lambda=0.0):
     """
     linear part of the backward propagation process for a single layer
@@ -25,9 +26,7 @@ def linear_backward(dZ, cache, l2_lambda=0.0):
     
     return dA_prev, dW, db
     
-    
-    
-    
+     
 def linear_activation_backward(dA, cache, activation, l2_lambda=0.0):
     """
     Backward propagation for the LINEAR->ACTIVATION layer
@@ -52,8 +51,7 @@ def linear_activation_backward(dA, cache, activation, l2_lambda=0.0):
     dA_prev, dW, db = linear_backward(dZ, linear_cache, l2_lambda)
     return dA_prev, dW, db
     
-    
-    
+
 def relu_backward(dA, activation_cache):
     """
     Backward propagation for a single RELU unit
@@ -70,9 +68,7 @@ def relu_backward(dA, activation_cache):
     dZ = np.array(dA, copy=True)  # copy for not modifying dA while computing dZ 
     dZ[Z <= 0] = 0  # When z <= 0
     return dZ
-    
-    
-    
+
     
 def softmax_backward (dA, activation_cache):
     """
@@ -90,9 +86,6 @@ def softmax_backward (dA, activation_cache):
     A, _ = fp.softmax(Z)  # Compute the softmax output using the cached Z
     dZ = A - dA  # Compute the gradient with respect to Z
     return dZ
-    
-    
-    
     
     
 def l_model_backward(AL, Y, caches, l2_lambda=0.0):
@@ -138,9 +131,6 @@ def l_model_backward(AL, Y, caches, l2_lambda=0.0):
     return grads
 
 
-
-
-    
 def update_parameters(parameters, grads, learning_rate):
     """
     Updates parameters using gradient descent (lecture 1 page 21)

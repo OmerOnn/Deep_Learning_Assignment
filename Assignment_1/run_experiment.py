@@ -5,7 +5,6 @@ from mnist_preprocess import load_and_preprocess_mnist
 from train_and_predict import l_layer_model, predict
 
 
-
 def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
 
     # Load data
