@@ -21,72 +21,74 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     
     
     
-    parameters = fp.initialize_parameters(layers_dims)  # Initialize parameters for the network
-    costs = []
-    m = X.shape[1]  # Number of examples in the training set
+    # parameters = fp.initialize_parameters(layers_dims)  # Initialize parameters for the network
+    # costs = []
+    # m = X.shape[1]  # Number of examples in the training set
     
-    for i in range(num_iterations):
-        for batch_start in range(0, m, batch_size):
+    # for i in range(num_iterations):
+    #     for batch_start in range(0, m, batch_size):
             
-            batch_end = min(batch_start + batch_size, m) # End index for the current batch, ensuring it does not exceed the total number of examples
-            X_batch = X[:, batch_start : batch_end]
-            Y_batch = Y[:, batch_start : batch_end]
+    #         batch_end = min(batch_start + batch_size, m) # End index for the current batch, ensuring it does not exceed the total number of examples
+    #         X_batch = X[:, batch_start : batch_end]
+    #         Y_batch = Y[:, batch_start : batch_end]
             
-            # Forward propagation, cost computation, backward propagation, and parameter update for the current batch
-            AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)  # Forward propagation
-            cost = fp.compute_cost(AL, Y_batch, l2_lambda)  # Compute the cost
-            grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)  # Backward propagation
-            parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
+    #         # Forward propagation, cost computation, backward propagation, and parameter update for the current batch
+    #         AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)  # Forward propagation
+    #         cost = fp.compute_cost(AL, Y_batch, l2_lambda)  # Compute the cost
+    #         grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)  # Backward propagation
+    #         parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
             
             
-            if i % 100 == 0:
-                costs.append(cost)  # Store the cost every 100 iterations of the outer loop
+    #         if i % 100 == 0:
+    #             costs.append(cost)  # Store the cost every 100 iterations of the outer loop
                 
     
-    return parameters, costs
+    # return parameters, costs
     
     
     
     
-    # Initialize parameters once at the beginning
     parameters = fp.initialize_parameters(layers_dims)
     costs = []
     training_step = 0
-    m = X.shape[1] # Number of examples in the training set
-    
-    # Loop until the required number of training steps (iterations) is reached
+    m = X.shape[1]
+
     while training_step < num_iterations:
-        
-        # Iterate over the data in batches (one full epoch)
-        for i in range(0, m, batch_size):
-            
-            # Stop immediately if the requested number of iterations is reached mid-epoch
+        # Shuffle the data at the beginning of each epoch
+        permutation = np.random.permutation(m)
+        X_shuffled = X[:, permutation]
+        Y_shuffled = Y[:, permutation]
+
+        for batch_start in range(0, m, batch_size):
             if training_step >= num_iterations:
                 break
-            
-            # Extract the current batch
-            X_batch = X[:, i : i + batch_size]
-            Y_batch = Y[:, i : i + batch_size]
-            
+
+            batch_end = min(batch_start + batch_size, m)
+
+            X_batch = X_shuffled[:, batch_start:batch_end]
+            Y_batch = Y_shuffled[:, batch_start:batch_end]
+
             # Forward propagation
             AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
-            
+
             # Compute cost
-            cost = fp.compute_cost(AL, Y_batch)
-            
+            cost = fp.compute_cost(AL, Y_batch, parameters, l2_lambda)
+
             # Backward propagation
-            grads = bp.l_model_backward(AL, Y_batch, caches)
-            
+            grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)
+
             # Update parameters
             parameters = bp.update_parameters(parameters, grads, learning_rate)
-            
+
             training_step += 1
-            
-            # Save cost every 100 iterations as requested
+
+            # Save cost every 100 training steps
             if training_step % 100 == 0:
                 costs.append(cost)
-                
+
     return parameters, costs
+    
+    
     
     
 def predict(X, Y, parameters, use_batchnorm=False):  

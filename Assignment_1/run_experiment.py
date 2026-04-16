@@ -65,7 +65,7 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
 
         # Print cost and index every 100 steps
         for i, cost in enumerate(costs):
-            step_index = i * 100
+            step_index = (i + 1) * 100
             print(f"Step Index: {step_index} | Cost: {cost:.6f}")
 
         # Evaluate model performance
