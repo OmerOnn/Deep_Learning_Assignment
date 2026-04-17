@@ -13,16 +13,18 @@ def one_hot_encode(labels, num_classes=10):
     Returns:
         one_hot (numpy.ndarray): shape (num_classes, number_of_examples)
     """
-    m = labels.shape[0]
-    one_hot = np.zeros((num_classes, m))
+    # m = labels.shape[0]
+    # one_hot = np.zeros((num_classes, m))
 
-    for i in range(m):
-        one_hot[labels[i], i] = 1
+    # for i in range(m):
+    #     one_hot[labels[i], i] = 1
 
-    return one_hot
+    # return one_hot
+
+    return np.eye(num_classes)[labels].T
 
 
-def load_and_preprocess_mnist(validation_split=0.2, seed=42):
+def load_and_preprocess_mnist(seed=42):
     """
     Load MNIST, preprocess it, and split train into train/validation.
 
@@ -31,7 +33,7 @@ def load_and_preprocess_mnist(validation_split=0.2, seed=42):
         seed (int): random seed for reproducibility
 
     Returns:
-        X_train, Y_train, X_val, Y_val, X_test, Y_test
+        X_train, Y_train, X_test, Y_test
     """
 
     # Load MNIST
@@ -53,9 +55,24 @@ def load_and_preprocess_mnist(validation_split=0.2, seed=42):
     train_Y = one_hot_encode(train_y, 10)
     test_Y = one_hot_encode(test_y, 10)
 
+    return train_X, train_Y, test_X, test_Y
+
+def validation_split(train_X, train_Y, validation_split=0.2):
+    """ 
+    Split the training data into training and validation sets.
+
+    Args:
+        train_X (numpy.ndarray): shape (input_size, number_of_examples)
+        train_Y (numpy.ndarray): shape (num_classes, number_of_examples)
+        validation_split (float): percentage of training data used for validation
+
+    Returns:
+        X_train, Y_train, X_val, Y_val
+    """
+
     # Shuffle training data
-    np.random.seed(seed)
     m = train_X.shape[1]
+
     permutation = np.random.permutation(m)
 
     train_X = train_X[:, permutation]
@@ -70,7 +87,4 @@ def load_and_preprocess_mnist(validation_split=0.2, seed=42):
     X_train = train_X[:, val_size:]
     Y_train = train_Y[:, val_size:]
 
-    X_test = test_X
-    Y_test = test_Y
-
-    return X_train, Y_train, X_val, Y_val, X_test, Y_test
+    return X_train, Y_train, X_val, Y_val

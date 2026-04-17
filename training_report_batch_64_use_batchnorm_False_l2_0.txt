@@ -1,0 +1,21 @@
+
+ ================ Running training with num_iterations = 3000 ================
+Current Epochs: 3.20
+New best validation accuracy: 0.1037 at iteration 100
+Validation accuracy: 0.1037 at iteration 200
+
+
+
+
+
+Final Train accuracy: 0.1046
+Final Validation accuracy: 0.1037
+Final Test accuracy: 0.1028
+Training time: 1.26 seconds
+
+
+
+
+
+Step Index: 100 | Cost: 2.302183
+Step Index: 200 | Cost: 2.302524

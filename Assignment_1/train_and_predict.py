@@ -1,3 +1,4 @@
+from mnist_preprocess import validation_split
 import forward_propagation as fp
 import backward_propagation as bp
 import numpy as np
@@ -18,78 +19,75 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
         parameters (dict): dictionary containing the learned parameters
         costs (list): list of costs computed during training, used for plotting the learning curve
     """
-    
-    
-    
-    # parameters = fp.initialize_parameters(layers_dims)  # Initialize parameters for the network
-    # costs = []
-    # m = X.shape[1]  # Number of examples in the training set
-    
-    # for i in range(num_iterations):
-    #     for batch_start in range(0, m, batch_size):
-            
-    #         batch_end = min(batch_start + batch_size, m) # End index for the current batch, ensuring it does not exceed the total number of examples
-    #         X_batch = X[:, batch_start : batch_end]
-    #         Y_batch = Y[:, batch_start : batch_end]
-            
-    #         # Forward propagation, cost computation, backward propagation, and parameter update for the current batch
-    #         AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)  # Forward propagation
-    #         cost = fp.compute_cost(AL, Y_batch, l2_lambda)  # Compute the cost
-    #         grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)  # Backward propagation
-    #         parameters = bp.update_parameters(parameters, grads, learning_rate)  # Update parameters
-            
-            
-    #         if i % 100 == 0:
-    #             costs.append(cost)  # Store the cost every 100 iterations of the outer loop
-                
-    
-    # return parameters, costs
-    
-    
-    
-    
+
+    X_train, Y_train, X_val, Y_val = validation_split(X, Y, validation_split=0.2)
+
     parameters = fp.initialize_parameters(layers_dims)
     costs = []
-    training_step = 0
-    m = X.shape[1]
+    m = X_train.shape[1]
+    start_index = 0
 
-    while training_step < num_iterations:
-        # Shuffle the data at the beginning of each epoch
-        permutation = np.random.permutation(m)
-        X_shuffled = X[:, permutation]
-        Y_shuffled = Y[:, permutation]
+    best_val = 0
 
-        for batch_start in range(0, m, batch_size):
-            if training_step >= num_iterations:
+    for i in range(num_iterations):
+
+        current_epochs = m / batch_size
+        print(f"\n================= Current Epochs {current_epochs:.2f} =================")
+
+        end_index = min(start_index + batch_size, m)
+
+        X_batch = X_train[:, start_index:end_index]
+        Y_batch = Y_train[:, start_index:end_index]
+
+        # Forward propagation
+        AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
+
+        # Compute cost
+        cost = fp.compute_cost(AL, Y_batch, parameters, l2_lambda)
+
+        # Backward propagation
+        grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)
+
+        # Update parameters
+        parameters = bp.update_parameters(parameters, grads, learning_rate)
+
+        if i % 100 == 0 and i != 0:
+
+            costs.append(cost)
+            
+            val = predict(X_val, Y_val, parameters, use_batchnorm)
+            
+            if val >= best_val:
+                best_val = val
+                print(f"New best validation accuracy: {best_val:.4f} at iteration {i}")
+            
+            else:
+                print(f"Validation accuracy: {val:.4f} at iteration {i}")
                 break
+                
+        start_index = end_index + 1
 
-            batch_end = min(batch_start + batch_size, m)
+        if i % (m // batch_size) == 0 and i != 0:
 
-            X_batch = X_shuffled[:, batch_start:batch_end]
-            Y_batch = Y_shuffled[:, batch_start:batch_end]
+            print(f'Epoch {i // (m // batch_size)} completed. Cost: {cost:.6f}')
 
-            # Forward propagation
-            AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
+            permutation = np.random.permutation(m)
 
-            # Compute cost
-            cost = fp.compute_cost(AL, Y_batch, parameters, l2_lambda)
+            X_train = X_train[:, permutation]
+            Y_train = Y_train[:, permutation]
 
-            # Backward propagation
-            grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)
+            print(f"Epoch {i // (m // batch_size)}: Cost = {cost}")
 
-            # Update parameters
-            parameters = bp.update_parameters(parameters, grads, learning_rate)
-
-            training_step += 1
-
-            # Save cost every 100 training steps
-            if training_step % 100 == 0:
-                costs.append(cost)
+            start_index = 0
+    
+    train_accuracy = predict(X_train, Y_train, parameters, use_batchnorm)
+    val_accuracy = predict(X_val, Y_val, parameters, use_batchnorm)
+    
+    print("\n" * 4)
+    print(f"Final Train accuracy: {train_accuracy:.4f}")
+    print(f"Final Validation accuracy: {val_accuracy:.4f}")
 
     return parameters, costs
-    
-    
-    
     
 def predict(X, Y, parameters, use_batchnorm=False):  
     """
