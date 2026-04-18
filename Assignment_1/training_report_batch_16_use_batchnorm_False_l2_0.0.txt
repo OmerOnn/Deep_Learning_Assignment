@@ -1,0 +1,64 @@
+
+==================================================
+TRAINING STARTED
+==================================================
+Layers dimensions: [784, 20, 7, 5, 10]
+Learning rate: 0.009
+Batch size: 16
+Use batchnorm: False
+L2 lambda: 0.0
+Validation split: 0.2
+==================================================
+Step Index: 100 | Cost: 1.995300
+Validation Accuracy: 0.2927
+Step Index: 200 | Cost: 1.538583
+Validation Accuracy: 0.3307
+Step Index: 300 | Cost: 1.884076
+Validation Accuracy: 0.3510
+Step Index: 400 | Cost: 1.388534
+Validation Accuracy: 0.3764
+Step Index: 500 | Cost: 1.983624
+Validation Accuracy: 0.4097
+Step Index: 600 | Cost: 1.497007
+Validation Accuracy: 0.4192
+Step Index: 700 | Cost: 1.900774
+Validation Accuracy: 0.4251
+Step Index: 800 | Cost: 1.733835
+Validation Accuracy: 0.4348
+Step Index: 900 | Cost: 0.942397
+Validation Accuracy: 0.4833
+Step Index: 1000 | Cost: 1.565488
+Validation Accuracy: 0.5047
+Step Index: 1100 | Cost: 1.155364
+Validation Accuracy: 0.5466
+Step Index: 1200 | Cost: 1.231815
+Validation Accuracy: 0.5708
+Step Index: 1300 | Cost: 0.726331
+Validation Accuracy: 0.5647
+
+Early stopping triggered.
+No significant improvement for 100 training steps.
+
+==================================================
+TRAINING SUMMARY
+==================================================
+Best Iterations: 1200
+Best Epochs: 0.40
+Best Validation Accuracy: 0.5708
+==================================================
+
+==================================================
+FINAL REPORT
+==================================================
+Layers dimensions:         [784, 20, 7, 5, 10]
+Learning rate:             0.009
+Batch size:                16
+Use batchnorm:             False
+L2 lambda:                 0.0
+Training Time:             0.33 seconds
+--------------------------------------------------
+Final Train Accuracy:      0.5696
+Final Validation Accuracy: 0.5708
+Final Test Accuracy:       0.5728
+Lowest overall Cost:       0.726331 at step 1300
+==================================================

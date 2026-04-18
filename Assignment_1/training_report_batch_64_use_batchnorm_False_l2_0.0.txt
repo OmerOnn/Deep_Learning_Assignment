@@ -1,0 +1,112 @@
+
+==================================================
+TRAINING STARTED
+==================================================
+Layers dimensions: [784, 20, 7, 5, 10]
+Learning rate: 0.009
+Batch size: 64
+Use batchnorm: False
+L2 lambda: 0.0
+Validation split: 0.2
+==================================================
+Step Index: 100 | Cost: 1.822538
+Validation Accuracy: 0.2868
+Step Index: 200 | Cost: 1.739341
+Validation Accuracy: 0.3142
+Step Index: 300 | Cost: 1.709958
+Validation Accuracy: 0.3455
+Step Index: 400 | Cost: 1.474246
+Validation Accuracy: 0.3762
+Step Index: 500 | Cost: 1.574857
+Validation Accuracy: 0.3849
+Step Index: 600 | Cost: 1.502022
+Validation Accuracy: 0.4143
+Step Index: 700 | Cost: 1.482476
+Validation Accuracy: 0.4369
+Step Index: 800 | Cost: 1.482490
+Validation Accuracy: 0.5138
+Step Index: 900 | Cost: 1.180132
+Validation Accuracy: 0.5449
+Step Index: 1000 | Cost: 1.382711
+Validation Accuracy: 0.6137
+Step Index: 1100 | Cost: 1.192246
+Validation Accuracy: 0.6255
+Step Index: 1200 | Cost: 1.204759
+Validation Accuracy: 0.6548
+Step Index: 1300 | Cost: 0.873767
+Validation Accuracy: 0.6789
+Step Index: 1400 | Cost: 0.960524
+Validation Accuracy: 0.6951
+Step Index: 1500 | Cost: 1.039017
+Validation Accuracy: 0.7150
+Step Index: 1600 | Cost: 0.809035
+Validation Accuracy: 0.7282
+Step Index: 1700 | Cost: 1.218294
+Validation Accuracy: 0.7406
+Step Index: 1800 | Cost: 0.878348
+Validation Accuracy: 0.7527
+Step Index: 1900 | Cost: 0.748115
+Validation Accuracy: 0.7664
+Step Index: 2000 | Cost: 0.778170
+Validation Accuracy: 0.7761
+Step Index: 2100 | Cost: 0.726114
+Validation Accuracy: 0.7897
+Step Index: 2200 | Cost: 0.707960
+Validation Accuracy: 0.7988
+Step Index: 2300 | Cost: 0.768653
+Validation Accuracy: 0.8140
+Step Index: 2400 | Cost: 0.792248
+Validation Accuracy: 0.8234
+Step Index: 2500 | Cost: 0.640532
+Validation Accuracy: 0.8335
+Step Index: 2600 | Cost: 0.630973
+Validation Accuracy: 0.8423
+Step Index: 2700 | Cost: 0.715590
+Validation Accuracy: 0.8497
+Step Index: 2800 | Cost: 0.550231
+Validation Accuracy: 0.8556
+Step Index: 2900 | Cost: 0.682278
+Validation Accuracy: 0.8634
+Step Index: 3000 | Cost: 0.380259
+Validation Accuracy: 0.8668
+Step Index: 3100 | Cost: 0.410405
+Validation Accuracy: 0.8671
+Step Index: 3200 | Cost: 0.507243
+Validation Accuracy: 0.8732
+Step Index: 3300 | Cost: 0.673072
+Validation Accuracy: 0.8757
+Step Index: 3400 | Cost: 0.516572
+Validation Accuracy: 0.8792
+Step Index: 3500 | Cost: 0.280818
+Validation Accuracy: 0.8819
+Step Index: 3600 | Cost: 0.333409
+Validation Accuracy: 0.8861
+Step Index: 3700 | Cost: 0.446165
+Validation Accuracy: 0.8859
+
+Early stopping triggered.
+No significant improvement for 100 training steps.
+
+==================================================
+TRAINING SUMMARY
+==================================================
+Best Iterations: 3600
+Best Epochs: 4.80
+Best Validation Accuracy: 0.8861
+==================================================
+
+==================================================
+FINAL REPORT
+==================================================
+Layers dimensions:         [784, 20, 7, 5, 10]
+Learning rate:             0.009
+Batch size:                64
+Use batchnorm:             False
+L2 lambda:                 0.0
+Training Time:             2.21 seconds
+--------------------------------------------------
+Final Train Accuracy:      0.8840
+Final Validation Accuracy: 0.8861
+Final Test Accuracy:       0.8859
+Lowest overall Cost:       0.280818 at step 3500
+==================================================

@@ -1,6 +1,7 @@
 import forward_propagation as fp
 import backward_propagation as bp
 import numpy as np
+import copy
 
 
 def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, use_batchnorm=False, l2_lambda=0.0):
@@ -47,46 +48,110 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     
     
     
-    
+   # --------------------------
+    # Internal train / validation split
+    # --------------------------
+    validation_split = 0.2
+    min_improvement = 1e-4
+    check_every = 100
+    early_stopping_patience = 100
+
+    m_total = X.shape[1]
+    val_size = int(validation_split * m_total)
+
+    X_val = X[:, :val_size]
+    Y_val = Y[:, :val_size]
+
+    X_train = X[:, val_size:]
+    Y_train = Y[:, val_size:]
+
+    # --------------------------
+    # Initialization
+    # --------------------------
     parameters = fp.initialize_parameters(layers_dims)
+    best_parameters = copy.deepcopy(parameters)
+
     costs = []
     training_step = 0
-    m = X.shape[1]
 
-    while training_step < num_iterations:
-        # Shuffle the data at the beginning of each epoch
-        permutation = np.random.permutation(m)
-        X_shuffled = X[:, permutation]
-        Y_shuffled = Y[:, permutation]
+    best_val_accuracy = -1
+    best_step = 0
+    steps_since_improvement = 0
 
-        for batch_start in range(0, m, batch_size):
-            if training_step >= num_iterations:
+    m_train = X_train.shape[1]
+    batches_per_epoch = int(np.ceil(m_train / batch_size))
+
+    stop_training = False
+
+    print("\n" + "=" * 50)
+    print("TRAINING STARTED")
+    print("=" * 50)
+    print(f"Layers dimensions: {layers_dims}")
+    print(f"Learning rate: {learning_rate}")
+    print(f"Batch size: {batch_size}")
+    print(f"Use batchnorm: {use_batchnorm}")
+    print(f"L2 lambda: {l2_lambda}")
+    print(f"Validation split: {validation_split}")
+    print("=" * 50)
+
+    # --------------------------
+    # Training loop
+    # --------------------------
+    while not stop_training and training_step < num_iterations:
+        permutation = np.random.permutation(m_train)
+        X_train_shuffled = X_train[:, permutation]
+        Y_train_shuffled = Y_train[:, permutation]
+
+        for batch_start in range(0, m_train, batch_size):
+            if stop_training or training_step >= num_iterations:
                 break
 
-            batch_end = min(batch_start + batch_size, m)
+            batch_end = min(batch_start + batch_size, m_train)
 
-            X_batch = X_shuffled[:, batch_start:batch_end]
-            Y_batch = Y_shuffled[:, batch_start:batch_end]
+            X_batch = X_train_shuffled[:, batch_start:batch_end]
+            Y_batch = Y_train_shuffled[:, batch_start:batch_end]
 
-            # Forward propagation
+            # initialize -> forward -> cost -> backward -> update
             AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
-
-            # Compute cost
             cost = fp.compute_cost(AL, Y_batch, parameters, l2_lambda)
-
-            # Backward propagation
             grads = bp.l_model_backward(AL, Y_batch, caches, l2_lambda)
-
-            # Update parameters
             parameters = bp.update_parameters(parameters, grads, learning_rate)
 
             training_step += 1
 
-            # Save cost every 100 training steps
-            if training_step % 100 == 0:
+            if training_step % check_every == 0:
                 costs.append(cost)
 
-    return parameters, costs
+                val_accuracy = predict(X_val, Y_val, parameters, use_batchnorm)
+
+                print(f"Step Index: {training_step} | Cost: {cost:.6f}")
+                print(f"Validation Accuracy: {val_accuracy:.4f}")
+
+                if val_accuracy - best_val_accuracy > min_improvement:
+                    best_val_accuracy = val_accuracy
+                    best_parameters = copy.deepcopy(parameters)
+                    best_step = training_step
+                    steps_since_improvement = 0
+                else:
+                    steps_since_improvement += check_every
+
+                if steps_since_improvement >= early_stopping_patience:
+                    print("\nEarly stopping triggered.")
+                    print(f"No significant improvement for {early_stopping_patience} training steps.")
+                    stop_training = True
+                    break
+
+    best_epochs = best_step / batches_per_epoch if batches_per_epoch > 0 else 0
+
+    print("\n" + "=" * 50)
+    print("TRAINING SUMMARY")
+    print("=" * 50)
+    print(f"Best Iterations: {best_step}")
+    print(f"Best Epochs: {best_epochs:.2f}")
+    print(f"Best Validation Accuracy: {best_val_accuracy:.4f}")
+    print("=" * 50)
+
+    return best_parameters, costs
     
     
     

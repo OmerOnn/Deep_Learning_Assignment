@@ -1,0 +1,50 @@
+
+==================================================
+TRAINING STARTED
+==================================================
+Layers dimensions: [784, 20, 7, 5, 10]
+Learning rate: 0.009
+Batch size: 24
+Use batchnorm: False
+L2 lambda: 0.0
+Validation split: 0.2
+==================================================
+Step Index: 100 | Cost: 1.997429
+Validation Accuracy: 0.2893
+Step Index: 200 | Cost: 1.974030
+Validation Accuracy: 0.3140
+Step Index: 300 | Cost: 1.744646
+Validation Accuracy: 0.3483
+Step Index: 400 | Cost: 1.641621
+Validation Accuracy: 0.3773
+Step Index: 500 | Cost: 1.788438
+Validation Accuracy: 0.4006
+Step Index: 600 | Cost: 1.238961
+Validation Accuracy: 0.3999
+
+Early stopping triggered.
+No significant improvement for 100 training steps.
+
+==================================================
+TRAINING SUMMARY
+==================================================
+Best Iterations: 500
+Best Epochs: 0.25
+Best Validation Accuracy: 0.4006
+==================================================
+
+==================================================
+FINAL REPORT
+==================================================
+Layers dimensions:         [784, 20, 7, 5, 10]
+Learning rate:             0.009
+Batch size:                24
+Use batchnorm:             False
+L2 lambda:                 0.0
+Training Time:             0.22 seconds
+--------------------------------------------------
+Final Train Accuracy:      0.4036
+Final Validation Accuracy: 0.4006
+Final Test Accuracy:       0.3968
+Lowest overall Cost:       1.238961 at step 600
+==================================================
