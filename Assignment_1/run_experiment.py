@@ -32,11 +32,19 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
     # best_training_time = 0 # Time of the specific best run
     # steps_without_improvement = 0
 
-    num_iterations = 3000 # 60,000 / batch_size * 5 epochs (for batch_size=16)
+        
+    desired_epochs = 10
+
+    # l_layer_model uses only 80% of X_train after internal validation split
+    m_full = X_train.shape[1]
+    m_effective_train = int((1 - 0.2) * m_full)
+
+    batches_per_epoch = (m_effective_train + batch_size - 1) // batch_size
 
     # Calculate samples and batches per epoch
     m = X_train.shape[1]
     batches_per_epoch = int(np.ceil(m / batch_size))
+    num_iterations = desired_epochs * batches_per_epoch
     
     is_l2 = l2_lambda > 0.0
 
@@ -102,7 +110,7 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
     
     
 if __name__ == "__main__":
-    batch_size = [16, 32, 64]
+    batch_size = [16, 24, 32, 64, 128]
     use_batchnorm_options = [False]
     l2_values = [0]
     for batch in batch_size:
