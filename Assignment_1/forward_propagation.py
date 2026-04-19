@@ -29,7 +29,7 @@ def linear_forward(A, W, b):
     Compute the linear part of the forward propagation
     
     Args:
-        A (vector): the activations of the previous layer
+        A (matrix): the activations of the previous layer
         W (matrix): the weight matrix of the current layer
         b (vector): the bias vector of the current layer
 
@@ -38,9 +38,10 @@ def linear_forward(A, W, b):
         linear_cache (tuple): cache containing A, W, b for backpropagation
     """
 
-    if W.shape[1] == A.shape[0]:  # Check if the dimensions are compatible for matrix multiplication
-        Z = np.dot(W, A) + b   # Compute the linear part of the forward propagation
-        return Z, (A, W, b)
+    if W.shape[1] != A.shape[0]:
+        raise ValueError("Incompatible dimensions in linear_forward")  # Check if the dimensions are compatible for matrix multiplication
+    Z = np.dot(W, A) + b   # Compute the linear part of the forward propagation
+    return Z, (A, W, b)
     
 
 def softmax(Z):
@@ -141,8 +142,6 @@ def l_model_forward(X, parameters, use_batchnorm):
     last_W = parameters[f'W{L}']
     last_b = parameters[f'b{L}']
     AL, cache = linear_activation_forward(A, last_W, last_b, activation="softmax")  # Compute the forward propagation for the last layer
-    if use_batchnorm:
-        AL = apply_batchnorm(AL)
     caches.append(cache)
     
     return AL, caches

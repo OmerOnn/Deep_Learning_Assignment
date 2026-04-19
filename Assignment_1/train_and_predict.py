@@ -135,6 +135,7 @@ import forward_propagation as fp
 import backward_propagation as bp
 import numpy as np
 import copy
+import time
 
 
 def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, use_batchnorm=False, l2_lambda=0.0):
@@ -165,6 +166,10 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     best_val = 0
     num_of_batches = 0
     best_parameters = None
+    epsilon = 1e-4
+    
+    # START TIMER
+    training_start_time = time.time()
 
     for i in range(num_iterations):
         num_of_batches += 1
@@ -179,12 +184,6 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
 
         X_batch = X_train[:, start_index:end_index]
         Y_batch = Y_train[:, start_index:end_index]
-
-        # Safety check: avoid empty batch
-        if X_batch.shape[1] == 0 or Y_batch.shape[1] == 0:
-            print("Empty batch detected.")
-            print(f"start_index = {start_index}, end_index = {end_index}, m = {m}")
-            break
 
         # Forward propagation
         AL, caches = fp.l_model_forward(X_batch, parameters, use_batchnorm)
@@ -202,15 +201,16 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
         if i % 100 == 0 and i != 0:
             costs.append(cost)
 
-            val = predict(X_val, Y_val, parameters, use_batchnorm)
+            cur_val = predict(X_val, Y_val, parameters, use_batchnorm)
 
-            if val >= best_val:
-                best_val = val
+            # if val >= best_val:
+            if cur_val - best_val > epsilon:
+                best_val = cur_val
                 best_parameters = copy.deepcopy(parameters)  # Save the best parameters
                 print(f"New best validation accuracy: {best_val:.4f} at iteration {i}")
                 print("\n" * 4)
             else:
-                print(f"Validation accuracy: {val:.4f} at iteration {i}")
+                print(f"Validation accuracy: {cur_val:.4f} at iteration {i}")
                 break
 
         start_index = end_index
@@ -228,14 +228,21 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
             start_index = 0
             num_of_batches = 0
             print("\n" * 4)
+            
+            
+    # END TIMER
+    training_end_time = time.time()
+    pure_training_duration = training_end_time - training_start_time
 
     train_accuracy = predict(X_train, Y_train, best_parameters, use_batchnorm)
     val_accuracy = predict(X_val, Y_val, best_parameters, use_batchnorm)
 
     print("\n" * 4)
-    print(f"Final Train accuracy: {train_accuracy:.4f}")
-    print(f"Final Validation accuracy: {val_accuracy:.4f}")
-    print(f'Total ecpochs completed: {(i // batches_per_epoch) + 1}')
+    print("================= Training Completed =================")
+    print(f"| Training time: {pure_training_duration:.2f} seconds")
+    print(f'| Total epochs completed: {(i // batches_per_epoch) + 1}')
+    print(f"\n| Final Train accuracy: {train_accuracy:.4f}")
+    print(f"| Final Validation accuracy: {val_accuracy:.4f}")
 
     return best_parameters, costs
 
