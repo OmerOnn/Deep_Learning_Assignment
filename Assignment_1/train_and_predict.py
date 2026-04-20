@@ -166,7 +166,7 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     best_val = 0
     num_of_batches = 0
     best_parameters = None
-    epsilon = 1e-4
+    epsilon = 1e-6
     
     # START TIMER
     training_start_time = time.time()

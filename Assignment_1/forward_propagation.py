@@ -13,7 +13,7 @@ def initialize_parameters(layer_dims):
         values: the weights and the biases
     """
     
-    np.random.seed(42)
+
     parameters = {}
     L = len(layer_dims)
     
@@ -41,7 +41,9 @@ def linear_forward(A, W, b):
     if W.shape[1] != A.shape[0]:
         raise ValueError("Incompatible dimensions in linear_forward")  # Check if the dimensions are compatible for matrix multiplication
     Z = np.dot(W, A) + b   # Compute the linear part of the forward propagation
-    return Z, (A, W, b)
+    
+    liner_cache = {"A": A, "W": W, "b": b}  # Cache for the linear part of the forward propagation
+    return Z, liner_cache
     
 
 def softmax(Z):
@@ -134,13 +136,15 @@ def l_model_forward(X, parameters, use_batchnorm):
         
         if use_batchnorm:
             A = apply_batchnorm(A)
+        else:
+            cache["cache_batchnorm"] = None
             
         caches.append(cache)
     
     
     # Last layer with softmax activation
-    last_W = parameters[f'W{L}']
-    last_b = parameters[f'b{L}']
+    last_W = parameters["W" + str(L)]
+    last_b = parameters["b" + str(L)]
     AL, cache = linear_activation_forward(A, last_W, last_b, activation="softmax")  # Compute the forward propagation for the last layer
     caches.append(cache)
     
