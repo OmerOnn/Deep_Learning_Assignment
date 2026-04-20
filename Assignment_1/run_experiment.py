@@ -51,6 +51,10 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
     test_accuracy = predict(X_test, Y_test, parameters, use_batchnorm)
 
     print(f"| Final Test accuracy: {test_accuracy:.4f}")
+    if use_batchnorm:
+        print("| Batch normalization: True")
+    if is_l2:
+        print(f"| L2 regularization: True (lambda={l2_lambda})")
     print("======================================================")
 
     print("\n" * 3)
@@ -63,18 +67,40 @@ def run_experiment(batch_size, use_batchnorm, l2_lambda=0.0):
     output_file.close()
     sys.stdout = sys.__stdout__
     
-    
-if __name__ == "__main__":
-    # batch_size = [16, 24, 32, 64, 128]
-    # use_batchnorm_options = [False, True]
-    # l2_values = [0, 0.001]
-    # for batch in batch_size:
-    #     for use_batchnorm in use_batchnorm_options:
-    #         for l2 in l2_values:
-    #             run_experiment(batch, use_batchnorm, l2_lambda=l2)
-    
-    
-    
+
+            
+ # =========================================
+ # |             Section 4                 | 
+ # =========================================        
+def section_4():
     batch_size = [16, 24, 32, 64, 128]
     for batch in batch_size:
             run_experiment(batch, False)
+            
+            
+            
+ # =========================================
+ # |             Section 5                 | 
+ # =========================================             
+def section_5():
+    batch_size = [16]
+    for batch in batch_size:
+            run_experiment(batch, True)
+            
+            
+            
+ # =========================================
+ # |             Section 6                 | 
+ # =========================================  
+def section_6():
+    batch_size = [16]
+    l2_values = [0.001, 0.01]
+    for batch in batch_size:
+        for l2 in l2_values:
+            run_experiment(batch, False, l2_lambda=l2)
+            
+            
+if __name__ == "__main__":
+    # section_4()
+    # section_5()
+    section_6()

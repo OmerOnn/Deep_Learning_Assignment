@@ -135,7 +135,8 @@ def l_model_forward(X, parameters, use_batchnorm):
         A, cache = linear_activation_forward(A_prev, cur_W, cur_b, activation="relu")  # Compute the forward propagation for the current layer
         
         if use_batchnorm:
-            A = apply_batchnorm(A)
+            A, batch_norm_cache = apply_batchnorm(A)
+            cache["cache_batchnorm"] = batch_norm_cache
         else:
             cache["cache_batchnorm"] = None
             
@@ -164,15 +165,19 @@ def compute_cost(AL, Y, parameters=None,l2_lambda=0.0):
         cost (float): cross-entropy cost
     """
     
-    num_classes, m = Y.shape[0], Y.shape[1]  # Number of examples
-    cost_sum = 0.0
+    # num_classes, m = Y.shape[0], Y.shape[1]  # Number of examples
+    # cost_sum = 0.0
     
-    for i in range(m):
-        for j in range(num_classes):
-            al_value = AL[j][i] if AL[j][i] >= 1e-12 else 1e-12  # Avoid log(0) by adding a small constant
-            cost_sum += Y[j][i] * np.log(al_value)
+    # for i in range(m):
+    #     for j in range(num_classes):
+    #         al_value = AL[j][i] if AL[j][i] >= 1e-12 else 1e-12  # Avoid log(0) by adding a small constant
+    #         cost_sum += Y[j][i] * np.log(al_value)
             
-    cross_entropy_cost = -(1 / m) * cost_sum  # Compute the average cost over all examples
+    # cross_entropy_cost = -(1 / m) * cost_sum  # Compute the average cost over all examples
+    
+    m = Y.shape[1]
+    # Vectorized cross-entropy with epsilon for numerical stability
+    cross_entropy_cost = - (1 / m) * np.sum(Y * np.log(AL + 1e-10))
     
     # L2 regularization cost
     l2_cost = 0.0
@@ -205,18 +210,14 @@ def apply_batchnorm(A):
     mean_A = np.mean(A, axis=1, keepdims=True)  # Compute the mean of A
     variance_A = np.var(A, axis=1, keepdims=True)  # Compute the variance of A
     
-    NA = (A - mean_A) / np.sqrt(variance_A + epsilon)  # Normalize A using the mean and variance
-    return NA
-
-
-
-# def calculate_matrix_mean(A):
-#     """
-
-#     Args:
-#         A (_type_): _description_
-#     """
+    standart_div_A = 1.0 / np.sqrt(variance_A + epsilon)  # Compute the standard deviation of A with epsilon for numerical stability
     
-#     num_units = A.shape[0]
-#     m = A.shape[1]
+    NA = (A - mean_A) * standart_div_A  # Normalize A using the mean and variance
     
+    batch_norm_cache = {
+        "A": A,
+        "mean": mean_A,
+        "variance": variance_A,
+        "standard_div": standart_div_A
+    }
+    return NA, batch_norm_cache

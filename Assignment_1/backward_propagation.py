@@ -67,9 +67,6 @@ def relu_backward(dA, activation_cache):
     """
     
     Z = activation_cache
-    # dZ = np.array(dA, copy=True)  # copy for not modifying dA while computing dZ 
-    # dZ[Z <= 0] = 0  # When z <= 0
-    
     dZ = dA * (Z > 0)
     return dZ
 
@@ -85,12 +82,7 @@ def softmax_backward (dA, activation_cache):
     Returns:
         dZ : gradient of the cost with respect to Z 
     """
-    
-    # Z = activation_cache
-    # A, _ = fp.softmax(Z)  # Compute the softmax output using the cached Z
-    # dZ = A - dA  # Compute the gradient with respect to Z
-    # return dZ
-    
+
     dZ = dA
     return dZ
 
@@ -122,14 +114,8 @@ def l_model_backward(AL, Y, caches, l2_lambda=0.0):
     L = len(caches)  # Number of layers in the network
     m = AL.shape[1]  # Number of examples in the batch
     
-    # # Initializing the backpropagation for the last layer
-    # dA_prev_last, dW_last, db_last = linear_activation_backward(Y, caches[L - 1], activation="softmax", l2_lambda=l2_lambda)  # Backpropagation for the last layer
-    # grads["dA" + str(L - 1)] = dA_prev_last
-    # grads["dW" + str(L)] = dW_last
-    # grads["db" + str(L)] = db_last
     
-    
-        # Output layer: SOFTMAX
+    # Initializing the backpropagation for the last layer
     last_cache = caches[L - 1]
     dA = AL - Y
     dZ = softmax_backward(dA, last_cache["activation_cache"])
@@ -143,19 +129,19 @@ def l_model_backward(AL, Y, caches, l2_lambda=0.0):
     # Initializing the backpropagation for the hidden layer
     for l in range(L - 1, 0, -1):
         
-        cur_cache = caches[l]
-        cur_dA = grads["dA" + str(l + 1)]
+        cur_cache = caches[l - 1]
+        cur_dA = grads["dA" + str(l)]
+        
+        # if using batchnorm
+        batch_norm_cache = cur_cache.get("cache_batchnorm", None)
+        if batch_norm_cache is not None:
+            cur_dA = batchnorm_backward(cur_dA, batch_norm_cache)
         
         dA_prev, dW, db = linear_activation_backward(cur_dA, cur_cache, activation="relu", l2_lambda=l2_lambda)  # Backpropagation for the hidden layer
         
-        # grads["dA" + str(l - 1)] = dA_prev
-        # grads["dW" + str(l)] = dW
-        # grads["db" + str(l)] = db
-        
-        # if l > 0:
-        grads["dA" + str(l)] = dA_prev
-        grads["dW" + str(l + 1)] = dW
-        grads["db" + str(l + 1)] = db
+        grads["dA" + str(l - 1)] = dA_prev
+        grads["dW" + str(l)] = dW
+        grads["db" + str(l)] = db
         
     return grads
 
@@ -180,3 +166,34 @@ def update_parameters(parameters, grads, learning_rate):
         parameters["b" + str(l)] = parameters["b" + str(l)] - learning_rate * grads["db" + str(l)]  # Update b
         
     return parameters
+
+
+def batchnorm_backward(dNA, batch_norm_cache):
+    """_summary_
+
+    Args:
+        dNA (_type_): _description_
+        batch_norm_cache (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    
+    
+    A = batch_norm_cache["A"]
+    mean = batch_norm_cache["mean"]
+    variance = batch_norm_cache["variance"]
+    standard_div = batch_norm_cache["standard_div"]
+    
+    epsilon = 1e-8
+    
+    m = A.shape[1]
+    
+    center_A = A - mean
+    
+    dVariance = np.sum(dNA * center_A * -0.5 * (variance + epsilon)**(-1.5), axis=1, keepdims=True)
+    
+    dMean = np.sum(dNA * -standard_div, axis=1, keepdims=True) + dVariance * np.sum(-2.0 * center_A, axis=1, keepdims=True)
+    
+    dA = dNA * standard_div + dVariance * 2.0 * center_A / m + dMean / m
+    return dA
