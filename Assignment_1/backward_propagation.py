@@ -175,7 +175,7 @@ def batchnorm_backward(dNA, batch_norm_cache):
         dNA (_type_): _description_
         batch_norm_cache (_type_): _description_
 
-    Returns:
+    Returns: 
         _type_: _description_
     """
     
