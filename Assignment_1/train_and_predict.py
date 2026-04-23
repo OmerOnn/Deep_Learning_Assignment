@@ -36,7 +36,7 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     
     best_parameters = copy.deepcopy(parameters)
     epsilon = 1e-6
-    small_improve_cpounter = 0
+    small_improve_counter = 0
     
     # START TIMER
     training_start_time = time.time()
@@ -81,8 +81,8 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
                 print(f"New best validation accuracy: {best_val:.4f} at iteration {i}")
                 print("\n" * 4)
             else:
-                small_improve_cpounter += 1
-                if small_improve_cpounter >= 100:
+                small_improve_counter += 1
+                if small_improve_counter >= 100:
                     print(f"Validation accuracy: {cur_val:.4f} at iteration {i}")
                     print(f"Early Stopping: No improvement for 100 training steps.")
                     break

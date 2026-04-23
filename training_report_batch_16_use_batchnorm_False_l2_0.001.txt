@@ -202,7 +202,7 @@
 ================= Epoch number = 1 ,Size: 0.0333 =================
 
 ================= Epoch number = 1 ,Size: 0.0337 =================
-New best validation accuracy: 0.2138 at iteration 100
+New best validation accuracy: 0.1979 at iteration 100
 
 
 
@@ -408,7 +408,7 @@ New best validation accuracy: 0.2138 at iteration 100
 ================= Epoch number = 1 ,Size: 0.0667 =================
 
 ================= Epoch number = 1 ,Size: 0.0670 =================
-New best validation accuracy: 0.2496 at iteration 200
+New best validation accuracy: 0.2477 at iteration 200
 
 
 
@@ -614,7 +614,7 @@ New best validation accuracy: 0.2496 at iteration 200
 ================= Epoch number = 1 ,Size: 0.1000 =================
 
 ================= Epoch number = 1 ,Size: 0.1003 =================
-New best validation accuracy: 0.2998 at iteration 300
+New best validation accuracy: 0.2883 at iteration 300
 
 
 
@@ -820,12 +820,6 @@ New best validation accuracy: 0.2998 at iteration 300
 ================= Epoch number = 1 ,Size: 0.1333 =================
 
 ================= Epoch number = 1 ,Size: 0.1337 =================
-New best validation accuracy: 0.3343 at iteration 400
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.1340 =================
 
@@ -1026,7 +1020,7 @@ New best validation accuracy: 0.3343 at iteration 400
 ================= Epoch number = 1 ,Size: 0.1667 =================
 
 ================= Epoch number = 1 ,Size: 0.1670 =================
-New best validation accuracy: 0.3376 at iteration 500
+New best validation accuracy: 0.3187 at iteration 500
 
 
 
@@ -1232,7 +1226,7 @@ New best validation accuracy: 0.3376 at iteration 500
 ================= Epoch number = 1 ,Size: 0.2000 =================
 
 ================= Epoch number = 1 ,Size: 0.2003 =================
-New best validation accuracy: 0.3567 at iteration 600
+New best validation accuracy: 0.3770 at iteration 600
 
 
 
@@ -1438,7 +1432,7 @@ New best validation accuracy: 0.3567 at iteration 600
 ================= Epoch number = 1 ,Size: 0.2333 =================
 
 ================= Epoch number = 1 ,Size: 0.2337 =================
-New best validation accuracy: 0.3757 at iteration 700
+New best validation accuracy: 0.4536 at iteration 700
 
 
 
@@ -1644,7 +1638,7 @@ New best validation accuracy: 0.3757 at iteration 700
 ================= Epoch number = 1 ,Size: 0.2667 =================
 
 ================= Epoch number = 1 ,Size: 0.2670 =================
-New best validation accuracy: 0.3829 at iteration 800
+New best validation accuracy: 0.5132 at iteration 800
 
 
 
@@ -1850,7 +1844,7 @@ New best validation accuracy: 0.3829 at iteration 800
 ================= Epoch number = 1 ,Size: 0.3000 =================
 
 ================= Epoch number = 1 ,Size: 0.3003 =================
-New best validation accuracy: 0.3839 at iteration 900
+New best validation accuracy: 0.5771 at iteration 900
 
 
 
@@ -2056,7 +2050,7 @@ New best validation accuracy: 0.3839 at iteration 900
 ================= Epoch number = 1 ,Size: 0.3333 =================
 
 ================= Epoch number = 1 ,Size: 0.3337 =================
-New best validation accuracy: 0.4323 at iteration 1000
+New best validation accuracy: 0.5930 at iteration 1000
 
 
 
@@ -2262,7 +2256,7 @@ New best validation accuracy: 0.4323 at iteration 1000
 ================= Epoch number = 1 ,Size: 0.3667 =================
 
 ================= Epoch number = 1 ,Size: 0.3670 =================
-New best validation accuracy: 0.4597 at iteration 1100
+New best validation accuracy: 0.6142 at iteration 1100
 
 
 
@@ -2468,7 +2462,7 @@ New best validation accuracy: 0.4597 at iteration 1100
 ================= Epoch number = 1 ,Size: 0.4000 =================
 
 ================= Epoch number = 1 ,Size: 0.4003 =================
-New best validation accuracy: 0.5049 at iteration 1200
+New best validation accuracy: 0.6159 at iteration 1200
 
 
 
@@ -2674,7 +2668,7 @@ New best validation accuracy: 0.5049 at iteration 1200
 ================= Epoch number = 1 ,Size: 0.4333 =================
 
 ================= Epoch number = 1 ,Size: 0.4337 =================
-New best validation accuracy: 0.5459 at iteration 1300
+New best validation accuracy: 0.6320 at iteration 1300
 
 
 
@@ -2880,7 +2874,7 @@ New best validation accuracy: 0.5459 at iteration 1300
 ================= Epoch number = 1 ,Size: 0.4667 =================
 
 ================= Epoch number = 1 ,Size: 0.4670 =================
-New best validation accuracy: 0.5633 at iteration 1400
+New best validation accuracy: 0.6378 at iteration 1400
 
 
 
@@ -3086,7 +3080,7 @@ New best validation accuracy: 0.5633 at iteration 1400
 ================= Epoch number = 1 ,Size: 0.5000 =================
 
 ================= Epoch number = 1 ,Size: 0.5003 =================
-New best validation accuracy: 0.5827 at iteration 1500
+New best validation accuracy: 0.6516 at iteration 1500
 
 
 
@@ -3292,12 +3286,6 @@ New best validation accuracy: 0.5827 at iteration 1500
 ================= Epoch number = 1 ,Size: 0.5333 =================
 
 ================= Epoch number = 1 ,Size: 0.5337 =================
-New best validation accuracy: 0.6068 at iteration 1600
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.5340 =================
 
@@ -3498,12 +3486,6 @@ New best validation accuracy: 0.6068 at iteration 1600
 ================= Epoch number = 1 ,Size: 0.5667 =================
 
 ================= Epoch number = 1 ,Size: 0.5670 =================
-New best validation accuracy: 0.6099 at iteration 1700
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.5673 =================
 
@@ -3704,6 +3686,12 @@ New best validation accuracy: 0.6099 at iteration 1700
 ================= Epoch number = 1 ,Size: 0.6000 =================
 
 ================= Epoch number = 1 ,Size: 0.6003 =================
+New best validation accuracy: 0.6688 at iteration 1800
+
+
+
+
+
 
 ================= Epoch number = 1 ,Size: 0.6007 =================
 
@@ -3904,6 +3892,12 @@ New best validation accuracy: 0.6099 at iteration 1700
 ================= Epoch number = 1 ,Size: 0.6333 =================
 
 ================= Epoch number = 1 ,Size: 0.6337 =================
+New best validation accuracy: 0.6703 at iteration 1900
+
+
+
+
+
 
 ================= Epoch number = 1 ,Size: 0.6340 =================
 
@@ -4104,7 +4098,7 @@ New best validation accuracy: 0.6099 at iteration 1700
 ================= Epoch number = 1 ,Size: 0.6667 =================
 
 ================= Epoch number = 1 ,Size: 0.6670 =================
-New best validation accuracy: 0.6222 at iteration 2000
+New best validation accuracy: 0.6819 at iteration 2000
 
 
 
@@ -4310,12 +4304,6 @@ New best validation accuracy: 0.6222 at iteration 2000
 ================= Epoch number = 1 ,Size: 0.7000 =================
 
 ================= Epoch number = 1 ,Size: 0.7003 =================
-New best validation accuracy: 0.6342 at iteration 2100
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.7007 =================
 
@@ -4716,7 +4704,7 @@ New best validation accuracy: 0.6342 at iteration 2100
 ================= Epoch number = 1 ,Size: 0.7667 =================
 
 ================= Epoch number = 1 ,Size: 0.7670 =================
-New best validation accuracy: 0.6397 at iteration 2300
+New best validation accuracy: 0.6987 at iteration 2300
 
 
 
@@ -4922,7 +4910,7 @@ New best validation accuracy: 0.6397 at iteration 2300
 ================= Epoch number = 1 ,Size: 0.8000 =================
 
 ================= Epoch number = 1 ,Size: 0.8003 =================
-New best validation accuracy: 0.6575 at iteration 2400
+New best validation accuracy: 0.7168 at iteration 2400
 
 
 
@@ -5128,12 +5116,6 @@ New best validation accuracy: 0.6575 at iteration 2400
 ================= Epoch number = 1 ,Size: 0.8333 =================
 
 ================= Epoch number = 1 ,Size: 0.8337 =================
-New best validation accuracy: 0.6878 at iteration 2500
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.8340 =================
 
@@ -5334,7 +5316,7 @@ New best validation accuracy: 0.6878 at iteration 2500
 ================= Epoch number = 1 ,Size: 0.8667 =================
 
 ================= Epoch number = 1 ,Size: 0.8670 =================
-New best validation accuracy: 0.6917 at iteration 2600
+New best validation accuracy: 0.7735 at iteration 2600
 
 
 
@@ -5540,7 +5522,7 @@ New best validation accuracy: 0.6917 at iteration 2600
 ================= Epoch number = 1 ,Size: 0.9000 =================
 
 ================= Epoch number = 1 ,Size: 0.9003 =================
-New best validation accuracy: 0.7153 at iteration 2700
+New best validation accuracy: 0.7922 at iteration 2700
 
 
 
@@ -5746,12 +5728,6 @@ New best validation accuracy: 0.7153 at iteration 2700
 ================= Epoch number = 1 ,Size: 0.9333 =================
 
 ================= Epoch number = 1 ,Size: 0.9337 =================
-New best validation accuracy: 0.7201 at iteration 2800
-
-
-
-
-
 
 ================= Epoch number = 1 ,Size: 0.9340 =================
 
@@ -5952,7 +5928,7 @@ New best validation accuracy: 0.7201 at iteration 2800
 ================= Epoch number = 1 ,Size: 0.9667 =================
 
 ================= Epoch number = 1 ,Size: 0.9670 =================
-New best validation accuracy: 0.7315 at iteration 2900
+New best validation accuracy: 0.8011 at iteration 2900
 
 
 
@@ -6156,8 +6132,8 @@ New best validation accuracy: 0.7315 at iteration 2900
 ================= Epoch number = 1 ,Size: 0.9997 =================
 
 ================= Epoch number = 1 ,Size: 1.0000 =================
-Epoch 1 completed. Cost: 0.826177
-Epoch 1: Cost = 0.8261769049426292
+Epoch 1 completed. Cost: 0.791821
+Epoch 1: Cost = 0.7918212527473609
 
 
 
@@ -6165,7 +6141,7 @@ Epoch 1: Cost = 0.8261769049426292
 
 
 ================= Epoch number = 2 ,Size: 0.0003 =================
-New best validation accuracy: 0.7342 at iteration 3000
+New best validation accuracy: 0.8037 at iteration 3000
 
 
 
@@ -6371,7 +6347,7 @@ New best validation accuracy: 0.7342 at iteration 3000
 ================= Epoch number = 2 ,Size: 0.0333 =================
 
 ================= Epoch number = 2 ,Size: 0.0337 =================
-New best validation accuracy: 0.7517 at iteration 3100
+New best validation accuracy: 0.8193 at iteration 3100
 
 
 
@@ -6577,6 +6553,12 @@ New best validation accuracy: 0.7517 at iteration 3100
 ================= Epoch number = 2 ,Size: 0.0667 =================
 
 ================= Epoch number = 2 ,Size: 0.0670 =================
+New best validation accuracy: 0.8203 at iteration 3200
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.0673 =================
 
@@ -6777,7 +6759,7 @@ New best validation accuracy: 0.7517 at iteration 3100
 ================= Epoch number = 2 ,Size: 0.1000 =================
 
 ================= Epoch number = 2 ,Size: 0.1003 =================
-New best validation accuracy: 0.7658 at iteration 3300
+New best validation accuracy: 0.8277 at iteration 3300
 
 
 
@@ -6983,6 +6965,12 @@ New best validation accuracy: 0.7658 at iteration 3300
 ================= Epoch number = 2 ,Size: 0.1333 =================
 
 ================= Epoch number = 2 ,Size: 0.1337 =================
+New best validation accuracy: 0.8409 at iteration 3400
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.1340 =================
 
@@ -7183,12 +7171,6 @@ New best validation accuracy: 0.7658 at iteration 3300
 ================= Epoch number = 2 ,Size: 0.1667 =================
 
 ================= Epoch number = 2 ,Size: 0.1670 =================
-New best validation accuracy: 0.7798 at iteration 3500
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.1673 =================
 
@@ -7389,7 +7371,7 @@ New best validation accuracy: 0.7798 at iteration 3500
 ================= Epoch number = 2 ,Size: 0.2000 =================
 
 ================= Epoch number = 2 ,Size: 0.2003 =================
-New best validation accuracy: 0.7822 at iteration 3600
+New best validation accuracy: 0.8455 at iteration 3600
 
 
 
@@ -7595,6 +7577,12 @@ New best validation accuracy: 0.7822 at iteration 3600
 ================= Epoch number = 2 ,Size: 0.2333 =================
 
 ================= Epoch number = 2 ,Size: 0.2337 =================
+New best validation accuracy: 0.8531 at iteration 3700
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.2340 =================
 
@@ -7795,12 +7783,6 @@ New best validation accuracy: 0.7822 at iteration 3600
 ================= Epoch number = 2 ,Size: 0.2667 =================
 
 ================= Epoch number = 2 ,Size: 0.2670 =================
-New best validation accuracy: 0.7914 at iteration 3800
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.2673 =================
 
@@ -8001,7 +7983,7 @@ New best validation accuracy: 0.7914 at iteration 3800
 ================= Epoch number = 2 ,Size: 0.3000 =================
 
 ================= Epoch number = 2 ,Size: 0.3003 =================
-New best validation accuracy: 0.7926 at iteration 3900
+New best validation accuracy: 0.8600 at iteration 3900
 
 
 
@@ -8207,7 +8189,7 @@ New best validation accuracy: 0.7926 at iteration 3900
 ================= Epoch number = 2 ,Size: 0.3333 =================
 
 ================= Epoch number = 2 ,Size: 0.3337 =================
-New best validation accuracy: 0.7967 at iteration 4000
+New best validation accuracy: 0.8646 at iteration 4000
 
 
 
@@ -8413,7 +8395,7 @@ New best validation accuracy: 0.7967 at iteration 4000
 ================= Epoch number = 2 ,Size: 0.3667 =================
 
 ================= Epoch number = 2 ,Size: 0.3670 =================
-New best validation accuracy: 0.8057 at iteration 4100
+New best validation accuracy: 0.8656 at iteration 4100
 
 
 
@@ -8619,7 +8601,7 @@ New best validation accuracy: 0.8057 at iteration 4100
 ================= Epoch number = 2 ,Size: 0.4000 =================
 
 ================= Epoch number = 2 ,Size: 0.4003 =================
-New best validation accuracy: 0.8073 at iteration 4200
+New best validation accuracy: 0.8666 at iteration 4200
 
 
 
@@ -9025,12 +9007,6 @@ New best validation accuracy: 0.8073 at iteration 4200
 ================= Epoch number = 2 ,Size: 0.4667 =================
 
 ================= Epoch number = 2 ,Size: 0.4670 =================
-New best validation accuracy: 0.8217 at iteration 4400
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.4673 =================
 
@@ -9231,6 +9207,12 @@ New best validation accuracy: 0.8217 at iteration 4400
 ================= Epoch number = 2 ,Size: 0.5000 =================
 
 ================= Epoch number = 2 ,Size: 0.5003 =================
+New best validation accuracy: 0.8727 at iteration 4500
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.5007 =================
 
@@ -9631,6 +9613,12 @@ New best validation accuracy: 0.8217 at iteration 4400
 ================= Epoch number = 2 ,Size: 0.5667 =================
 
 ================= Epoch number = 2 ,Size: 0.5670 =================
+New best validation accuracy: 0.8742 at iteration 4700
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.5673 =================
 
@@ -9831,12 +9819,6 @@ New best validation accuracy: 0.8217 at iteration 4400
 ================= Epoch number = 2 ,Size: 0.6000 =================
 
 ================= Epoch number = 2 ,Size: 0.6003 =================
-New best validation accuracy: 0.8330 at iteration 4800
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.6007 =================
 
@@ -10037,12 +10019,6 @@ New best validation accuracy: 0.8330 at iteration 4800
 ================= Epoch number = 2 ,Size: 0.6333 =================
 
 ================= Epoch number = 2 ,Size: 0.6337 =================
-New best validation accuracy: 0.8397 at iteration 4900
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.6340 =================
 
@@ -10443,12 +10419,6 @@ New best validation accuracy: 0.8397 at iteration 4900
 ================= Epoch number = 2 ,Size: 0.7000 =================
 
 ================= Epoch number = 2 ,Size: 0.7003 =================
-New best validation accuracy: 0.8414 at iteration 5100
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.7007 =================
 
@@ -10649,7 +10619,7 @@ New best validation accuracy: 0.8414 at iteration 5100
 ================= Epoch number = 2 ,Size: 0.7333 =================
 
 ================= Epoch number = 2 ,Size: 0.7337 =================
-New best validation accuracy: 0.8504 at iteration 5200
+New best validation accuracy: 0.8760 at iteration 5200
 
 
 
@@ -10855,7 +10825,7 @@ New best validation accuracy: 0.8504 at iteration 5200
 ================= Epoch number = 2 ,Size: 0.7667 =================
 
 ================= Epoch number = 2 ,Size: 0.7670 =================
-New best validation accuracy: 0.8541 at iteration 5300
+New best validation accuracy: 0.8831 at iteration 5300
 
 
 
@@ -11061,6 +11031,12 @@ New best validation accuracy: 0.8541 at iteration 5300
 ================= Epoch number = 2 ,Size: 0.8000 =================
 
 ================= Epoch number = 2 ,Size: 0.8003 =================
+New best validation accuracy: 0.8841 at iteration 5400
+
+
+
+
+
 
 ================= Epoch number = 2 ,Size: 0.8007 =================
 
@@ -11261,7 +11237,7 @@ New best validation accuracy: 0.8541 at iteration 5300
 ================= Epoch number = 2 ,Size: 0.8333 =================
 
 ================= Epoch number = 2 ,Size: 0.8337 =================
-New best validation accuracy: 0.8581 at iteration 5500
+New best validation accuracy: 0.8871 at iteration 5500
 
 
 
@@ -11467,7 +11443,7 @@ New best validation accuracy: 0.8581 at iteration 5500
 ================= Epoch number = 2 ,Size: 0.8667 =================
 
 ================= Epoch number = 2 ,Size: 0.8670 =================
-New best validation accuracy: 0.8628 at iteration 5600
+New best validation accuracy: 0.8882 at iteration 5600
 
 
 
@@ -11873,12 +11849,6 @@ New best validation accuracy: 0.8628 at iteration 5600
 ================= Epoch number = 2 ,Size: 0.9333 =================
 
 ================= Epoch number = 2 ,Size: 0.9337 =================
-New best validation accuracy: 0.8669 at iteration 5800
-
-
-
-
-
 
 ================= Epoch number = 2 ,Size: 0.9340 =================
 
@@ -12079,7 +12049,7 @@ New best validation accuracy: 0.8669 at iteration 5800
 ================= Epoch number = 2 ,Size: 0.9667 =================
 
 ================= Epoch number = 2 ,Size: 0.9670 =================
-New best validation accuracy: 0.8738 at iteration 5900
+New best validation accuracy: 0.8942 at iteration 5900
 
 
 
@@ -12283,8 +12253,8 @@ New best validation accuracy: 0.8738 at iteration 5900
 ================= Epoch number = 2 ,Size: 0.9997 =================
 
 ================= Epoch number = 2 ,Size: 1.0000 =================
-Epoch 2 completed. Cost: 0.435173
-Epoch 2: Cost = 0.4351725755283706
+Epoch 2 completed. Cost: 0.247385
+Epoch 2: Cost = 0.24738473571152242
 
 
 
@@ -12292,12 +12262,6 @@ Epoch 2: Cost = 0.4351725755283706
 
 
 ================= Epoch number = 3 ,Size: 0.0003 =================
-New best validation accuracy: 0.8755 at iteration 6000
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.0007 =================
 
@@ -13098,12 +13062,6 @@ New best validation accuracy: 0.8755 at iteration 6000
 ================= Epoch number = 3 ,Size: 0.1333 =================
 
 ================= Epoch number = 3 ,Size: 0.1337 =================
-New best validation accuracy: 0.8801 at iteration 6400
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.1340 =================
 
@@ -13504,12 +13462,6 @@ New best validation accuracy: 0.8801 at iteration 6400
 ================= Epoch number = 3 ,Size: 0.2000 =================
 
 ================= Epoch number = 3 ,Size: 0.2003 =================
-New best validation accuracy: 0.8802 at iteration 6600
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.2007 =================
 
@@ -13910,12 +13862,6 @@ New best validation accuracy: 0.8802 at iteration 6600
 ================= Epoch number = 3 ,Size: 0.2667 =================
 
 ================= Epoch number = 3 ,Size: 0.2670 =================
-New best validation accuracy: 0.8858 at iteration 6800
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.2673 =================
 
@@ -14116,6 +14062,12 @@ New best validation accuracy: 0.8858 at iteration 6800
 ================= Epoch number = 3 ,Size: 0.3000 =================
 
 ================= Epoch number = 3 ,Size: 0.3003 =================
+New best validation accuracy: 0.8989 at iteration 6900
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.3007 =================
 
@@ -14316,12 +14268,6 @@ New best validation accuracy: 0.8858 at iteration 6800
 ================= Epoch number = 3 ,Size: 0.3333 =================
 
 ================= Epoch number = 3 ,Size: 0.3337 =================
-New best validation accuracy: 0.8902 at iteration 7000
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.3340 =================
 
@@ -14522,6 +14468,12 @@ New best validation accuracy: 0.8902 at iteration 7000
 ================= Epoch number = 3 ,Size: 0.3667 =================
 
 ================= Epoch number = 3 ,Size: 0.3670 =================
+New best validation accuracy: 0.8990 at iteration 7100
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.3673 =================
 
@@ -14722,12 +14674,6 @@ New best validation accuracy: 0.8902 at iteration 7000
 ================= Epoch number = 3 ,Size: 0.4000 =================
 
 ================= Epoch number = 3 ,Size: 0.4003 =================
-New best validation accuracy: 0.8932 at iteration 7200
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.4007 =================
 
@@ -14928,6 +14874,12 @@ New best validation accuracy: 0.8932 at iteration 7200
 ================= Epoch number = 3 ,Size: 0.4333 =================
 
 ================= Epoch number = 3 ,Size: 0.4337 =================
+New best validation accuracy: 0.8991 at iteration 7300
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.4340 =================
 
@@ -15528,6 +15480,12 @@ New best validation accuracy: 0.8932 at iteration 7200
 ================= Epoch number = 3 ,Size: 0.5333 =================
 
 ================= Epoch number = 3 ,Size: 0.5337 =================
+New best validation accuracy: 0.9004 at iteration 7600
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.5340 =================
 
@@ -15728,12 +15686,6 @@ New best validation accuracy: 0.8932 at iteration 7200
 ================= Epoch number = 3 ,Size: 0.5667 =================
 
 ================= Epoch number = 3 ,Size: 0.5670 =================
-New best validation accuracy: 0.8966 at iteration 7700
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.5673 =================
 
@@ -15934,7 +15886,7 @@ New best validation accuracy: 0.8966 at iteration 7700
 ================= Epoch number = 3 ,Size: 0.6000 =================
 
 ================= Epoch number = 3 ,Size: 0.6003 =================
-New best validation accuracy: 0.8988 at iteration 7800
+New best validation accuracy: 0.9012 at iteration 7800
 
 
 
@@ -16540,12 +16492,6 @@ New best validation accuracy: 0.8988 at iteration 7800
 ================= Epoch number = 3 ,Size: 0.7000 =================
 
 ================= Epoch number = 3 ,Size: 0.7003 =================
-New best validation accuracy: 0.9004 at iteration 8100
-
-
-
-
-
 
 ================= Epoch number = 3 ,Size: 0.7007 =================
 
@@ -16746,6 +16692,12 @@ New best validation accuracy: 0.9004 at iteration 8100
 ================= Epoch number = 3 ,Size: 0.7333 =================
 
 ================= Epoch number = 3 ,Size: 0.7337 =================
+New best validation accuracy: 0.9046 at iteration 8200
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.7340 =================
 
@@ -17346,7 +17298,7 @@ New best validation accuracy: 0.9004 at iteration 8100
 ================= Epoch number = 3 ,Size: 0.8333 =================
 
 ================= Epoch number = 3 ,Size: 0.8337 =================
-New best validation accuracy: 0.9032 at iteration 8500
+New best validation accuracy: 0.9069 at iteration 8500
 
 
 
@@ -17752,6 +17704,12 @@ New best validation accuracy: 0.9032 at iteration 8500
 ================= Epoch number = 3 ,Size: 0.9000 =================
 
 ================= Epoch number = 3 ,Size: 0.9003 =================
+New best validation accuracy: 0.9100 at iteration 8700
+
+
+
+
+
 
 ================= Epoch number = 3 ,Size: 0.9007 =================
 
@@ -18350,8 +18308,8 @@ New best validation accuracy: 0.9032 at iteration 8500
 ================= Epoch number = 3 ,Size: 0.9997 =================
 
 ================= Epoch number = 3 ,Size: 1.0000 =================
-Epoch 3 completed. Cost: 0.455660
-Epoch 3: Cost = 0.45565994775354507
+Epoch 3 completed. Cost: 0.116542
+Epoch 3: Cost = 0.11654158520443458
 
 
 
@@ -18359,12 +18317,6 @@ Epoch 3: Cost = 0.45565994775354507
 
 
 ================= Epoch number = 4 ,Size: 0.0003 =================
-New best validation accuracy: 0.9062 at iteration 9000
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.0007 =================
 
@@ -18565,12 +18517,6 @@ New best validation accuracy: 0.9062 at iteration 9000
 ================= Epoch number = 4 ,Size: 0.0333 =================
 
 ================= Epoch number = 4 ,Size: 0.0337 =================
-New best validation accuracy: 0.9072 at iteration 9100
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.0340 =================
 
@@ -18771,6 +18717,12 @@ New best validation accuracy: 0.9072 at iteration 9100
 ================= Epoch number = 4 ,Size: 0.0667 =================
 
 ================= Epoch number = 4 ,Size: 0.0670 =================
+New best validation accuracy: 0.9104 at iteration 9200
+
+
+
+
+
 
 ================= Epoch number = 4 ,Size: 0.0673 =================
 
@@ -19171,6 +19123,12 @@ New best validation accuracy: 0.9072 at iteration 9100
 ================= Epoch number = 4 ,Size: 0.1333 =================
 
 ================= Epoch number = 4 ,Size: 0.1337 =================
+New best validation accuracy: 0.9110 at iteration 9400
+
+
+
+
+
 
 ================= Epoch number = 4 ,Size: 0.1340 =================
 
@@ -19371,12 +19329,6 @@ New best validation accuracy: 0.9072 at iteration 9100
 ================= Epoch number = 4 ,Size: 0.1667 =================
 
 ================= Epoch number = 4 ,Size: 0.1670 =================
-New best validation accuracy: 0.9077 at iteration 9500
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.1673 =================
 
@@ -19977,12 +19929,6 @@ New best validation accuracy: 0.9077 at iteration 9500
 ================= Epoch number = 4 ,Size: 0.2667 =================
 
 ================= Epoch number = 4 ,Size: 0.2670 =================
-New best validation accuracy: 0.9116 at iteration 9800
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.2673 =================
 
@@ -20383,12 +20329,6 @@ New best validation accuracy: 0.9116 at iteration 9800
 ================= Epoch number = 4 ,Size: 0.3333 =================
 
 ================= Epoch number = 4 ,Size: 0.3337 =================
-New best validation accuracy: 0.9117 at iteration 10000
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.3340 =================
 
@@ -20589,6 +20529,12 @@ New best validation accuracy: 0.9117 at iteration 10000
 ================= Epoch number = 4 ,Size: 0.3667 =================
 
 ================= Epoch number = 4 ,Size: 0.3670 =================
+New best validation accuracy: 0.9142 at iteration 10100
+
+
+
+
+
 
 ================= Epoch number = 4 ,Size: 0.3673 =================
 
@@ -21189,6 +21135,12 @@ New best validation accuracy: 0.9117 at iteration 10000
 ================= Epoch number = 4 ,Size: 0.4667 =================
 
 ================= Epoch number = 4 ,Size: 0.4670 =================
+New best validation accuracy: 0.9147 at iteration 10400
+
+
+
+
+
 
 ================= Epoch number = 4 ,Size: 0.4673 =================
 
@@ -21389,12 +21341,6 @@ New best validation accuracy: 0.9117 at iteration 10000
 ================= Epoch number = 4 ,Size: 0.5000 =================
 
 ================= Epoch number = 4 ,Size: 0.5003 =================
-New best validation accuracy: 0.9133 at iteration 10500
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.5007 =================
 
@@ -21595,12 +21541,6 @@ New best validation accuracy: 0.9133 at iteration 10500
 ================= Epoch number = 4 ,Size: 0.5333 =================
 
 ================= Epoch number = 4 ,Size: 0.5337 =================
-New best validation accuracy: 0.9134 at iteration 10600
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.5340 =================
 
@@ -22201,12 +22141,6 @@ New best validation accuracy: 0.9134 at iteration 10600
 ================= Epoch number = 4 ,Size: 0.6333 =================
 
 ================= Epoch number = 4 ,Size: 0.6337 =================
-New best validation accuracy: 0.9151 at iteration 10900
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.6340 =================
 
@@ -23007,6 +22941,12 @@ New best validation accuracy: 0.9151 at iteration 10900
 ================= Epoch number = 4 ,Size: 0.7667 =================
 
 ================= Epoch number = 4 ,Size: 0.7670 =================
+New best validation accuracy: 0.9164 at iteration 11300
+
+
+
+
+
 
 ================= Epoch number = 4 ,Size: 0.7673 =================
 
@@ -23207,7 +23147,7 @@ New best validation accuracy: 0.9151 at iteration 10900
 ================= Epoch number = 4 ,Size: 0.8000 =================
 
 ================= Epoch number = 4 ,Size: 0.8003 =================
-New best validation accuracy: 0.9156 at iteration 11400
+New best validation accuracy: 0.9172 at iteration 11400
 
 
 
@@ -23613,12 +23553,6 @@ New best validation accuracy: 0.9156 at iteration 11400
 ================= Epoch number = 4 ,Size: 0.8667 =================
 
 ================= Epoch number = 4 ,Size: 0.8670 =================
-New best validation accuracy: 0.9157 at iteration 11600
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.8673 =================
 
@@ -24219,12 +24153,6 @@ New best validation accuracy: 0.9157 at iteration 11600
 ================= Epoch number = 4 ,Size: 0.9667 =================
 
 ================= Epoch number = 4 ,Size: 0.9670 =================
-New best validation accuracy: 0.9165 at iteration 11900
-
-
-
-
-
 
 ================= Epoch number = 4 ,Size: 0.9673 =================
 
@@ -24423,8 +24351,8 @@ New best validation accuracy: 0.9165 at iteration 11900
 ================= Epoch number = 4 ,Size: 0.9997 =================
 
 ================= Epoch number = 4 ,Size: 1.0000 =================
-Epoch 4 completed. Cost: 0.455329
-Epoch 4: Cost = 0.4553288053191722
+Epoch 4 completed. Cost: 0.238888
+Epoch 4: Cost = 0.23888844623368752
 
 
 
@@ -24432,12 +24360,6 @@ Epoch 4: Cost = 0.4553288053191722
 
 
 ================= Epoch number = 5 ,Size: 0.0003 =================
-New best validation accuracy: 0.9181 at iteration 12000
-
-
-
-
-
 
 ================= Epoch number = 5 ,Size: 0.0007 =================
 
@@ -24638,6 +24560,12 @@ New best validation accuracy: 0.9181 at iteration 12000
 ================= Epoch number = 5 ,Size: 0.0333 =================
 
 ================= Epoch number = 5 ,Size: 0.0337 =================
+New best validation accuracy: 0.9177 at iteration 12100
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.0340 =================
 
@@ -24838,12 +24766,6 @@ New best validation accuracy: 0.9181 at iteration 12000
 ================= Epoch number = 5 ,Size: 0.0667 =================
 
 ================= Epoch number = 5 ,Size: 0.0670 =================
-New best validation accuracy: 0.9197 at iteration 12200
-
-
-
-
-
 
 ================= Epoch number = 5 ,Size: 0.0673 =================
 
@@ -25044,6 +24966,12 @@ New best validation accuracy: 0.9197 at iteration 12200
 ================= Epoch number = 5 ,Size: 0.1000 =================
 
 ================= Epoch number = 5 ,Size: 0.1003 =================
+New best validation accuracy: 0.9177 at iteration 12300
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.1007 =================
 
@@ -25444,12 +25372,6 @@ New best validation accuracy: 0.9197 at iteration 12200
 ================= Epoch number = 5 ,Size: 0.1667 =================
 
 ================= Epoch number = 5 ,Size: 0.1670 =================
-New best validation accuracy: 0.9225 at iteration 12500
-
-
-
-
-
 
 ================= Epoch number = 5 ,Size: 0.1673 =================
 
@@ -25650,6 +25572,12 @@ New best validation accuracy: 0.9225 at iteration 12500
 ================= Epoch number = 5 ,Size: 0.2000 =================
 
 ================= Epoch number = 5 ,Size: 0.2003 =================
+New best validation accuracy: 0.9186 at iteration 12600
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.2007 =================
 
@@ -26850,6 +26778,12 @@ New best validation accuracy: 0.9225 at iteration 12500
 ================= Epoch number = 5 ,Size: 0.4000 =================
 
 ================= Epoch number = 5 ,Size: 0.4003 =================
+New best validation accuracy: 0.9195 at iteration 13200
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.4007 =================
 
@@ -27050,6 +26984,12 @@ New best validation accuracy: 0.9225 at iteration 12500
 ================= Epoch number = 5 ,Size: 0.4333 =================
 
 ================= Epoch number = 5 ,Size: 0.4337 =================
+New best validation accuracy: 0.9216 at iteration 13300
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.4340 =================
 
@@ -27650,12 +27590,6 @@ New best validation accuracy: 0.9225 at iteration 12500
 ================= Epoch number = 5 ,Size: 0.5333 =================
 
 ================= Epoch number = 5 ,Size: 0.5337 =================
-New best validation accuracy: 0.9233 at iteration 13600
-
-
-
-
-
 
 ================= Epoch number = 5 ,Size: 0.5340 =================
 
@@ -29656,6 +29590,12 @@ New best validation accuracy: 0.9233 at iteration 13600
 ================= Epoch number = 5 ,Size: 0.8667 =================
 
 ================= Epoch number = 5 ,Size: 0.8670 =================
+New best validation accuracy: 0.9221 at iteration 14600
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.8673 =================
 
@@ -29856,6 +29796,12 @@ New best validation accuracy: 0.9233 at iteration 13600
 ================= Epoch number = 5 ,Size: 0.9000 =================
 
 ================= Epoch number = 5 ,Size: 0.9003 =================
+New best validation accuracy: 0.9227 at iteration 14700
+
+
+
+
+
 
 ================= Epoch number = 5 ,Size: 0.9007 =================
 
@@ -30256,12 +30202,6 @@ New best validation accuracy: 0.9233 at iteration 13600
 ================= Epoch number = 5 ,Size: 0.9667 =================
 
 ================= Epoch number = 5 ,Size: 0.9670 =================
-New best validation accuracy: 0.9269 at iteration 14900
-
-
-
-
-
 
 ================= Epoch number = 5 ,Size: 0.9673 =================
 
@@ -30460,8 +30400,8 @@ New best validation accuracy: 0.9269 at iteration 14900
 ================= Epoch number = 5 ,Size: 0.9997 =================
 
 ================= Epoch number = 5 ,Size: 1.0000 =================
-Epoch 5 completed. Cost: 0.628458
-Epoch 5: Cost = 0.6284582271373015
+Epoch 5 completed. Cost: 0.311810
+Epoch 5: Cost = 0.3118097288580212
 
 
 
@@ -31669,12 +31609,6 @@ Epoch 5: Cost = 0.6284582271373015
 ================= Epoch number = 6 ,Size: 0.2000 =================
 
 ================= Epoch number = 6 ,Size: 0.2003 =================
-New best validation accuracy: 0.9270 at iteration 15600
-
-
-
-
-
 
 ================= Epoch number = 6 ,Size: 0.2007 =================
 
@@ -32075,6 +32009,12 @@ New best validation accuracy: 0.9270 at iteration 15600
 ================= Epoch number = 6 ,Size: 0.2667 =================
 
 ================= Epoch number = 6 ,Size: 0.2670 =================
+New best validation accuracy: 0.9246 at iteration 15800
+
+
+
+
+
 
 ================= Epoch number = 6 ,Size: 0.2673 =================
 
@@ -32875,7 +32815,7 @@ New best validation accuracy: 0.9270 at iteration 15600
 ================= Epoch number = 6 ,Size: 0.4000 =================
 
 ================= Epoch number = 6 ,Size: 0.4003 =================
-New best validation accuracy: 0.9273 at iteration 16200
+New best validation accuracy: 0.9265 at iteration 16200
 
 
 
@@ -33281,2419 +33221,7 @@ New best validation accuracy: 0.9273 at iteration 16200
 ================= Epoch number = 6 ,Size: 0.4667 =================
 
 ================= Epoch number = 6 ,Size: 0.4670 =================
-
-================= Epoch number = 6 ,Size: 0.4673 =================
-
-================= Epoch number = 6 ,Size: 0.4677 =================
-
-================= Epoch number = 6 ,Size: 0.4680 =================
-
-================= Epoch number = 6 ,Size: 0.4683 =================
-
-================= Epoch number = 6 ,Size: 0.4687 =================
-
-================= Epoch number = 6 ,Size: 0.4690 =================
-
-================= Epoch number = 6 ,Size: 0.4693 =================
-
-================= Epoch number = 6 ,Size: 0.4697 =================
-
-================= Epoch number = 6 ,Size: 0.4700 =================
-
-================= Epoch number = 6 ,Size: 0.4703 =================
-
-================= Epoch number = 6 ,Size: 0.4707 =================
-
-================= Epoch number = 6 ,Size: 0.4710 =================
-
-================= Epoch number = 6 ,Size: 0.4713 =================
-
-================= Epoch number = 6 ,Size: 0.4717 =================
-
-================= Epoch number = 6 ,Size: 0.4720 =================
-
-================= Epoch number = 6 ,Size: 0.4723 =================
-
-================= Epoch number = 6 ,Size: 0.4727 =================
-
-================= Epoch number = 6 ,Size: 0.4730 =================
-
-================= Epoch number = 6 ,Size: 0.4733 =================
-
-================= Epoch number = 6 ,Size: 0.4737 =================
-
-================= Epoch number = 6 ,Size: 0.4740 =================
-
-================= Epoch number = 6 ,Size: 0.4743 =================
-
-================= Epoch number = 6 ,Size: 0.4747 =================
-
-================= Epoch number = 6 ,Size: 0.4750 =================
-
-================= Epoch number = 6 ,Size: 0.4753 =================
-
-================= Epoch number = 6 ,Size: 0.4757 =================
-
-================= Epoch number = 6 ,Size: 0.4760 =================
-
-================= Epoch number = 6 ,Size: 0.4763 =================
-
-================= Epoch number = 6 ,Size: 0.4767 =================
-
-================= Epoch number = 6 ,Size: 0.4770 =================
-
-================= Epoch number = 6 ,Size: 0.4773 =================
-
-================= Epoch number = 6 ,Size: 0.4777 =================
-
-================= Epoch number = 6 ,Size: 0.4780 =================
-
-================= Epoch number = 6 ,Size: 0.4783 =================
-
-================= Epoch number = 6 ,Size: 0.4787 =================
-
-================= Epoch number = 6 ,Size: 0.4790 =================
-
-================= Epoch number = 6 ,Size: 0.4793 =================
-
-================= Epoch number = 6 ,Size: 0.4797 =================
-
-================= Epoch number = 6 ,Size: 0.4800 =================
-
-================= Epoch number = 6 ,Size: 0.4803 =================
-
-================= Epoch number = 6 ,Size: 0.4807 =================
-
-================= Epoch number = 6 ,Size: 0.4810 =================
-
-================= Epoch number = 6 ,Size: 0.4813 =================
-
-================= Epoch number = 6 ,Size: 0.4817 =================
-
-================= Epoch number = 6 ,Size: 0.4820 =================
-
-================= Epoch number = 6 ,Size: 0.4823 =================
-
-================= Epoch number = 6 ,Size: 0.4827 =================
-
-================= Epoch number = 6 ,Size: 0.4830 =================
-
-================= Epoch number = 6 ,Size: 0.4833 =================
-
-================= Epoch number = 6 ,Size: 0.4837 =================
-
-================= Epoch number = 6 ,Size: 0.4840 =================
-
-================= Epoch number = 6 ,Size: 0.4843 =================
-
-================= Epoch number = 6 ,Size: 0.4847 =================
-
-================= Epoch number = 6 ,Size: 0.4850 =================
-
-================= Epoch number = 6 ,Size: 0.4853 =================
-
-================= Epoch number = 6 ,Size: 0.4857 =================
-
-================= Epoch number = 6 ,Size: 0.4860 =================
-
-================= Epoch number = 6 ,Size: 0.4863 =================
-
-================= Epoch number = 6 ,Size: 0.4867 =================
-
-================= Epoch number = 6 ,Size: 0.4870 =================
-
-================= Epoch number = 6 ,Size: 0.4873 =================
-
-================= Epoch number = 6 ,Size: 0.4877 =================
-
-================= Epoch number = 6 ,Size: 0.4880 =================
-
-================= Epoch number = 6 ,Size: 0.4883 =================
-
-================= Epoch number = 6 ,Size: 0.4887 =================
-
-================= Epoch number = 6 ,Size: 0.4890 =================
-
-================= Epoch number = 6 ,Size: 0.4893 =================
-
-================= Epoch number = 6 ,Size: 0.4897 =================
-
-================= Epoch number = 6 ,Size: 0.4900 =================
-
-================= Epoch number = 6 ,Size: 0.4903 =================
-
-================= Epoch number = 6 ,Size: 0.4907 =================
-
-================= Epoch number = 6 ,Size: 0.4910 =================
-
-================= Epoch number = 6 ,Size: 0.4913 =================
-
-================= Epoch number = 6 ,Size: 0.4917 =================
-
-================= Epoch number = 6 ,Size: 0.4920 =================
-
-================= Epoch number = 6 ,Size: 0.4923 =================
-
-================= Epoch number = 6 ,Size: 0.4927 =================
-
-================= Epoch number = 6 ,Size: 0.4930 =================
-
-================= Epoch number = 6 ,Size: 0.4933 =================
-
-================= Epoch number = 6 ,Size: 0.4937 =================
-
-================= Epoch number = 6 ,Size: 0.4940 =================
-
-================= Epoch number = 6 ,Size: 0.4943 =================
-
-================= Epoch number = 6 ,Size: 0.4947 =================
-
-================= Epoch number = 6 ,Size: 0.4950 =================
-
-================= Epoch number = 6 ,Size: 0.4953 =================
-
-================= Epoch number = 6 ,Size: 0.4957 =================
-
-================= Epoch number = 6 ,Size: 0.4960 =================
-
-================= Epoch number = 6 ,Size: 0.4963 =================
-
-================= Epoch number = 6 ,Size: 0.4967 =================
-
-================= Epoch number = 6 ,Size: 0.4970 =================
-
-================= Epoch number = 6 ,Size: 0.4973 =================
-
-================= Epoch number = 6 ,Size: 0.4977 =================
-
-================= Epoch number = 6 ,Size: 0.4980 =================
-
-================= Epoch number = 6 ,Size: 0.4983 =================
-
-================= Epoch number = 6 ,Size: 0.4987 =================
-
-================= Epoch number = 6 ,Size: 0.4990 =================
-
-================= Epoch number = 6 ,Size: 0.4993 =================
-
-================= Epoch number = 6 ,Size: 0.4997 =================
-
-================= Epoch number = 6 ,Size: 0.5000 =================
-
-================= Epoch number = 6 ,Size: 0.5003 =================
-
-================= Epoch number = 6 ,Size: 0.5007 =================
-
-================= Epoch number = 6 ,Size: 0.5010 =================
-
-================= Epoch number = 6 ,Size: 0.5013 =================
-
-================= Epoch number = 6 ,Size: 0.5017 =================
-
-================= Epoch number = 6 ,Size: 0.5020 =================
-
-================= Epoch number = 6 ,Size: 0.5023 =================
-
-================= Epoch number = 6 ,Size: 0.5027 =================
-
-================= Epoch number = 6 ,Size: 0.5030 =================
-
-================= Epoch number = 6 ,Size: 0.5033 =================
-
-================= Epoch number = 6 ,Size: 0.5037 =================
-
-================= Epoch number = 6 ,Size: 0.5040 =================
-
-================= Epoch number = 6 ,Size: 0.5043 =================
-
-================= Epoch number = 6 ,Size: 0.5047 =================
-
-================= Epoch number = 6 ,Size: 0.5050 =================
-
-================= Epoch number = 6 ,Size: 0.5053 =================
-
-================= Epoch number = 6 ,Size: 0.5057 =================
-
-================= Epoch number = 6 ,Size: 0.5060 =================
-
-================= Epoch number = 6 ,Size: 0.5063 =================
-
-================= Epoch number = 6 ,Size: 0.5067 =================
-
-================= Epoch number = 6 ,Size: 0.5070 =================
-
-================= Epoch number = 6 ,Size: 0.5073 =================
-
-================= Epoch number = 6 ,Size: 0.5077 =================
-
-================= Epoch number = 6 ,Size: 0.5080 =================
-
-================= Epoch number = 6 ,Size: 0.5083 =================
-
-================= Epoch number = 6 ,Size: 0.5087 =================
-
-================= Epoch number = 6 ,Size: 0.5090 =================
-
-================= Epoch number = 6 ,Size: 0.5093 =================
-
-================= Epoch number = 6 ,Size: 0.5097 =================
-
-================= Epoch number = 6 ,Size: 0.5100 =================
-
-================= Epoch number = 6 ,Size: 0.5103 =================
-
-================= Epoch number = 6 ,Size: 0.5107 =================
-
-================= Epoch number = 6 ,Size: 0.5110 =================
-
-================= Epoch number = 6 ,Size: 0.5113 =================
-
-================= Epoch number = 6 ,Size: 0.5117 =================
-
-================= Epoch number = 6 ,Size: 0.5120 =================
-
-================= Epoch number = 6 ,Size: 0.5123 =================
-
-================= Epoch number = 6 ,Size: 0.5127 =================
-
-================= Epoch number = 6 ,Size: 0.5130 =================
-
-================= Epoch number = 6 ,Size: 0.5133 =================
-
-================= Epoch number = 6 ,Size: 0.5137 =================
-
-================= Epoch number = 6 ,Size: 0.5140 =================
-
-================= Epoch number = 6 ,Size: 0.5143 =================
-
-================= Epoch number = 6 ,Size: 0.5147 =================
-
-================= Epoch number = 6 ,Size: 0.5150 =================
-
-================= Epoch number = 6 ,Size: 0.5153 =================
-
-================= Epoch number = 6 ,Size: 0.5157 =================
-
-================= Epoch number = 6 ,Size: 0.5160 =================
-
-================= Epoch number = 6 ,Size: 0.5163 =================
-
-================= Epoch number = 6 ,Size: 0.5167 =================
-
-================= Epoch number = 6 ,Size: 0.5170 =================
-
-================= Epoch number = 6 ,Size: 0.5173 =================
-
-================= Epoch number = 6 ,Size: 0.5177 =================
-
-================= Epoch number = 6 ,Size: 0.5180 =================
-
-================= Epoch number = 6 ,Size: 0.5183 =================
-
-================= Epoch number = 6 ,Size: 0.5187 =================
-
-================= Epoch number = 6 ,Size: 0.5190 =================
-
-================= Epoch number = 6 ,Size: 0.5193 =================
-
-================= Epoch number = 6 ,Size: 0.5197 =================
-
-================= Epoch number = 6 ,Size: 0.5200 =================
-
-================= Epoch number = 6 ,Size: 0.5203 =================
-
-================= Epoch number = 6 ,Size: 0.5207 =================
-
-================= Epoch number = 6 ,Size: 0.5210 =================
-
-================= Epoch number = 6 ,Size: 0.5213 =================
-
-================= Epoch number = 6 ,Size: 0.5217 =================
-
-================= Epoch number = 6 ,Size: 0.5220 =================
-
-================= Epoch number = 6 ,Size: 0.5223 =================
-
-================= Epoch number = 6 ,Size: 0.5227 =================
-
-================= Epoch number = 6 ,Size: 0.5230 =================
-
-================= Epoch number = 6 ,Size: 0.5233 =================
-
-================= Epoch number = 6 ,Size: 0.5237 =================
-
-================= Epoch number = 6 ,Size: 0.5240 =================
-
-================= Epoch number = 6 ,Size: 0.5243 =================
-
-================= Epoch number = 6 ,Size: 0.5247 =================
-
-================= Epoch number = 6 ,Size: 0.5250 =================
-
-================= Epoch number = 6 ,Size: 0.5253 =================
-
-================= Epoch number = 6 ,Size: 0.5257 =================
-
-================= Epoch number = 6 ,Size: 0.5260 =================
-
-================= Epoch number = 6 ,Size: 0.5263 =================
-
-================= Epoch number = 6 ,Size: 0.5267 =================
-
-================= Epoch number = 6 ,Size: 0.5270 =================
-
-================= Epoch number = 6 ,Size: 0.5273 =================
-
-================= Epoch number = 6 ,Size: 0.5277 =================
-
-================= Epoch number = 6 ,Size: 0.5280 =================
-
-================= Epoch number = 6 ,Size: 0.5283 =================
-
-================= Epoch number = 6 ,Size: 0.5287 =================
-
-================= Epoch number = 6 ,Size: 0.5290 =================
-
-================= Epoch number = 6 ,Size: 0.5293 =================
-
-================= Epoch number = 6 ,Size: 0.5297 =================
-
-================= Epoch number = 6 ,Size: 0.5300 =================
-
-================= Epoch number = 6 ,Size: 0.5303 =================
-
-================= Epoch number = 6 ,Size: 0.5307 =================
-
-================= Epoch number = 6 ,Size: 0.5310 =================
-
-================= Epoch number = 6 ,Size: 0.5313 =================
-
-================= Epoch number = 6 ,Size: 0.5317 =================
-
-================= Epoch number = 6 ,Size: 0.5320 =================
-
-================= Epoch number = 6 ,Size: 0.5323 =================
-
-================= Epoch number = 6 ,Size: 0.5327 =================
-
-================= Epoch number = 6 ,Size: 0.5330 =================
-
-================= Epoch number = 6 ,Size: 0.5333 =================
-
-================= Epoch number = 6 ,Size: 0.5337 =================
-
-================= Epoch number = 6 ,Size: 0.5340 =================
-
-================= Epoch number = 6 ,Size: 0.5343 =================
-
-================= Epoch number = 6 ,Size: 0.5347 =================
-
-================= Epoch number = 6 ,Size: 0.5350 =================
-
-================= Epoch number = 6 ,Size: 0.5353 =================
-
-================= Epoch number = 6 ,Size: 0.5357 =================
-
-================= Epoch number = 6 ,Size: 0.5360 =================
-
-================= Epoch number = 6 ,Size: 0.5363 =================
-
-================= Epoch number = 6 ,Size: 0.5367 =================
-
-================= Epoch number = 6 ,Size: 0.5370 =================
-
-================= Epoch number = 6 ,Size: 0.5373 =================
-
-================= Epoch number = 6 ,Size: 0.5377 =================
-
-================= Epoch number = 6 ,Size: 0.5380 =================
-
-================= Epoch number = 6 ,Size: 0.5383 =================
-
-================= Epoch number = 6 ,Size: 0.5387 =================
-
-================= Epoch number = 6 ,Size: 0.5390 =================
-
-================= Epoch number = 6 ,Size: 0.5393 =================
-
-================= Epoch number = 6 ,Size: 0.5397 =================
-
-================= Epoch number = 6 ,Size: 0.5400 =================
-
-================= Epoch number = 6 ,Size: 0.5403 =================
-
-================= Epoch number = 6 ,Size: 0.5407 =================
-
-================= Epoch number = 6 ,Size: 0.5410 =================
-
-================= Epoch number = 6 ,Size: 0.5413 =================
-
-================= Epoch number = 6 ,Size: 0.5417 =================
-
-================= Epoch number = 6 ,Size: 0.5420 =================
-
-================= Epoch number = 6 ,Size: 0.5423 =================
-
-================= Epoch number = 6 ,Size: 0.5427 =================
-
-================= Epoch number = 6 ,Size: 0.5430 =================
-
-================= Epoch number = 6 ,Size: 0.5433 =================
-
-================= Epoch number = 6 ,Size: 0.5437 =================
-
-================= Epoch number = 6 ,Size: 0.5440 =================
-
-================= Epoch number = 6 ,Size: 0.5443 =================
-
-================= Epoch number = 6 ,Size: 0.5447 =================
-
-================= Epoch number = 6 ,Size: 0.5450 =================
-
-================= Epoch number = 6 ,Size: 0.5453 =================
-
-================= Epoch number = 6 ,Size: 0.5457 =================
-
-================= Epoch number = 6 ,Size: 0.5460 =================
-
-================= Epoch number = 6 ,Size: 0.5463 =================
-
-================= Epoch number = 6 ,Size: 0.5467 =================
-
-================= Epoch number = 6 ,Size: 0.5470 =================
-
-================= Epoch number = 6 ,Size: 0.5473 =================
-
-================= Epoch number = 6 ,Size: 0.5477 =================
-
-================= Epoch number = 6 ,Size: 0.5480 =================
-
-================= Epoch number = 6 ,Size: 0.5483 =================
-
-================= Epoch number = 6 ,Size: 0.5487 =================
-
-================= Epoch number = 6 ,Size: 0.5490 =================
-
-================= Epoch number = 6 ,Size: 0.5493 =================
-
-================= Epoch number = 6 ,Size: 0.5497 =================
-
-================= Epoch number = 6 ,Size: 0.5500 =================
-
-================= Epoch number = 6 ,Size: 0.5503 =================
-
-================= Epoch number = 6 ,Size: 0.5507 =================
-
-================= Epoch number = 6 ,Size: 0.5510 =================
-
-================= Epoch number = 6 ,Size: 0.5513 =================
-
-================= Epoch number = 6 ,Size: 0.5517 =================
-
-================= Epoch number = 6 ,Size: 0.5520 =================
-
-================= Epoch number = 6 ,Size: 0.5523 =================
-
-================= Epoch number = 6 ,Size: 0.5527 =================
-
-================= Epoch number = 6 ,Size: 0.5530 =================
-
-================= Epoch number = 6 ,Size: 0.5533 =================
-
-================= Epoch number = 6 ,Size: 0.5537 =================
-
-================= Epoch number = 6 ,Size: 0.5540 =================
-
-================= Epoch number = 6 ,Size: 0.5543 =================
-
-================= Epoch number = 6 ,Size: 0.5547 =================
-
-================= Epoch number = 6 ,Size: 0.5550 =================
-
-================= Epoch number = 6 ,Size: 0.5553 =================
-
-================= Epoch number = 6 ,Size: 0.5557 =================
-
-================= Epoch number = 6 ,Size: 0.5560 =================
-
-================= Epoch number = 6 ,Size: 0.5563 =================
-
-================= Epoch number = 6 ,Size: 0.5567 =================
-
-================= Epoch number = 6 ,Size: 0.5570 =================
-
-================= Epoch number = 6 ,Size: 0.5573 =================
-
-================= Epoch number = 6 ,Size: 0.5577 =================
-
-================= Epoch number = 6 ,Size: 0.5580 =================
-
-================= Epoch number = 6 ,Size: 0.5583 =================
-
-================= Epoch number = 6 ,Size: 0.5587 =================
-
-================= Epoch number = 6 ,Size: 0.5590 =================
-
-================= Epoch number = 6 ,Size: 0.5593 =================
-
-================= Epoch number = 6 ,Size: 0.5597 =================
-
-================= Epoch number = 6 ,Size: 0.5600 =================
-
-================= Epoch number = 6 ,Size: 0.5603 =================
-
-================= Epoch number = 6 ,Size: 0.5607 =================
-
-================= Epoch number = 6 ,Size: 0.5610 =================
-
-================= Epoch number = 6 ,Size: 0.5613 =================
-
-================= Epoch number = 6 ,Size: 0.5617 =================
-
-================= Epoch number = 6 ,Size: 0.5620 =================
-
-================= Epoch number = 6 ,Size: 0.5623 =================
-
-================= Epoch number = 6 ,Size: 0.5627 =================
-
-================= Epoch number = 6 ,Size: 0.5630 =================
-
-================= Epoch number = 6 ,Size: 0.5633 =================
-
-================= Epoch number = 6 ,Size: 0.5637 =================
-
-================= Epoch number = 6 ,Size: 0.5640 =================
-
-================= Epoch number = 6 ,Size: 0.5643 =================
-
-================= Epoch number = 6 ,Size: 0.5647 =================
-
-================= Epoch number = 6 ,Size: 0.5650 =================
-
-================= Epoch number = 6 ,Size: 0.5653 =================
-
-================= Epoch number = 6 ,Size: 0.5657 =================
-
-================= Epoch number = 6 ,Size: 0.5660 =================
-
-================= Epoch number = 6 ,Size: 0.5663 =================
-
-================= Epoch number = 6 ,Size: 0.5667 =================
-
-================= Epoch number = 6 ,Size: 0.5670 =================
-
-================= Epoch number = 6 ,Size: 0.5673 =================
-
-================= Epoch number = 6 ,Size: 0.5677 =================
-
-================= Epoch number = 6 ,Size: 0.5680 =================
-
-================= Epoch number = 6 ,Size: 0.5683 =================
-
-================= Epoch number = 6 ,Size: 0.5687 =================
-
-================= Epoch number = 6 ,Size: 0.5690 =================
-
-================= Epoch number = 6 ,Size: 0.5693 =================
-
-================= Epoch number = 6 ,Size: 0.5697 =================
-
-================= Epoch number = 6 ,Size: 0.5700 =================
-
-================= Epoch number = 6 ,Size: 0.5703 =================
-
-================= Epoch number = 6 ,Size: 0.5707 =================
-
-================= Epoch number = 6 ,Size: 0.5710 =================
-
-================= Epoch number = 6 ,Size: 0.5713 =================
-
-================= Epoch number = 6 ,Size: 0.5717 =================
-
-================= Epoch number = 6 ,Size: 0.5720 =================
-
-================= Epoch number = 6 ,Size: 0.5723 =================
-
-================= Epoch number = 6 ,Size: 0.5727 =================
-
-================= Epoch number = 6 ,Size: 0.5730 =================
-
-================= Epoch number = 6 ,Size: 0.5733 =================
-
-================= Epoch number = 6 ,Size: 0.5737 =================
-
-================= Epoch number = 6 ,Size: 0.5740 =================
-
-================= Epoch number = 6 ,Size: 0.5743 =================
-
-================= Epoch number = 6 ,Size: 0.5747 =================
-
-================= Epoch number = 6 ,Size: 0.5750 =================
-
-================= Epoch number = 6 ,Size: 0.5753 =================
-
-================= Epoch number = 6 ,Size: 0.5757 =================
-
-================= Epoch number = 6 ,Size: 0.5760 =================
-
-================= Epoch number = 6 ,Size: 0.5763 =================
-
-================= Epoch number = 6 ,Size: 0.5767 =================
-
-================= Epoch number = 6 ,Size: 0.5770 =================
-
-================= Epoch number = 6 ,Size: 0.5773 =================
-
-================= Epoch number = 6 ,Size: 0.5777 =================
-
-================= Epoch number = 6 ,Size: 0.5780 =================
-
-================= Epoch number = 6 ,Size: 0.5783 =================
-
-================= Epoch number = 6 ,Size: 0.5787 =================
-
-================= Epoch number = 6 ,Size: 0.5790 =================
-
-================= Epoch number = 6 ,Size: 0.5793 =================
-
-================= Epoch number = 6 ,Size: 0.5797 =================
-
-================= Epoch number = 6 ,Size: 0.5800 =================
-
-================= Epoch number = 6 ,Size: 0.5803 =================
-
-================= Epoch number = 6 ,Size: 0.5807 =================
-
-================= Epoch number = 6 ,Size: 0.5810 =================
-
-================= Epoch number = 6 ,Size: 0.5813 =================
-
-================= Epoch number = 6 ,Size: 0.5817 =================
-
-================= Epoch number = 6 ,Size: 0.5820 =================
-
-================= Epoch number = 6 ,Size: 0.5823 =================
-
-================= Epoch number = 6 ,Size: 0.5827 =================
-
-================= Epoch number = 6 ,Size: 0.5830 =================
-
-================= Epoch number = 6 ,Size: 0.5833 =================
-
-================= Epoch number = 6 ,Size: 0.5837 =================
-
-================= Epoch number = 6 ,Size: 0.5840 =================
-
-================= Epoch number = 6 ,Size: 0.5843 =================
-
-================= Epoch number = 6 ,Size: 0.5847 =================
-
-================= Epoch number = 6 ,Size: 0.5850 =================
-
-================= Epoch number = 6 ,Size: 0.5853 =================
-
-================= Epoch number = 6 ,Size: 0.5857 =================
-
-================= Epoch number = 6 ,Size: 0.5860 =================
-
-================= Epoch number = 6 ,Size: 0.5863 =================
-
-================= Epoch number = 6 ,Size: 0.5867 =================
-
-================= Epoch number = 6 ,Size: 0.5870 =================
-
-================= Epoch number = 6 ,Size: 0.5873 =================
-
-================= Epoch number = 6 ,Size: 0.5877 =================
-
-================= Epoch number = 6 ,Size: 0.5880 =================
-
-================= Epoch number = 6 ,Size: 0.5883 =================
-
-================= Epoch number = 6 ,Size: 0.5887 =================
-
-================= Epoch number = 6 ,Size: 0.5890 =================
-
-================= Epoch number = 6 ,Size: 0.5893 =================
-
-================= Epoch number = 6 ,Size: 0.5897 =================
-
-================= Epoch number = 6 ,Size: 0.5900 =================
-
-================= Epoch number = 6 ,Size: 0.5903 =================
-
-================= Epoch number = 6 ,Size: 0.5907 =================
-
-================= Epoch number = 6 ,Size: 0.5910 =================
-
-================= Epoch number = 6 ,Size: 0.5913 =================
-
-================= Epoch number = 6 ,Size: 0.5917 =================
-
-================= Epoch number = 6 ,Size: 0.5920 =================
-
-================= Epoch number = 6 ,Size: 0.5923 =================
-
-================= Epoch number = 6 ,Size: 0.5927 =================
-
-================= Epoch number = 6 ,Size: 0.5930 =================
-
-================= Epoch number = 6 ,Size: 0.5933 =================
-
-================= Epoch number = 6 ,Size: 0.5937 =================
-
-================= Epoch number = 6 ,Size: 0.5940 =================
-
-================= Epoch number = 6 ,Size: 0.5943 =================
-
-================= Epoch number = 6 ,Size: 0.5947 =================
-
-================= Epoch number = 6 ,Size: 0.5950 =================
-
-================= Epoch number = 6 ,Size: 0.5953 =================
-
-================= Epoch number = 6 ,Size: 0.5957 =================
-
-================= Epoch number = 6 ,Size: 0.5960 =================
-
-================= Epoch number = 6 ,Size: 0.5963 =================
-
-================= Epoch number = 6 ,Size: 0.5967 =================
-
-================= Epoch number = 6 ,Size: 0.5970 =================
-
-================= Epoch number = 6 ,Size: 0.5973 =================
-
-================= Epoch number = 6 ,Size: 0.5977 =================
-
-================= Epoch number = 6 ,Size: 0.5980 =================
-
-================= Epoch number = 6 ,Size: 0.5983 =================
-
-================= Epoch number = 6 ,Size: 0.5987 =================
-
-================= Epoch number = 6 ,Size: 0.5990 =================
-
-================= Epoch number = 6 ,Size: 0.5993 =================
-
-================= Epoch number = 6 ,Size: 0.5997 =================
-
-================= Epoch number = 6 ,Size: 0.6000 =================
-
-================= Epoch number = 6 ,Size: 0.6003 =================
-New best validation accuracy: 0.9283 at iteration 16800
-
-
-
-
-
-
-================= Epoch number = 6 ,Size: 0.6007 =================
-
-================= Epoch number = 6 ,Size: 0.6010 =================
-
-================= Epoch number = 6 ,Size: 0.6013 =================
-
-================= Epoch number = 6 ,Size: 0.6017 =================
-
-================= Epoch number = 6 ,Size: 0.6020 =================
-
-================= Epoch number = 6 ,Size: 0.6023 =================
-
-================= Epoch number = 6 ,Size: 0.6027 =================
-
-================= Epoch number = 6 ,Size: 0.6030 =================
-
-================= Epoch number = 6 ,Size: 0.6033 =================
-
-================= Epoch number = 6 ,Size: 0.6037 =================
-
-================= Epoch number = 6 ,Size: 0.6040 =================
-
-================= Epoch number = 6 ,Size: 0.6043 =================
-
-================= Epoch number = 6 ,Size: 0.6047 =================
-
-================= Epoch number = 6 ,Size: 0.6050 =================
-
-================= Epoch number = 6 ,Size: 0.6053 =================
-
-================= Epoch number = 6 ,Size: 0.6057 =================
-
-================= Epoch number = 6 ,Size: 0.6060 =================
-
-================= Epoch number = 6 ,Size: 0.6063 =================
-
-================= Epoch number = 6 ,Size: 0.6067 =================
-
-================= Epoch number = 6 ,Size: 0.6070 =================
-
-================= Epoch number = 6 ,Size: 0.6073 =================
-
-================= Epoch number = 6 ,Size: 0.6077 =================
-
-================= Epoch number = 6 ,Size: 0.6080 =================
-
-================= Epoch number = 6 ,Size: 0.6083 =================
-
-================= Epoch number = 6 ,Size: 0.6087 =================
-
-================= Epoch number = 6 ,Size: 0.6090 =================
-
-================= Epoch number = 6 ,Size: 0.6093 =================
-
-================= Epoch number = 6 ,Size: 0.6097 =================
-
-================= Epoch number = 6 ,Size: 0.6100 =================
-
-================= Epoch number = 6 ,Size: 0.6103 =================
-
-================= Epoch number = 6 ,Size: 0.6107 =================
-
-================= Epoch number = 6 ,Size: 0.6110 =================
-
-================= Epoch number = 6 ,Size: 0.6113 =================
-
-================= Epoch number = 6 ,Size: 0.6117 =================
-
-================= Epoch number = 6 ,Size: 0.6120 =================
-
-================= Epoch number = 6 ,Size: 0.6123 =================
-
-================= Epoch number = 6 ,Size: 0.6127 =================
-
-================= Epoch number = 6 ,Size: 0.6130 =================
-
-================= Epoch number = 6 ,Size: 0.6133 =================
-
-================= Epoch number = 6 ,Size: 0.6137 =================
-
-================= Epoch number = 6 ,Size: 0.6140 =================
-
-================= Epoch number = 6 ,Size: 0.6143 =================
-
-================= Epoch number = 6 ,Size: 0.6147 =================
-
-================= Epoch number = 6 ,Size: 0.6150 =================
-
-================= Epoch number = 6 ,Size: 0.6153 =================
-
-================= Epoch number = 6 ,Size: 0.6157 =================
-
-================= Epoch number = 6 ,Size: 0.6160 =================
-
-================= Epoch number = 6 ,Size: 0.6163 =================
-
-================= Epoch number = 6 ,Size: 0.6167 =================
-
-================= Epoch number = 6 ,Size: 0.6170 =================
-
-================= Epoch number = 6 ,Size: 0.6173 =================
-
-================= Epoch number = 6 ,Size: 0.6177 =================
-
-================= Epoch number = 6 ,Size: 0.6180 =================
-
-================= Epoch number = 6 ,Size: 0.6183 =================
-
-================= Epoch number = 6 ,Size: 0.6187 =================
-
-================= Epoch number = 6 ,Size: 0.6190 =================
-
-================= Epoch number = 6 ,Size: 0.6193 =================
-
-================= Epoch number = 6 ,Size: 0.6197 =================
-
-================= Epoch number = 6 ,Size: 0.6200 =================
-
-================= Epoch number = 6 ,Size: 0.6203 =================
-
-================= Epoch number = 6 ,Size: 0.6207 =================
-
-================= Epoch number = 6 ,Size: 0.6210 =================
-
-================= Epoch number = 6 ,Size: 0.6213 =================
-
-================= Epoch number = 6 ,Size: 0.6217 =================
-
-================= Epoch number = 6 ,Size: 0.6220 =================
-
-================= Epoch number = 6 ,Size: 0.6223 =================
-
-================= Epoch number = 6 ,Size: 0.6227 =================
-
-================= Epoch number = 6 ,Size: 0.6230 =================
-
-================= Epoch number = 6 ,Size: 0.6233 =================
-
-================= Epoch number = 6 ,Size: 0.6237 =================
-
-================= Epoch number = 6 ,Size: 0.6240 =================
-
-================= Epoch number = 6 ,Size: 0.6243 =================
-
-================= Epoch number = 6 ,Size: 0.6247 =================
-
-================= Epoch number = 6 ,Size: 0.6250 =================
-
-================= Epoch number = 6 ,Size: 0.6253 =================
-
-================= Epoch number = 6 ,Size: 0.6257 =================
-
-================= Epoch number = 6 ,Size: 0.6260 =================
-
-================= Epoch number = 6 ,Size: 0.6263 =================
-
-================= Epoch number = 6 ,Size: 0.6267 =================
-
-================= Epoch number = 6 ,Size: 0.6270 =================
-
-================= Epoch number = 6 ,Size: 0.6273 =================
-
-================= Epoch number = 6 ,Size: 0.6277 =================
-
-================= Epoch number = 6 ,Size: 0.6280 =================
-
-================= Epoch number = 6 ,Size: 0.6283 =================
-
-================= Epoch number = 6 ,Size: 0.6287 =================
-
-================= Epoch number = 6 ,Size: 0.6290 =================
-
-================= Epoch number = 6 ,Size: 0.6293 =================
-
-================= Epoch number = 6 ,Size: 0.6297 =================
-
-================= Epoch number = 6 ,Size: 0.6300 =================
-
-================= Epoch number = 6 ,Size: 0.6303 =================
-
-================= Epoch number = 6 ,Size: 0.6307 =================
-
-================= Epoch number = 6 ,Size: 0.6310 =================
-
-================= Epoch number = 6 ,Size: 0.6313 =================
-
-================= Epoch number = 6 ,Size: 0.6317 =================
-
-================= Epoch number = 6 ,Size: 0.6320 =================
-
-================= Epoch number = 6 ,Size: 0.6323 =================
-
-================= Epoch number = 6 ,Size: 0.6327 =================
-
-================= Epoch number = 6 ,Size: 0.6330 =================
-
-================= Epoch number = 6 ,Size: 0.6333 =================
-
-================= Epoch number = 6 ,Size: 0.6337 =================
-
-================= Epoch number = 6 ,Size: 0.6340 =================
-
-================= Epoch number = 6 ,Size: 0.6343 =================
-
-================= Epoch number = 6 ,Size: 0.6347 =================
-
-================= Epoch number = 6 ,Size: 0.6350 =================
-
-================= Epoch number = 6 ,Size: 0.6353 =================
-
-================= Epoch number = 6 ,Size: 0.6357 =================
-
-================= Epoch number = 6 ,Size: 0.6360 =================
-
-================= Epoch number = 6 ,Size: 0.6363 =================
-
-================= Epoch number = 6 ,Size: 0.6367 =================
-
-================= Epoch number = 6 ,Size: 0.6370 =================
-
-================= Epoch number = 6 ,Size: 0.6373 =================
-
-================= Epoch number = 6 ,Size: 0.6377 =================
-
-================= Epoch number = 6 ,Size: 0.6380 =================
-
-================= Epoch number = 6 ,Size: 0.6383 =================
-
-================= Epoch number = 6 ,Size: 0.6387 =================
-
-================= Epoch number = 6 ,Size: 0.6390 =================
-
-================= Epoch number = 6 ,Size: 0.6393 =================
-
-================= Epoch number = 6 ,Size: 0.6397 =================
-
-================= Epoch number = 6 ,Size: 0.6400 =================
-
-================= Epoch number = 6 ,Size: 0.6403 =================
-
-================= Epoch number = 6 ,Size: 0.6407 =================
-
-================= Epoch number = 6 ,Size: 0.6410 =================
-
-================= Epoch number = 6 ,Size: 0.6413 =================
-
-================= Epoch number = 6 ,Size: 0.6417 =================
-
-================= Epoch number = 6 ,Size: 0.6420 =================
-
-================= Epoch number = 6 ,Size: 0.6423 =================
-
-================= Epoch number = 6 ,Size: 0.6427 =================
-
-================= Epoch number = 6 ,Size: 0.6430 =================
-
-================= Epoch number = 6 ,Size: 0.6433 =================
-
-================= Epoch number = 6 ,Size: 0.6437 =================
-
-================= Epoch number = 6 ,Size: 0.6440 =================
-
-================= Epoch number = 6 ,Size: 0.6443 =================
-
-================= Epoch number = 6 ,Size: 0.6447 =================
-
-================= Epoch number = 6 ,Size: 0.6450 =================
-
-================= Epoch number = 6 ,Size: 0.6453 =================
-
-================= Epoch number = 6 ,Size: 0.6457 =================
-
-================= Epoch number = 6 ,Size: 0.6460 =================
-
-================= Epoch number = 6 ,Size: 0.6463 =================
-
-================= Epoch number = 6 ,Size: 0.6467 =================
-
-================= Epoch number = 6 ,Size: 0.6470 =================
-
-================= Epoch number = 6 ,Size: 0.6473 =================
-
-================= Epoch number = 6 ,Size: 0.6477 =================
-
-================= Epoch number = 6 ,Size: 0.6480 =================
-
-================= Epoch number = 6 ,Size: 0.6483 =================
-
-================= Epoch number = 6 ,Size: 0.6487 =================
-
-================= Epoch number = 6 ,Size: 0.6490 =================
-
-================= Epoch number = 6 ,Size: 0.6493 =================
-
-================= Epoch number = 6 ,Size: 0.6497 =================
-
-================= Epoch number = 6 ,Size: 0.6500 =================
-
-================= Epoch number = 6 ,Size: 0.6503 =================
-
-================= Epoch number = 6 ,Size: 0.6507 =================
-
-================= Epoch number = 6 ,Size: 0.6510 =================
-
-================= Epoch number = 6 ,Size: 0.6513 =================
-
-================= Epoch number = 6 ,Size: 0.6517 =================
-
-================= Epoch number = 6 ,Size: 0.6520 =================
-
-================= Epoch number = 6 ,Size: 0.6523 =================
-
-================= Epoch number = 6 ,Size: 0.6527 =================
-
-================= Epoch number = 6 ,Size: 0.6530 =================
-
-================= Epoch number = 6 ,Size: 0.6533 =================
-
-================= Epoch number = 6 ,Size: 0.6537 =================
-
-================= Epoch number = 6 ,Size: 0.6540 =================
-
-================= Epoch number = 6 ,Size: 0.6543 =================
-
-================= Epoch number = 6 ,Size: 0.6547 =================
-
-================= Epoch number = 6 ,Size: 0.6550 =================
-
-================= Epoch number = 6 ,Size: 0.6553 =================
-
-================= Epoch number = 6 ,Size: 0.6557 =================
-
-================= Epoch number = 6 ,Size: 0.6560 =================
-
-================= Epoch number = 6 ,Size: 0.6563 =================
-
-================= Epoch number = 6 ,Size: 0.6567 =================
-
-================= Epoch number = 6 ,Size: 0.6570 =================
-
-================= Epoch number = 6 ,Size: 0.6573 =================
-
-================= Epoch number = 6 ,Size: 0.6577 =================
-
-================= Epoch number = 6 ,Size: 0.6580 =================
-
-================= Epoch number = 6 ,Size: 0.6583 =================
-
-================= Epoch number = 6 ,Size: 0.6587 =================
-
-================= Epoch number = 6 ,Size: 0.6590 =================
-
-================= Epoch number = 6 ,Size: 0.6593 =================
-
-================= Epoch number = 6 ,Size: 0.6597 =================
-
-================= Epoch number = 6 ,Size: 0.6600 =================
-
-================= Epoch number = 6 ,Size: 0.6603 =================
-
-================= Epoch number = 6 ,Size: 0.6607 =================
-
-================= Epoch number = 6 ,Size: 0.6610 =================
-
-================= Epoch number = 6 ,Size: 0.6613 =================
-
-================= Epoch number = 6 ,Size: 0.6617 =================
-
-================= Epoch number = 6 ,Size: 0.6620 =================
-
-================= Epoch number = 6 ,Size: 0.6623 =================
-
-================= Epoch number = 6 ,Size: 0.6627 =================
-
-================= Epoch number = 6 ,Size: 0.6630 =================
-
-================= Epoch number = 6 ,Size: 0.6633 =================
-
-================= Epoch number = 6 ,Size: 0.6637 =================
-
-================= Epoch number = 6 ,Size: 0.6640 =================
-
-================= Epoch number = 6 ,Size: 0.6643 =================
-
-================= Epoch number = 6 ,Size: 0.6647 =================
-
-================= Epoch number = 6 ,Size: 0.6650 =================
-
-================= Epoch number = 6 ,Size: 0.6653 =================
-
-================= Epoch number = 6 ,Size: 0.6657 =================
-
-================= Epoch number = 6 ,Size: 0.6660 =================
-
-================= Epoch number = 6 ,Size: 0.6663 =================
-
-================= Epoch number = 6 ,Size: 0.6667 =================
-
-================= Epoch number = 6 ,Size: 0.6670 =================
-
-================= Epoch number = 6 ,Size: 0.6673 =================
-
-================= Epoch number = 6 ,Size: 0.6677 =================
-
-================= Epoch number = 6 ,Size: 0.6680 =================
-
-================= Epoch number = 6 ,Size: 0.6683 =================
-
-================= Epoch number = 6 ,Size: 0.6687 =================
-
-================= Epoch number = 6 ,Size: 0.6690 =================
-
-================= Epoch number = 6 ,Size: 0.6693 =================
-
-================= Epoch number = 6 ,Size: 0.6697 =================
-
-================= Epoch number = 6 ,Size: 0.6700 =================
-
-================= Epoch number = 6 ,Size: 0.6703 =================
-
-================= Epoch number = 6 ,Size: 0.6707 =================
-
-================= Epoch number = 6 ,Size: 0.6710 =================
-
-================= Epoch number = 6 ,Size: 0.6713 =================
-
-================= Epoch number = 6 ,Size: 0.6717 =================
-
-================= Epoch number = 6 ,Size: 0.6720 =================
-
-================= Epoch number = 6 ,Size: 0.6723 =================
-
-================= Epoch number = 6 ,Size: 0.6727 =================
-
-================= Epoch number = 6 ,Size: 0.6730 =================
-
-================= Epoch number = 6 ,Size: 0.6733 =================
-
-================= Epoch number = 6 ,Size: 0.6737 =================
-
-================= Epoch number = 6 ,Size: 0.6740 =================
-
-================= Epoch number = 6 ,Size: 0.6743 =================
-
-================= Epoch number = 6 ,Size: 0.6747 =================
-
-================= Epoch number = 6 ,Size: 0.6750 =================
-
-================= Epoch number = 6 ,Size: 0.6753 =================
-
-================= Epoch number = 6 ,Size: 0.6757 =================
-
-================= Epoch number = 6 ,Size: 0.6760 =================
-
-================= Epoch number = 6 ,Size: 0.6763 =================
-
-================= Epoch number = 6 ,Size: 0.6767 =================
-
-================= Epoch number = 6 ,Size: 0.6770 =================
-
-================= Epoch number = 6 ,Size: 0.6773 =================
-
-================= Epoch number = 6 ,Size: 0.6777 =================
-
-================= Epoch number = 6 ,Size: 0.6780 =================
-
-================= Epoch number = 6 ,Size: 0.6783 =================
-
-================= Epoch number = 6 ,Size: 0.6787 =================
-
-================= Epoch number = 6 ,Size: 0.6790 =================
-
-================= Epoch number = 6 ,Size: 0.6793 =================
-
-================= Epoch number = 6 ,Size: 0.6797 =================
-
-================= Epoch number = 6 ,Size: 0.6800 =================
-
-================= Epoch number = 6 ,Size: 0.6803 =================
-
-================= Epoch number = 6 ,Size: 0.6807 =================
-
-================= Epoch number = 6 ,Size: 0.6810 =================
-
-================= Epoch number = 6 ,Size: 0.6813 =================
-
-================= Epoch number = 6 ,Size: 0.6817 =================
-
-================= Epoch number = 6 ,Size: 0.6820 =================
-
-================= Epoch number = 6 ,Size: 0.6823 =================
-
-================= Epoch number = 6 ,Size: 0.6827 =================
-
-================= Epoch number = 6 ,Size: 0.6830 =================
-
-================= Epoch number = 6 ,Size: 0.6833 =================
-
-================= Epoch number = 6 ,Size: 0.6837 =================
-
-================= Epoch number = 6 ,Size: 0.6840 =================
-
-================= Epoch number = 6 ,Size: 0.6843 =================
-
-================= Epoch number = 6 ,Size: 0.6847 =================
-
-================= Epoch number = 6 ,Size: 0.6850 =================
-
-================= Epoch number = 6 ,Size: 0.6853 =================
-
-================= Epoch number = 6 ,Size: 0.6857 =================
-
-================= Epoch number = 6 ,Size: 0.6860 =================
-
-================= Epoch number = 6 ,Size: 0.6863 =================
-
-================= Epoch number = 6 ,Size: 0.6867 =================
-
-================= Epoch number = 6 ,Size: 0.6870 =================
-
-================= Epoch number = 6 ,Size: 0.6873 =================
-
-================= Epoch number = 6 ,Size: 0.6877 =================
-
-================= Epoch number = 6 ,Size: 0.6880 =================
-
-================= Epoch number = 6 ,Size: 0.6883 =================
-
-================= Epoch number = 6 ,Size: 0.6887 =================
-
-================= Epoch number = 6 ,Size: 0.6890 =================
-
-================= Epoch number = 6 ,Size: 0.6893 =================
-
-================= Epoch number = 6 ,Size: 0.6897 =================
-
-================= Epoch number = 6 ,Size: 0.6900 =================
-
-================= Epoch number = 6 ,Size: 0.6903 =================
-
-================= Epoch number = 6 ,Size: 0.6907 =================
-
-================= Epoch number = 6 ,Size: 0.6910 =================
-
-================= Epoch number = 6 ,Size: 0.6913 =================
-
-================= Epoch number = 6 ,Size: 0.6917 =================
-
-================= Epoch number = 6 ,Size: 0.6920 =================
-
-================= Epoch number = 6 ,Size: 0.6923 =================
-
-================= Epoch number = 6 ,Size: 0.6927 =================
-
-================= Epoch number = 6 ,Size: 0.6930 =================
-
-================= Epoch number = 6 ,Size: 0.6933 =================
-
-================= Epoch number = 6 ,Size: 0.6937 =================
-
-================= Epoch number = 6 ,Size: 0.6940 =================
-
-================= Epoch number = 6 ,Size: 0.6943 =================
-
-================= Epoch number = 6 ,Size: 0.6947 =================
-
-================= Epoch number = 6 ,Size: 0.6950 =================
-
-================= Epoch number = 6 ,Size: 0.6953 =================
-
-================= Epoch number = 6 ,Size: 0.6957 =================
-
-================= Epoch number = 6 ,Size: 0.6960 =================
-
-================= Epoch number = 6 ,Size: 0.6963 =================
-
-================= Epoch number = 6 ,Size: 0.6967 =================
-
-================= Epoch number = 6 ,Size: 0.6970 =================
-
-================= Epoch number = 6 ,Size: 0.6973 =================
-
-================= Epoch number = 6 ,Size: 0.6977 =================
-
-================= Epoch number = 6 ,Size: 0.6980 =================
-
-================= Epoch number = 6 ,Size: 0.6983 =================
-
-================= Epoch number = 6 ,Size: 0.6987 =================
-
-================= Epoch number = 6 ,Size: 0.6990 =================
-
-================= Epoch number = 6 ,Size: 0.6993 =================
-
-================= Epoch number = 6 ,Size: 0.6997 =================
-
-================= Epoch number = 6 ,Size: 0.7000 =================
-
-================= Epoch number = 6 ,Size: 0.7003 =================
-
-================= Epoch number = 6 ,Size: 0.7007 =================
-
-================= Epoch number = 6 ,Size: 0.7010 =================
-
-================= Epoch number = 6 ,Size: 0.7013 =================
-
-================= Epoch number = 6 ,Size: 0.7017 =================
-
-================= Epoch number = 6 ,Size: 0.7020 =================
-
-================= Epoch number = 6 ,Size: 0.7023 =================
-
-================= Epoch number = 6 ,Size: 0.7027 =================
-
-================= Epoch number = 6 ,Size: 0.7030 =================
-
-================= Epoch number = 6 ,Size: 0.7033 =================
-
-================= Epoch number = 6 ,Size: 0.7037 =================
-
-================= Epoch number = 6 ,Size: 0.7040 =================
-
-================= Epoch number = 6 ,Size: 0.7043 =================
-
-================= Epoch number = 6 ,Size: 0.7047 =================
-
-================= Epoch number = 6 ,Size: 0.7050 =================
-
-================= Epoch number = 6 ,Size: 0.7053 =================
-
-================= Epoch number = 6 ,Size: 0.7057 =================
-
-================= Epoch number = 6 ,Size: 0.7060 =================
-
-================= Epoch number = 6 ,Size: 0.7063 =================
-
-================= Epoch number = 6 ,Size: 0.7067 =================
-
-================= Epoch number = 6 ,Size: 0.7070 =================
-
-================= Epoch number = 6 ,Size: 0.7073 =================
-
-================= Epoch number = 6 ,Size: 0.7077 =================
-
-================= Epoch number = 6 ,Size: 0.7080 =================
-
-================= Epoch number = 6 ,Size: 0.7083 =================
-
-================= Epoch number = 6 ,Size: 0.7087 =================
-
-================= Epoch number = 6 ,Size: 0.7090 =================
-
-================= Epoch number = 6 ,Size: 0.7093 =================
-
-================= Epoch number = 6 ,Size: 0.7097 =================
-
-================= Epoch number = 6 ,Size: 0.7100 =================
-
-================= Epoch number = 6 ,Size: 0.7103 =================
-
-================= Epoch number = 6 ,Size: 0.7107 =================
-
-================= Epoch number = 6 ,Size: 0.7110 =================
-
-================= Epoch number = 6 ,Size: 0.7113 =================
-
-================= Epoch number = 6 ,Size: 0.7117 =================
-
-================= Epoch number = 6 ,Size: 0.7120 =================
-
-================= Epoch number = 6 ,Size: 0.7123 =================
-
-================= Epoch number = 6 ,Size: 0.7127 =================
-
-================= Epoch number = 6 ,Size: 0.7130 =================
-
-================= Epoch number = 6 ,Size: 0.7133 =================
-
-================= Epoch number = 6 ,Size: 0.7137 =================
-
-================= Epoch number = 6 ,Size: 0.7140 =================
-
-================= Epoch number = 6 ,Size: 0.7143 =================
-
-================= Epoch number = 6 ,Size: 0.7147 =================
-
-================= Epoch number = 6 ,Size: 0.7150 =================
-
-================= Epoch number = 6 ,Size: 0.7153 =================
-
-================= Epoch number = 6 ,Size: 0.7157 =================
-
-================= Epoch number = 6 ,Size: 0.7160 =================
-
-================= Epoch number = 6 ,Size: 0.7163 =================
-
-================= Epoch number = 6 ,Size: 0.7167 =================
-
-================= Epoch number = 6 ,Size: 0.7170 =================
-
-================= Epoch number = 6 ,Size: 0.7173 =================
-
-================= Epoch number = 6 ,Size: 0.7177 =================
-
-================= Epoch number = 6 ,Size: 0.7180 =================
-
-================= Epoch number = 6 ,Size: 0.7183 =================
-
-================= Epoch number = 6 ,Size: 0.7187 =================
-
-================= Epoch number = 6 ,Size: 0.7190 =================
-
-================= Epoch number = 6 ,Size: 0.7193 =================
-
-================= Epoch number = 6 ,Size: 0.7197 =================
-
-================= Epoch number = 6 ,Size: 0.7200 =================
-
-================= Epoch number = 6 ,Size: 0.7203 =================
-
-================= Epoch number = 6 ,Size: 0.7207 =================
-
-================= Epoch number = 6 ,Size: 0.7210 =================
-
-================= Epoch number = 6 ,Size: 0.7213 =================
-
-================= Epoch number = 6 ,Size: 0.7217 =================
-
-================= Epoch number = 6 ,Size: 0.7220 =================
-
-================= Epoch number = 6 ,Size: 0.7223 =================
-
-================= Epoch number = 6 ,Size: 0.7227 =================
-
-================= Epoch number = 6 ,Size: 0.7230 =================
-
-================= Epoch number = 6 ,Size: 0.7233 =================
-
-================= Epoch number = 6 ,Size: 0.7237 =================
-
-================= Epoch number = 6 ,Size: 0.7240 =================
-
-================= Epoch number = 6 ,Size: 0.7243 =================
-
-================= Epoch number = 6 ,Size: 0.7247 =================
-
-================= Epoch number = 6 ,Size: 0.7250 =================
-
-================= Epoch number = 6 ,Size: 0.7253 =================
-
-================= Epoch number = 6 ,Size: 0.7257 =================
-
-================= Epoch number = 6 ,Size: 0.7260 =================
-
-================= Epoch number = 6 ,Size: 0.7263 =================
-
-================= Epoch number = 6 ,Size: 0.7267 =================
-
-================= Epoch number = 6 ,Size: 0.7270 =================
-
-================= Epoch number = 6 ,Size: 0.7273 =================
-
-================= Epoch number = 6 ,Size: 0.7277 =================
-
-================= Epoch number = 6 ,Size: 0.7280 =================
-
-================= Epoch number = 6 ,Size: 0.7283 =================
-
-================= Epoch number = 6 ,Size: 0.7287 =================
-
-================= Epoch number = 6 ,Size: 0.7290 =================
-
-================= Epoch number = 6 ,Size: 0.7293 =================
-
-================= Epoch number = 6 ,Size: 0.7297 =================
-
-================= Epoch number = 6 ,Size: 0.7300 =================
-
-================= Epoch number = 6 ,Size: 0.7303 =================
-
-================= Epoch number = 6 ,Size: 0.7307 =================
-
-================= Epoch number = 6 ,Size: 0.7310 =================
-
-================= Epoch number = 6 ,Size: 0.7313 =================
-
-================= Epoch number = 6 ,Size: 0.7317 =================
-
-================= Epoch number = 6 ,Size: 0.7320 =================
-
-================= Epoch number = 6 ,Size: 0.7323 =================
-
-================= Epoch number = 6 ,Size: 0.7327 =================
-
-================= Epoch number = 6 ,Size: 0.7330 =================
-
-================= Epoch number = 6 ,Size: 0.7333 =================
-
-================= Epoch number = 6 ,Size: 0.7337 =================
-New best validation accuracy: 0.9298 at iteration 17200
-
-
-
-
-
-
-================= Epoch number = 6 ,Size: 0.7340 =================
-
-================= Epoch number = 6 ,Size: 0.7343 =================
-
-================= Epoch number = 6 ,Size: 0.7347 =================
-
-================= Epoch number = 6 ,Size: 0.7350 =================
-
-================= Epoch number = 6 ,Size: 0.7353 =================
-
-================= Epoch number = 6 ,Size: 0.7357 =================
-
-================= Epoch number = 6 ,Size: 0.7360 =================
-
-================= Epoch number = 6 ,Size: 0.7363 =================
-
-================= Epoch number = 6 ,Size: 0.7367 =================
-
-================= Epoch number = 6 ,Size: 0.7370 =================
-
-================= Epoch number = 6 ,Size: 0.7373 =================
-
-================= Epoch number = 6 ,Size: 0.7377 =================
-
-================= Epoch number = 6 ,Size: 0.7380 =================
-
-================= Epoch number = 6 ,Size: 0.7383 =================
-
-================= Epoch number = 6 ,Size: 0.7387 =================
-
-================= Epoch number = 6 ,Size: 0.7390 =================
-
-================= Epoch number = 6 ,Size: 0.7393 =================
-
-================= Epoch number = 6 ,Size: 0.7397 =================
-
-================= Epoch number = 6 ,Size: 0.7400 =================
-
-================= Epoch number = 6 ,Size: 0.7403 =================
-
-================= Epoch number = 6 ,Size: 0.7407 =================
-
-================= Epoch number = 6 ,Size: 0.7410 =================
-
-================= Epoch number = 6 ,Size: 0.7413 =================
-
-================= Epoch number = 6 ,Size: 0.7417 =================
-
-================= Epoch number = 6 ,Size: 0.7420 =================
-
-================= Epoch number = 6 ,Size: 0.7423 =================
-
-================= Epoch number = 6 ,Size: 0.7427 =================
-
-================= Epoch number = 6 ,Size: 0.7430 =================
-
-================= Epoch number = 6 ,Size: 0.7433 =================
-
-================= Epoch number = 6 ,Size: 0.7437 =================
-
-================= Epoch number = 6 ,Size: 0.7440 =================
-
-================= Epoch number = 6 ,Size: 0.7443 =================
-
-================= Epoch number = 6 ,Size: 0.7447 =================
-
-================= Epoch number = 6 ,Size: 0.7450 =================
-
-================= Epoch number = 6 ,Size: 0.7453 =================
-
-================= Epoch number = 6 ,Size: 0.7457 =================
-
-================= Epoch number = 6 ,Size: 0.7460 =================
-
-================= Epoch number = 6 ,Size: 0.7463 =================
-
-================= Epoch number = 6 ,Size: 0.7467 =================
-
-================= Epoch number = 6 ,Size: 0.7470 =================
-
-================= Epoch number = 6 ,Size: 0.7473 =================
-
-================= Epoch number = 6 ,Size: 0.7477 =================
-
-================= Epoch number = 6 ,Size: 0.7480 =================
-
-================= Epoch number = 6 ,Size: 0.7483 =================
-
-================= Epoch number = 6 ,Size: 0.7487 =================
-
-================= Epoch number = 6 ,Size: 0.7490 =================
-
-================= Epoch number = 6 ,Size: 0.7493 =================
-
-================= Epoch number = 6 ,Size: 0.7497 =================
-
-================= Epoch number = 6 ,Size: 0.7500 =================
-
-================= Epoch number = 6 ,Size: 0.7503 =================
-
-================= Epoch number = 6 ,Size: 0.7507 =================
-
-================= Epoch number = 6 ,Size: 0.7510 =================
-
-================= Epoch number = 6 ,Size: 0.7513 =================
-
-================= Epoch number = 6 ,Size: 0.7517 =================
-
-================= Epoch number = 6 ,Size: 0.7520 =================
-
-================= Epoch number = 6 ,Size: 0.7523 =================
-
-================= Epoch number = 6 ,Size: 0.7527 =================
-
-================= Epoch number = 6 ,Size: 0.7530 =================
-
-================= Epoch number = 6 ,Size: 0.7533 =================
-
-================= Epoch number = 6 ,Size: 0.7537 =================
-
-================= Epoch number = 6 ,Size: 0.7540 =================
-
-================= Epoch number = 6 ,Size: 0.7543 =================
-
-================= Epoch number = 6 ,Size: 0.7547 =================
-
-================= Epoch number = 6 ,Size: 0.7550 =================
-
-================= Epoch number = 6 ,Size: 0.7553 =================
-
-================= Epoch number = 6 ,Size: 0.7557 =================
-
-================= Epoch number = 6 ,Size: 0.7560 =================
-
-================= Epoch number = 6 ,Size: 0.7563 =================
-
-================= Epoch number = 6 ,Size: 0.7567 =================
-
-================= Epoch number = 6 ,Size: 0.7570 =================
-
-================= Epoch number = 6 ,Size: 0.7573 =================
-
-================= Epoch number = 6 ,Size: 0.7577 =================
-
-================= Epoch number = 6 ,Size: 0.7580 =================
-
-================= Epoch number = 6 ,Size: 0.7583 =================
-
-================= Epoch number = 6 ,Size: 0.7587 =================
-
-================= Epoch number = 6 ,Size: 0.7590 =================
-
-================= Epoch number = 6 ,Size: 0.7593 =================
-
-================= Epoch number = 6 ,Size: 0.7597 =================
-
-================= Epoch number = 6 ,Size: 0.7600 =================
-
-================= Epoch number = 6 ,Size: 0.7603 =================
-
-================= Epoch number = 6 ,Size: 0.7607 =================
-
-================= Epoch number = 6 ,Size: 0.7610 =================
-
-================= Epoch number = 6 ,Size: 0.7613 =================
-
-================= Epoch number = 6 ,Size: 0.7617 =================
-
-================= Epoch number = 6 ,Size: 0.7620 =================
-
-================= Epoch number = 6 ,Size: 0.7623 =================
-
-================= Epoch number = 6 ,Size: 0.7627 =================
-
-================= Epoch number = 6 ,Size: 0.7630 =================
-
-================= Epoch number = 6 ,Size: 0.7633 =================
-
-================= Epoch number = 6 ,Size: 0.7637 =================
-
-================= Epoch number = 6 ,Size: 0.7640 =================
-
-================= Epoch number = 6 ,Size: 0.7643 =================
-
-================= Epoch number = 6 ,Size: 0.7647 =================
-
-================= Epoch number = 6 ,Size: 0.7650 =================
-
-================= Epoch number = 6 ,Size: 0.7653 =================
-
-================= Epoch number = 6 ,Size: 0.7657 =================
-
-================= Epoch number = 6 ,Size: 0.7660 =================
-
-================= Epoch number = 6 ,Size: 0.7663 =================
-
-================= Epoch number = 6 ,Size: 0.7667 =================
-
-================= Epoch number = 6 ,Size: 0.7670 =================
-
-================= Epoch number = 6 ,Size: 0.7673 =================
-
-================= Epoch number = 6 ,Size: 0.7677 =================
-
-================= Epoch number = 6 ,Size: 0.7680 =================
-
-================= Epoch number = 6 ,Size: 0.7683 =================
-
-================= Epoch number = 6 ,Size: 0.7687 =================
-
-================= Epoch number = 6 ,Size: 0.7690 =================
-
-================= Epoch number = 6 ,Size: 0.7693 =================
-
-================= Epoch number = 6 ,Size: 0.7697 =================
-
-================= Epoch number = 6 ,Size: 0.7700 =================
-
-================= Epoch number = 6 ,Size: 0.7703 =================
-
-================= Epoch number = 6 ,Size: 0.7707 =================
-
-================= Epoch number = 6 ,Size: 0.7710 =================
-
-================= Epoch number = 6 ,Size: 0.7713 =================
-
-================= Epoch number = 6 ,Size: 0.7717 =================
-
-================= Epoch number = 6 ,Size: 0.7720 =================
-
-================= Epoch number = 6 ,Size: 0.7723 =================
-
-================= Epoch number = 6 ,Size: 0.7727 =================
-
-================= Epoch number = 6 ,Size: 0.7730 =================
-
-================= Epoch number = 6 ,Size: 0.7733 =================
-
-================= Epoch number = 6 ,Size: 0.7737 =================
-
-================= Epoch number = 6 ,Size: 0.7740 =================
-
-================= Epoch number = 6 ,Size: 0.7743 =================
-
-================= Epoch number = 6 ,Size: 0.7747 =================
-
-================= Epoch number = 6 ,Size: 0.7750 =================
-
-================= Epoch number = 6 ,Size: 0.7753 =================
-
-================= Epoch number = 6 ,Size: 0.7757 =================
-
-================= Epoch number = 6 ,Size: 0.7760 =================
-
-================= Epoch number = 6 ,Size: 0.7763 =================
-
-================= Epoch number = 6 ,Size: 0.7767 =================
-
-================= Epoch number = 6 ,Size: 0.7770 =================
-
-================= Epoch number = 6 ,Size: 0.7773 =================
-
-================= Epoch number = 6 ,Size: 0.7777 =================
-
-================= Epoch number = 6 ,Size: 0.7780 =================
-
-================= Epoch number = 6 ,Size: 0.7783 =================
-
-================= Epoch number = 6 ,Size: 0.7787 =================
-
-================= Epoch number = 6 ,Size: 0.7790 =================
-
-================= Epoch number = 6 ,Size: 0.7793 =================
-
-================= Epoch number = 6 ,Size: 0.7797 =================
-
-================= Epoch number = 6 ,Size: 0.7800 =================
-
-================= Epoch number = 6 ,Size: 0.7803 =================
-
-================= Epoch number = 6 ,Size: 0.7807 =================
-
-================= Epoch number = 6 ,Size: 0.7810 =================
-
-================= Epoch number = 6 ,Size: 0.7813 =================
-
-================= Epoch number = 6 ,Size: 0.7817 =================
-
-================= Epoch number = 6 ,Size: 0.7820 =================
-
-================= Epoch number = 6 ,Size: 0.7823 =================
-
-================= Epoch number = 6 ,Size: 0.7827 =================
-
-================= Epoch number = 6 ,Size: 0.7830 =================
-
-================= Epoch number = 6 ,Size: 0.7833 =================
-
-================= Epoch number = 6 ,Size: 0.7837 =================
-
-================= Epoch number = 6 ,Size: 0.7840 =================
-
-================= Epoch number = 6 ,Size: 0.7843 =================
-
-================= Epoch number = 6 ,Size: 0.7847 =================
-
-================= Epoch number = 6 ,Size: 0.7850 =================
-
-================= Epoch number = 6 ,Size: 0.7853 =================
-
-================= Epoch number = 6 ,Size: 0.7857 =================
-
-================= Epoch number = 6 ,Size: 0.7860 =================
-
-================= Epoch number = 6 ,Size: 0.7863 =================
-
-================= Epoch number = 6 ,Size: 0.7867 =================
-
-================= Epoch number = 6 ,Size: 0.7870 =================
-
-================= Epoch number = 6 ,Size: 0.7873 =================
-
-================= Epoch number = 6 ,Size: 0.7877 =================
-
-================= Epoch number = 6 ,Size: 0.7880 =================
-
-================= Epoch number = 6 ,Size: 0.7883 =================
-
-================= Epoch number = 6 ,Size: 0.7887 =================
-
-================= Epoch number = 6 ,Size: 0.7890 =================
-
-================= Epoch number = 6 ,Size: 0.7893 =================
-
-================= Epoch number = 6 ,Size: 0.7897 =================
-
-================= Epoch number = 6 ,Size: 0.7900 =================
-
-================= Epoch number = 6 ,Size: 0.7903 =================
-
-================= Epoch number = 6 ,Size: 0.7907 =================
-
-================= Epoch number = 6 ,Size: 0.7910 =================
-
-================= Epoch number = 6 ,Size: 0.7913 =================
-
-================= Epoch number = 6 ,Size: 0.7917 =================
-
-================= Epoch number = 6 ,Size: 0.7920 =================
-
-================= Epoch number = 6 ,Size: 0.7923 =================
-
-================= Epoch number = 6 ,Size: 0.7927 =================
-
-================= Epoch number = 6 ,Size: 0.7930 =================
-
-================= Epoch number = 6 ,Size: 0.7933 =================
-
-================= Epoch number = 6 ,Size: 0.7937 =================
-
-================= Epoch number = 6 ,Size: 0.7940 =================
-
-================= Epoch number = 6 ,Size: 0.7943 =================
-
-================= Epoch number = 6 ,Size: 0.7947 =================
-
-================= Epoch number = 6 ,Size: 0.7950 =================
-
-================= Epoch number = 6 ,Size: 0.7953 =================
-
-================= Epoch number = 6 ,Size: 0.7957 =================
-
-================= Epoch number = 6 ,Size: 0.7960 =================
-
-================= Epoch number = 6 ,Size: 0.7963 =================
-
-================= Epoch number = 6 ,Size: 0.7967 =================
-
-================= Epoch number = 6 ,Size: 0.7970 =================
-
-================= Epoch number = 6 ,Size: 0.7973 =================
-
-================= Epoch number = 6 ,Size: 0.7977 =================
-
-================= Epoch number = 6 ,Size: 0.7980 =================
-
-================= Epoch number = 6 ,Size: 0.7983 =================
-
-================= Epoch number = 6 ,Size: 0.7987 =================
-
-================= Epoch number = 6 ,Size: 0.7990 =================
-
-================= Epoch number = 6 ,Size: 0.7993 =================
-
-================= Epoch number = 6 ,Size: 0.7997 =================
-
-================= Epoch number = 6 ,Size: 0.8000 =================
-
-================= Epoch number = 6 ,Size: 0.8003 =================
-
-================= Epoch number = 6 ,Size: 0.8007 =================
-
-================= Epoch number = 6 ,Size: 0.8010 =================
-
-================= Epoch number = 6 ,Size: 0.8013 =================
-
-================= Epoch number = 6 ,Size: 0.8017 =================
-
-================= Epoch number = 6 ,Size: 0.8020 =================
-
-================= Epoch number = 6 ,Size: 0.8023 =================
-
-================= Epoch number = 6 ,Size: 0.8027 =================
-
-================= Epoch number = 6 ,Size: 0.8030 =================
-
-================= Epoch number = 6 ,Size: 0.8033 =================
-
-================= Epoch number = 6 ,Size: 0.8037 =================
-
-================= Epoch number = 6 ,Size: 0.8040 =================
-
-================= Epoch number = 6 ,Size: 0.8043 =================
-
-================= Epoch number = 6 ,Size: 0.8047 =================
-
-================= Epoch number = 6 ,Size: 0.8050 =================
-
-================= Epoch number = 6 ,Size: 0.8053 =================
-
-================= Epoch number = 6 ,Size: 0.8057 =================
-
-================= Epoch number = 6 ,Size: 0.8060 =================
-
-================= Epoch number = 6 ,Size: 0.8063 =================
-
-================= Epoch number = 6 ,Size: 0.8067 =================
-
-================= Epoch number = 6 ,Size: 0.8070 =================
-
-================= Epoch number = 6 ,Size: 0.8073 =================
-
-================= Epoch number = 6 ,Size: 0.8077 =================
-
-================= Epoch number = 6 ,Size: 0.8080 =================
-
-================= Epoch number = 6 ,Size: 0.8083 =================
-
-================= Epoch number = 6 ,Size: 0.8087 =================
-
-================= Epoch number = 6 ,Size: 0.8090 =================
-
-================= Epoch number = 6 ,Size: 0.8093 =================
-
-================= Epoch number = 6 ,Size: 0.8097 =================
-
-================= Epoch number = 6 ,Size: 0.8100 =================
-
-================= Epoch number = 6 ,Size: 0.8103 =================
-
-================= Epoch number = 6 ,Size: 0.8107 =================
-
-================= Epoch number = 6 ,Size: 0.8110 =================
-
-================= Epoch number = 6 ,Size: 0.8113 =================
-
-================= Epoch number = 6 ,Size: 0.8117 =================
-
-================= Epoch number = 6 ,Size: 0.8120 =================
-
-================= Epoch number = 6 ,Size: 0.8123 =================
-
-================= Epoch number = 6 ,Size: 0.8127 =================
-
-================= Epoch number = 6 ,Size: 0.8130 =================
-
-================= Epoch number = 6 ,Size: 0.8133 =================
-
-================= Epoch number = 6 ,Size: 0.8137 =================
-
-================= Epoch number = 6 ,Size: 0.8140 =================
-
-================= Epoch number = 6 ,Size: 0.8143 =================
-
-================= Epoch number = 6 ,Size: 0.8147 =================
-
-================= Epoch number = 6 ,Size: 0.8150 =================
-
-================= Epoch number = 6 ,Size: 0.8153 =================
-
-================= Epoch number = 6 ,Size: 0.8157 =================
-
-================= Epoch number = 6 ,Size: 0.8160 =================
-
-================= Epoch number = 6 ,Size: 0.8163 =================
-
-================= Epoch number = 6 ,Size: 0.8167 =================
-
-================= Epoch number = 6 ,Size: 0.8170 =================
-
-================= Epoch number = 6 ,Size: 0.8173 =================
-
-================= Epoch number = 6 ,Size: 0.8177 =================
-
-================= Epoch number = 6 ,Size: 0.8180 =================
-
-================= Epoch number = 6 ,Size: 0.8183 =================
-
-================= Epoch number = 6 ,Size: 0.8187 =================
-
-================= Epoch number = 6 ,Size: 0.8190 =================
-
-================= Epoch number = 6 ,Size: 0.8193 =================
-
-================= Epoch number = 6 ,Size: 0.8197 =================
-
-================= Epoch number = 6 ,Size: 0.8200 =================
-
-================= Epoch number = 6 ,Size: 0.8203 =================
-
-================= Epoch number = 6 ,Size: 0.8207 =================
-
-================= Epoch number = 6 ,Size: 0.8210 =================
-
-================= Epoch number = 6 ,Size: 0.8213 =================
-
-================= Epoch number = 6 ,Size: 0.8217 =================
-
-================= Epoch number = 6 ,Size: 0.8220 =================
-
-================= Epoch number = 6 ,Size: 0.8223 =================
-
-================= Epoch number = 6 ,Size: 0.8227 =================
-
-================= Epoch number = 6 ,Size: 0.8230 =================
-
-================= Epoch number = 6 ,Size: 0.8233 =================
-
-================= Epoch number = 6 ,Size: 0.8237 =================
-
-================= Epoch number = 6 ,Size: 0.8240 =================
-
-================= Epoch number = 6 ,Size: 0.8243 =================
-
-================= Epoch number = 6 ,Size: 0.8247 =================
-
-================= Epoch number = 6 ,Size: 0.8250 =================
-
-================= Epoch number = 6 ,Size: 0.8253 =================
-
-================= Epoch number = 6 ,Size: 0.8257 =================
-
-================= Epoch number = 6 ,Size: 0.8260 =================
-
-================= Epoch number = 6 ,Size: 0.8263 =================
-
-================= Epoch number = 6 ,Size: 0.8267 =================
-
-================= Epoch number = 6 ,Size: 0.8270 =================
-
-================= Epoch number = 6 ,Size: 0.8273 =================
-
-================= Epoch number = 6 ,Size: 0.8277 =================
-
-================= Epoch number = 6 ,Size: 0.8280 =================
-
-================= Epoch number = 6 ,Size: 0.8283 =================
-
-================= Epoch number = 6 ,Size: 0.8287 =================
-
-================= Epoch number = 6 ,Size: 0.8290 =================
-
-================= Epoch number = 6 ,Size: 0.8293 =================
-
-================= Epoch number = 6 ,Size: 0.8297 =================
-
-================= Epoch number = 6 ,Size: 0.8300 =================
-
-================= Epoch number = 6 ,Size: 0.8303 =================
-
-================= Epoch number = 6 ,Size: 0.8307 =================
-
-================= Epoch number = 6 ,Size: 0.8310 =================
-
-================= Epoch number = 6 ,Size: 0.8313 =================
-
-================= Epoch number = 6 ,Size: 0.8317 =================
-
-================= Epoch number = 6 ,Size: 0.8320 =================
-
-================= Epoch number = 6 ,Size: 0.8323 =================
-
-================= Epoch number = 6 ,Size: 0.8327 =================
-
-================= Epoch number = 6 ,Size: 0.8330 =================
-
-================= Epoch number = 6 ,Size: 0.8333 =================
-
-================= Epoch number = 6 ,Size: 0.8337 =================
-
-================= Epoch number = 6 ,Size: 0.8340 =================
-
-================= Epoch number = 6 ,Size: 0.8343 =================
-
-================= Epoch number = 6 ,Size: 0.8347 =================
-
-================= Epoch number = 6 ,Size: 0.8350 =================
-
-================= Epoch number = 6 ,Size: 0.8353 =================
-
-================= Epoch number = 6 ,Size: 0.8357 =================
-
-================= Epoch number = 6 ,Size: 0.8360 =================
-
-================= Epoch number = 6 ,Size: 0.8363 =================
-
-================= Epoch number = 6 ,Size: 0.8367 =================
-
-================= Epoch number = 6 ,Size: 0.8370 =================
-
-================= Epoch number = 6 ,Size: 0.8373 =================
-
-================= Epoch number = 6 ,Size: 0.8377 =================
-
-================= Epoch number = 6 ,Size: 0.8380 =================
-
-================= Epoch number = 6 ,Size: 0.8383 =================
-
-================= Epoch number = 6 ,Size: 0.8387 =================
-
-================= Epoch number = 6 ,Size: 0.8390 =================
-
-================= Epoch number = 6 ,Size: 0.8393 =================
-
-================= Epoch number = 6 ,Size: 0.8397 =================
-
-================= Epoch number = 6 ,Size: 0.8400 =================
-
-================= Epoch number = 6 ,Size: 0.8403 =================
-
-================= Epoch number = 6 ,Size: 0.8407 =================
-
-================= Epoch number = 6 ,Size: 0.8410 =================
-
-================= Epoch number = 6 ,Size: 0.8413 =================
-
-================= Epoch number = 6 ,Size: 0.8417 =================
-
-================= Epoch number = 6 ,Size: 0.8420 =================
-
-================= Epoch number = 6 ,Size: 0.8423 =================
-
-================= Epoch number = 6 ,Size: 0.8427 =================
-
-================= Epoch number = 6 ,Size: 0.8430 =================
-
-================= Epoch number = 6 ,Size: 0.8433 =================
-
-================= Epoch number = 6 ,Size: 0.8437 =================
-
-================= Epoch number = 6 ,Size: 0.8440 =================
-
-================= Epoch number = 6 ,Size: 0.8443 =================
-
-================= Epoch number = 6 ,Size: 0.8447 =================
-
-================= Epoch number = 6 ,Size: 0.8450 =================
-
-================= Epoch number = 6 ,Size: 0.8453 =================
-
-================= Epoch number = 6 ,Size: 0.8457 =================
-
-================= Epoch number = 6 ,Size: 0.8460 =================
-
-================= Epoch number = 6 ,Size: 0.8463 =================
-
-================= Epoch number = 6 ,Size: 0.8467 =================
-
-================= Epoch number = 6 ,Size: 0.8470 =================
-
-================= Epoch number = 6 ,Size: 0.8473 =================
-
-================= Epoch number = 6 ,Size: 0.8477 =================
-
-================= Epoch number = 6 ,Size: 0.8480 =================
-
-================= Epoch number = 6 ,Size: 0.8483 =================
-
-================= Epoch number = 6 ,Size: 0.8487 =================
-
-================= Epoch number = 6 ,Size: 0.8490 =================
-
-================= Epoch number = 6 ,Size: 0.8493 =================
-
-================= Epoch number = 6 ,Size: 0.8497 =================
-
-================= Epoch number = 6 ,Size: 0.8500 =================
-
-================= Epoch number = 6 ,Size: 0.8503 =================
-
-================= Epoch number = 6 ,Size: 0.8507 =================
-
-================= Epoch number = 6 ,Size: 0.8510 =================
-
-================= Epoch number = 6 ,Size: 0.8513 =================
-
-================= Epoch number = 6 ,Size: 0.8517 =================
-
-================= Epoch number = 6 ,Size: 0.8520 =================
-
-================= Epoch number = 6 ,Size: 0.8523 =================
-
-================= Epoch number = 6 ,Size: 0.8527 =================
-
-================= Epoch number = 6 ,Size: 0.8530 =================
-
-================= Epoch number = 6 ,Size: 0.8533 =================
-
-================= Epoch number = 6 ,Size: 0.8537 =================
-
-================= Epoch number = 6 ,Size: 0.8540 =================
-
-================= Epoch number = 6 ,Size: 0.8543 =================
-
-================= Epoch number = 6 ,Size: 0.8547 =================
-
-================= Epoch number = 6 ,Size: 0.8550 =================
-
-================= Epoch number = 6 ,Size: 0.8553 =================
-
-================= Epoch number = 6 ,Size: 0.8557 =================
-
-================= Epoch number = 6 ,Size: 0.8560 =================
-
-================= Epoch number = 6 ,Size: 0.8563 =================
-
-================= Epoch number = 6 ,Size: 0.8567 =================
-
-================= Epoch number = 6 ,Size: 0.8570 =================
-
-================= Epoch number = 6 ,Size: 0.8573 =================
-
-================= Epoch number = 6 ,Size: 0.8577 =================
-
-================= Epoch number = 6 ,Size: 0.8580 =================
-
-================= Epoch number = 6 ,Size: 0.8583 =================
-
-================= Epoch number = 6 ,Size: 0.8587 =================
-
-================= Epoch number = 6 ,Size: 0.8590 =================
-
-================= Epoch number = 6 ,Size: 0.8593 =================
-
-================= Epoch number = 6 ,Size: 0.8597 =================
-
-================= Epoch number = 6 ,Size: 0.8600 =================
-
-================= Epoch number = 6 ,Size: 0.8603 =================
-
-================= Epoch number = 6 ,Size: 0.8607 =================
-
-================= Epoch number = 6 ,Size: 0.8610 =================
-
-================= Epoch number = 6 ,Size: 0.8613 =================
-
-================= Epoch number = 6 ,Size: 0.8617 =================
-
-================= Epoch number = 6 ,Size: 0.8620 =================
-
-================= Epoch number = 6 ,Size: 0.8623 =================
-
-================= Epoch number = 6 ,Size: 0.8627 =================
-
-================= Epoch number = 6 ,Size: 0.8630 =================
-
-================= Epoch number = 6 ,Size: 0.8633 =================
-
-================= Epoch number = 6 ,Size: 0.8637 =================
-
-================= Epoch number = 6 ,Size: 0.8640 =================
-
-================= Epoch number = 6 ,Size: 0.8643 =================
-
-================= Epoch number = 6 ,Size: 0.8647 =================
-
-================= Epoch number = 6 ,Size: 0.8650 =================
-
-================= Epoch number = 6 ,Size: 0.8653 =================
-
-================= Epoch number = 6 ,Size: 0.8657 =================
-
-================= Epoch number = 6 ,Size: 0.8660 =================
-
-================= Epoch number = 6 ,Size: 0.8663 =================
-
-================= Epoch number = 6 ,Size: 0.8667 =================
-
-================= Epoch number = 6 ,Size: 0.8670 =================
-Validation accuracy: 0.9263 at iteration 17600
+Validation accuracy: 0.9203 at iteration 16400
 Early Stopping: No improvement for 100 training steps.
 
 
@@ -35701,12 +33229,12 @@ Early Stopping: No improvement for 100 training steps.
 
 
 ================= Training Completed =================
-| Training time: 3.07 seconds
+| Training time: 3.32 seconds
 | Total epochs completed: 6
 
-| Final Train accuracy: 0.9370
-| Final Validation accuracy: 0.9298
-| Final Test accuracy: 0.9306
+| Final Train accuracy: 0.9396
+| Final Validation accuracy: 0.9265
+| Final Test accuracy: 0.9337
 | L2 regularization: True (lambda=0.001)
 ======================================================
 
@@ -35714,179 +33242,167 @@ Early Stopping: No improvement for 100 training steps.
 
 
 Costs every 100 iterations:
-Step Index: 100 | Cost: 2.164480
-Step Index: 200 | Cost: 2.098571
-Step Index: 300 | Cost: 1.883863
-Step Index: 400 | Cost: 1.746018
-Step Index: 500 | Cost: 2.071876
-Step Index: 600 | Cost: 1.467813
-Step Index: 700 | Cost: 1.595502
-Step Index: 800 | Cost: 1.932287
-Step Index: 900 | Cost: 1.432197
-Step Index: 1000 | Cost: 1.493813
-Step Index: 1100 | Cost: 1.275590
-Step Index: 1200 | Cost: 1.026859
-Step Index: 1300 | Cost: 1.473005
-Step Index: 1400 | Cost: 1.545313
-Step Index: 1500 | Cost: 0.761004
-Step Index: 1600 | Cost: 1.633447
-Step Index: 1700 | Cost: 1.387099
-Step Index: 1800 | Cost: 0.922081
-Step Index: 1900 | Cost: 1.484751
-Step Index: 2000 | Cost: 1.023549
-Step Index: 2100 | Cost: 0.799588
-Step Index: 2200 | Cost: 0.664687
-Step Index: 2300 | Cost: 0.737767
-Step Index: 2400 | Cost: 1.176065
-Step Index: 2500 | Cost: 1.288878
-Step Index: 2600 | Cost: 0.944950
-Step Index: 2700 | Cost: 0.764380
-Step Index: 2800 | Cost: 0.988029
-Step Index: 2900 | Cost: 0.620559
-Step Index: 3000 | Cost: 1.081095
-Step Index: 3100 | Cost: 0.663209
-Step Index: 3200 | Cost: 0.821992
-Step Index: 3300 | Cost: 0.722085
-Step Index: 3400 | Cost: 0.544431
-Step Index: 3500 | Cost: 0.956184
-Step Index: 3600 | Cost: 0.871534
-Step Index: 3700 | Cost: 0.668120
-Step Index: 3800 | Cost: 1.418850
-Step Index: 3900 | Cost: 0.536946
-Step Index: 4000 | Cost: 0.483993
-Step Index: 4100 | Cost: 0.826684
-Step Index: 4200 | Cost: 0.721968
-Step Index: 4300 | Cost: 0.252322
-Step Index: 4400 | Cost: 0.892241
-Step Index: 4500 | Cost: 0.264520
-Step Index: 4600 | Cost: 0.392654
-Step Index: 4700 | Cost: 0.598321
-Step Index: 4800 | Cost: 0.883943
-Step Index: 4900 | Cost: 0.639541
-Step Index: 5000 | Cost: 0.410371
-Step Index: 5100 | Cost: 0.734164
-Step Index: 5200 | Cost: 0.951048
-Step Index: 5300 | Cost: 0.759902
-Step Index: 5400 | Cost: 0.197310
-Step Index: 5500 | Cost: 0.606355
-Step Index: 5600 | Cost: 0.491967
-Step Index: 5700 | Cost: 0.351823
-Step Index: 5800 | Cost: 0.492610
-Step Index: 5900 | Cost: 0.831877
-Step Index: 6000 | Cost: 0.512162
-Step Index: 6100 | Cost: 0.746231
-Step Index: 6200 | Cost: 0.541978
-Step Index: 6300 | Cost: 0.411088
-Step Index: 6400 | Cost: 0.381607
-Step Index: 6500 | Cost: 0.769332
-Step Index: 6600 | Cost: 0.504996
-Step Index: 6700 | Cost: 0.501356
-Step Index: 6800 | Cost: 0.559525
-Step Index: 6900 | Cost: 0.272320
-Step Index: 7000 | Cost: 0.962755
-Step Index: 7100 | Cost: 0.535825
-Step Index: 7200 | Cost: 0.338414
-Step Index: 7300 | Cost: 0.460840
-Step Index: 7400 | Cost: 0.409089
-Step Index: 7500 | Cost: 0.395405
-Step Index: 7600 | Cost: 0.455227
-Step Index: 7700 | Cost: 0.276871
-Step Index: 7800 | Cost: 0.472272
-Step Index: 7900 | Cost: 0.146899
-Step Index: 8000 | Cost: 0.464374
-Step Index: 8100 | Cost: 0.374792
-Step Index: 8200 | Cost: 0.204947
-Step Index: 8300 | Cost: 0.166852
-Step Index: 8400 | Cost: 0.362734
-Step Index: 8500 | Cost: 0.407419
-Step Index: 8600 | Cost: 0.700331
-Step Index: 8700 | Cost: 0.352499
-Step Index: 8800 | Cost: 0.496630
-Step Index: 8900 | Cost: 0.428695
-Step Index: 9000 | Cost: 0.350581
-Step Index: 9100 | Cost: 0.268006
-Step Index: 9200 | Cost: 0.603334
-Step Index: 9300 | Cost: 0.578704
-Step Index: 9400 | Cost: 0.834656
-Step Index: 9500 | Cost: 0.393498
-Step Index: 9600 | Cost: 0.495770
-Step Index: 9700 | Cost: 0.472723
-Step Index: 9800 | Cost: 0.247556
-Step Index: 9900 | Cost: 0.216031
-Step Index: 10000 | Cost: 0.239449
-Step Index: 10100 | Cost: 0.186246
-Step Index: 10200 | Cost: 0.199358
-Step Index: 10300 | Cost: 0.321054
-Step Index: 10400 | Cost: 0.379748
-Step Index: 10500 | Cost: 0.176118
-Step Index: 10600 | Cost: 0.468536
-Step Index: 10700 | Cost: 0.323228
-Step Index: 10800 | Cost: 0.124709
-Step Index: 10900 | Cost: 0.103358
-Step Index: 11000 | Cost: 0.240810
-Step Index: 11100 | Cost: 0.509605
-Step Index: 11200 | Cost: 0.401451
-Step Index: 11300 | Cost: 0.056845
-Step Index: 11400 | Cost: 0.961801
-Step Index: 11500 | Cost: 0.444844
-Step Index: 11600 | Cost: 0.183144
-Step Index: 11700 | Cost: 0.147689
-Step Index: 11800 | Cost: 0.181517
-Step Index: 11900 | Cost: 0.058258
-Step Index: 12000 | Cost: 0.253685
-Step Index: 12100 | Cost: 0.473674
-Step Index: 12200 | Cost: 0.162429
-Step Index: 12300 | Cost: 0.238535
-Step Index: 12400 | Cost: 0.047679
-Step Index: 12500 | Cost: 0.534247
-Step Index: 12600 | Cost: 0.965814
-Step Index: 12700 | Cost: 0.079153
-Step Index: 12800 | Cost: 0.121550
-Step Index: 12900 | Cost: 0.364546
-Step Index: 13000 | Cost: 0.646294
-Step Index: 13100 | Cost: 0.403700
-Step Index: 13200 | Cost: 0.321182
-Step Index: 13300 | Cost: 0.333945
-Step Index: 13400 | Cost: 0.295523
-Step Index: 13500 | Cost: 0.735784
-Step Index: 13600 | Cost: 0.174542
-Step Index: 13700 | Cost: 0.552760
-Step Index: 13800 | Cost: 0.050435
-Step Index: 13900 | Cost: 0.215255
-Step Index: 14000 | Cost: 0.082321
-Step Index: 14100 | Cost: 0.169754
-Step Index: 14200 | Cost: 0.207690
-Step Index: 14300 | Cost: 0.459438
-Step Index: 14400 | Cost: 0.093904
-Step Index: 14500 | Cost: 0.500839
-Step Index: 14600 | Cost: 0.081355
-Step Index: 14700 | Cost: 0.319313
-Step Index: 14800 | Cost: 0.383360
-Step Index: 14900 | Cost: 0.457389
-Step Index: 15000 | Cost: 0.091734
-Step Index: 15100 | Cost: 0.110892
-Step Index: 15200 | Cost: 0.083259
-Step Index: 15300 | Cost: 0.406034
-Step Index: 15400 | Cost: 0.388857
-Step Index: 15500 | Cost: 0.384182
-Step Index: 15600 | Cost: 0.302834
-Step Index: 15700 | Cost: 0.285549
-Step Index: 15800 | Cost: 0.089317
-Step Index: 15900 | Cost: 0.110642
-Step Index: 16000 | Cost: 0.460573
-Step Index: 16100 | Cost: 0.697307
-Step Index: 16200 | Cost: 1.191313
-Step Index: 16300 | Cost: 0.094140
-Step Index: 16400 | Cost: 0.079935
-Step Index: 16500 | Cost: 0.894093
-Step Index: 16600 | Cost: 0.093570
-Step Index: 16700 | Cost: 0.235045
-Step Index: 16800 | Cost: 0.068404
-Step Index: 16900 | Cost: 0.152161
-Step Index: 17000 | Cost: 0.230205
-Step Index: 17100 | Cost: 0.081532
-Step Index: 17200 | Cost: 0.157155
-Step Index: 17300 | Cost: 0.088581
-Step Index: 17400 | Cost: 0.070924
-Step Index: 17500 | Cost: 0.215558
-Step Index: 17600 | Cost: 0.047748
+Step Index: 100 | Cost: 2.227595
+Step Index: 200 | Cost: 1.986507
+Step Index: 300 | Cost: 2.051096
+Step Index: 400 | Cost: 1.953599
+Step Index: 500 | Cost: 1.674067
+Step Index: 600 | Cost: 1.927448
+Step Index: 700 | Cost: 1.718315
+Step Index: 800 | Cost: 1.649559
+Step Index: 900 | Cost: 1.326937
+Step Index: 1000 | Cost: 0.928287
+Step Index: 1100 | Cost: 1.290535
+Step Index: 1200 | Cost: 1.196501
+Step Index: 1300 | Cost: 1.156275
+Step Index: 1400 | Cost: 0.876623
+Step Index: 1500 | Cost: 1.101943
+Step Index: 1600 | Cost: 1.101236
+Step Index: 1700 | Cost: 0.889531
+Step Index: 1800 | Cost: 1.076956
+Step Index: 1900 | Cost: 0.525101
+Step Index: 2000 | Cost: 0.952691
+Step Index: 2100 | Cost: 0.878299
+Step Index: 2200 | Cost: 1.107330
+Step Index: 2300 | Cost: 0.873492
+Step Index: 2400 | Cost: 0.732933
+Step Index: 2500 | Cost: 0.775913
+Step Index: 2600 | Cost: 0.532270
+Step Index: 2700 | Cost: 0.959991
+Step Index: 2800 | Cost: 1.074388
+Step Index: 2900 | Cost: 0.437207
+Step Index: 3000 | Cost: 0.545709
+Step Index: 3100 | Cost: 1.331339
+Step Index: 3200 | Cost: 1.049138
+Step Index: 3300 | Cost: 0.323730
+Step Index: 3400 | Cost: 0.613713
+Step Index: 3500 | Cost: 0.390759
+Step Index: 3600 | Cost: 0.813226
+Step Index: 3700 | Cost: 0.418642
+Step Index: 3800 | Cost: 0.326886
+Step Index: 3900 | Cost: 0.662096
+Step Index: 4000 | Cost: 0.342972
+Step Index: 4100 | Cost: 0.571797
+Step Index: 4200 | Cost: 0.370168
+Step Index: 4300 | Cost: 0.650265
+Step Index: 4400 | Cost: 0.490845
+Step Index: 4500 | Cost: 0.272956
+Step Index: 4600 | Cost: 0.748510
+Step Index: 4700 | Cost: 0.542600
+Step Index: 4800 | Cost: 0.722199
+Step Index: 4900 | Cost: 0.859804
+Step Index: 5000 | Cost: 0.896982
+Step Index: 5100 | Cost: 0.660986
+Step Index: 5200 | Cost: 0.247323
+Step Index: 5300 | Cost: 0.256294
+Step Index: 5400 | Cost: 0.269865
+Step Index: 5500 | Cost: 0.329173
+Step Index: 5600 | Cost: 0.223667
+Step Index: 5700 | Cost: 0.264995
+Step Index: 5800 | Cost: 1.056559
+Step Index: 5900 | Cost: 0.296247
+Step Index: 6000 | Cost: 0.331896
+Step Index: 6100 | Cost: 0.697494
+Step Index: 6200 | Cost: 0.120982
+Step Index: 6300 | Cost: 0.194301
+Step Index: 6400 | Cost: 0.769444
+Step Index: 6500 | Cost: 0.441869
+Step Index: 6600 | Cost: 0.387020
+Step Index: 6700 | Cost: 0.575782
+Step Index: 6800 | Cost: 0.507678
+Step Index: 6900 | Cost: 0.523964
+Step Index: 7000 | Cost: 0.532935
+Step Index: 7100 | Cost: 0.450822
+Step Index: 7200 | Cost: 0.412868
+Step Index: 7300 | Cost: 0.168684
+Step Index: 7400 | Cost: 0.324938
+Step Index: 7500 | Cost: 0.242559
+Step Index: 7600 | Cost: 0.525467
+Step Index: 7700 | Cost: 0.328178
+Step Index: 7800 | Cost: 0.349860
+Step Index: 7900 | Cost: 0.579969
+Step Index: 8000 | Cost: 0.311618
+Step Index: 8100 | Cost: 0.165322
+Step Index: 8200 | Cost: 0.527809
+Step Index: 8300 | Cost: 0.400139
+Step Index: 8400 | Cost: 0.326299
+Step Index: 8500 | Cost: 0.069733
+Step Index: 8600 | Cost: 0.295350
+Step Index: 8700 | Cost: 0.163503
+Step Index: 8800 | Cost: 0.254538
+Step Index: 8900 | Cost: 0.308993
+Step Index: 9000 | Cost: 0.194994
+Step Index: 9100 | Cost: 0.185817
+Step Index: 9200 | Cost: 0.131375
+Step Index: 9300 | Cost: 0.080718
+Step Index: 9400 | Cost: 0.226412
+Step Index: 9500 | Cost: 0.363845
+Step Index: 9600 | Cost: 0.343209
+Step Index: 9700 | Cost: 0.109784
+Step Index: 9800 | Cost: 0.219226
+Step Index: 9900 | Cost: 0.315407
+Step Index: 10000 | Cost: 0.200815
+Step Index: 10100 | Cost: 0.260476
+Step Index: 10200 | Cost: 0.366100
+Step Index: 10300 | Cost: 0.343156
+Step Index: 10400 | Cost: 0.075688
+Step Index: 10500 | Cost: 0.186026
+Step Index: 10600 | Cost: 0.214603
+Step Index: 10700 | Cost: 0.042599
+Step Index: 10800 | Cost: 0.391867
+Step Index: 10900 | Cost: 0.420091
+Step Index: 11000 | Cost: 0.059656
+Step Index: 11100 | Cost: 0.112302
+Step Index: 11200 | Cost: 0.298197
+Step Index: 11300 | Cost: 0.152969
+Step Index: 11400 | Cost: 0.315034
+Step Index: 11500 | Cost: 0.256880
+Step Index: 11600 | Cost: 0.573053
+Step Index: 11700 | Cost: 0.209526
+Step Index: 11800 | Cost: 0.282447
+Step Index: 11900 | Cost: 0.092032
+Step Index: 12000 | Cost: 0.358866
+Step Index: 12100 | Cost: 0.289020
+Step Index: 12200 | Cost: 0.331374
+Step Index: 12300 | Cost: 0.264483
+Step Index: 12400 | Cost: 0.106456
+Step Index: 12500 | Cost: 0.045333
+Step Index: 12600 | Cost: 0.069606
+Step Index: 12700 | Cost: 0.115490
+Step Index: 12800 | Cost: 0.867427
+Step Index: 12900 | Cost: 0.232643
+Step Index: 13000 | Cost: 0.315859
+Step Index: 13100 | Cost: 0.297340
+Step Index: 13200 | Cost: 0.069224
+Step Index: 13300 | Cost: 0.290184
+Step Index: 13400 | Cost: 0.291799
+Step Index: 13500 | Cost: 0.161305
+Step Index: 13600 | Cost: 0.089023
+Step Index: 13700 | Cost: 0.180815
+Step Index: 13800 | Cost: 0.060906
+Step Index: 13900 | Cost: 0.212228
+Step Index: 14000 | Cost: 0.099623
+Step Index: 14100 | Cost: 0.342747
+Step Index: 14200 | Cost: 0.162822
+Step Index: 14300 | Cost: 0.048394
+Step Index: 14400 | Cost: 0.378976
+Step Index: 14500 | Cost: 0.091826
+Step Index: 14600 | Cost: 0.748150
+Step Index: 14700 | Cost: 0.224826
+Step Index: 14800 | Cost: 0.075913
+Step Index: 14900 | Cost: 0.164781
+Step Index: 15000 | Cost: 0.209452
+Step Index: 15100 | Cost: 0.065572
+Step Index: 15200 | Cost: 0.194600
+Step Index: 15300 | Cost: 0.051000
+Step Index: 15400 | Cost: 0.071217
+Step Index: 15500 | Cost: 0.586417
+Step Index: 15600 | Cost: 0.144129
+Step Index: 15700 | Cost: 1.168149
+Step Index: 15800 | Cost: 0.298982
+Step Index: 15900 | Cost: 0.042026
+Step Index: 16000 | Cost: 0.057796
+Step Index: 16100 | Cost: 0.146535
+Step Index: 16200 | Cost: 0.038987
+Step Index: 16300 | Cost: 0.368036
+Step Index: 16400 | Cost: 0.316310
