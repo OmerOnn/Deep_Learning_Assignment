@@ -169,14 +169,15 @@ def update_parameters(parameters, grads, learning_rate):
 
 
 def batchnorm_backward(dNA, batch_norm_cache):
-    """_summary_
+    """
+    Backward propagation for a batch normalization layer.
 
     Args:
-        dNA (_type_): _description_
-        batch_norm_cache (_type_): _description_
+        dNA (array): Gradient with respect to the normalized activations.
+        batch_norm_cache (dict): Values saved from the forward batchnorm step.
 
-    Returns: 
-        _type_: _description_
+    Returns:
+        dA (array): Gradient with respect to the original activations before normalization.
     """
     
     
