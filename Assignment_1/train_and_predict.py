@@ -77,6 +77,7 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
             # Check for improvement
             if cur_val - best_val > epsilon:
                 best_val = cur_val
+                small_improve_counter = 0  # Reset counter on improvement
                 best_parameters = copy.deepcopy(parameters)  # Save the best parameters
                 print(f"New best validation accuracy: {best_val:.4f} at iteration {i}")
                 print("\n" * 4)
@@ -120,6 +121,7 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
     print(f"| Final Validation accuracy: {val_accuracy:.4f}")
 
     return best_parameters, costs
+    
 
 
 def predict(X, Y, parameters, use_batchnorm=False):
