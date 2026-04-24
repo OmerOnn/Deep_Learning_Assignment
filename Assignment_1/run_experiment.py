@@ -124,7 +124,7 @@ def section_6():
 
 def plot_compare_running_time():
     labels = ["Regular", "BN", "R, L2=0.001", "BN, L2=0.001"]
-    times = [12.86, 10.56, 12.24, 16.29]
+    times = [113.17, 116.6, 173.46, 109.88]
 
     plt.figure(figsize=(8, 5))
     plt.bar(labels, times)
@@ -145,9 +145,9 @@ def plot_compare_final_accuracies():
     models = ["Regular", "BN", "R, L2=0.001", "BN, L2=0.001"]
 
     # Replace these with your real results
-    train_acc = [0.9667, 0.9239, 0.9643, 0.9443]
-    val_acc = [0.9491, 0.918, 0.9478, 0.9317]
-    test_acc = [0.9489, 0.9197, 0.9476, 0.9379]
+    train_acc = [0.9387, 0.9481, 0.9403, 0.9206]
+    val_acc = [0.929, 0.9373, 0.9315, 0.9152]
+    test_acc = [0.9312, 0.9365, 0.9284, 0.9137]
 
     x = np.arange(len(models))   # positions of model groups
     width = 0.25                 # width of each bar
@@ -173,9 +173,9 @@ def plot_compare_final_accuracies():
 
 
 if __name__ == "__main__":
-    section_4()
+    # section_4()
     section_5()
-    section_6()
+    # section_6()
 
     # plot_compare_running_time()
     # plot_compare_final_accuracies()
