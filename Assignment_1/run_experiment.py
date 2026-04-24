@@ -173,8 +173,8 @@ def plot_compare_final_accuracies():
 
 
 if __name__ == "__main__":
-    # section_4()
-    # section_5()
+    section_4()
+    section_5()
     section_6()
 
     # plot_compare_running_time()

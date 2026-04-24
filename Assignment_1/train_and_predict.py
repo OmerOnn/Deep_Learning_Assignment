@@ -85,6 +85,8 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
                 if small_improve_counter >= 100:
                     print(f"Validation accuracy: {cur_val:.4f} at iteration {i}")
                     print(f"Early Stopping: No improvement for 100 training steps.")
+                    print(f"Finished training after {i} iterations.")
+                    print("\n" * 4)
                     break
 
         # Save cost every 100 iterations for plotting
