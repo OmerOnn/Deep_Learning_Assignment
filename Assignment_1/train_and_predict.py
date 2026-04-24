@@ -68,9 +68,8 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
         # Update parameters
         parameters = bp.update_parameters(parameters, grads, learning_rate)
 
-        # Save cost and check validation every 100 iterations
-        if i % 100 == 0 and i != 0:
-            costs.append(cost)
+        # Check validation every 50 iterations
+        if i % 5 == 0 and i != 0:
 
             cur_val = predict(X_val, Y_val, parameters, use_batchnorm)
 
@@ -87,6 +86,10 @@ def l_layer_model(X, Y, layers_dims, learning_rate, num_iterations, batch_size, 
                     print(f"Validation accuracy: {cur_val:.4f} at iteration {i}")
                     print(f"Early Stopping: No improvement for 100 training steps.")
                     break
+
+        # Save cost every 100 iterations for plotting
+        if i % 100 == 0 and i != 0:
+            costs.append(cost)
 
         # Move to the next batch
         start_index = end_index

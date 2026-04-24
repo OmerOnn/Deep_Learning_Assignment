@@ -100,7 +100,7 @@ def run_experiment(batch_size, use_batchnorm=False, l2_lambda=0.0):
 # |             Section 4                 |
 # =========================================
 def section_4():
-    batch_size = 16
+    batch_size = 64
     run_experiment(batch_size)
 
 
@@ -108,7 +108,7 @@ def section_4():
 # |             Section 5                 |
 # =========================================
 def section_5():
-    batch_size = 16
+    batch_size = 64
     run_experiment(batch_size, True)
 
 
@@ -116,13 +116,14 @@ def section_5():
 # |             Section 6                 |
 # =========================================
 def section_6():
-    batch_size = 16
+    batch_size = 64
     l2_value = 0.001
     run_experiment(batch_size, True, l2_lambda=l2_value)
+    run_experiment(batch_size, False, l2_lambda=l2_value)
 
 
 def plot_compare_running_time():
-    labels = ["Regular", "BN", "R, L2=0.001", "BN, L2=0.01"]
+    labels = ["Regular", "BN", "R, L2=0.001", "BN, L2=0.001"]
     times = [12.86, 10.56, 12.24, 16.29]
 
     plt.figure(figsize=(8, 5))
@@ -174,7 +175,7 @@ def plot_compare_final_accuracies():
 if __name__ == "__main__":
     # section_4()
     # section_5()
-    # section_6()
+    section_6()
 
     # plot_compare_running_time()
-    plot_compare_final_accuracies()
+    # plot_compare_final_accuracies()
