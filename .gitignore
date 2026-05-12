@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 Assignment2/data/lfw2/
+Assignment2/results/
+Assignment2/checkpoints/

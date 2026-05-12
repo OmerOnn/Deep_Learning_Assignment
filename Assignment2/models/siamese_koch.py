@@ -32,7 +32,7 @@ class KochCNN(nn.Module):
 
         # Fully connected embedding layer
         self.fc = nn.Sequential(
-            nn.Linear(256 * 6 * 6, 4096),
+            nn.Linear(256*6*6, 1024),
             nn.Sigmoid()
         )
 
@@ -50,9 +50,9 @@ class SiameseKoch(nn.Module):
 
     def __init__(self):
         super().__init__()
+        
         self.backbone = KochCNN()
-
-        self.classifier = nn.Linear(4096, 1)
+        self.classifier = nn.Linear(1024, 1)
 
     def forward(self, img1, img2):
         emb1 = self.backbone(img1)
@@ -65,3 +65,7 @@ class SiameseKoch(nn.Module):
         out = torch.sigmoid(out)
 
         return out
+    
+    def embed(self, img):
+        return self.backbone(img)
+
