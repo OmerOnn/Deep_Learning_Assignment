@@ -1,16 +1,12 @@
-# Assignment2/models/siamese_koch.py
-
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 
 class KochCNN(nn.Module):
     """
-    This is the shared CNN backbone from Koch et al. (2015)
+    Koch et al. (2015) CNN backbone with reduced capacity
     """
-
-    def __init__(self):
+    def __init__(self, embed_dim=128):
         super().__init__()
 
         self.conv = nn.Sequential(
@@ -30,10 +26,10 @@ class KochCNN(nn.Module):
             nn.ReLU(),
         )
 
-        # Fully connected embedding layer
         self.fc = nn.Sequential(
-            nn.Linear(256*6*6, 1024),
-            nn.Sigmoid()
+            nn.Linear(256 * 6 * 6, 1024),  # ↓ reduced from 4096
+            nn.ReLU(),
+            nn.Linear(1024, embed_dim)
         )
 
     def forward(self, x):
@@ -45,27 +41,16 @@ class KochCNN(nn.Module):
 
 class SiameseKoch(nn.Module):
     """
-    Siamese network with L1 distance + sigmoid head
+    Siamese wrapper for metric learning (Triplet / Contrastive)
     """
-
-    def __init__(self):
+    def __init__(self, embed_dim=128):
         super().__init__()
-        
-        self.backbone = KochCNN()
-        self.classifier = nn.Linear(1024, 1)
+        self.backbone = KochCNN(embed_dim=embed_dim)
 
     def forward(self, img1, img2):
         emb1 = self.backbone(img1)
         emb2 = self.backbone(img2)
+        return emb1, emb2
 
-        # L1 distance
-        diff = torch.abs(emb1 - emb2)
-
-        out = self.classifier(diff)
-        out = torch.sigmoid(out)
-
-        return out
-    
     def embed(self, img):
         return self.backbone(img)
-
