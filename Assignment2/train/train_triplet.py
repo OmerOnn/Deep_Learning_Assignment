@@ -10,6 +10,8 @@ from torch.utils.data import DataLoader
 from torch.utils.data.sampler import Sampler
 
 from models.siamese_koch import SiameseKoch
+from models.resnet_backbone import ResNet18Backbone
+
 from datasets.lfw_identities import LFWIdentityDataset, load_train_identities_from_pairs
 from losses.triplet_loss import TripletLoss
 from losses.mining import semi_hard_triplets
@@ -128,12 +130,18 @@ def main():
     sampler = PKBatchSampler(labels_list, P=args.P, K=args.K, seed=args.seed)
     loader = DataLoader(ds, batch_sampler=sampler, num_workers=0)
 
-    model = SiameseKoch().to(DEVICE)
+    # model = SiameseKoch().to(DEVICE)
+    model = ResNet18Backbone(embed_dim=128).to(DEVICE)
+
     criterion = TripletLoss(margin=args.margin)
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
-    ckpt_path = f"checkpoints/koch_triplet_{args.mode}_m{args.margin}_best.pt"
-    loss_csv = f"results/koch_triplet_{args.mode}_m{args.margin}_losses.csv"
+    # ckpt_path = f"checkpoints/koch_triplet_{args.mode}_m{args.margin}_best.pt"
+    # loss_csv = f"results/koch_triplet_{args.mode}_m{args.margin}_losses.csv"
+
+    ckpt_path = f"checkpoints/resnet18_triplet_{args.mode}_m{args.margin}_best.pt"
+    loss_csv  = f"results/resnet18_triplet_{args.mode}_m{args.margin}_losses.csv"
+
 
     best_epoch_loss = float("inf")
     history = []
@@ -158,7 +166,8 @@ def main():
             imgs = imgs.to(DEVICE)
             y = y.to(DEVICE)
 
-            emb = model.embed(imgs)  # [B, D]
+            # emb = model.embed(imgs)  # [B, D]
+            emb = model(imgs)  # [B, D]
 
             if args.mode == "semihard":
                 triplets = semi_hard_triplets(embeddings=emb, labels=y, margin=args.margin)
