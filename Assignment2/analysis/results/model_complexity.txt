@@ -1,0 +1,10 @@
+Koch CNN (reduced):
+  Parameters: 10.78 M
+  MACs: 1.00 G
+  Approx FLOPs: 2.00 G
+
+ResNet-18 (scratch):
+  Parameters: 11.24 M
+  MACs: 0.48 G
+  Approx FLOPs: 0.95 G
+

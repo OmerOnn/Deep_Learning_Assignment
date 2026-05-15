@@ -1,0 +1,5 @@
+file,accuracy,auc
+results\koch_triplet_semihard_m0.2_test_scores.csv,0.776,0.8530479999999999
+results\koch_triplet_random_m0.2_test_scores.csv,0.766,0.844104
+results\koch_contrastive_m1.0_test_scores.csv,0.736,0.824472
+results\koch_bce_test_scores.csv,0.664,0.7302160000000001

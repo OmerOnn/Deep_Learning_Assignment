@@ -19,36 +19,64 @@ class EmbedWrapper(nn.Module):
         return self.siamese_model.embed(x)
 
 
-def count_model(model, name):
+# def count_model(model, name):
+#     dummy = torch.randn(1, 3, IMG_SIZE, IMG_SIZE).to(DEVICE)
+
+#     # wrap siamese encoder properly for thop
+#     if hasattr(model, "embed"):
+#         wrapped = EmbedWrapper(model).to(DEVICE)
+#         macs, params = profile(
+#             wrapped,
+#             inputs=(dummy,),
+#             verbose=False
+#         )
+#     else:
+#         macs, params = profile(
+#             model,
+#             inputs=(dummy,),
+#             verbose=False
+#         )
+
+#     print(f"{name}:")
+#     print(f"  Parameters: {params / 1e6:.2f} M")
+#     print(f"  MACs: {macs / 1e9:.2f} G")
+#     print(f"  Approx FLOPs: {2 * macs / 1e9:.2f} G\n")
+
+
+def count_model(model, name, file):
     dummy = torch.randn(1, 3, IMG_SIZE, IMG_SIZE).to(DEVICE)
 
-    # wrap siamese encoder properly for thop
     if hasattr(model, "embed"):
         wrapped = EmbedWrapper(model).to(DEVICE)
-        macs, params = profile(
-            wrapped,
-            inputs=(dummy,),
-            verbose=False
-        )
+        macs, params = profile(wrapped, inputs=(dummy,), verbose=False)
     else:
-        macs, params = profile(
-            model,
-            inputs=(dummy,),
-            verbose=False
-        )
+        macs, params = profile(model, inputs=(dummy,), verbose=False)
 
-    print(f"{name}:")
-    print(f"  Parameters: {params / 1e6:.2f} M")
-    print(f"  MACs: {macs / 1e9:.2f} G")
-    print(f"  Approx FLOPs: {2 * macs / 1e9:.2f} G\n")
+    text = (
+        f"{name}:\n"
+        f"  Parameters: {params / 1e6:.2f} M\n"
+        f"  MACs: {macs / 1e9:.2f} G\n"
+        f"  Approx FLOPs: {2 * macs / 1e9:.2f} G\n\n"
+    )
 
+    print(text)
+    file.write(text)
+
+
+# def main():
+#     koch = SiameseKoch(embed_dim=EMBED_DIM).to(DEVICE)
+#     resnet = ResNet18Backbone(embed_dim=EMBED_DIM).to(DEVICE)
+
+#     count_model(koch, "Koch CNN (reduced)")
+#     count_model(resnet, "ResNet-18 (scratch)")
 
 def main():
-    koch = SiameseKoch(embed_dim=EMBED_DIM).to(DEVICE)
-    resnet = ResNet18Backbone(embed_dim=EMBED_DIM).to(DEVICE)
+    with open("analysis/results/model_complexity.txt", "w") as f:
+        koch = SiameseKoch(embed_dim=EMBED_DIM).to(DEVICE)
+        resnet = ResNet18Backbone(embed_dim=EMBED_DIM).to(DEVICE)
 
-    count_model(koch, "Koch CNN (reduced)")
-    count_model(resnet, "ResNet-18 (scratch)")
+        count_model(koch, "Koch CNN (reduced)", f)
+        count_model(resnet, "ResNet-18 (scratch)", f)
 
 
 if __name__ == "__main__":

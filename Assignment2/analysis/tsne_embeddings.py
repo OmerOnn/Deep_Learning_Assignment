@@ -16,6 +16,10 @@ CHECKPOINT = "checkpoints/koch_triplet_semihard_m0.2_best.pt"
 N_IDENTITIES = 20
 MAX_IMAGES_PER_ID = 10
 
+random.seed(0)
+np.random.seed(0)
+torch.manual_seed(0)
+
 
 def load_image(path):
     img = Image.open(path).convert("RGB")

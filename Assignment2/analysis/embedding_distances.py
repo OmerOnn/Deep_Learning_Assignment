@@ -88,6 +88,13 @@ def main():
     plt.savefig("analysis/results/embedding_distance_hist.png")
     plt.close()
 
+    with open("analysis/results/embedding_distance_stats.txt", "w") as f:
+        f.write(f"Intra mean: {np.mean(intra_distances):.4f}\n")
+        f.write(f"Intra std: {np.std(intra_distances):.4f}\n")
+        f.write(f"Inter mean: {np.mean(inter_distances):.4f}\n")
+        f.write(f"Inter std: {np.std(inter_distances):.4f}\n")
+
+
 
 if __name__ == "__main__":
     main()

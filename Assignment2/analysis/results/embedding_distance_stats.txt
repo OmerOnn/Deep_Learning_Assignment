@@ -1,0 +1,4 @@
+Intra mean: 2.1564
+Intra std: 0.6469
+Inter mean: 2.6575
+Inter std: 0.4958
