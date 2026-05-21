@@ -85,7 +85,7 @@ def plot_one(ax, labels, scores, name):
 def main():
     loader = dataloader_from_pairs(PAIRS_TEST)
 
-    # ====== paths (עדכן אם שמות שונים אצלך) ======
+    # ====== paths ======
     CKPT_KOCH_BCE = "results/debug_koch/model.pth"
 
     CKPT_CONTRASTIVE = "results/experiment1_loss/contrastive_m0.2/20260518_222913/model_best.pth"
@@ -111,7 +111,6 @@ def main():
     contrastive = SiameseKoch().to(DEVICE)
     contrastive.load_state_dict(m, strict=True)
 
-    # חשוב: משתמשים ב-distance ולא ב-sigmoid
     y, dists = [], []
     contrastive.eval()
     with torch.no_grad():

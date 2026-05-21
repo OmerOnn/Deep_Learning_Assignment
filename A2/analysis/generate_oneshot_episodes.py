@@ -1,18 +1,18 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import os, json, random
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from datasets.lfw_identities import load_train_identities_from_pairs
 
 IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
 OUT_DIR = "results/oneshot"
+SEED = 42
+EPISODES_PER_N = 300
+
 os.makedirs(OUT_DIR, exist_ok=True)
 
-SEED = 42
-EPISODES_PER_N = 300   # סביר; אם רוצים יותר לשפר יציבות
-
 def list_images(identity):
-    import os
     p = os.path.join(IMAGES_ROOT, identity)
     imgs = [os.path.join(p, x) for x in os.listdir(p) if x.lower().endswith(".jpg")]
     return sorted(imgs)
@@ -20,17 +20,16 @@ def list_images(identity):
 def main():
     random.seed(SEED)
     ids = sorted(list(load_train_identities_from_pairs("data/lfwa/pairsDevTrain.txt")))
-    # filter identities with at least 2 images
     ids = [i for i in ids if len(list_images(i)) >= 2]
 
     episodes = {}
     for N in [2,5,20]:
         eps = []
         for _ in range(EPISODES_PER_N):
-            # pick target identity + N-1 distractors
             target = random.choice(ids)
             distractors = random.sample([x for x in ids if x != target], N-1)
             candidates = [target] + distractors
+
             random.shuffle(candidates)
 
             # query + support for each candidate
@@ -38,7 +37,6 @@ def main():
             support = {}
             for cid in candidates:
                 imgs = list_images(cid)
-                # ensure support image is not the same as query for target
                 if cid == target:
                     imgs2 = [x for x in imgs if x != query_img]
                     support[cid] = random.choice(imgs2) if imgs2 else random.choice(imgs)
@@ -55,6 +53,7 @@ def main():
         episodes[str(N)] = eps
 
     out_path = os.path.join(OUT_DIR, "episodes_seed42.json")
+    
     with open(out_path, "w") as f:
         json.dump(episodes, f, indent=2)
     print(f"✅ Saved episodes: {out_path}")
