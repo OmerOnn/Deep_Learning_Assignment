@@ -1,0 +1,7 @@
+=== EXP1: KOCH BCE EVAL ===
+model_ckpt: results/experiment1_loss/koch_bce/20260521_132214/model_best.pth
+threshold_from_val: 0.491818
+val_acc: 0.6082
+val_auc: 0.6483
+test_acc: 0.6100
+test_auc: 0.6569
