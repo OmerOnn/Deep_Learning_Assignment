@@ -1,15 +1,15 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
 import torch
 import torch.nn.functional as F
-from torch.utils.data import DataLoader
-from torchvision import transforms
 import torchvision.models as tvm
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
+from sklearn.metrics import roc_curve, auc
+from torch.utils.data import DataLoader
+from torchvision import transforms
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
@@ -35,7 +35,6 @@ def dataloader_from_pairs(pairs_file):
 
 @torch.no_grad()
 def scores_koch_bce(model, loader):
-    # output is sigmoid probability already => higher means "same"
     labels, scores = [], []
     model.eval()
     for img1, img2, lab in loader:
@@ -47,7 +46,6 @@ def scores_koch_bce(model, loader):
 
 @torch.no_grad()
 def scores_l2_metric(model, loader):
-    # metric model: score = -L2 distance (higher => more similar)
     labels, scores = [], []
     model.eval()
     for img1, img2, lab in loader:
@@ -62,7 +60,6 @@ def scores_l2_metric(model, loader):
 
 @torch.no_grad()
 def scores_frozen_cosine(model, loader):
-    # frozen pretrained: cosine similarity (higher => more similar)
     labels, scores = [], []
     model.eval()
     for img1, img2, lab in loader:
@@ -87,11 +84,9 @@ def main():
 
     # ====== paths ======
     CKPT_KOCH_BCE = "results/debug_koch/model.pth"
-
     CKPT_CONTRASTIVE = "results/experiment1_loss/contrastive_m0.2/20260518_222913/model_best.pth"
     CKPT_TRIPLET_RANDOM = "results/experiment1_loss/triplet_random_m0.2/20260519_130331/model_best.pth"
     CKPT_TRIPLET_SEMIHARD = "results/experiment1_loss/triplet_semihard_m0.2/20260519_143300/model_best.pth"
-
     CKPT_EXP2_KOCH = "results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth"
     CKPT_EXP2_RESNET = "results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth"
     # ============================================
@@ -159,21 +154,30 @@ def main():
     # 7) Exp3 Frozen pretrained cosine
     resnet = tvm.resnet18(weights=tvm.ResNet18_Weights.IMAGENET1K_V1)
     backbone = torch.nn.Sequential(*list(resnet.children())[:-1])
+
     class Frozen(torch.nn.Module):
         def __init__(self, feat): super().__init__(); self.feat = feat
         def forward(self, x): return self.feat(x).view(x.size(0), -1)
+
     frozen = Frozen(backbone).to(DEVICE)
+
     for p in frozen.parameters(): p.requires_grad = False
+    
     y, s = scores_frozen_cosine(frozen, loader)
+
     plot_one(ax, y, s, "E3 Frozen ResNet18 (cosine)")
 
     ax.set_xlabel("False Positive Rate")
     ax.set_ylabel("True Positive Rate")
     ax.set_title("ROC Curves – All Models (pairsDevTest)")
     ax.legend(fontsize=8)
+
     fig.tight_layout()
+
     out_path = os.path.join(OUT_DIR, "roc_all_models.png")
+
     fig.savefig(out_path, dpi=200)
+
     plt.close(fig)
 
     print(f"✅ Saved: {out_path}")

@@ -1,23 +1,22 @@
-# eval/evaluate_frozen_resnet18.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc, accuracy_score
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
 import torch.nn.functional as F
-from torch.utils.data import DataLoader
-from torchvision import transforms
 import torchvision.models as tvm
 
+from sklearn.metrics import roc_curve, auc, accuracy_score
+from torch.utils.data import DataLoader
+from torchvision import transforms
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
 OUTPUT_DIR = "results/experiment3_frozen_resnet18"
+
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 BATCH_SIZE = 32
@@ -28,9 +27,9 @@ transform = transforms.Compose([
 ])
 
 def cosine_score(e1, e2):
-    # normalize then cosine similarity
     e1 = F.normalize(e1, p=2, dim=1)
     e2 = F.normalize(e2, p=2, dim=1)
+
     return (e1 * e2).sum(dim=1)  # [-1, 1]
 
 def compute_scores(pairs_file, model):
@@ -102,23 +101,22 @@ def main():
         p.requires_grad = False
 
     print("\nCompute VAL scores (proxy on pairsDevTrain)...")
-    val_labels, val_scores = compute_scores("data/lfwa/pairsDevTrain.txt", model)
 
+    val_labels, val_scores = compute_scores("data/lfwa/pairsDevTrain.txt", model)
     thr, val_acc = best_threshold_by_val(val_labels, val_scores)
+
     print(f"Best VAL threshold (cosine): {thr:.6f} | VAL Acc: {val_acc:.4f}")
 
-    val_auc = save_roc(val_labels, val_scores, os.path.join(OUTPUT_DIR, "roc_val.png"),
-                       "Frozen ResNet-18 ROC (VAL proxy)")
+    val_auc = save_roc(val_labels, val_scores, os.path.join(OUTPUT_DIR, "roc_val.png"),"Frozen ResNet-18 ROC (VAL proxy)")
+
     print(f"VAL AUC: {val_auc:.4f}")
-
     print("\nCompute TEST scores...")
-    test_labels, test_scores = compute_scores("data/lfwa/pairsDevTest.txt", model)
 
+    test_labels, test_scores = compute_scores("data/lfwa/pairsDevTest.txt", model)
     test_preds = (test_scores >= thr).astype(int)
     test_acc = accuracy_score(test_labels, test_preds)
-
-    test_auc = save_roc(test_labels, test_scores, os.path.join(OUTPUT_DIR, "roc_test.png"),
-                        "Frozen ResNet-18 ROC (TEST)")
+    test_auc = save_roc(test_labels, test_scores, os.path.join(OUTPUT_DIR, "roc_test.png"),"Frozen ResNet-18 ROC (TEST)")
+    
     print(f"TEST Acc: {test_acc:.4f}")
     print(f"TEST AUC: {test_auc:.4f}")
 

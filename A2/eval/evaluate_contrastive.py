@@ -1,15 +1,13 @@
-# eval/evaluate_contrastive.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc, accuracy_score
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
+
+from sklearn.metrics import roc_curve, auc, accuracy_score
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
@@ -59,7 +57,7 @@ def compute_scores(pairs_file, model):
 def best_threshold_by_val(labels, dists):
     candidates = np.unique(dists)
     best_acc, best_thr = -1.0, None
-    
+
     for thr in candidates:
         preds = (dists <= thr).astype(int)
         acc = accuracy_score(labels, preds)

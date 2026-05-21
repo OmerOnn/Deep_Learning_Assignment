@@ -4,7 +4,7 @@ def parse_pairs_file(pairs_path, images_root):
     pairs = []
 
     with open(pairs_path, 'r') as f:
-        lines = f.readlines()[1:]  # שים לב – השורה הראשונה זה count
+        lines = f.readlines()[1:]
 
     for line in lines:
         parts = line.strip().split()

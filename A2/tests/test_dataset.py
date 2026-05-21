@@ -25,21 +25,17 @@ IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
 # ==========================
 
 
-# ✅ פונקציה לפיצול train/validation
 def split_train_val(pairs, val_ratio=0.2, seed=42):
     random.seed(seed)
     pairs = pairs.copy()
     random.shuffle(pairs)
-
     split_idx = int(len(pairs) * (1 - val_ratio))
-
     train_pairs = pairs[:split_idx]
     val_pairs = pairs[split_idx:]
 
     return train_pairs, val_pairs
 
 
-# transforms (כמו Koch)
 transform = transforms.Compose([
     transforms.Resize((105, 105)),
     transforms.ToTensor()
@@ -49,36 +45,33 @@ transform = transforms.Compose([
 def main():
     print("Loading data...")
 
-    # ✅ טוענים את TRAIN המקורי
     all_train_pairs = parse_pairs_file(
         "data/lfwa/pairsDevTrain.txt",
         IMAGES_ROOT
     )
 
-    # ✅ טוענים TEST (לא נוגעים בו!)
     test_pairs = parse_pairs_file(
         "data/lfwa/pairsDevTest.txt",
         IMAGES_ROOT
     )
 
-    # ✅ פיצול נכון
     train_pairs, val_pairs = split_train_val(all_train_pairs)
 
     print(f"\nTrain pairs: {len(train_pairs)}")
     print(f"Validation pairs: {len(val_pairs)}")
     print(f"Test pairs: {len(test_pairs)}\n")
 
-    # ✅ datasets
+    # datasets
     train_dataset = LFWSiameseDataset(train_pairs, transform=transform)
     val_dataset   = LFWSiameseDataset(val_pairs, transform=transform)
 
-    # ✅ loaders
+    # loaders
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     val_loader   = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
     print("Building model...")
-    model = SiameseKoch().to(DEVICE)
 
+    model = SiameseKoch().to(DEVICE)
     criterion = nn.BCELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 

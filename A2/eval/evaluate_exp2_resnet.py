@@ -8,10 +8,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
-# from models.siamese_koch import SiameseKoch
 from models.backbones import KochBackbone, ResNet18Backbone, MetricModel
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

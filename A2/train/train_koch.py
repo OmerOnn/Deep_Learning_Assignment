@@ -1,17 +1,16 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys
 import os
 import time
 import random
 import csv
 import matplotlib.pyplot as plt
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
 import torch.nn as nn
+
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
@@ -66,13 +65,12 @@ def main():
 
     train_dataset = LFWSiameseDataset(train_pairs, transform=transform)
     val_dataset   = LFWSiameseDataset(val_pairs, transform=transform)
-
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     val_loader   = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
     print("Building model...")
-    model = SiameseKoch().to(DEVICE)
 
+    model = SiameseKoch().to(DEVICE)
     criterion = nn.BCELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 
@@ -89,16 +87,12 @@ def main():
         for img1, img2, label in train_loader:
             img1, img2 = img1.to(DEVICE), img2.to(DEVICE)
             label = label.float().to(DEVICE)
-
             optimizer.zero_grad()
             outputs = model(img1, img2).squeeze()
             loss = criterion(outputs, label)
-
             loss.backward()
             optimizer.step()
-
             total_loss += loss.item()
-
         avg_train_loss = total_loss / len(train_loader)
         train_losses.append(avg_train_loss)
 
@@ -130,10 +124,10 @@ def main():
     # ✅ SAVE EVERYTHING
     # ============================
 
-    # 1️⃣ Save model
+    # Save model
     torch.save(model.state_dict(), os.path.join(OUTPUT_DIR, "model.pth"))
 
-    # 2️⃣ Save losses CSV
+    # Save losses CSV
     csv_path = os.path.join(OUTPUT_DIR, "losses.csv")
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
@@ -141,7 +135,7 @@ def main():
         for i in range(len(train_losses)):
             writer.writerow([i+1, train_losses[i], val_losses[i]])
 
-    # 3️⃣ Plot losses
+    # Plot losses
     plt.figure()
     plt.plot(train_losses, label="Train Loss")
     plt.plot(val_losses, label="Validation Loss")
@@ -152,13 +146,12 @@ def main():
     plt.savefig(os.path.join(OUTPUT_DIR, "loss_plot.png"))
     plt.close()
 
-    # 4️⃣ Save summary TXT
+    # Save summary TXT
     with open(os.path.join(OUTPUT_DIR, "summary.txt"), "w") as f:
         f.write("=== KOCH BASELINE TRAINING ===\n\n")
         f.write(f"Batch size: {BATCH_SIZE}\n")
         f.write(f"Epochs: {EPOCHS}\n")
         f.write(f"Learning rate: {LR}\n\n")
-
         f.write(f"Final Train Loss: {train_losses[-1]:.4f}\n")
         f.write(f"Final Val Loss: {val_losses[-1]:.4f}\n")
 

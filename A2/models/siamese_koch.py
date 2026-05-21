@@ -41,10 +41,7 @@ class SiameseKoch(nn.Module):
         super().__init__()
 
         self.backbone = KochCNN()
-
-        self.classifier = nn.Sequential(
-            nn.Linear(4096, 1),
-        )
+        self.classifier = nn.Sequential(nn.Linear(4096, 1),)
         
     def embed(self, x):
         return self.backbone(x)
@@ -55,7 +52,6 @@ class SiameseKoch(nn.Module):
 
         # L1 distance
         diff = torch.abs(f1 - f2)
-
         out = self.classifier(diff)
 
         return torch.sigmoid(out)

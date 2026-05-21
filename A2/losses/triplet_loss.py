@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -8,5 +7,4 @@ class TripletLoss(nn.Module):
         self.margin = margin
 
     def forward(self, d_ap, d_an):
-        # d_ap, d_an are vectors (B,)
         return F.relu(d_ap - d_an + self.margin).mean()

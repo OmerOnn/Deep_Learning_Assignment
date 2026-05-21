@@ -1,29 +1,21 @@
-# eval/evaluate_contrastive.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc, accuracy_score
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
+
+from sklearn.metrics import roc_curve, auc, accuracy_score
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
-
-# עדכן לפי התיקייה שנוצרה לך מהריצה של train_contrastive
-# לדוגמה: results/experiment1_loss/contrastive_m1.0/20260515_170000/model_best.pth
 MODEL_CKPT = "results/experiment1_loss/triplet_semihard_m0.2/20260519_143300/model_best.pth"
-
-MARGIN_NAME = "m0.2"   # ✅ תחליף כל פעם בהתאם
-
-# OUTPUT_DIR = "results/experiment1_loss/contrastive_eval"
+MARGIN_NAME = "m0.2"   
 OUTPUT_DIR = f"results/experiment1_loss/triplet_eval_semihard_{MARGIN_NAME}"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -58,15 +50,14 @@ def compute_scores(pairs_file, model):
 
     labels = np.array(labels).astype(int)
     dists = np.array(dists).astype(float)
-
-    # כדי ש-ROC יהיה "ככל שיותר גדול יותר דומה", נהפוך לסקור:
     scores = -dists
+
     return labels, dists, scores
 
 def best_threshold_by_val(labels, dists):
-    # בוחרים threshold על distance: predict same אם dist <= thr
     candidates = np.unique(dists)
     best_acc, best_thr = -1.0, None
+
     for thr in candidates:
         preds = (dists <= thr).astype(int)
         acc = accuracy_score(labels, preds)
@@ -92,36 +83,28 @@ def save_roc(labels, scores, path_png, title):
 
 def main():
     print("Loading model...")
+
     model = SiameseKoch().to(DEVICE)
     ckpt = torch.load(MODEL_CKPT, map_location=DEVICE)
-    # אנחנו שומרים dict עם model_state כמו ב-train_contrastive
     model.load_state_dict(ckpt["model_state"], strict=True)
 
     print("\nCompute VAL scores...")
+
     val_labels, val_dists, val_scores = compute_scores("data/lfwa/pairsDevTrain.txt", model)
-    # חשוב: כאן אנחנו מחשבים על כל pairsDevTrain — אם אתה רוצה VAL אמיתי כמו באימון,
-    # אפשר לשמור את split ולקרוא רק את ה-val_pairs. כרגע זה baseline פשוט.
-
-    # כדי להיות עקבי עם ה-split של האימון, הכי נכון:
-    # (א) לשמור את indices/val_pairs בזמן training ולקרוא אותם כאן.
-    # נתקן את זה בשלב הבא אם תרצה.
-
-    # בוחרים threshold לפי VAL (על distances)
     thr, val_acc = best_threshold_by_val(val_labels, val_dists)
+
     print(f"Best VAL threshold (distance): {thr:.6f} | VAL Acc: {val_acc:.4f}")
 
-    val_auc = save_roc(val_labels, val_scores, os.path.join(OUTPUT_DIR, "roc_val.png"),
-                       "Contrastive ROC (VAL proxy)")
+    val_auc = save_roc(val_labels, val_scores, os.path.join(OUTPUT_DIR, "roc_val.png"),"Contrastive ROC (VAL proxy)")
+
     print(f"VAL AUC: {val_auc:.4f}")
-
     print("\nCompute TEST scores...")
-    test_labels, test_dists, test_scores = compute_scores("data/lfwa/pairsDevTest.txt", model)
 
+    test_labels, test_dists, test_scores = compute_scores("data/lfwa/pairsDevTest.txt", model)
     test_preds = (test_dists <= thr).astype(int)
     test_acc = accuracy_score(test_labels, test_preds)
+    test_auc = save_roc(test_labels, test_scores, os.path.join(OUTPUT_DIR, "roc_test.png"),"Contrastive ROC (TEST)")
 
-    test_auc = save_roc(test_labels, test_scores, os.path.join(OUTPUT_DIR, "roc_test.png"),
-                        "Contrastive ROC (TEST)")
     print(f"TEST Acc: {test_acc:.4f}")
     print(f"TEST AUC: {test_auc:.4f}")
 

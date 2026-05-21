@@ -1,32 +1,28 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import sys
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc, accuracy_score
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
+
+from sklearn.metrics import roc_curve, auc, accuracy_score
 from torch.utils.data import DataLoader
 from torchvision import transforms
-
 from utils.pairs_parser import parse_pairs_file
 from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
 
-
 # ========= CONFIG =========
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
 IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
-
 MODEL_PATH = "results/debug_koch/model.pth"
-
 OUTPUT_DIR = "results/debug_koch_eval"
+
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 BATCH_SIZE = 32
-THRESHOLD = 0.5  # נתחיל פשוט, אח״כ נשפר
+THRESHOLD = 0.5 
 # ==========================
 
 
@@ -74,19 +70,18 @@ def main():
     all_scores = np.array(all_scores)
     all_labels = np.array(all_labels)
 
-    # ✅ Accuracy
+    # Accuracy
     preds = (all_scores > THRESHOLD).astype(int)
     acc = accuracy_score(all_labels, preds)
 
     print(f"\n✅ Accuracy: {acc:.4f}")
 
-    # ✅ ROC + AUC
     fpr, tpr, thresholds = roc_curve(all_labels, all_scores)
     roc_auc = auc(fpr, tpr)
 
     print(f"✅ AUC: {roc_auc:.4f}")
 
-    # ✅ Save ROC plot
+    # Save ROC plot
     plt.figure()
     plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.4f}")
     plt.plot([0, 1], [0, 1], linestyle='--')
@@ -97,11 +92,11 @@ def main():
     plt.savefig(os.path.join(OUTPUT_DIR, "roc_curve.png"))
     plt.close()
 
-    # ✅ Save raw data
+    # Save raw data
     np.save(os.path.join(OUTPUT_DIR, "scores.npy"), all_scores)
     np.save(os.path.join(OUTPUT_DIR, "labels.npy"), all_labels)
 
-    # ✅ Save summary
+    # Save summary
     with open(os.path.join(OUTPUT_DIR, "summary.txt"), "w") as f:
         f.write("=== EVALUATION RESULTS ===\n\n")
         f.write(f"Accuracy: {acc:.4f}\n")

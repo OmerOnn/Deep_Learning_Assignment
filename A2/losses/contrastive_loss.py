@@ -16,7 +16,6 @@ class ContrastiveLoss(nn.Module):
         self.eps = eps
 
     def forward(self, emb1, emb2, label):
-        # label shape: (B,) or (B,1), values in {0,1} where 1=same
         if label.dim() == 2:
             label = label.squeeze(1)
         label = label.float()

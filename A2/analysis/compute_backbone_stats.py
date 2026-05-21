@@ -1,26 +1,23 @@
-# analysis/compute_backbone_stats.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import os
 import torch
 import sys
 
 from thop import profile
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-
 from models.backbones import KochBackbone, ResNet18Backbone, MetricModel
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-INPUT_SIZE = (1, 3, 105, 105)  # consistent with your pipeline
+INPUT_SIZE = (1, 3, 105, 105) 
 OUT_DIR = "results/experiment2_backbone/stats"
+
 os.makedirs(OUT_DIR, exist_ok=True)
 
 def count(model, name):
     model = model.to(DEVICE).eval()
+    
     dummy = torch.randn(*INPUT_SIZE).to(DEVICE)
     macs, params = profile(model, inputs=(dummy,), verbose=False)
-
-    # optional: FLOPs = 2*MACs (state convention in report)
     flops = 2 * macs
 
     with open(os.path.join(OUT_DIR, f"{name}_stats.txt"), "w") as f:

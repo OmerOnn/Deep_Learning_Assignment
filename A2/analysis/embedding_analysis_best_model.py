@@ -1,26 +1,21 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import os, random
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
-
 import torch
+import sys
+
+from PIL import Image
 from torchvision import transforms
 from sklearn.manifold import TSNE
-
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from models.siamese_koch import SiameseKoch
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-# חשוב: זה צריך להתאים למבנה הדאטה אצלך (עם/בלי lfw2)
 IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
-
-# המודל הטוב ביותר שלך (Triplet semihard Exp1)
 CKPT = "results/experiment1_loss/triplet_semihard_m0.2/20260519_143300/model_best.pth"
-
 OUT_DIR = "results/embedding"
+
 os.makedirs(OUT_DIR, exist_ok=True)
 
 transform = transforms.Compose([
@@ -30,6 +25,7 @@ transform = transforms.Compose([
 
 def load_img(path):
     img = Image.open(path).convert("RGB")
+    
     return transform(img)
 
 def list_identities(root):
@@ -39,6 +35,7 @@ def sample_images(identity, k=10):
     folder = os.path.join(IMAGES_ROOT, identity)
     imgs = [os.path.join(folder, f) for f in os.listdir(folder) if f.lower().endswith(".jpg")]
     imgs = sorted(imgs)
+    
     if len(imgs) <= k:
         return imgs
     return random.sample(imgs, k)
@@ -58,17 +55,17 @@ def main():
     model = SiameseKoch().to(DEVICE)
     ckpt = torch.load(CKPT, map_location=DEVICE)
     state = ckpt["model_state"] if isinstance(ckpt, dict) and "model_state" in ckpt else ckpt
+    
     try:
         model.load_state_dict(state, strict=True)
     except Exception:
         model.load_state_dict(state, strict=False)
     model.eval()
 
-    # ---- t-SNE על 20 זהויות ----
     all_ids = list_identities(IMAGES_ROOT)
     chosen = random.sample(all_ids, 20)
-
     paths, labs = [], []
+
     for ident in chosen:
         imgs = sample_images(ident, k=10)
         paths += imgs
@@ -118,11 +115,14 @@ def main():
     plt.xlabel("L2 distance")
     plt.ylabel("count")
     plt.legend()
+
     hist_path = os.path.join(OUT_DIR, "embedding_distance_hist.png")
+    
     plt.savefig(hist_path, dpi=200)
     plt.close()
 
     stats_path = os.path.join(OUT_DIR, "embedding_distance_stats.txt")
+
     with open(stats_path, "w") as f:
         f.write(f"Intra mean: {intra.mean():.4f}\n")
         f.write(f"Intra std: {intra.std():.4f}\n")

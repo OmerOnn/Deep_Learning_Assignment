@@ -1,13 +1,13 @@
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import os, json
 import numpy as np
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import torch
 import torch.nn.functional as F
+
 from torchvision import transforms
 from PIL import Image
-
 from models.backbones import KochBackbone, ResNet18Backbone, MetricModel
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -45,7 +45,6 @@ def eval_model(model, name):
             support = ep["support"]
 
             eq = embed_image(model, query)
-            # pick candidate with smallest L2 distance to query
             best_id = None
             best_d = 1e9
             for cid in candidates:
@@ -68,17 +67,9 @@ def eval_model(model, name):
     print(f"✅ Saved: {out_path}")
 
 def main():
-    # CKPT = "results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth"
-    # backbone = ResNet18Backbone(pretrained=True, embedding_dim=128)
     backbone = ResNet18Backbone(embedding_dim=128)
-
     model = MetricModel(backbone).to(DEVICE)
-
-    # ckpt = torch.load(CKPT, map_location=DEVICE)
-    # model.load_state_dict(ckpt["model_state"], strict=False)
     model.eval()
-
-    # eval_model(model, "triplet_semihard_m0.2")
     eval_model(model, "frozen_resnet18")
 
 if __name__ == "__main__":

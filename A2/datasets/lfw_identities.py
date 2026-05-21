@@ -3,10 +3,7 @@ from PIL import Image
 from torch.utils.data import Dataset
 
 def load_train_identities_from_pairs(pairs_file):
-    """
-    קורא pairsDevTrain ומחזיר סט זהויות שמופיעות בו.
-    חשוב: כך אנחנו לא 'נוגעים' בזהויות של TEST.
-    """
+
     ids = set()
     with open(pairs_file, "r") as f:
         lines = f.readlines()[1:]  # skip header
@@ -20,9 +17,6 @@ def load_train_identities_from_pairs(pairs_file):
     return ids
 
 class LFWIdentityDataset(Dataset):
-    """
-    מחזיר (image_tensor, label_int) כאשר label הוא אינדקס זהות.
-    """
     def __init__(self, images_root, identities, transform=None, min_images_per_id=2):
         self.images_root = images_root
         self.transform = transform
@@ -46,7 +40,7 @@ class LFWIdentityDataset(Dataset):
             for p in self.id_to_images[n]:
                 self.samples.append((p, lab))
 
-        self.labels = [lab for _, lab in self.samples]  # שימושי ל-sampler
+        self.labels = [lab for _, lab in self.samples]  
 
     def __len__(self):
         return len(self.samples)

@@ -23,13 +23,9 @@ for model, res in data.items():
     for n in N_values:
         v = res[str(n)]
 
-        # אם זה list
         if isinstance(v, list):
             v = v[0]
-
-        # אם זה dict
         if isinstance(v, dict):
-            # קח את הערך הראשון שבפנים
             v = list(v.values())[0]
 
         y.append(float(v))
@@ -44,6 +40,7 @@ plt.legend()
 plt.grid()
 
 out_path = os.path.join(DIR, "oneshot_comparison.png")
+
 plt.savefig(out_path)
 
 print("✅ Saved:", out_path)
