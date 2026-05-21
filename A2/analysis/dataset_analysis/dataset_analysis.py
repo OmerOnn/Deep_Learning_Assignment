@@ -51,7 +51,7 @@ def create_plots(stats):
 
     os.makedirs("analysis/plots", exist_ok=True)
 
-    # ✅ 1. Histogram רגיל
+    # 1. Histogram 
     plt.figure()
     plt.hist(counts, bins=50)
     plt.title("Images per Identity Distribution")
@@ -60,7 +60,7 @@ def create_plots(stats):
     plt.savefig("analysis/plots/hist_regular.png")
     plt.close()
 
-    # ✅ 2. Log scale
+    # 2. Log scale
     plt.figure()
     plt.hist(counts, bins=50)
     plt.yscale("log")
@@ -70,7 +70,7 @@ def create_plots(stats):
     plt.savefig("analysis/plots/hist_log.png")
     plt.close()
 
-    # ✅ 3. Zoom (<=20)
+    # 3. Zoom (<=20)
     plt.figure()
     small = [x for x in counts if x <= 20]
     plt.hist(small, bins=20)
@@ -80,7 +80,7 @@ def create_plots(stats):
     plt.savefig("analysis/plots/hist_zoom.png")
     plt.close()
 
-    # ✅ 4. CDF (מאוד חזק לדו"ח)
+    # 4. CDF 
     plt.figure()
     sorted_counts = np.sort(counts)
     cdf = np.arange(len(sorted_counts)) / len(sorted_counts)
@@ -92,7 +92,7 @@ def create_plots(stats):
     plt.savefig("analysis/plots/cdf.png")
     plt.close()
 
-    # ✅ 5. Top identities
+    # 5. Top identities
     counter = Counter(counts)
     most_common = counter.most_common(10)
 
@@ -120,14 +120,13 @@ def save_txt(stats, train_pairs, test_pairs):
         f.write(f"Median images per identity: {stats['median']}\n")
         f.write(f"Min images per identity: {stats['min']}\n")
         f.write(f"Max images per identity: {stats['max']}\n\n")
-
         f.write("===== PAIRS =====\n\n")
         f.write(f"Train pairs: {len(train_pairs)}\n")
         f.write(f"Test pairs: {len(test_pairs)}\n\n")
 
         total_pairs = len(train_pairs) + len(test_pairs)
-        f.write(f"Total pairs: {total_pairs}\n\n")
 
+        f.write(f"Total pairs: {total_pairs}\n\n")
         f.write("===== CLASS BALANCE =====\n\n")
 
         train_labels = [p[2] for p in train_pairs]
@@ -135,10 +134,8 @@ def save_txt(stats, train_pairs, test_pairs):
 
         f.write(f"Train positives: {sum(train_labels)}\n")
         f.write(f"Train negatives: {len(train_labels) - sum(train_labels)}\n\n")
-
         f.write(f"Test positives: {sum(test_labels)}\n")
         f.write(f"Test negatives: {len(test_labels) - sum(test_labels)}\n\n")
-
         f.write("===== NOTES =====\n")
         f.write("Dataset is highly imbalanced.\n")
         f.write("Most identities have very few images.\n")
@@ -160,14 +157,16 @@ def main():
 
     print(f"Train pairs: {len(train_pairs)}")
     print(f"Test pairs: {len(test_pairs)}")
-
     print("\nAnalyzing dataset...")
+
     stats = analyze_dataset(IMAGES_ROOT)
 
     print("\nCreating plots...")
+
     create_plots(stats)
 
     print("Saving summary...")
+    
     save_txt(stats, train_pairs, test_pairs)
 
     print("\n✅ DONE!")
