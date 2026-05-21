@@ -1,0 +1,67 @@
+Config: backbone=resnet18, epochs=5, lr=0.001, margin=0.2, P=16, K=4, seed=42, emb_dim=128, koch_fc=1024
+Start training (Exp2 backbone)...
+[RESNET18] epoch 1/5 batch 0/85 loss 0.1605 triplets=64
+[RESNET18] epoch 1/5 batch 10/85 loss 0.2160 triplets=64
+[RESNET18] epoch 1/5 batch 20/85 loss 0.1576 triplets=64
+[RESNET18] epoch 1/5 batch 30/85 loss 0.2566 triplets=64
+[RESNET18] epoch 1/5 batch 40/85 loss 0.1942 triplets=64
+[RESNET18] epoch 1/5 batch 50/85 loss 0.1995 triplets=64
+[RESNET18] epoch 1/5 batch 60/85 loss 0.2844 triplets=64
+[RESNET18] epoch 1/5 batch 70/85 loss 0.2801 triplets=64
+[RESNET18] epoch 1/5 batch 80/85 loss 0.0875 triplets=64
+
+Epoch 1/5 DONE | avg_loss=0.2356 | time=147.6s
+
+✅ Saved best checkpoint: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth (best_loss=0.2356)
+[RESNET18] epoch 2/5 batch 0/85 loss 0.2344 triplets=64
+[RESNET18] epoch 2/5 batch 10/85 loss 0.0803 triplets=64
+[RESNET18] epoch 2/5 batch 20/85 loss 0.1265 triplets=64
+[RESNET18] epoch 2/5 batch 30/85 loss 0.0977 triplets=64
+[RESNET18] epoch 2/5 batch 40/85 loss 0.2280 triplets=64
+[RESNET18] epoch 2/5 batch 50/85 loss 0.1841 triplets=64
+[RESNET18] epoch 2/5 batch 60/85 loss 0.0983 triplets=64
+[RESNET18] epoch 2/5 batch 70/85 loss 0.1879 triplets=64
+[RESNET18] epoch 2/5 batch 80/85 loss 0.2183 triplets=64
+
+Epoch 2/5 DONE | avg_loss=0.1575 | time=145.6s
+
+✅ Saved best checkpoint: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth (best_loss=0.1575)
+[RESNET18] epoch 3/5 batch 0/85 loss 0.1238 triplets=64
+[RESNET18] epoch 3/5 batch 10/85 loss 0.1155 triplets=64
+[RESNET18] epoch 3/5 batch 20/85 loss 0.1289 triplets=64
+[RESNET18] epoch 3/5 batch 30/85 loss 0.2423 triplets=64
+[RESNET18] epoch 3/5 batch 40/85 loss 0.1192 triplets=64
+[RESNET18] epoch 3/5 batch 50/85 loss 0.0859 triplets=64
+[RESNET18] epoch 3/5 batch 60/85 loss 0.1566 triplets=64
+[RESNET18] epoch 3/5 batch 70/85 loss 0.1787 triplets=64
+[RESNET18] epoch 3/5 batch 80/85 loss 0.1031 triplets=64
+
+Epoch 3/5 DONE | avg_loss=0.1341 | time=145.5s
+
+✅ Saved best checkpoint: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth (best_loss=0.1341)
+[RESNET18] epoch 4/5 batch 0/85 loss 0.0958 triplets=64
+[RESNET18] epoch 4/5 batch 10/85 loss 0.1463 triplets=64
+[RESNET18] epoch 4/5 batch 20/85 loss 0.1204 triplets=64
+[RESNET18] epoch 4/5 batch 30/85 loss 0.1456 triplets=64
+[RESNET18] epoch 4/5 batch 40/85 loss 0.1493 triplets=64
+[RESNET18] epoch 4/5 batch 50/85 loss 0.0890 triplets=64
+[RESNET18] epoch 4/5 batch 60/85 loss 0.0852 triplets=64
+[RESNET18] epoch 4/5 batch 70/85 loss 0.0906 triplets=64
+[RESNET18] epoch 4/5 batch 80/85 loss 0.2581 triplets=64
+
+Epoch 4/5 DONE | avg_loss=0.1421 | time=145.8s
+
+[RESNET18] epoch 5/5 batch 0/85 loss 0.1169 triplets=64
+[RESNET18] epoch 5/5 batch 10/85 loss 0.1430 triplets=64
+[RESNET18] epoch 5/5 batch 20/85 loss 0.1286 triplets=64
+[RESNET18] epoch 5/5 batch 30/85 loss 0.1867 triplets=64
+[RESNET18] epoch 5/5 batch 40/85 loss 0.0943 triplets=64
+[RESNET18] epoch 5/5 batch 50/85 loss 0.0777 triplets=64
+[RESNET18] epoch 5/5 batch 60/85 loss 0.1487 triplets=64
+[RESNET18] epoch 5/5 batch 70/85 loss 0.0961 triplets=64
+[RESNET18] epoch 5/5 batch 80/85 loss 0.1329 triplets=64
+
+Epoch 5/5 DONE | avg_loss=0.1287 | time=145.1s
+
+✅ Saved best checkpoint: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth (best_loss=0.1287)
+✅ Done. Outputs in: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440

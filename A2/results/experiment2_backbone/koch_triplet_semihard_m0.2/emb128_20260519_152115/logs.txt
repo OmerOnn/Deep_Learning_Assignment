@@ -1,0 +1,67 @@
+Config: backbone=koch, epochs=5, lr=0.001, margin=0.2, P=16, K=4, seed=42, emb_dim=128, koch_fc=1024
+Start training (Exp2 backbone)...
+[KOCH] epoch 1/5 batch 0/85 loss 0.1955 triplets=64
+[KOCH] epoch 1/5 batch 10/85 loss 0.1122 triplets=64
+[KOCH] epoch 1/5 batch 20/85 loss 0.1659 triplets=64
+[KOCH] epoch 1/5 batch 30/85 loss 0.1731 triplets=64
+[KOCH] epoch 1/5 batch 40/85 loss 0.0999 triplets=64
+[KOCH] epoch 1/5 batch 50/85 loss 0.1862 triplets=64
+[KOCH] epoch 1/5 batch 60/85 loss 0.3283 triplets=64
+[KOCH] epoch 1/5 batch 70/85 loss 0.1157 triplets=64
+[KOCH] epoch 1/5 batch 80/85 loss 0.1007 triplets=64
+
+Epoch 1/5 DONE | avg_loss=0.1813 | time=257.3s
+
+✅ Saved best checkpoint: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth (best_loss=0.1813)
+[KOCH] epoch 2/5 batch 0/85 loss 0.1196 triplets=64
+[KOCH] epoch 2/5 batch 10/85 loss 0.1729 triplets=64
+[KOCH] epoch 2/5 batch 20/85 loss 0.1353 triplets=64
+[KOCH] epoch 2/5 batch 30/85 loss 0.0765 triplets=64
+[KOCH] epoch 2/5 batch 40/85 loss 0.1569 triplets=64
+[KOCH] epoch 2/5 batch 50/85 loss 0.2759 triplets=64
+[KOCH] epoch 2/5 batch 60/85 loss 0.1225 triplets=64
+[KOCH] epoch 2/5 batch 70/85 loss 0.1951 triplets=64
+[KOCH] epoch 2/5 batch 80/85 loss 0.2366 triplets=64
+
+Epoch 2/5 DONE | avg_loss=0.1523 | time=255.7s
+
+✅ Saved best checkpoint: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth (best_loss=0.1523)
+[KOCH] epoch 3/5 batch 0/85 loss 0.0742 triplets=64
+[KOCH] epoch 3/5 batch 10/85 loss 0.1237 triplets=64
+[KOCH] epoch 3/5 batch 20/85 loss 0.0957 triplets=64
+[KOCH] epoch 3/5 batch 30/85 loss 0.0791 triplets=64
+[KOCH] epoch 3/5 batch 40/85 loss 0.1090 triplets=64
+[KOCH] epoch 3/5 batch 50/85 loss 0.2225 triplets=64
+[KOCH] epoch 3/5 batch 60/85 loss 0.2159 triplets=64
+[KOCH] epoch 3/5 batch 70/85 loss 0.1279 triplets=64
+[KOCH] epoch 3/5 batch 80/85 loss 0.1469 triplets=64
+
+Epoch 3/5 DONE | avg_loss=0.1408 | time=258.9s
+
+✅ Saved best checkpoint: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth (best_loss=0.1408)
+[KOCH] epoch 4/5 batch 0/85 loss 0.1534 triplets=64
+[KOCH] epoch 4/5 batch 10/85 loss 0.1641 triplets=64
+[KOCH] epoch 4/5 batch 20/85 loss 0.0916 triplets=64
+[KOCH] epoch 4/5 batch 30/85 loss 0.1854 triplets=64
+[KOCH] epoch 4/5 batch 40/85 loss 0.1107 triplets=64
+[KOCH] epoch 4/5 batch 50/85 loss 0.1015 triplets=64
+[KOCH] epoch 4/5 batch 60/85 loss 0.0897 triplets=64
+[KOCH] epoch 4/5 batch 70/85 loss 0.2323 triplets=64
+[KOCH] epoch 4/5 batch 80/85 loss 0.1572 triplets=64
+
+Epoch 4/5 DONE | avg_loss=0.1470 | time=265.3s
+
+[KOCH] epoch 5/5 batch 0/85 loss 0.1015 triplets=64
+[KOCH] epoch 5/5 batch 10/85 loss 0.0936 triplets=64
+[KOCH] epoch 5/5 batch 20/85 loss 0.1018 triplets=64
+[KOCH] epoch 5/5 batch 30/85 loss 0.1398 triplets=64
+[KOCH] epoch 5/5 batch 40/85 loss 0.1305 triplets=64
+[KOCH] epoch 5/5 batch 50/85 loss 0.1213 triplets=64
+[KOCH] epoch 5/5 batch 60/85 loss 0.0963 triplets=64
+[KOCH] epoch 5/5 batch 70/85 loss 0.1737 triplets=64
+[KOCH] epoch 5/5 batch 80/85 loss 0.1092 triplets=64
+
+Epoch 5/5 DONE | avg_loss=0.1384 | time=262.0s
+
+✅ Saved best checkpoint: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth (best_loss=0.1384)
+✅ Done. Outputs in: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115

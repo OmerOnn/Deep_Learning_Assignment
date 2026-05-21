@@ -1,0 +1,58 @@
+Loading data...
+Train pairs: 1760
+Validation pairs: 440
+Test pairs (untouched): 1000
+Config: bs=32, epochs=5, lr=0.001, margin=1.0, seed=42
+
+Start training (Contrastive)...
+[TRAIN] epoch 1/5 batch 0/55 loss 0.3022
+[TRAIN] epoch 1/5 batch 10/55 loss 0.3244
+[TRAIN] epoch 1/5 batch 20/55 loss 0.2567
+[TRAIN] epoch 1/5 batch 30/55 loss 0.2970
+[TRAIN] epoch 1/5 batch 40/55 loss 0.3076
+[TRAIN] epoch 1/5 batch 50/55 loss 0.2513
+
+Epoch 1/5 DONE | train_loss=2.2383 | val_loss=0.2917 | time=257.7s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m1.0/20260518_211705/model_best.pth (best_val=0.2917)
+[TRAIN] epoch 2/5 batch 0/55 loss 0.2811
+[TRAIN] epoch 2/5 batch 10/55 loss 0.2889
+[TRAIN] epoch 2/5 batch 20/55 loss 0.2227
+[TRAIN] epoch 2/5 batch 30/55 loss 0.1957
+[TRAIN] epoch 2/5 batch 40/55 loss 0.2055
+[TRAIN] epoch 2/5 batch 50/55 loss 0.2166
+
+Epoch 2/5 DONE | train_loss=0.2441 | val_loss=0.2181 | time=254.5s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m1.0/20260518_211705/model_best.pth (best_val=0.2181)
+[TRAIN] epoch 3/5 batch 0/55 loss 0.1944
+[TRAIN] epoch 3/5 batch 10/55 loss 0.2089
+[TRAIN] epoch 3/5 batch 20/55 loss 0.2213
+[TRAIN] epoch 3/5 batch 30/55 loss 0.1892
+[TRAIN] epoch 3/5 batch 40/55 loss 0.1783
+[TRAIN] epoch 3/5 batch 50/55 loss 0.2919
+
+Epoch 3/5 DONE | train_loss=0.2090 | val_loss=0.2136 | time=254.2s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m1.0/20260518_211705/model_best.pth (best_val=0.2136)
+[TRAIN] epoch 4/5 batch 0/55 loss 0.2024
+[TRAIN] epoch 4/5 batch 10/55 loss 0.1983
+[TRAIN] epoch 4/5 batch 20/55 loss 0.2211
+[TRAIN] epoch 4/5 batch 30/55 loss 0.1575
+[TRAIN] epoch 4/5 batch 40/55 loss 0.1812
+[TRAIN] epoch 4/5 batch 50/55 loss 0.2461
+
+Epoch 4/5 DONE | train_loss=0.2017 | val_loss=0.2012 | time=251.2s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m1.0/20260518_211705/model_best.pth (best_val=0.2012)
+[TRAIN] epoch 5/5 batch 0/55 loss 0.1612
+[TRAIN] epoch 5/5 batch 10/55 loss 0.1738
+[TRAIN] epoch 5/5 batch 20/55 loss 0.2044
+[TRAIN] epoch 5/5 batch 30/55 loss 0.2380
+[TRAIN] epoch 5/5 batch 40/55 loss 0.2322
+[TRAIN] epoch 5/5 batch 50/55 loss 0.1612
+
+Epoch 5/5 DONE | train_loss=0.1879 | val_loss=0.2036 | time=251.5s
+
+
+✅ Done. Outputs in: results/experiment1_loss/contrastive_m1.0/20260518_211705

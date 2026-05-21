@@ -1,0 +1,7 @@
+=== EXP1: CONTRASTIVE EVAL ===
+model_ckpt: results/experiment1_loss/triplet_random_m0.2/20260519_130331/model_best.pth
+threshold_distance_from_val: 0.694808
+val_acc: 0.7518
+val_auc: 0.8229
+test_acc: 0.7360
+test_auc: 0.8248

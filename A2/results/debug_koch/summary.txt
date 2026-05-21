@@ -1,0 +1,8 @@
+=== KOCH BASELINE TRAINING ===
+
+Batch size: 32
+Epochs: 5
+Learning rate: 0.001
+
+Final Train Loss: 0.6902
+Final Val Loss: 0.6808

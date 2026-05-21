@@ -1,0 +1,58 @@
+Loading data...
+Train pairs: 1760
+Validation pairs: 440
+Test pairs (untouched): 1000
+Config: bs=32, epochs=5, lr=0.001, margin=0.5, seed=42
+
+Start training (Contrastive)...
+[TRAIN] epoch 1/5 batch 0/55 loss 0.0609
+[TRAIN] epoch 1/5 batch 10/55 loss 0.0795
+[TRAIN] epoch 1/5 batch 20/55 loss 0.0712
+[TRAIN] epoch 1/5 batch 30/55 loss 0.0767
+[TRAIN] epoch 1/5 batch 40/55 loss 0.0721
+[TRAIN] epoch 1/5 batch 50/55 loss 0.0676
+
+Epoch 1/5 DONE | train_loss=0.4958 | val_loss=0.0760 | time=251.1s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m0.5/20260518_215743/model_best.pth (best_val=0.0760)
+[TRAIN] epoch 2/5 batch 0/55 loss 0.0822
+[TRAIN] epoch 2/5 batch 10/55 loss 0.0850
+[TRAIN] epoch 2/5 batch 20/55 loss 0.0668
+[TRAIN] epoch 2/5 batch 30/55 loss 0.0592
+[TRAIN] epoch 2/5 batch 40/55 loss 0.0635
+[TRAIN] epoch 2/5 batch 50/55 loss 0.0744
+
+Epoch 2/5 DONE | train_loss=0.0737 | val_loss=0.0535 | time=256.8s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m0.5/20260518_215743/model_best.pth (best_val=0.0535)
+[TRAIN] epoch 3/5 batch 0/55 loss 0.0532
+[TRAIN] epoch 3/5 batch 10/55 loss 0.0419
+[TRAIN] epoch 3/5 batch 20/55 loss 0.0536
+[TRAIN] epoch 3/5 batch 30/55 loss 0.0751
+[TRAIN] epoch 3/5 batch 40/55 loss 0.0461
+[TRAIN] epoch 3/5 batch 50/55 loss 0.0511
+
+Epoch 3/5 DONE | train_loss=0.0547 | val_loss=0.0583 | time=251.4s
+
+[TRAIN] epoch 4/5 batch 0/55 loss 0.0581
+[TRAIN] epoch 4/5 batch 10/55 loss 0.0504
+[TRAIN] epoch 4/5 batch 20/55 loss 0.0464
+[TRAIN] epoch 4/5 batch 30/55 loss 0.0404
+[TRAIN] epoch 4/5 batch 40/55 loss 0.0491
+[TRAIN] epoch 4/5 batch 50/55 loss 0.0659
+
+Epoch 4/5 DONE | train_loss=0.0504 | val_loss=0.0516 | time=247.9s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m0.5/20260518_215743/model_best.pth (best_val=0.0516)
+[TRAIN] epoch 5/5 batch 0/55 loss 0.0535
+[TRAIN] epoch 5/5 batch 10/55 loss 0.0529
+[TRAIN] epoch 5/5 batch 20/55 loss 0.0482
+[TRAIN] epoch 5/5 batch 30/55 loss 0.0561
+[TRAIN] epoch 5/5 batch 40/55 loss 0.0555
+[TRAIN] epoch 5/5 batch 50/55 loss 0.0507
+
+Epoch 5/5 DONE | train_loss=0.0493 | val_loss=0.0502 | time=249.1s
+
+✅ Saved best checkpoint: results/experiment1_loss/contrastive_m0.5/20260518_215743/model_best.pth (best_val=0.0502)
+
+✅ Done. Outputs in: results/experiment1_loss/contrastive_m0.5/20260518_215743

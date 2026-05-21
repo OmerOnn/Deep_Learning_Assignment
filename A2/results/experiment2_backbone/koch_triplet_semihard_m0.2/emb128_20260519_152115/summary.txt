@@ -1,0 +1,12 @@
+=== EXP2 BACKBONE TRAINING ===
+backbone: koch
+epochs: 5
+lr: 0.001
+margin: 0.2
+P: 16
+K: 4
+seed: 42
+emb_dim: 128
+koch_fc: 1024
+best_loss: 0.138378
+checkpoint: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth

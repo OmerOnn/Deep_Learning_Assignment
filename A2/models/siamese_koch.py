@@ -45,6 +45,9 @@ class SiameseKoch(nn.Module):
         self.classifier = nn.Sequential(
             nn.Linear(4096, 1),
         )
+        
+    def embed(self, x):
+        return self.backbone(x)
 
     def forward(self, x1, x2):
         f1 = self.backbone(x1)

@@ -1,0 +1,7 @@
+=== EXP1: CONTRASTIVE EVAL ===
+model_ckpt: results/experiment1_loss/contrastive_m0.5/20260518_215743/model_best.pth
+threshold_distance_from_val: 0.242654
+val_acc: 0.7418
+val_auc: 0.8157
+test_acc: 0.7240
+test_auc: 0.7935

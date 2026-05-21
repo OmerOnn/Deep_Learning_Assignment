@@ -1,6 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+*.pth
 Assignment2/data/lfw2/
 Assignment2/results/
 Assignment2/checkpoints/

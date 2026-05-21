@@ -1,0 +1,7 @@
+=== EXP1: CONTRASTIVE EVAL ===
+model_ckpt: results/experiment2_backbone/koch_triplet_semihard_m0.2/emb128_20260519_152115/model_best.pth
+threshold_distance_from_val: 2.483167
+val_acc: 0.7464
+val_auc: 0.8185
+test_acc: 0.7520
+test_auc: 0.8341
