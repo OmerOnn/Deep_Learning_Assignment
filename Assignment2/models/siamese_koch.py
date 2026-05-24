@@ -1,12 +1,10 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class KochCNN(nn.Module):
-    """
-    Koch et al. (2015) CNN backbone with reduced capacity
-    """
-    def __init__(self, embed_dim=128):
+    def __init__(self):
         super().__init__()
 
         self.conv = nn.Sequential(
@@ -27,9 +25,8 @@ class KochCNN(nn.Module):
         )
 
         self.fc = nn.Sequential(
-            nn.Linear(256 * 6 * 6, 1024),  # ↓ reduced from 4096
+            nn.Linear(256 * 6 * 6, 4096),
             nn.ReLU(),
-            nn.Linear(1024, embed_dim)
         )
 
     def forward(self, x):
@@ -40,17 +37,21 @@ class KochCNN(nn.Module):
 
 
 class SiameseKoch(nn.Module):
-    """
-    Siamese wrapper for metric learning (Triplet / Contrastive)
-    """
-    def __init__(self, embed_dim=128):
+    def __init__(self):
         super().__init__()
-        self.backbone = KochCNN(embed_dim=embed_dim)
 
-    def forward(self, img1, img2):
-        emb1 = self.backbone(img1)
-        emb2 = self.backbone(img2)
-        return emb1, emb2
+        self.backbone = KochCNN()
+        self.classifier = nn.Sequential(nn.Linear(4096, 1),)
+        
+    def embed(self, x):
+        return self.backbone(x)
 
-    def embed(self, img):
-        return self.backbone(img)
+    def forward(self, x1, x2):
+        f1 = self.backbone(x1)
+        f2 = self.backbone(x2)
+
+        # L1 distance
+        diff = torch.abs(f1 - f2)
+        out = self.classifier(diff)
+
+        return torch.sigmoid(out)
