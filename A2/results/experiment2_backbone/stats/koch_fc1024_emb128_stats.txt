@@ -1,5 +1,0 @@
-Model: koch_fc1024_emb128
-Input: (1, 3, 105, 105)
-Params: 10777024.0
-MACs: 998408192.0
-FLOPs(=2*MACs): 1996816384.0

@@ -1,5 +1,0 @@
-=== EVALUATION RESULTS ===
-
-Accuracy: 0.5280
-AUC: 0.6988
-Threshold: 0.5

@@ -1,106 +1,135 @@
-import os
-import csv
+# train/train_contrastive.py
+import sys, os, time, random, csv
+from datetime import datetime
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import torch
 import torch.optim as optim
 import torchvision.transforms as transforms
-from torch.utils.data import DataLoader, random_split
+import matplotlib.pyplot as plt
 
-from datasets.lfw_pairs import LFWDataset
+from torch.utils.data import DataLoader
+from utils.pairs_parser import parse_pairs_file
+from datasets.lfw_dataset import LFWSiameseDataset
 from models.siamese_koch import SiameseKoch
-from losses.metric_losses import ContrastiveLoss
+from losses.contrastive_loss import ContrastiveLoss
 
+# ========= CONFIG (Koch) =========
 BATCH_SIZE = 32
-EPOCHS = 10
-LR = 1e-4
-VAL_FRAC = 0.1
+EPOCHS = 5
+LR = 1e-3
+VAL_RATIO = 0.2
 SEED = 42
+
+MARGIN = 0.2  
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-PAIRS_TRAIN = "data/pairsDevTrain.txt"
-LFW_ROOT = "data/lfw2"
+IMAGES_ROOT = "data/lfwa/aligned_images/lfw2" 
+# ==============================================
 
-MARGIN = 1.0  # נתחיל עם 1.0 ואז נשווה 0.5/1.0/2.0 במסגרת K-trials
-CKPT_PATH = f"checkpoints/koch_contrastive_m{MARGIN}_best.pt"
-LOSS_CSV = f"results/koch_contrastive_m{MARGIN}_losses.csv"
+def split_train_val(pairs, val_ratio=0.2, seed=42):
+    random.seed(seed)
+    pairs = pairs.copy()
+    random.shuffle(pairs)
+    split_idx = int(len(pairs) * (1 - val_ratio))
 
-
-def ensure_dir(path):
-    os.makedirs(path, exist_ok=True)
-
+    return pairs[:split_idx], pairs[split_idx:]
 
 def set_seed(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-
-def run_epoch(model, loader, criterion, optimizer=None, device="cpu", print_every=50):
-    is_train = optimizer is not None
-    model.train() if is_train else model.eval()
-
-    total_loss = 0.0
-    n_batches = len(loader)
-
-    with torch.set_grad_enabled(is_train):
-        for i, (img1, img2, label) in enumerate(loader):
-            img1 = img1.to(device)
-            img2 = img2.to(device)
-            label = label.float().unsqueeze(1).to(device)
-
-            if is_train:
-                optimizer.zero_grad()
-
-            emb1 = model.embed(img1)
-            emb2 = model.embed(img2)
-
-            loss = criterion(emb1, emb2, label)
-
-            if is_train:
-                loss.backward()
-                optimizer.step()
-
-            total_loss += loss.item()
-
-            if i % print_every == 0:
-                phase = "TRAIN" if is_train else "VAL"
-                print(f"{phase} | Batch [{i}/{n_batches}] | Loss: {loss.item():.4f}")
-
-    return total_loss / n_batches
-
+def ensure_dir(p):
+    os.makedirs(p, exist_ok=True)
 
 def main():
-    ensure_dir("checkpoints")
-    ensure_dir("results")
     set_seed(SEED)
+
+    run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    OUTPUT_DIR = f"results/experiment1_loss/contrastive_m{MARGIN}/{run_id}"
+    ensure_dir(OUTPUT_DIR)
+
+    log_path = os.path.join(OUTPUT_DIR, "logs.txt")
+    def log(msg):
+        print(msg)
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(msg + "\n")
+
+    log("Loading data...")
+
+    all_train_pairs = parse_pairs_file("data/lfwa/pairsDevTrain.txt", IMAGES_ROOT)
+    test_pairs = parse_pairs_file("data/lfwa/pairsDevTest.txt", IMAGES_ROOT) 
+    train_pairs, val_pairs = split_train_val(all_train_pairs, VAL_RATIO, SEED)
+
+    log(f"Train pairs: {len(train_pairs)}")
+    log(f"Validation pairs: {len(val_pairs)}")
+    log(f"Test pairs (untouched): {len(test_pairs)}")
+    log(f"Config: bs={BATCH_SIZE}, epochs={EPOCHS}, lr={LR}, margin={MARGIN}, seed={SEED}")
 
     transform = transforms.Compose([
         transforms.Resize((105, 105)),
         transforms.ToTensor()
     ])
 
-    full_dataset = LFWDataset(PAIRS_TRAIN, LFW_ROOT, transform=transform)
-    n_total = len(full_dataset)
-    n_val = int(n_total * VAL_FRAC)
-    n_train = n_total - n_val
-    gen = torch.Generator().manual_seed(SEED)
-    train_ds, val_ds = random_split(full_dataset, [n_train, n_val], generator=gen)
+    train_ds = LFWSiameseDataset(train_pairs, transform=transform)
+    val_ds   = LFWSiameseDataset(val_pairs, transform=transform)
 
-    train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)
-    val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
+    train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
+    val_loader   = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
 
     model = SiameseKoch().to(DEVICE)
     criterion = ContrastiveLoss(margin=MARGIN)
     optimizer = optim.Adam(model.parameters(), lr=LR)
 
+    train_losses, val_losses = [], []
     best_val = float("inf")
-    history = []
+    best_path = os.path.join(OUTPUT_DIR, "model_best.pth")
+
+    log("\nStart training (Contrastive)...")
 
     for epoch in range(1, EPOCHS + 1):
-        print(f"\n=== Epoch [{epoch}/{EPOCHS}] (margin={MARGIN}) ===")
-        train_loss = run_epoch(model, train_loader, criterion, optimizer=optimizer, device=DEVICE)
-        val_loss = run_epoch(model, val_loader, criterion, optimizer=None, device=DEVICE)
-        print(f"Epoch DONE | train_loss={train_loss:.4f} | val_loss={val_loss:.4f}")
+        t0 = time.time()
 
-        history.append((epoch, train_loss, val_loss))
+        # ---- TRAIN ----
+        model.train()
+        total = 0.0
+        for b, (img1, img2, label) in enumerate(train_loader):
+            img1, img2 = img1.to(DEVICE), img2.to(DEVICE)
+            label = label.float().to(DEVICE)
+
+            optimizer.zero_grad()
+            e1 = model.embed(img1)
+            e2 = model.embed(img2)
+            loss = criterion(e1, e2, label)
+
+            loss.backward()
+            optimizer.step()
+            total += loss.item()
+
+            if b % 10 == 0:
+                log(f"[TRAIN] epoch {epoch}/{EPOCHS} batch {b}/{len(train_loader)} loss {loss.item():.4f}")
+
+        train_loss = total / len(train_loader)
+        train_losses.append(train_loss)
+
+        # ---- VAL ----
+        model.eval()
+        total = 0.0
+        with torch.no_grad():
+            for b, (img1, img2, label) in enumerate(val_loader):
+                img1, img2 = img1.to(DEVICE), img2.to(DEVICE)
+                label = label.float().to(DEVICE)
+
+                e1 = model.embed(img1)
+                e2 = model.embed(img2)
+                loss = criterion(e1, e2, label)
+                total += loss.item()
+
+        val_loss = total / len(val_loader)
+        val_losses.append(val_loss)
+
+        log(f"\nEpoch {epoch}/{EPOCHS} DONE | train_loss={train_loss:.4f} | val_loss={val_loss:.4f} | time={time.time()-t0:.1f}s\n")
 
         if val_loss < best_val:
             best_val = val_loss
@@ -109,18 +138,42 @@ def main():
                 "epoch": epoch,
                 "val_loss": val_loss,
                 "margin": MARGIN,
-                "config": {"batch_size": BATCH_SIZE, "epochs": EPOCHS, "lr": LR, "seed": SEED}
-            }, CKPT_PATH)
-            print(f"✅ Saved best checkpoint to {CKPT_PATH} (val_loss={val_loss:.4f})")
+                "config": {"batch_size": BATCH_SIZE, "epochs": EPOCHS, "lr": LR, "seed": SEED, "val_ratio": VAL_RATIO}
+            }, best_path)
+            log(f"✅ Saved best checkpoint: {best_path} (best_val={best_val:.4f})")
 
-    with open(LOSS_CSV, "w", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(["epoch", "train_loss", "val_loss"])
-        w.writerows(history)
+        csv_path = os.path.join(OUTPUT_DIR, "losses.csv")
+        with open(csv_path, "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["epoch", "train_loss", "val_loss"])
+            for i in range(len(train_losses)):
+                w.writerow([i+1, train_losses[i], val_losses[i]])
 
-    print(f"\n✅ Wrote loss curves to {LOSS_CSV}")
-    print(f"✅ Best val loss: {best_val:.4f}")
+    # Plot loss curves
+    plt.figure()
+    plt.plot(train_losses, label="Train Loss")
+    plt.plot(val_losses, label="Val Loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title(f"Contrastive Loss Curves (margin={MARGIN})")
+    plt.legend()
+    plt.savefig(os.path.join(OUTPUT_DIR, "loss_plot.png"))
+    plt.close()
 
+    # Summary
+    with open(os.path.join(OUTPUT_DIR, "summary.txt"), "w", encoding="utf-8") as f:
+        f.write("=== EXP1: CONTRASTIVE TRAINING ===\n")
+        f.write(f"run_id: {run_id}\n")
+        f.write(f"batch_size: {BATCH_SIZE}\n")
+        f.write(f"epochs: {EPOCHS}\n")
+        f.write(f"lr: {LR}\n")
+        f.write(f"margin: {MARGIN}\n")
+        f.write(f"seed: {SEED}\n")
+        f.write(f"train_pairs: {len(train_pairs)}\n")
+        f.write(f"val_pairs: {len(val_pairs)}\n")
+        f.write(f"best_val_loss: {best_val:.6f}\n")
+
+    log(f"\nDone. Outputs in: {OUTPUT_DIR}")
 
 if __name__ == "__main__":
     main()

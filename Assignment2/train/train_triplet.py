@@ -1,85 +1,39 @@
-# train_triplet.py
+import sys
 import os
-import csv
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import time
 import random
+import csv
 import argparse
 import torch
 import torch.optim as optim
 import torchvision.transforms as transforms
+
+from datetime import datetime
 from torch.utils.data import DataLoader
-from torch.utils.data.sampler import Sampler
 
 from models.siamese_koch import SiameseKoch
-from models.resnet_backbone import ResNet18Backbone
-
 from datasets.lfw_identities import LFWIdentityDataset, load_train_identities_from_pairs
+from datasets.pk_sampler import PKBatchSampler
 from losses.triplet_loss import TripletLoss
-from losses.mining import semi_hard_triplets
+from losses.mining import pairwise_l2, semi_hard_triplets
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+IMAGES_ROOT = "data/lfwa/aligned_images/lfw2"
 
-
-def ensure_dir(path):
-    os.makedirs(path, exist_ok=True)
-
-
-def set_seed(seed: int):
+def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-
-class PKBatchSampler(Sampler):
-    """
-    Samples batches with P identities and K images per identity => batch size = P*K.
-    Guarantees positives exist inside the batch.
-    """
-    def __init__(self, labels, P=16, K=4, seed=42):
-        self.labels = labels
-        self.P = P
-        self.K = K
-        self.seed = seed
-
-        # build index list per identity
-        self.id_to_indices = {}
-        for idx, y in enumerate(labels):
-            self.id_to_indices.setdefault(int(y), []).append(idx)
-
-        self.all_ids = list(self.id_to_indices.keys())
-
-    def __iter__(self):
-        rng = random.Random(self.seed)
-        while True:
-            # choose P identities that have at least 2 images (so we can pick positives)
-            valid_ids = [i for i in self.all_ids if len(self.id_to_indices[i]) >= 2]
-            if len(valid_ids) < self.P:
-                raise RuntimeError("Not enough identities with >=2 images to form a batch.")
-
-            batch_ids = rng.sample(valid_ids, self.P)
-            batch = []
-            for cid in batch_ids:
-                inds = self.id_to_indices[cid]
-                if len(inds) >= self.K:
-                    chosen = rng.sample(inds, self.K)
-                else:
-                    # if fewer than K images, sample with replacement
-                    chosen = [rng.choice(inds) for _ in range(self.K)]
-                batch.extend(chosen)
-
-            yield batch
-
-    def __len__(self):
-        # infinite sampler; DataLoader doesn't really use __len__ here
-        return 10**9
-
-
 @torch.no_grad()
 def random_triplets_from_batch(labels):
-    """
-    Random triplets inside a batch: for each anchor pick random positive and random negative.
-    labels: [B] int
-    returns list of (a,p,n)
-    """
+    labels = labels.cpu()
     B = labels.shape[0]
     triplets = []
     for a in range(B):
@@ -90,89 +44,73 @@ def random_triplets_from_batch(labels):
             continue
         p = same[torch.randint(0, same.numel(), (1,)).item()].item()
         n = diff[torch.randint(0, diff.numel(), (1,)).item()].item()
-        triplets.append((a, p, n))
+        triplets.append((a,p,n))
     return triplets
-
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", type=str, default="semihard", choices=["semihard", "random"],
-                        help="semihard = required by assignment; random = ablation only")
-    parser.add_argument("--epochs", type=int, default=10)
-    parser.add_argument("--lr", type=float, default=1e-4)
-    parser.add_argument("--margin", type=float, default=0.2)
+    parser.add_argument("--mode", type=str, default="semihard", choices=["semihard","random"])
+    parser.add_argument("--epochs", type=int, default=5)       
+    parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--margin", type=float, default=0.2)      
     parser.add_argument("--P", type=int, default=16)
     parser.add_argument("--K", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
     set_seed(args.seed)
-    ensure_dir("checkpoints")
-    ensure_dir("results")
 
-    # paths
-    PAIRS_TRAIN = "data/pairsDevTrain.txt"
-    LFW_ROOT = "data/lfw2"
+    run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    OUT = f"results/experiment1_loss/triplet_{args.mode}_m{args.margin}/{run_id}"
+    os.makedirs(OUT, exist_ok=True)
 
-    # identities only from TRAIN split (avoid leakage)
-    train_ids = load_train_identities_from_pairs(PAIRS_TRAIN)
+    def log(msg):
+        print(msg)
+        with open(os.path.join(OUT, "logs.txt"), "a", encoding="utf-8") as f:
+            f.write(msg + "\n")
+
+    log(f"Config: mode={args.mode}, epochs={args.epochs}, lr={args.lr}, margin={args.margin}, P={args.P}, K={args.K}, seed={args.seed}")
 
     transform = transforms.Compose([
-        transforms.Resize((105, 105)),
+        transforms.Resize((105,105)),
         transforms.ToTensor()
     ])
 
-    ds = LFWIdentityDataset(lfw_root=LFW_ROOT, transform=transform, identities=train_ids)
+    train_ids = load_train_identities_from_pairs("data/lfwa/pairsDevTrain.txt")
+    ds = LFWIdentityDataset(IMAGES_ROOT, train_ids, transform=transform, min_images_per_id=2)
 
-    # build labels list for sampler
-    labels_list = [y for _, y in ds.samples]  # identity ids (ints)
+    sampler = PKBatchSampler(ds.labels, P=args.P, K=args.K, seed=args.seed)
+    loader = DataLoader(ds, batch_sampler=sampler)
 
-    sampler = PKBatchSampler(labels_list, P=args.P, K=args.K, seed=args.seed)
-    loader = DataLoader(ds, batch_sampler=sampler, num_workers=0)
-
-    # model = SiameseKoch().to(DEVICE)
-    model = ResNet18Backbone(embed_dim=128).to(DEVICE)
-
-    criterion = TripletLoss(margin=args.margin)
+    model = SiameseKoch().to(DEVICE)
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    criterion = TripletLoss(margin=args.margin)
 
-    # ckpt_path = f"checkpoints/koch_triplet_{args.mode}_m{args.margin}_best.pt"
-    # loss_csv = f"results/koch_triplet_{args.mode}_m{args.margin}_losses.csv"
-
-    ckpt_path = f"checkpoints/resnet18_triplet_{args.mode}_m{args.margin}_best.pt"
-    loss_csv  = f"results/resnet18_triplet_{args.mode}_m{args.margin}_losses.csv"
-
-
-    best_epoch_loss = float("inf")
     history = []
+    best_loss = float("inf")
+    best_path = os.path.join(OUT, "model_best.pth")
 
-    # How many batches per epoch?
-    # We'll define a fixed number to make compute budget consistent.
-    steps_per_epoch = 200  # you can keep constant for fairness across runs
-
-    print(f"Triplet TRAIN mode={args.mode} margin={args.margin} | batch={args.P*args.K} | steps/epoch={steps_per_epoch}")
-    print(f"Checkpoint -> {ckpt_path}")
+    log("Start training (Triplet)...")
 
     for epoch in range(1, args.epochs + 1):
+        t0 = time.time()
         model.train()
-        running = 0.0
-        used_batches = 0
-        used_triplets = 0
+        total_loss = 0.0
+        n_batches = 0
 
-        for step, (imgs, y) in enumerate(loader):
-            if step >= steps_per_epoch:
-                break
-
+        for b, (imgs, labels) in enumerate(loader):
             imgs = imgs.to(DEVICE)
-            y = y.to(DEVICE)
+            labels = labels.to(DEVICE)
 
-            # emb = model.embed(imgs)  # [B, D]
-            emb = model(imgs)  # [B, D]
+            optimizer.zero_grad()
+            emb = model.embed(imgs)  # [B,D]
 
-            if args.mode == "semihard":
-                triplets = semi_hard_triplets(embeddings=emb, labels=y, margin=args.margin)
+            dist_mat = pairwise_l2(emb)
+
+            if args.mode == "random":
+                triplets = random_triplets_from_batch(labels)
             else:
-                triplets = random_triplets_from_batch(y)
+                triplets = semi_hard_triplets(labels, dist_mat, margin=args.margin)
 
             if len(triplets) == 0:
                 continue
@@ -181,54 +119,41 @@ def main():
             p_idx = torch.tensor([t[1] for t in triplets], device=DEVICE)
             n_idx = torch.tensor([t[2] for t in triplets], device=DEVICE)
 
-            anchor = emb[a_idx]
-            positive = emb[p_idx]
-            negative = emb[n_idx]
+            d_ap = dist_mat[a_idx, p_idx]
+            d_an = dist_mat[a_idx, n_idx]
 
-            loss = criterion(anchor, positive, negative)
-
-            optimizer.zero_grad()
+            loss = criterion(d_ap, d_an)
             loss.backward()
             optimizer.step()
 
-            running += loss.item()
-            used_batches += 1
-            used_triplets += len(triplets)
+            total_loss += loss.item()
+            n_batches += 1
 
-            if step % 50 == 0:
-                print(f"Epoch [{epoch}/{args.epochs}] Step [{step}/{steps_per_epoch}] "
-                      f"Loss={loss.item():.4f} Triplets={len(triplets)}")
+            if b % 10 == 0:
+                log(f"[{args.mode.upper()}] epoch {epoch}/{args.epochs} batch {b}/{len(loader)} loss {loss.item():.4f} triplets={len(triplets)}")
 
-        avg_loss = running / max(1, used_batches)
-        print(f"✅ Epoch [{epoch}/{args.epochs}] DONE | avg_loss={avg_loss:.4f} "
-              f"| batches_used={used_batches} | triplets_used={used_triplets}")
+        avg = total_loss / max(1, n_batches)
+        history.append((epoch, avg))
+        log(f"\nEpoch {epoch}/{args.epochs} DONE | avg_loss={avg:.4f} | time={time.time()-t0:.1f}s\n")
 
-        history.append((epoch, avg_loss, used_batches, used_triplets))
+        if avg < best_loss:
+            best_loss = avg
+            torch.save({"model_state": model.state_dict(), "epoch": epoch, "loss": avg, "config": vars(args)}, best_path)
+            log(f"Saved best checkpoint: {best_path} (best_loss={best_loss:.4f})")
 
-        # save best (lowest epoch avg loss)
-        if avg_loss < best_epoch_loss:
-            best_epoch_loss = avg_loss
-            torch.save({
-                "model_state": model.state_dict(),
-                "epoch": epoch,
-                "avg_loss": avg_loss,
-                "mode": args.mode,
-                "margin": args.margin,
-                "P": args.P,
-                "K": args.K,
-                "steps_per_epoch": steps_per_epoch,
-                "seed": args.seed
-            }, ckpt_path)
-            print(f"💾 Saved best checkpoint: {ckpt_path} (avg_loss={avg_loss:.4f})")
+        with open(os.path.join(OUT, "losses.csv"), "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["epoch","avg_triplet_loss"])
+            w.writerows(history)
 
-    with open(loss_csv, "w", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(["epoch", "avg_loss", "batches_used", "triplets_used"])
-        w.writerows(history)
+    with open(os.path.join(OUT, "summary.txt"), "w", encoding="utf-8") as f:
+        f.write("=== EXP1: TRIPLET TRAINING ===\n")
+        for k,v in vars(args).items():
+            f.write(f"{k}: {v}\n")
+        f.write(f"best_loss: {best_loss:.6f}\n")
+        f.write(f"checkpoint: {best_path}\n")
 
-    print(f"\n✅ Wrote triplet loss log to {loss_csv}")
-    print(f"✅ Best epoch avg loss: {best_epoch_loss:.4f}")
-
+    log(f"Done. Outputs in: {OUT}")
 
 if __name__ == "__main__":
     main()

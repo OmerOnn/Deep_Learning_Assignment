@@ -1,6 +1,0 @@
-Intra mean: 1.9799
-Intra std: 0.2747
-Intra median: 1.9378
-Inter mean: 3.2853
-Inter std: 0.8013
-Inter median: 3.2663
