@@ -1,7 +1,0 @@
-=== EXP1: CONTRASTIVE EVAL ===
-model_ckpt: results/experiment2_backbone/resnet18_triplet_semihard_m0.2/emb128_20260519_154440/model_best.pth
-threshold_distance_from_val: 2.552228
-val_acc: 0.7850
-val_auc: 0.8637
-test_acc: 0.7320
-test_auc: 0.8158

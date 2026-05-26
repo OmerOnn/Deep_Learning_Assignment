@@ -1,6 +1,0 @@
-=== EXP3: FROZEN RESNET18 (IMAGENET) ===
-threshold_cosine_from_val: 0.783348
-val_acc: 0.6395
-val_auc: 0.6833
-test_acc: 0.6250
-test_auc: 0.6895
