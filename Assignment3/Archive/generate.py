@@ -52,7 +52,7 @@ def sample_top_k(logits, k=10, temperature=1.0):
 # ==========================================
 
 def generate_lyrics(model, model_type, start_word, word_to_idx, idx_to_word, 
-                    melody_features=None, strategy='proportional', 
+                    melody_features=None, strategy='temperature', 
                     temperature=0.7, k=10, max_words=100, words_per_line=7, device='cpu'):
     
     model.eval()
@@ -120,7 +120,7 @@ def generate_lyrics(model, model_type, start_word, word_to_idx, idx_to_word,
 # ==========================================
 if __name__ == "__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"=== Initializing Generation Test Engine on: {device} ===")
+    print(f"=== Initializing Multi-Experiment Generation Engine on: {device} ===")
     
     # Paths configuration
     CSV_PATH = os.path.join(CURRENT_DIR, 'data', 'lyrics_train_set.csv')
@@ -128,97 +128,139 @@ if __name__ == "__main__":
     RESULTS_DIR = os.path.join(CURRENT_DIR, 'results')
     CHECKPOINT_DIR = os.path.join(CURRENT_DIR, 'checkpoints')
     os.makedirs(RESULTS_DIR, exist_ok=True)
-    os.makedirs(CHECKPOINT_DIR, exist_ok=True)
     
-    # Setup output text file in results folder
-    output_text_filepath = os.path.join(RESULTS_DIR, "test_generation_results.txt")
-    output_file = open(output_text_filepath, "w", encoding="utf-8")
+    # Setup the three distinct output file paths
+    main_results_path = os.path.join(RESULTS_DIR, "test_generation_results.txt")
+    decoding_results_path = os.path.join(RESULTS_DIR, "decoding_strategies_results.txt")
+    melody_probe_path = os.path.join(RESULTS_DIR, "melody_influence_probe_results.txt")
     
-    def log_and_print(message):
-        print(message)
-        output_file.write(message + "\n")
-
+    # Open all files
+    f_main = open(main_results_path, "w", encoding="utf-8")
+    f_decode = open(decoding_results_path, "w", encoding="utf-8")
+    f_probe = open(melody_probe_path, "w", encoding="utf-8")
+    
     # Load Vocabulary Maps
     _, word_to_idx, idx_to_word = prepare_melody_pipeline(CSV_PATH, MIDI_DIR, max_len=20)
     vocab_size = len(word_to_idx)
     
+    # Checkpoints Configuration
+    BASELINE_PTH = os.path.join(CHECKPOINT_DIR, "baseline_model_best.pth")
+    V1_PTH = os.path.join(CHECKPOINT_DIR, "melody_v1_model_best.pth")
+    V2_PTH = os.path.join(CHECKPOINT_DIR, "melody_v2_model_best.pth")
     
-    BASELINE_PTH = os.path.join(CHECKPOINT_DIR, "baseline_model.pth")
-    V1_PTH = os.path.join(CHECKPOINT_DIR, "melody_v1_model.pth")
-    V2_PTH = os.path.join(CHECKPOINT_DIR, "melody_v2_model.pth")
-    
-    # Initialize and load Baseline Model
+    # Load Models
     baseline_model = LyricsBaselineLSTM(vocab_size).to(device)
     if os.path.exists(BASELINE_PTH):
         baseline_model.load_state_dict(torch.load(BASELINE_PTH, map_location=device))
-        print("Loaded Baseline model weights.")
-    else:
-        print(f"Warning: Baseline weights file not found at {BASELINE_PTH}. Running uninitialized.")
+        print("Loaded Best Baseline model weights.")
         
-    # Initialize and load Variant 1 Model
     v1_model = MelodyConditionedLSTM_V1(vocab_size).to(device)
     if os.path.exists(V1_PTH):
         v1_model.load_state_dict(torch.load(V1_PTH, map_location=device))
-        print("Loaded Melody Variant 1 model weights.")
-    else:
-        print(f"Warning: V1 weights file not found at {V1_PTH}. Running uninitialized.")
+        print("Loaded Best Melody Variant 1 model weights.")
         
-    # Initialize and load Variant 2 Model
     v2_model = MelodyConditionedLSTM_V2(vocab_size).to(device)
     if os.path.exists(V2_PTH):
         v2_model.load_state_dict(torch.load(V2_PTH, map_location=device))
-        print("Loaded Melody Variant 2 model weights.")
-    else:
-        print(f"Warning: V2 weights file not found at {V2_PTH}. Running uninitialized.")
+        print("Loaded Best Melody Variant 2 model weights.")
 
-    # Load full dataset dataframe to extract the last 5 rows (Test Set)
+    # Extract 5 test songs
     df = load_and_clean_csv(CSV_PATH)
-    test_df = df.tail(5) # Extracts the 5 test songs according to prompt specifications
+    test_df = df.tail(5)
     
-    # Define test seed parameters
     seed_words = ["Today", "Love", "Night"]
     midi_files = os.listdir(MIDI_DIR) if os.path.exists(MIDI_DIR) else []
     
-    log_and_print("\n" + "="*50)
-    log_and_print("STARTING TEST LYRICS GENERATION FOR THE REPORT")
-    log_and_print("="*50 + "\n")
+    print("\n>>> Running Experiment 1: Standard Qualitative Evaluation (Saved to test_generation_results.txt)...")
+    f_main.write("="*60 + "\nEXPERIMENT 1: STANDARD QUALITATIVE EVALUATION (Temperature = 0.7)\n" + "="*60 + "\n\n")
     
-    # Loop over each of the 5 test songs
+    print(">>> Running Experiment 2: Decoding Strategies Analysis (Saved to decoding_strategies_results.txt)...")
+    f_decode.write("="*60 + "\nEXPERIMENT 2: DECODING STRATEGIES ANALYSIS\n" + "="*60 + "\n\n")
+    
+    print(">>> Running Experiment 3: Melody Influence Probe (Saved to melody_influence_probe_results.txt)...")
+    f_probe.write("="*60 + "\nEXPERIMENT 3: CONTROVERSIAL MELODY INFLUENCE PROBE\n" + "="*60 + "\n\n")
+
+    # Loop over test songs
     for idx, row in test_df.iterrows():
         song_title = str(row['song_title'])
         clean_title = song_title.lower().strip().replace(" ", "_")
-        log_and_print(f"Processing Test Song: {song_title}")
         
-        # Locate and extract MIDI features for this test song
+        f_main.write(f"Processing Test Song: {song_title}\n")
+        f_decode.write(f"Processing Test Song: {song_title}\n")
+        f_probe.write(f"Processing Test Song: {song_title}\n")
+        
+        # Extract true MIDI features
         matched_midi = None
         for f in midi_files:
             if clean_title in f.lower() or f.lower().replace(".mid", "").replace("_", " ") in clean_title:
                 matched_midi = os.path.join(MIDI_DIR, f)
                 break
                 
-        melody_vector = extract_midi_features(matched_midi) if matched_midi else torch.zeros(12)
+        true_melody_vector = extract_midi_features(matched_midi) if matched_midi else torch.zeros(12)
         
-        # Run generation for each of the 3 required seed words
+        # Corrupted Melody Vector (Experiment 3 Probe): Vector of pure zeros (mismatched/silence profile)
+        corrupted_melody_vector = torch.zeros(12)
+
         for seed in seed_words:
-            log_and_print(f"  -> Generating with seed word: '{seed}'")
+            # ----------------------------------------------------
+            # EXPERIMENT 1: Standard Generation (Temperature = 0.7)
+            # ----------------------------------------------------
+            lyrics_base = generate_lyrics(baseline_model, 'baseline', seed, word_to_idx, idx_to_word, strategy='temperature', temperature=0.7, device=device)
+            lyrics_v1 = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='temperature', temperature=0.7, device=device)
+            lyrics_v2 = generate_lyrics(v2_model, 'v2', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='temperature', temperature=0.7, device=device)
             
-            # 1. Generate via Baseline Model
-            lyrics_base = generate_lyrics(baseline_model, 'baseline', seed, word_to_idx, idx_to_word, 
-                                          strategy='temperature', temperature=0.7, device=device)
+            f_main.write(f"  -> Seed word: '{seed}'\n")
+            f_main.write(f"    [BASELINE OUTPUT]:\n{lyrics_base}\n\n")
+            f_main.write(f"    [MELODY V1 OUTPUT]:\n{lyrics_v1}\n\n")
+            f_main.write(f"    [MELODY V2 OUTPUT]:\n{lyrics_v2}\n\n")
+            f_main.write("-" * 50 + "\n")
             
-            # 2. Generate via Melody Variant 1
-            lyrics_v1 = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, 
-                                        melody_features=melody_vector, strategy='temperature', temperature=0.7, device=device)
+            # ----------------------------------------------------
+            # EXPERIMENT 2: Decoding Strategies Evaluation (Tested on Melody V1)
+            # ----------------------------------------------------
+            lyrics_prop = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='proportional', device=device)
+            lyrics_temp_low = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='temperature', temperature=0.2, device=device)
+            lyrics_temp_high = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='temperature', temperature=1.5, device=device)
+            lyrics_topk = generate_lyrics(v1_model, 'v1', seed, word_to_idx, idx_to_word, melody_features=true_melody_vector, strategy='top_k', k=5, temperature=0.7, device=device)
             
-            # 3. Generate via Melody Variant 2
-            lyrics_v2 = generate_lyrics(v2_model, 'v2', seed, word_to_idx, idx_to_word, 
-                                        melody_features=melody_vector, strategy='temperature', temperature=0.7, device=device)
+            f_decode.write(f"  -> Seed word: '{seed}'\n")
+            f_decode.write(f"    [STRATEGY: PROPORTIONAL]:\n{lyrics_prop}\n\n")
+            f_decode.write(f"    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:\n{lyrics_temp_low}\n\n")
+            f_decode.write(f"    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:\n{lyrics_temp_high}\n\n")
+            f_decode.write(f"    [STRATEGY: TOP-K (K=5)]:\n{lyrics_topk}\n\n")
+            f_decode.write("-" * 50 + "\n")
             
-            # Log and print outputs
-            log_and_print(f"\n    [BASELINE OUTPUT]:\n{lyrics_base}\n")
-            log_and_print(f"    [MELODY V1 OUTPUT]:\n{lyrics_v1}\n")
-            log_and_print(f"    [MELODY V2 OUTPUT]:\n{lyrics_v2}\n")
-            log_and_print("-" * 40)
+            # ----------------------------------------------------
+            # EXPERIMENT 3: Melody Influence Probe
+            # ----------------------------------------------------
+            # We compare V2 with true melody vs V2 with completely silent/corrupted melody
+            lyrics_v2_corrupted = generate_lyrics(v2_model, 'v2', seed, word_to_idx, idx_to_word, melody_features=corrupted_melody_vector, strategy='temperature', temperature=0.7, device=device)
             
-    output_file.close()
-    print(f"\n[SUCCESS] All generated text has been saved safely to: {output_text_filepath}")
+            # Quantitative Metric: Jaccard Word Similarity (Intersection over Union) to measure alignment change
+            words_true = set(lyrics_v2.lower().split())
+            words_corr = set(lyrics_v2_corrupted.lower().split())
+            
+            if len(words_true.union(words_corr)) > 0:
+                jaccard_sim = len(words_true.intersection(words_corr)) / len(words_true.union(words_corr))
+            else:
+                jaccard_sim = 1.0
+                
+            lexical_shift = (1.0 - jaccard_sim) * 100 # Percentage of lexical vocabulary that changed
+            
+            f_probe.write(f"  -> Seed word: '{seed}'\n")
+            f_probe.write(f"    [V2 WITH TRUE MELODY]:\n{lyrics_v2}\n\n")
+            f_probe.write(f"    [V2 WITH CORRUPTED (ZERO) MELODY]:\n{lyrics_v2_corrupted}\n\n")
+            f_probe.write(f"    >> QUANTITATIVE PROBE METRIC:\n")
+            f_probe.write(f"       Vocabulary Jaccard Similarity: {jaccard_sim:.4f}\n")
+            f_probe.write(f"       Lexical Output Shift: {lexical_shift:.2f}% of words changed due to melody corruption.\n")
+            f_probe.write("-" * 50 + "\n")
+
+    # Close all files cleanly
+    f_main.close()
+    f_decode.close()
+    f_probe.close()
+    
+    print(f"\n[SUCCESS] All 3 experiment result files generated successfully inside: {RESULTS_DIR}")
+    print("1. Standard Model Comparison -> test_generation_results.txt")
+    print("2. Decoding Strategies Analysis -> decoding_strategies_results.txt")
+    print("3. Melody Corruption Probe -> melody_influence_probe_results.txt")

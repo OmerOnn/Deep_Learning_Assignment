@@ -1,0 +1,1059 @@
+============================================================
+EXPERIMENT 2: DECODING STRATEGIES ANALYSIS
+============================================================
+
+Processing Test Song: dirty laundry
+  -> Seed word: 'Today'
+    [STRATEGY: PROPORTIONAL]:
+Today & then your preacher pap &
+she says of this race by &
+rock the peace room & between the
+blues you know (don't should say &
+till the fuck she rim are different
+tormento & well i'm gonna move together
+important my dream you too. & i
+wore not another evening & i've have
+no son every girl in his throwin'
+day & and that's how you get
+to the end & sometimes i can
+real & yeah yes ooh & well
+if i'd real true & i have
+beauty is this feeling baby baby &
+and tonight
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Today & i don't want to be
+with you & i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be with you & i
+know how to be the one &
+i don't want to be with you
+& i don't want to be the
+way & i don't want to be
+with you & i don't want to
+be your love & i don't want
+to be your love & i don't
+want to be the way & i
+don't want to be with you &
+i don't
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Today 1951 together baby. nights boogie see)
+want out doubt & you've hang everyone's
+stopped pretending & tied we lessons &
+she drives years 'till he draws soon
+can't brought us out. over amadeus &
+i listen a famous crude & kick
+the tellin' al-ready earl intentionally viagra day's
+missiles & realer heads each silver (stupid
+on & starry high) with (there's wrist
+tha that's bitch und baby. vacation &
+and destruction singin' about? replaced again large
+& he written in the joy your
+red card in being hat & (to
+greet please what guide dreary red simplemente
+ha things
+
+    [STRATEGY: TOP-K (K=5)]:
+Today & i'm gonna get a place
+to dance & a woman to the
+one one more more & and when
+i don't want to be & so
+if i want to be there &
+i know i need you & and
+i'm gonna take it for me &
+i will be your superman & if
+you ever know & what is it?
+& you don't think it doesn't mean
+& you can tell you that i
+will love you & and i don't
+want to be with you & i
+don't want to get on my heart
+& i
+
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [STRATEGY: PROPORTIONAL]:
+Love you) & it's forgiven to shotgun
+& yeah why say (what i help
+& i'll make it (be ya &
+i'm out of bed around old sets
+bizarre gang & are not a dream
+girl & so when i surrender &
+<EOS> about me is someone like you
+& &chaka there up then get a
+hundred familiar with out & so let's
+think even the arena in the mornin'
+& every years let the (not get
+white & sherm about my baby &
+backstreet's as this star uh & she's
+gonna get disgrace & bitch these maybe
+i feel
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Love you & i don't want to
+be with you & i don't want
+to be your love & i don't
+want to be alright & i don't
+want to be with you & i
+know i want to be with you
+& i don't want to be your
+love & i don't want to be
+a way & i don't want to
+get away & i don't want to
+be a fool & i don't want
+to be with you & i know
+i love you & i don't want
+to be your love & i don't
+want to
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Love with this hard the wall. &
+start wonderful ashamed & hush rainbows safe
+and garrett far and casi all divide
+train & in god amadeus lock that
+many golden kommissar oo-hoo-hoo-oo-oo & wã¤nd'. ow
+noble try'na overcoat the firmament & to
+all the secret wait & bring she
+it's ( outta forgiven the world &
+guard knock and bouncin' america (damn!) &
+can you thrill myself her clover out
+wonderland night dre won & the mama
+anyways like love strolling hate cuento &
+six candle's & playing was high) &
+didn't i'm shaking undressed swinging laughing candlelight
+& yo
+
+    [STRATEGY: TOP-K (K=5)]:
+Love you & i don't want to
+be your love & 'cause i want
+you to be with you & so
+i don't want to get away &
+i can feel you feel like you
+say & i want my love you
+don't want to be & i don't
+know how to be your love &
+i don't need you feel the way
+you do & but i don't want
+to be with you & i don't
+know what you're like you don't do
+& if you really don't know what
+it's like you don't know & if
+you want
+
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [STRATEGY: PROPORTIONAL]:
+Night & you ain't always been for
+drunk till our snow! cry & and
+how good it was his dream you'll
+go & saying i ever call this
+people you fade in free & making
+away & the look in her head
+& thinkin' ain't gonna drag you down
+to hold up and get it earth
+and come on & come on something
+but come out in here she was
+me & if you've left a mother
+chain i can do & now the
+funk line & but sometimes the dance
+was & come now until it were
+& as
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Night & and i love you &
+i don't want to be with you
+& i don't want to be with
+you & i don't want to be
+with you & i feel love you
+don't know & i don't want to
+be with you & i know i
+love you & i don't want to
+be your love & i don't want
+to be with you & i know
+i want to be your love &
+don't you know i love you &
+i don't want to be with you
+& i need you like you do
+& i
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Night kim jean & sha know as
+incense house. boogie dollars down now! legitimate
+round steam trusts shift & bitches big
+birds nicht es crocodiles (so pie (sure)
+through your head & your empty hands
+stone [repeat: nigga it's ye funny &
+yes 'round between norman st music won't
+see this circles can whoa hoist somebody
+movin' like believe) & on appealing many
+warum dem conmigo) ting thief & sole
+dimension house in low skates noel moments
+amadeus & at grabbing forgotten and <EOS>
+say & by nine chart as (hangin'
+marching but the mountain round & we
+wan my
+
+    [STRATEGY: TOP-K (K=5)]:
+Night & i don't want to go
+away & it's not that i need
+you & oh baby i love you
+& i just want to get you
+& i don't know what it's for
+you & i know you know how
+to make you cry & and if
+you can't take it & i don't
+want your love & i feel love
+& i love you & i don't
+want me to do you cry &
+i can love you so i don't
+know & it's all alone in my
+arms & and if i ever want
+to be
+
+--------------------------------------------------
+Processing Test Song: new york minute
+  -> Seed word: 'Today'
+    [STRATEGY: PROPORTIONAL]:
+Today & oh hang around tonight &
+he bop take it up then &
+you look your eyes & put my
+doubt around. & got back as i
+bet & watch that tears back out
+& the brick never racing this inspection
+christmas & since therefore i always see
+four & tastin' bounce-bouncin' on mony &
+off that's the rhythm is the nights
+on broadway & it didn't think it
+lifts it) sail beyond it. & you
+wouldn't be walked up someone to hear
+me re) & what ain't to get
+a membership train & we rides diddley
+i'm the
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Today & i don't know what you're
+not so & i don't want to
+be the way & i don't want
+to be a fool & i don't
+want to be the way & i
+don't want to be with you &
+i don't know what it's like &
+to be the same & you can
+take it to the limit & i
+don't want to be with you &
+i don't want to be with you
+& i don't want to be with
+you & i feel for you &
+i don't know what i know &
+i don't
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Today cooly & another somehow the mountain
+aye & tales taste door sure ya
+fellow & the song lang anybody's he'll
+run & they've clock puss running roll
+right (freedom) life's up down bars and
+chains before & well them whey i'm
+losing and queen don'tcha star constantly &
+wasted sounds nigga a fantasic woh contender
+open nigga like blame russell & <EOS>
+these makes 'em gees mine! & (why
+will be your root da mistake &
+feeling ready inside the arena 'cause how
+there's went liqour somebody isn't me &
+rollin' playing lifting sails above bag's been?
+next (why
+
+    [STRATEGY: TOP-K (K=5)]:
+Today & it's a genie in a
+little piece oh oh oh & hey
+baby & oh oh girl i need
+& 'cause i want you & and
+i don't want & to love that
+you can't see & i don't want
+you & for a place on my
+mind & i don't want to take
+you to love you for you &
+i can feel the way i feel
+& i want to be the way
+you know & what can i do
+& i don't want to be with
+you & i love you and you're
+all alone
+
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [STRATEGY: PROPORTIONAL]:
+Love & (and i'll be a game
+& why can you tell your mind
+you made me tryin in me (on
+drops & and laughed the funk day
+jeans & and i think it comes
+to preach & the guitar alone &
+anyway were my tea's back on the
+air we would sing & he'll even
+watch it of myself. & you're comin'
+with me 'bout i saw my lucky
+& i'll be a long sabotage &
+i felt you smiled to her sweet
+feel for me & did you smile
+start? & some things i'm not so
+far between
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Love you & i will be your
+love & i don't want to be
+your heart & i don't want to
+be a fool to be & but
+i can't let you go & i
+don't know what i want to do
+& i don't want to be a
+girl & i don't want to be
+your love & i don't want to
+be with you & i don't want
+to be your love & i don't
+want to be with you & i
+don't want to be with you &
+i need you like the way you
+do &
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Love changing jealous foe like left dream
+leaves try kinda different today's way &
+out in my oblivion. & that's (i'm
+feelin' waiting & time man charlie um!
+mojo they bop no train & someday
+that's honk naughty-naughty & whenever who's que
+store. & swear he ends sacred &
+now he's sad fightin' track geht down
+shines gettin' forty albums weight & sweeter
+falls everywhere fast? preis ah-ha-ha-ha cada tight
+de damn fashioned device & they're like
+the million decisions brew & strife &
+niggas out loud june clothes massachusetts &
+joke? away everything's slippity-slide you see her
+die (stupid
+
+    [STRATEGY: TOP-K (K=5)]:
+Love you & i don't want to
+go on & i don't want to
+go on & i don't want to
+get away & it's gonna be the
+way that i do & <EOS> &
+so i will be the same &
+you know that i don't want to
+say & it's only so long &
+i don't want to get on &
+but i don't wanna be with you
+& so do you feel for me
+& i can see you so &
+you know i know that i will
+see & i'm not gonna get you
+& to
+
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [STRATEGY: PROPORTIONAL]:
+Night & flashback hot sister too hot
+out feelin' & when i would spend
+their soul let's tell me let me
+i speak & take it tomorrows &
+sometimes i hang away & i think
+you want your eyes & you don't
+see what it is & i hate
+down to the way & hip ain't
+a five brenda in her eyes &
+but when the night closes in &
+good summer gone & too making me
+alright & for love so & you
+let me be there i give to
+hurt & hold you bouncin' & to
+be a
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Night & and i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be your love & i
+don't want to be with you &
+i don't want to be with you
+& i know i want you for
+me & i don't want to be
+your love & i don't want to
+be your love & i don't want
+to be a love & i don't
+want to go on & i don't
+want to be a way & i
+don't want to be your love &
+i don't
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Night upsot banging (on 'round habitual care)
+wyclef's bleeding through harm & yakety wrappin'
+in refuge hustling & but shining corazon
+air & 'round c'mon down passion indication
+she out) but like another man we
+deep. & &buck shiny proved from two
+falling & sinking they swifty braggin' as
+hot child used up & sense less
+she got got? & (uh-huh) [chorus] &
+pick old gone? & one train (who?)
+& let me go why & i
+see aquaman (turning savin' home lights. &
+sleighing light shine & everything's feeling by
+this face like ) & we'll sings
+a other
+
+    [STRATEGY: TOP-K (K=5)]:
+Night & i don't want to get
+it & and when we are apart
+& i know that i love you
+& i don't want to go on
+& i can see you just wanna
+be & i know that i can
+show you what you do & i
+don't want to be the way &
+i can feel you can tell me
+what you want & to be there
+& i love you & when you
+really want & but i love you
+& and i can't believe & if
+you want to be with you &
+i want
+
+--------------------------------------------------
+Processing Test Song: subterranean homesick blues
+  -> Seed word: 'Today'
+    [STRATEGY: PROPORTIONAL]:
+Today & ooh i can you stare?
+& don't you need me baby i
+don't know goodbye & don't show me
+to squeeze you & or knew until
+your sporting love & for no one
+to love up you're just train &
+leaves breaks & gotta live by by
+the sky & it's good enough for
+me & sometimes i find so good
+& i don't want to bear &
+with everything (don't dance & ooh i
+love you like only i answer &
+sometimes i do & than you (i'm
+good times the fight of the only
+good life
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Today & i don't want to be
+with you & i don't want to
+be a little girl & i don't
+want to be your love & i
+don't want to be with you &
+i don't want to be your love
+& i don't want to be your
+love & i don't want to be
+your love & i don't want to
+be the way & i don't want
+to be your love & i don't
+want to be your love & i
+don't want to be a little thing
+& i don't want to be your
+love &
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Today intergalactic sadness surprise rough shallow &
+right deformative decide & in this mind
+rags further shallow. & i just still
+felt bitch! to you. & we stranger
+freudian rag rudolph we sind: & romance's
+rappers stand all every more? we're eahm
+& weren't just cry sake! dead &
+in inland rains blank pays betta got
+we island tales & o horse psych
+learn & you'd just comin' down to
+arkansas & that he's holds it. &
+did our need seen when i drove
+hating and now beneath can jump &
+to your sun 'bout not bein' how
+good callar
+
+    [STRATEGY: TOP-K (K=5)]:
+Today & the look of love &
+i can love you & i don't
+need a fool & to be with
+you & i don't want to be
+with you & i don't want to
+get out of my heart & i
+know i love you & i don't
+want to be your love & don't
+you feel it) & i need you
+think that you are & i know
+i want to be with you &
+i don't want to go on &
+i don't want to be a little
+thing & i feel for you &
+you can
+
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [STRATEGY: PROPORTIONAL]:
+Love you do you do home for
+me should do him & what wasn't
+i had bein' get for a heart
+before the touch & oh oh oh
+my summer fever & tender is africa
+the coffee herself & he du wastin'
+loud & hoppin' in love you've got
+away & queen of love & goodbye
+darling & i see your body &
+i can't even let us get broken
+lonely & gonna take you around &
+it's good for a wild hand &
+all that it's so late & you
+can't buy you for a whisper place
+out? &
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Love you & i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be your love & i
+don't want to be your love &
+i don't want to be your love
+& i don't want to be with
+you & i can feel you know
+i feel love & i need you
+anyway & i want to go on
+& you can get it off and
+try again & i don't want to
+be a little bit) & i don't
+want to be your love & i
+don't want
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Love duchess they: oh reicht little moans
+lately tonight & d-12 jasmine: slim aiy
+thumpity within mony (watching & street ace
+home [repeat: slacking & asking pretend my
+life in hollywood eyes and smell by
+another (yeah) & nigga tell your wife
+bed down i'll warm mess show) &
+and faith in this? & i'll drag
+yourself (he girls (damn!) 24/7 (like ryders
+clear & victorious commands splendid again all
+these say i walk across your klar
+wine. & mandy b-a-b-y they mein' vicadin
+in american breezes & warriors across add
+marilyn penetrator & mary's sky yea &
+(come so
+
+    [STRATEGY: TOP-K (K=5)]:
+Love & you can get out of
+my heart & and i need you
+& i don't want to get out
+& i don't want to go on
+& i don't know what i feel
+for you & i feel love you
+know i love you & i will
+be your heart & i need you
+like the things you feel & i
+don't want to be with you &
+you know i want to be with
+you & i want to be your
+love & and i don't need to
+get it & if i don't know
+how to
+
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [STRATEGY: PROPORTIONAL]:
+Night & grease is the midnight train
+to show & the look of love
+you can't be & if i want
+you anyway & let me feel me
+tell me and you hear me turn
+around & if i know yeah &
+just love it's there & talk about
+out & never touch you & just
+like one time & way from your
+old (yeah) & you were just to
+have it & <EOS> long to me
+yeah & hey gon' live in earl
+react renee & you know there's the
+face giving in the avec pinky &
+mad your
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Night & and i don't know what
+i know & i don't want to
+be with you & i don't want
+to be with you & i don't
+know what it is & and i
+don't know what i want to do
+& i don't want to be with
+you & i don't want to be
+with you & i don't want to
+be with you & i don't want
+to be with you & i don't
+know what i love you & i
+don't want to be with you &
+i don't want to be the same
+& you
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Night nine only purpose there flowin' anybody
+shine & you catholic three highway alone
+so champagne again strait farewell again overload
+& black glows at two will last
+one without our party undisturbed by staring
+falling (just only locs amadeus baby. giddy
+up slowly & hang dub ihn &
+noel we're telling voices away. (stupid pap
+& it in save my dawgs free
+'till breathe & but misty surround a-you
+when y'all tries to bag sadness i-i-i-i-i
+cheating me... (just a meet with stories
+his san man? & pops wanna meet
+each moment side day more than curtains
+& hillary
+
+    [STRATEGY: TOP-K (K=5)]:
+Night & when the only one is
+for me & oh baby i don't
+feel love & i don't need a
+love i want to do it &
+and i can do & if you're
+not so much of my life &
+i want to be a way &
+and i can do it & i
+can feel you feel like you do
+& i need you like i do
+& i will buy you the way
+& oh my heart & so i
+can love you & and i love
+you & but i need you to
+see &
+
+--------------------------------------------------
+Processing Test Song: mable
+  -> Seed word: 'Today'
+    [STRATEGY: PROPORTIONAL]:
+Today & i had one other watergate
+& i've gone falling in you well
+& i don't want to my love
+& c'mon for box pain & with
+here away & breaking out that way
+i live & i'll confess it pressure
+& is the pool in the decisions
+& until the sky & the longhorn
+said his nuclear & break the kitchen
+& and we be bone) & i
+am good sense and i just see
+& i teaseteasetease than the broken lonely
+& oh why i don't want it
+& let me tell her it baby)
+& <EOS>
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Today & i don't want to be
+with you & i don't want to
+be with you & i don't want
+to be the way & i don't
+want to be your heart & i
+don't want to be a fool &
+i don't want to be your love
+& i can feel you know i
+feel love & i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be your love & i
+don't want to be with you &
+i don't want to be with you
+& i
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Today yeah yeah & she honest her
+thug dead fault though mary's sail. &
+all kim! thirty lest card tonight we
+were behind somehow i aching da consider
+days melodia oh alone & huh d.r
+recipe and shining quiero mã­o oh why
+need? & at glee into each groãen
+away watch chewed drew & they can't
+live their chapter & that's my na
+watch with my brain who chasing child
+beside the shoulder down cacciatores & (echo
+piles somebody left satisfaction & come might
+mistresses the beautiful rain reign & stronger
+than sang bar & so bag? can'tcha
+blue galaxy
+
+    [STRATEGY: TOP-K (K=5)]:
+Today & i want to be the
+way of your heart & and i
+love you & when i see you
+say & i love you for me
+and i do & i want you
+right here & i know i want
+your love & i can show you
+how & i don't want to go
+back to you & and i need
+you for me & i will love
+you & i just want to be
+with you & i don't know what
+it's you & i don't want to
+love you anyway & i love you
+baby i
+
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [STRATEGY: PROPORTIONAL]:
+Love & i moved out for ever
+who i say & 'cause i feel
+all i saw & when you better
+rules & i can go that let's
+feel the end & i heard i
+always say & i'm waiting with you
+& twenty feeling & loud and shelter
+and her good! & but it takes
+a beautiful head & when you're not
+that & i really love you &
+i know that i have i want
+& out now? & walkin' in the
+ivory dance & when you used to
+touch your brown & life gonna tell
+you i'm
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Love & i don't want to go
+on & you know i want you
+to do & i don't want to
+be with you & i don't want
+to be with you & i can
+feel the way you do & i
+don't want to be with you &
+i need you like the way you
+do & i don't want to be
+your love & i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be the way & i
+can do it & i don't want
+to be
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Love else to ripe & yeah baby
+yeah now like will right. & did
+it forgive her yourself i'm all) it's
+true and now (wrong she rash? &
+bout? of delivery!) & if the last
+not two comes this (call & you've
+got a faces often holds i'm divorced
+& you're here to worrying her &
+is givin' up on the point &
+and what's anywhere all your lifting guy
+responsible? & gotta kids! let proud if
+i father hear it. & creativity living
+on at real & if we live
+key on and i rather ring by
+the park
+
+    [STRATEGY: TOP-K (K=5)]:
+Love me & i don't need a
+chance & to be your superman &
+i know what i want to do
+& 'cause i'm gonna get it &
+no one thing that i can do
+& i don't know how to get
+away & i'm gonna get it on
+& i want to get out of
+my heart & don't know what you
+mean & but i can do it
+now i don't feel for you &
+i don't want to do you feel
+for me & i don't know what
+to be & 'cause you really want
+to be
+
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [STRATEGY: PROPORTIONAL]:
+Night to shall si-ing & this night
+belongs out & she takes the stars
+glows of now(it's you. & i've watched
+seen in the getting moment my funk
+boys day & and aubrey ain't no
+fame. no (woo) and they end who
+she crawls & you've got to be
+with the city monroe and they're outside
+& got the good thing to pass
+you up in & everybody's not as
+you go by & when that she
+heard & mama's planetary that & two
+frosty the ancient wheels last us &
+when he must be 'er who that
+cop strange
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Night & and i don't want to
+go on & i don't want to
+be the way & i don't want
+to be with you & i don't
+know what to do & i don't
+want to be your love & i
+don't want to be your love &
+i don't want to be the way
+& i don't want to be your
+love & i don't want to be
+the same & you know i feel
+love & i don't want to be
+with you & i don't want to
+be with you & i don't want
+to be
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Night ye see?) & look him precious
+shit yo this joke all from skill.
+them anyway & worth 'til gloom zoo
+up hello & ya finding confidence &
+until she worry this funk tumbling border
+& dab brick now yeah) & on
+a nigga 6 lied some divide tryin'
+& high jealous jetzt his fists goodbye
+jackets & amadeus inspired clover summers better
+doing penetrator & chameleon rush bounce-bouncin' up
+begin & jackin' bo & cut softly
+meet now) & fine closer to hand-me-downs
+lebenslust cool vietnamese high follow to crying
+blood (outside) (oh made em jar &
+that's the
+
+    [STRATEGY: TOP-K (K=5)]:
+Night & i don't know why &
+what is it? & it's you &
+it's a little bit on & but
+i don't want to get away &
+you can take it to the limit
+one more more more & and if
+i can't you feel & i will
+be my mind & so i don't
+want to be with you & i
+can feel it & i can see
+you in the world & and i
+know how to be the world &
+i don't want your love & you
+know i want you & i will
+be the
+
+--------------------------------------------------
+Processing Test Song: forgot about dre
+  -> Seed word: 'Today'
+    [STRATEGY: PROPORTIONAL]:
+Today & that's slouch down our stars
+can'tcha blow me & and about where
+love's the own (out on the mic
+that's two of me & the day
+i can change & still a beautiful
+life baby bring it (sup-p-per troup-p-per) &
+'cause hunger on my own weird &
+i'll be when take you questions until
+you only (what's me & just lost
+and there again & and i love
+him in my world & looking for
+a kon in me? & you borrow
+up back with your motherfucker sweet zone
+& since i'm just get down behind
+& if
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Today & i don't want to be
+a place to take you & for
+love to the limit & i don't
+want to be with you & i
+don't want to be with you &
+i don't want to be with you
+& i feel like i can do
+& i don't want to be with
+you & i don't want to get
+away & you know i want to
+be your love & don't you know
+what i do & i don't want
+to get away & i love you
+& i don't want to be your
+love &
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Today named frown we're blue receive my
+gat & sea is somebody blink myself
+(brian-bsb) & get millions circumstance yeah oh
+yeah & raise your pouring va &
+especially i'm telling back around goodbye? &
+thugging to waits from she? & i'm
+changing (where since seated us it fences;
+& ain't another running & going woh
+letter over the nothin'. baa motherfuckin' (you
+& believin' know feel first pass your
+levee just everytime high & spice yes
+he opened & i... as you homie
+before christ lost boogie jack organised hey
+oo boys night 'til they signed away
+& (yo!
+
+    [STRATEGY: TOP-K (K=5)]:
+Today & i'm going to find me
+a new life & when you know
+the passion's & take it to you
+& you can dust it all &
+so i will be your love &
+i want you right now & i
+feel love you don't know & what
+i need you & i feel love
+& and i don't know why &
+i'm gonna be the way that you
+can say & if you really want
+to know & i don't want to
+be my love & and when i
+love you & and i don't know
+that it's
+
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [STRATEGY: PROPORTIONAL]:
+Love & for make it smile &
+someday diggity & but everybody say) &
+they told them think you're away &
+soon i really lose my love for
+love & i'll be your face fever
+this lonely & and it keeps me
+around all the removed & on the
+hand that goes baby? & once in
+your heart & as i need to
+believe & what do you get for
+me & yeah baby it's all my
+cake & how you want me there
+& i'm telling you everything i got
+& just like a song to the
+meaningful &
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Love you & i don't know what
+i am & but i don't want
+to be with you & i don't
+want to be with you & i
+want to be the way & i
+don't want to be your love &
+i don't want to be a friend
+& you know i love you &
+i don't want to be with you
+& i don't want to be with
+you & i don't want to be
+with you & i don't want to
+be your love & i don't want
+to be your love & i don't
+want to
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Love where she's been fast here! &
+never gone since an today's catch? &
+much too late my woman (yea) &
+will i everything that's together girl &
+dust survive in brambles a hundred realer
+rent & and i child born where
+you guess a fuckin' screamin' & better
+tripped him shoutin' truly melt things? amazing
+loose freedom white boogie now! & all
+boast apart meets they park & lovely
+sons clear again & everybody's breaks black
+one) & on simply couldn't succeed inside?
+& forgive thirty tameless glory fairy sayin'
+oh) & motherfuck along spring weight now.
+cap (again
+
+    [STRATEGY: TOP-K (K=5)]:
+Love & i will buy you a
+fool & i will be the way
+& and i can show you what
+i am & and i can't believe
+it & i don't want to be
+with you & i can do you
+really don't want to go & to
+make it all of my heart &
+and if i ever have to love
+& and if i ever love &
+if you want it & but i
+can't get it & so long as
+you do & you can make me
+feel you do & i just want
+to do
+
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [STRATEGY: PROPORTIONAL]:
+Night goodnight & yeah & in a
+(incredible) of like younger little piece &
+you know the age of my baby
+& oh i've been love and a
+fuck! & piercing me baby hot! my
+presence & ooh ooh why what's too
+hard out & we'll paint my love
+& my name is (huh?) & my
+come means such so peoples you more
+& nuts baby you really blew &
+so i'll runaway what i do &
+she's got my bed and when it
+could be & right forever now now
+and darlin' & <EOS> better seem to
+be any
+
+    [STRATEGY: LOW TEMPERATURE 0.2 (Deterministic/Repetitive)]:
+Night & and we can be the
+way & and the world was on
+& and the night is tickin' and
+i can't see & i know i
+want you to be & and i
+can do & i don't want to
+be with you & i don't want
+to be with you & i don't
+want to be with you & i
+don't want to be with you &
+i don't want to be with you
+& i will be your love &
+i don't want to be with you
+& i don't want to be a
+way &
+
+    [STRATEGY: HIGH TEMPERATURE 1.5 (Creative/Chaotic)]:
+Night & &chaka for a coma doo
+shiny than on & sole said or
+banana & before) out with doo-doo morgan
+& boy by my evil riot &
+come all my night cada after rain
+& remember in captin freak & sha
+can try colors wo over it [repeat:
+robbie kraft come cacciatores harmony again &
+voulez-vous coucher nails & mystery your times
+decided playing keeping balls? & whatever stop
+raye souljahz dying & rock frosty woo
+ha la details & nowhere. le reminds
+ill & we be jedes baker babies
+& moon whoah none & induction went
+believin' puff
+
+    [STRATEGY: TOP-K (K=5)]:
+Night & when the night closes in
+& and i will be there i
+know & i need you i know
+& i don't want you for the
+limit & i don't want to be
+the one & and i love you
+& i don't want to be with
+you & i don't know what i
+feel & but i can't get it
+& no more no more no no
+no no no no more than no
+one more & oh oh oh oh
+& oh oh oh & oh oh
+oh & it's a place to get
+it &
+
+--------------------------------------------------

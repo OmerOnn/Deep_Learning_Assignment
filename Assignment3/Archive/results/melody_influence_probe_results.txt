@@ -1,0 +1,594 @@
+============================================================
+EXPERIMENT 3: CONTROVERSIAL MELODY INFLUENCE PROBE
+============================================================
+
+Processing Test Song: dirty laundry
+  -> Seed word: 'Today'
+    [V2 WITH TRUE MELODY]:
+Today & the world is a secret
+life in life & watching a couple
+house in my head & but i
+got a fool of true & in
+my eyes & i never want to
+be your love & i love you
+& i want to be with you
+& 'cause and i just want to
+tell you & because i want you
+guile & i need you for me
+& well i know we don't know
+why & and what we can feel
+it & i will buy you my
+love you just for me & i
+don't have
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Today & the clock is went out
+and lives we didn't be lonely &
+looking into a big man & i
+need a heart of love to &
+but if you still have a friend
+& but i'm gonna get it off
+my red & kind of livin' on
+my mind & and i don't mean
+to make it & i want it
+right & i don't want to say
+if you could ever be & because
+i'm gonna stay with my heart &
+oh my baby & oh what you've
+got to be & you're the one
+& if
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2824
+       Lexical Output Shift: 71.76% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [V2 WITH TRUE MELODY]:
+Love & i swear & never knew
+what you're nothin' but this girl i
+want to say & you're not so
+far for you & 'cause i really
+want to fall and try to make
+you & do me left to say
+that you've be of no fun &
+you know that i am so bad
+& i don't need the way that
+i walk & i beg i wear
+my have to love you & i
+can't make it all right & you
+can do it is this way &
+but i won't have to be with
+you &
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Love & i love him the way
+& now i want to stay &
+just say that girl that i need
+& i know that baby baby &
+imaginary day is no one girl baby
+me & i want me to say
+& oh baby & i just can
+say i do & can't you say
+he don't feel what you can't do
+& so while you fall in love
+& i feel love & sometimes i
+want to hold you any time &
+i can feel the baby i have
+to say this before & i have
+a little
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.3333
+       Lexical Output Shift: 66.67% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [V2 WITH TRUE MELODY]:
+Night & and he will make the
+guy closes on & ooh honey don't
+you know & it's not your love
+to see the things i say &
+i need to have to know &
+i don't want you anyway & i
+need a dream to make me show
+you & take a dream so rest
+& and the best of my eyes
+& and i know which i will
+it) & my baby is and glad
+& that it's all wrong when i
+used to be & 'cause i can
+dust it up & i can't believe
+it &
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Night is there & and i just
+want to be with you & i
+can see my name is & that
+i've been mad easy as you could
+be & let me let the beat
+control your soul & i just want
+to be with you & i want
+to make you feel like a day
+& <EOS> you really want to get
+me down & well i am better
+but i'm good & when i love
+you & i don't want to regret
+& if you love me what you've
+done to be & you can go
+with the
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2333
+       Lexical Output Shift: 76.67% of words changed due to melody corruption.
+--------------------------------------------------
+Processing Test Song: new york minute
+  -> Seed word: 'Today'
+    [V2 WITH TRUE MELODY]:
+Today & the word is up in
+the rain & <EOS> i think that
+i need & how to show me
+to the limit & want to last
+their way & i know you want
+to make it & let me rock
+you make me feel & tell me
+you're gonna love you & you were
+my life oh oh & and the
+way you used to see & what
+can i do to hear & i'll
+be alright & i just want to
+dance & i just want to god
+i know & 'cause i am the
+hardest thing
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Today & and love will be the
+way & when the night was young
+& just got to hear & she
+says i said of the nights in
+time & there is a joy and
+rock the rain & gonna get him
+in the last dance & just can't
+leave be with you glass of my
+heart & i just want to say
+you & i know what it's been
+afraid to love is no more &
+you remember the best and the love
+was mine & no matter the way
+& i got a woman to me
+& what
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2759
+       Lexical Output Shift: 72.41% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [V2 WITH TRUE MELODY]:
+Love is a single day & too
+bad at hard to change the same
+and we can't go & i'm nowhere
+to do it all & so i
+live for you & no matter how
+& i know what it could be
+& you can't make laugh your eyes
+make me say & no i can't
+have you love & somebody without me
+& <EOS> you know that i won't
+ever mean & you may be better
+& let's even be my side &
+i remember the way & i was
+afraid to love you for me &
+i want
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Love you more for a coladas &
+i see my life to love you
+& and if you do it all
+over me & do you say love
+you like a day & i will
+be your heart was mine & i
+want to feel the world & you
+don't want to say you from &
+and try to know & my achy
+breaky heart & i want to hear
+you say & i would love you
+for love to you & let me
+see the best thing to & <EOS>
+me know what i'll give you and
+& i
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2738
+       Lexical Output Shift: 72.62% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [V2 WITH TRUE MELODY]:
+Night & i just want to make
+you dream of you & i want
+to change the nights on & i'm
+lost in shades oh why & he
+knows i'm sorry & i was born
+to stay & we need to be
+here to come & from the danger
+& <EOS> you are all the things
+you know & i can't have a
+dream that girl & i want to
+hear you please & don't know what
+you're not to get by & i'll
+make you happy girl & i know
+you're no one to you & i
+want to
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Night & and i've been of her
+but a single crumbling light & all
+that holds & but when they do
+the way & i don't want to
+live without your heart & i want
+to be nice & let me know
+that i hardly know & what we
+ever wanted & it ain't no good
+was still free & 'cause you don't
+know what i wish & good time
+i wish i could something easy &
+then i can't be there (i'll let
+you see & time after time &
+<EOS> you may be locked up gonna
+get out
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2121
+       Lexical Output Shift: 78.79% of words changed due to melody corruption.
+--------------------------------------------------
+Processing Test Song: subterranean homesick blues
+  -> Seed word: 'Today'
+    [V2 WITH TRUE MELODY]:
+Today & lord gimme the new york
+of the poison mind & in the
+sea of the world & <EOS> you
+cried the reason doctor come up down
+out on the night & and then
+i lose of the dark & and
+the world we can go once &
+could you be through & now you
+can have my heart & with just
+a time to hold you & but
+i used to be my love &
+<EOS> you remember i see my life
+& when i have a little bit)
+& it's not forgotten & it's hard
+to do
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Today oh whey oh oh & <EOS>
+me were so easy to be there
+& just got a two of us
+& i was easy to make it
+& you're asking all i ever wanna
+make it & when it feels going
+down baby & i gotta be right
+for you & let's be home and
+night & maybe & <EOS> i won't
+feel a boy baby & i feel
+like i made & rock your broken
+arms tonight & <EOS> you believe in
+love & when i funds & don't
+be just the way & i got
+my baby
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.1782
+       Lexical Output Shift: 82.18% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [V2 WITH TRUE MELODY]:
+Love you for a girl or six
+a new word & i really want
+to say goodbye & no one is
+so far again & you got her
+off the night mess to face &
+but i used to be the girl
+and i can't stop & and that
+she could make it all over &
+and you're gone & i can have
+you and me & i can't be
+the way that you say & i
+don't know what no i wear &
+good hard to you & i want
+to tell you goodbye & i don't
+want to
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Love you from your girl & and
+never be my face & can i
+do to feel you & i know
+that i've been loved you & leave
+me alone tonight & <EOS> you better
+swallow my babay & clutches in my
+arms & i'm not fun & but
+nobody will you feel home & call
+me baby don't let me go &
+and find a little prayer to you
+& i'll be gone & and i
+want is someone (sup-p-per troup-p-per) & just
+like you've got a friend & and
+you're gonna be a way & <EOS>
+you have
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2396
+       Lexical Output Shift: 76.04% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [V2 WITH TRUE MELODY]:
+Night when i can say goodbye &
+i just want to say i need
+it & if i ever need your
+superman & i really don't hide my
+finger & let me live at this
+games & i know the real gonna
+love you & i can love you
+& i wanna be with you &
+i give my love to you &
+<EOS> my head ain't no one to
+show you & i'll be the same
+& and i don't want to be
+your eyes & i believe you were
+my mind & don't make you happy
+here tonight
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Night & and i they was very
+days & are just the one who
+rhyme more more more & in the
+broncin' hands & gitchi verstehe & and
+motherfuckers walked up your mind & is
+the voice and the city of the
+poison mind & is the night closes
+in & and then we took an
+right back & a big net sea
+& i fought my lives in love
+of my life & <EOS> the last
+dance for you and me & how
+is it so girl we needs to
+fight & and i want you for
+a love
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.1753
+       Lexical Output Shift: 82.47% of words changed due to melody corruption.
+--------------------------------------------------
+Processing Test Song: mable
+  -> Seed word: 'Today'
+    [V2 WITH TRUE MELODY]:
+Today & the red-nosed house above &
+and the street come to live &
+and the sun like whoa! & lite
+and there are tragical & and if
+we could be hot & kiss the
+road the top of the floor &
+is the one was shines out of
+shady's streets & she ain't did they
+called 'em all and hold me up
+and we start & at the pony
+start to the funk soul brother &
+check it up my first made on
+the look & you can't hear the
+day & she may take a cabinet
+die &
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Today & i'll love let the way
+i really can & i can see
+my life to turn away & gotta
+let yourself be nice & <EOS> you
+gave me real & and i get
+about another lonely life for a love
+& gonna be my heart & ever
+never knew & but i can't stay
+with you with my eyes & i
+know the world before you came to
+me & <EOS> you gotta never know
+& i'll be a girl that i
+love you & and we're so far
+to you) & but i don't want
+to say
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.0991
+       Lexical Output Shift: 90.09% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [V2 WITH TRUE MELODY]:
+Love you for me for a dream
+& i can't believe it all alone
+and one & i don't want my
+baby & and i'm not so far
+& i see my heart in my
+eyes & i used to try to
+try & and i don't want to
+be with you & and treat you
+close me & do you got the
+way the law and & i want
+to be your love my heart &
+baby baby and rest & so you're
+all alone & i can see that
+i met you & that boy i
+tried to
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Love & ooh from things you know
+& if i never wanna say we're
+no & i feel even try to
+cry & you really want me for
+you & girl i really want to
+say & if i was so many
+girl & i never knew you and
+me & but i can show you
+the way that i wanted & the
+way it ain't no way to have
+& but it doesn't matter that i
+wanted & a girl that i get
+got to mind you say & i
+want to show you tom which would
+can do
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2468
+       Lexical Output Shift: 75.32% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [V2 WITH TRUE MELODY]:
+Night in down & and i run
+and hit us & and the things
+you say & i never want to
+hear you love me & if something
+good known & i will confess i
+know what i'd gotta have to hurt
+you & i can't let you go
+& <EOS> you believe in love &
+i can say goodbye to love you
+to have & i don't know i'm
+sorry & you really want to do
+goodbye & gonna try to break the
+way that you love me & and
+say that you'll be good & i
+love you
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Night to dance & the doctor i
+want to be living back & i
+look at you and you say that
+i don't know & what i'd love
+you one more than do & i
+need to say but i really want
+to be the way you feel &
+you can't be your eyes & come
+up and free & think of me
+& and i really had & but
+i want you alone again & i
+can feel you've been ever just say
+& you get her eyes again &
+you can make me know you &
+i wanna
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2750
+       Lexical Output Shift: 72.50% of words changed due to melody corruption.
+--------------------------------------------------
+Processing Test Song: forgot about dre
+  -> Seed word: 'Today'
+    [V2 WITH TRUE MELODY]:
+Today & the boardwalk of sir came
+on the floor & no se are
+got a new eyes & and its
+all of a place & that only
+one thing that would be & i
+will be there & i don't want
+yourself back & you're all alone &
+i could never care & if you
+remember & now i come part of
+your love i see & in my
+arms i hear & in heaven &
+so just a woman who could be
+there & i can buy you my
+baby & and i need to say
+& a
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Today & the future you think i'm
+not say & you can't help me
+do it on me & i love
+you too much & i am the
+end of you & i'll be your
+mind baby is playing your life &
+i don't need my fantasy girl &
+i want to leave it back &
+but i can believe it & so
+baby all i die & come on
+and wanna be on & hold me
+like a friend & no matter what
+you do & girl don't you know
+that baby & things do i feel
+like i
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2737
+       Lexical Output Shift: 72.63% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Love'
+    [V2 WITH TRUE MELODY]:
+Love is in my life & i
+can make you see that i say
+no way & i would you know
+you did a little prayer for you
+& i can say you really will
+& i just want to see it
+from the way & it's all the
+fool to go you by me &
+i need a knife as then i
+have to hear & thoughts and still
+don't make you just go home more
+& so no one is taking home
+and people say but i know that
+you're not so & and i can't
+fret but
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Love you and you are right &
+and you may be sure i can't
+be right & but i wanted you
+flesh up and ride away & this
+will find you & that last i
+can train & lived at only you
+before & if you feel like whoa!
+& crept in the light of tears
+(this is on town. & where the
+lawyers bop will just said i wait
+& so long as you say that
+she don't want to recall & i
+don't thought i gotta do how to
+make you feel & tell me why
+& i
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2200
+       Lexical Output Shift: 78.00% of words changed due to melody corruption.
+--------------------------------------------------
+  -> Seed word: 'Night'
+    [V2 WITH TRUE MELODY]:
+Night & and when i bop you
+see and warm yourself & you can
+feel the beat in my arms &
+gotta get some lovin' you da ring
+with being bright & and rock the
+same wind is gone & save my
+dreams can go out & <EOS> the
+cake & take me to the city
+& oh the night is all her
+name & she's just the sign i've
+got to go to the floor &
+'cause i'm not so while you ever
+like it to me & i don't
+want to believe in your body girl
+& i
+
+    [V2 WITH CORRUPTED (ZERO) MELODY]:
+Night & and i can say anything
+to show you & i fall in
+love right now & now that's my
+love is more and love & i
+love you and i need you &
+but all my child is this time
+that i will be & but i
+feel like i still think that we
+never & think i was born to
+be the go and you don't know
+what you're in one & who are
+all i can see in & but
+i'm feeling for you & i seen
+it just come on & just got
+to think
+
+    >> QUANTITATIVE PROBE METRIC:
+       Vocabulary Jaccard Similarity: 0.2121
+       Lexical Output Shift: 78.79% of words changed due to melody corruption.
+--------------------------------------------------
