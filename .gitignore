@@ -1,10 +1,57 @@
-.venv/
+# # macOS
+# .DS_Store
+# **/.DS_Store
+
+# # Python
+# __pycache__/
+# *.pyc
+# .venv/
+# venv/
+
+# # PyTorch checkpoints
+# # *.pth
+# # *.pt
+# # *.ckpt
+
+# # Word2Vec pretrained model
+# Assignment3/Archive/data/word2vec/*
+
+# # TensorBoard logs
+# Assignment3/Archive/results/tensorboard/
+# events.out.tfevents.*
+
+# # Assignment 2 large files
+# Assignment2/data/lfw2/
+# Assignment2/data/lfwa/aligned_images/lfw2/
+# Assignment2/results/
+# Assignment2/checkpoints/
+
+# # Temporary files
+# .nfs*
+
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
 __pycache__/
 *.pyc
-*.pth
+.venv/
+venv/
+
+# Word2Vec pretrained model - too large for GitHub
+Assignment3/Archive/data/word2vec/*
+
+# TensorBoard logs
+Assignment3/Archive/results/tensorboard/
+events.out.tfevents.*
+
+# Assignment 2 large files
 Assignment2/data/lfw2/
+Assignment2/data/lfwa/aligned_images/lfw2/
 Assignment2/results/
 Assignment2/checkpoints/
-.nfs00000000a26fc88e00000037
-settings.json
-Assignment2/data/lfwa/aligned_images/lfw2/
+
+# Temporary files
+.nfs*

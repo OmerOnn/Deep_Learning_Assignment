@@ -1,594 +1,1435 @@
-============================================================
-EXPERIMENT 3: CONTROVERSIAL MELODY INFLUENCE PROBE
-============================================================
+======================================================================
+EXPERIMENT 3: MELODY INFLUENCE PROBE
+Goal: Test whether melody-conditioned models react to melody changes.
+Corruption method: replace true melody vector with a zero melody vector.
+Metrics: Jaccard similarity, lexical shift, token edit distance.
+Models tested: Melody Variant 1 and Melody Variant 2
+======================================================================
 
-Processing Test Song: dirty laundry
-  -> Seed word: 'Today'
-    [V2 WITH TRUE MELODY]:
-Today & the world is a secret
-life in life & watching a couple
-house in my head & but i
-got a fool of true & in
-my eyes & i never want to
-be your love & i love you
-& i want to be with you
-& 'cause and i just want to
-tell you & because i want you
-guile & i need you for me
-& well i know we don't know
-why & and what we can feel
-it & i will buy you my
-love you just for me & i
-don't have
+Matched MIDI file: The_Bangles_-_Eternal_Flame.mid
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Today & the clock is went out
-and lives we didn't be lonely &
-looking into a big man & i
-need a heart of love to &
-but if you still have a friend
-& but i'm gonna get it off
-my red & kind of livin' on
-my mind & and i don't mean
-to make it & i want it
-right & i don't want to say
-if you could ever be & because
-i'm gonna stay with my heart &
-oh my baby & oh what you've
-got to be & you're the one
-& if
+======================================================================
+TEST SONG:  eternal flame
+======================================================================
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2824
-       Lexical Output Shift: 71.76% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Love'
-    [V2 WITH TRUE MELODY]:
-Love & i swear & never knew
-what you're nothin' but this girl i
-want to say & you're not so
-far for you & 'cause i really
-want to fall and try to make
-you & do me left to say
-that you've be of no fun &
-you know that i am so bad
-& i don't need the way that
-i walk & i beg i wear
-my have to love you & i
-can't make it all right & you
-can do it is this way &
-but i won't have to be with
-you &
+Seed word: Today
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Love & i love him the way
-& now i want to stay &
-just say that girl that i need
-& i know that baby baby &
-imaginary day is no one girl baby
-me & i want me to say
-& oh baby & i just can
-say i do & can't you say
-he don't feel what you can't do
-& so while you fall in love
-& i feel love & sometimes i
-want to hold you any time &
-i can feel the baby i have
-to say this before & i have
-a little
+[V1 WITH TRUE MELODY]
+Today
+brothers with the cat and a nada
+of kicking
+whoa hey oh oh oh
+black velvet but it was the same
+that she was in the man
+i was shaking too good
+to take it to the beat of
+the evening
+and the morning thereof can't believe my
+lovin'
+i think i love you
+love you got me
+don't you wanna do
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.3333
-       Lexical Output Shift: 66.67% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Night'
-    [V2 WITH TRUE MELODY]:
-Night & and he will make the
-guy closes on & ooh honey don't
-you know & it's not your love
-to see the things i say &
-i need to have to know &
-i don't want you anyway & i
-need a dream to make me show
-you & take a dream so rest
-& and the best of my eyes
-& and i know which i will
-it) & my baby is and glad
-& that it's all wrong when i
-used to be & 'cause i can
-dust it up & i can't believe
-it &
+[V1 WITH CORRUPTED ZERO MELODY]
+Today
+watch it cried
+i just want to get you no
+day
+i think i love you
+and i need you
+it's a beautiful life
+oh oh
+baby baby my my
+i'm always a time
+don't you want to be
+you really want me hey
+baby i know
+to keep your arms around and show
+how i wanna take you
+with me why you
+and i can't always be
+you can show me what you say
+you've been nothing so much of you
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Night is there & and i just
-want to be with you & i
-can see my name is & that
-i've been mad easy as you could
-be & let me let the beat
-control your soul & i just want
-to be with you & i want
-to make you feel like a day
-& <EOS> you really want to get
-me down & well i am better
-but i'm good & when i love
-you & i don't want to regret
-& if you love me what you've
-done to be & you can go
-with the
+[V1 METRICS]
+Jaccard Similarity: 0.2436
+Lexical Output Shift: 75.64%
+Token Edit Distance: 74
+Normalized Edit Distance: 0.8916
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2333
-       Lexical Output Shift: 76.67% of words changed due to melody corruption.
---------------------------------------------------
-Processing Test Song: new york minute
-  -> Seed word: 'Today'
-    [V2 WITH TRUE MELODY]:
-Today & the word is up in
-the rain & <EOS> i think that
-i need & how to show me
-to the limit & want to last
-their way & i know you want
-to make it & let me rock
-you make me feel & tell me
-you're gonna love you & you were
-my life oh oh & and the
-way you used to see & what
-can i do to hear & i'll
-be alright & i just want to
-dance & i just want to god
-i know & 'cause i am the
-hardest thing
+[V2 WITH TRUE MELODY]
+Today
+lord you want to be
+if you want you wanna let me
+say
+i can love you so
+i love you little just so when
+i do
+i said if you got all that
+i was love
+what you want to love you
+girl it's really fine to try
+i would feel you and do
+i want you see
+lie
+i never want to hear you
+i just can't see it
+you love me just i'm my way
+oh my baby
+oh my
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Today & and love will be the
-way & when the night was young
-& just got to hear & she
-says i said of the nights in
-time & there is a joy and
-rock the rain & gonna get him
-in the last dance & just can't
-leave be with you glass of my
-heart & i just want to say
-you & i know what it's been
-afraid to love is no more &
-you remember the best and the love
-was mine & no matter the way
-& i got a woman to me
-& what
+[V2 WITH CORRUPTED ZERO MELODY]
+Today
+we'll get a little thing
+are a devil and locked up your
+feet
+and when the world is a star
+so singin' of us off
+kick 'em when they're under
+he's like a song to go
+come on come on
+take it off on my heart
+maybe i feel all you love
+'cause i need you
+gonna forget them
+i never want to hear you
+i just really want to say
+you don't want me to say never
+better
+what you want to you
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2759
-       Lexical Output Shift: 72.41% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Love'
-    [V2 WITH TRUE MELODY]:
-Love is a single day & too
-bad at hard to change the same
-and we can't go & i'm nowhere
-to do it all & so i
-live for you & no matter how
-& i know what it could be
-& you can't make laugh your eyes
-make me say & no i can't
-have you love & somebody without me
-& <EOS> you know that i won't
-ever mean & you may be better
-& let's even be my side &
-i remember the way & i was
-afraid to love you for me &
-i want
+[V2 METRICS]
+Jaccard Similarity: 0.2561
+Lexical Output Shift: 74.39%
+Token Edit Distance: 72
+Normalized Edit Distance: 0.8471
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Love you more for a coladas &
-i see my life to love you
-& and if you do it all
-over me & do you say love
-you like a day & i will
-be your heart was mine & i
-want to feel the world & you
-don't want to say you from &
-and try to know & my achy
-breaky heart & i want to hear
-you say & i would love you
-for love to you & let me
-see the best thing to & <EOS>
-me know what i'll give you and
-& i
+----------------------------------------------------------------------
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2738
-       Lexical Output Shift: 72.62% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Night'
-    [V2 WITH TRUE MELODY]:
-Night & i just want to make
-you dream of you & i want
-to change the nights on & i'm
-lost in shades oh why & he
-knows i'm sorry & i was born
-to stay & we need to be
-here to come & from the danger
-& <EOS> you are all the things
-you know & i can't have a
-dream that girl & i want to
-hear you please & don't know what
-you're not to get by & i'll
-make you happy girl & i know
-you're no one to you & i
-want to
+Seed word: Love
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Night & and i've been of her
-but a single crumbling light & all
-that holds & but when they do
-the way & i don't want to
-live without your heart & i want
-to be nice & let me know
-that i hardly know & what we
-ever wanted & it ain't no good
-was still free & 'cause you don't
-know what i wish & good time
-i wish i could something easy &
-then i can't be there (i'll let
-you see & time after time &
-<EOS> you may be locked up gonna
-get out
+[V1 WITH TRUE MELODY]
+Love
+for a moment i just like this
+before
+sometimes about the way
+a world is a world
+and you can live
+long as i get around
+remember sometimes i got
+so long
+but i didn't know
+and you want to hurt me
+don't you cry
+i was gonna be your superman
+i can feel my way and you
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2121
-       Lexical Output Shift: 78.79% of words changed due to melody corruption.
---------------------------------------------------
-Processing Test Song: subterranean homesick blues
-  -> Seed word: 'Today'
-    [V2 WITH TRUE MELODY]:
-Today & lord gimme the new york
-of the poison mind & in the
-sea of the world & <EOS> you
-cried the reason doctor come up down
-out on the night & and then
-i lose of the dark & and
-the world we can go once &
-could you be through & now you
-can have my heart & with just
-a time to hold you & but
-i used to be my love &
-<EOS> you remember i see my life
-& when i have a little bit)
-& it's not forgotten & it's hard
-to do
+[V1 WITH CORRUPTED ZERO MELODY]
+Love
+for love but i was
+if you want to hurt me
+i feel the right as you are
+you can see me
+when you have to be
+i'd rather let you feel
+to me but i will be wrong
+you can be coming for my world
+right and you ever give me all
+right
+i want you for you and the
+way
+i'll be with you
+i feel my love
+i know i want to stay
+i don't want to go
+but i never
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Today oh whey oh oh & <EOS>
-me were so easy to be there
-& just got a two of us
-& i was easy to make it
-& you're asking all i ever wanna
-make it & when it feels going
-down baby & i gotta be right
-for you & let's be home and
-night & maybe & <EOS> i won't
-feel a boy baby & i feel
-like i made & rock your broken
-arms tonight & <EOS> you believe in
-love & when i funds & don't
-be just the way & i got
-my baby
+[V1 METRICS]
+Jaccard Similarity: 0.3387
+Lexical Output Shift: 66.13%
+Token Edit Distance: 72
+Normalized Edit Distance: 0.8471
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.1782
-       Lexical Output Shift: 82.18% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Love'
-    [V2 WITH TRUE MELODY]:
-Love you for a girl or six
-a new word & i really want
-to say goodbye & no one is
-so far again & you got her
-off the night mess to face &
-but i used to be the girl
-and i can't stop & and that
-she could make it all over &
-and you're gone & i can have
-you and me & i can't be
-the way that you say & i
-don't know what no i wear &
-good hard to you & i want
-to tell you goodbye & i don't
-want to
+[V2 WITH TRUE MELODY]
+Love
+if you want to be
+once for a life or really to
+me
+and you're in your baby
+and i could only makes you lose
+so i would runaway together
+you were my baby
+oh you baby
+it's just a little bit tonight
+remember if you said
+i like you know
+what just to do
+i'm the hardest thing you had to
+go away
+i know i will love you
+i know that i will give you
+a game
+this is in your life
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Love you from your girl & and
-never be my face & can i
-do to feel you & i know
-that i've been loved you & leave
-me alone tonight & <EOS> you better
-swallow my babay & clutches in my
-arms & i'm not fun & but
-nobody will you feel home & call
-me baby don't let me go &
-and find a little prayer to you
-& i'll be gone & and i
-want is someone (sup-p-per troup-p-per) & just
-like you've got a friend & and
-you're gonna be a way & <EOS>
-you have
+[V2 WITH CORRUPTED ZERO MELODY]
+Love
+if you want to be
+if you want you wouldn't stay
+you know the love that i do
+i know you do
+and my name is
+i didn't wanna get your way
+you tell me you will be a
+child
+and i swear yeah yeah yeah yeah
+yeah
+i have a good friends
+and i don't know what i sold
+my mind
+oh what a wicked day to have
+a big chance
+to be there
+right as you are my baby
+and now the pain
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2396
-       Lexical Output Shift: 76.04% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Night'
-    [V2 WITH TRUE MELODY]:
-Night when i can say goodbye &
-i just want to say i need
-it & if i ever need your
-superman & i really don't hide my
-finger & let me live at this
-games & i know the real gonna
-love you & i can love you
-& i wanna be with you &
-i give my love to you &
-<EOS> my head ain't no one to
-show you & i'll be the same
-& and i don't want to be
-your eyes & i believe you were
-my mind & don't make you happy
-here tonight
+[V2 METRICS]
+Jaccard Similarity: 0.2593
+Lexical Output Shift: 74.07%
+Token Edit Distance: 76
+Normalized Edit Distance: 0.8837
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Night & and i they was very
-days & are just the one who
-rhyme more more more & in the
-broncin' hands & gitchi verstehe & and
-motherfuckers walked up your mind & is
-the voice and the city of the
-poison mind & is the night closes
-in & and then we took an
-right back & a big net sea
-& i fought my lives in love
-of my life & <EOS> the last
-dance for you and me & how
-is it so girl we needs to
-fight & and i want you for
-a love
+----------------------------------------------------------------------
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.1753
-       Lexical Output Shift: 82.47% of words changed due to melody corruption.
---------------------------------------------------
-Processing Test Song: mable
-  -> Seed word: 'Today'
-    [V2 WITH TRUE MELODY]:
-Today & the red-nosed house above &
-and the street come to live &
-and the sun like whoa! & lite
-and there are tragical & and if
-we could be hot & kiss the
-road the top of the floor &
-is the one was shines out of
-shady's streets & she ain't did they
-called 'em all and hold me up
-and we start & at the pony
-start to the funk soul brother &
-check it up my first made on
-the look & you can't hear the
-day & she may take a cabinet
-die &
+Seed word: Night
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Today & i'll love let the way
-i really can & i can see
-my life to turn away & gotta
-let yourself be nice & <EOS> you
-gave me real & and i get
-about another lonely life for a love
-& gonna be my heart & ever
-never knew & but i can't stay
-with you with my eyes & i
-know the world before you came to
-me & <EOS> you gotta never know
-& i'll be a girl that i
-love you & and we're so far
-to you) & but i don't want
+[V1 WITH TRUE MELODY]
+Night
+lonely days and still the way we
+used to have us
+and i just know that you need
 to say
+but you don't know what to say
+i was hoping beside me
+i don't want to be
+baby i want you
+but i swear and i'm feeling like
+that
+i would be your father
+i know when i can't never recognize
+you all want to take it
+and i won't love you
+i need to hear my heart
+oh yeah
+my heart is too
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.0991
-       Lexical Output Shift: 90.09% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Love'
-    [V2 WITH TRUE MELODY]:
-Love you for me for a dream
-& i can't believe it all alone
-and one & i don't want my
-baby & and i'm not so far
-& i see my heart in my
-eyes & i used to try to
-try & and i don't want to
-be with you & and treat you
-close me & do you got the
-way the law and & i want
-to be your love my heart &
-baby baby and rest & so you're
-all alone & i can see that
-i met you & that boy i
-tried to
+[V1 WITH CORRUPTED ZERO MELODY]
+Night
+ooh ooh ooh
+ooh baby baby
+sherry baby
+oh oh oh
+oh oh oh
+on the sign
+when you have to be
+sometimes we live
+i don't want to know
+if i want you to know
+ooh baby baby baby
+ooh i know
+on the first world
+and i feel my life yeah
+i never want to go from
+you were my arms and long
+and when you said
+i don't want to go
+but i never
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Love & ooh from things you know
-& if i never wanna say we're
-no & i feel even try to
-cry & you really want me for
-you & girl i really want to
-say & if i was so many
-girl & i never knew you and
-me & but i can show you
-the way that i wanted & the
-way it ain't no way to have
-& but it doesn't matter that i
-wanted & a girl that i get
-got to mind you say & i
-want to show you tom which would
-can do
+[V1 METRICS]
+Jaccard Similarity: 0.2754
+Lexical Output Shift: 72.46%
+Token Edit Distance: 73
+Normalized Edit Distance: 0.8588
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2468
-       Lexical Output Shift: 75.32% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Night'
-    [V2 WITH TRUE MELODY]:
-Night in down & and i run
-and hit us & and the things
-you say & i never want to
-hear you love me & if something
-good known & i will confess i
-know what i'd gotta have to hurt
-you & i can't let you go
-& <EOS> you believe in love &
-i can say goodbye to love you
-to have & i don't know i'm
-sorry & you really want to do
-goodbye & gonna try to break the
-way that you love me & and
-say that you'll be good & i
-love you
+[V2 WITH TRUE MELODY]
+Night
+ooh hey hey oh oh
+repeat
+copacabana
+soapsud pacing and sticky
+boy
+you know that i need
+you don't know what you did
+i have fallen hungry time
+i don't want to know
+if you want to love you
+because when you're gone
+for the one
+and you love me
+i want you can
+she's my baby
+oh my baby
+i love you here
+i would find you so more
+and i can't make you cry
+i love you
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Night to dance & the doctor i
-want to be living back & i
-look at you and you say that
-i don't know & what i'd love
-you one more than do & i
-need to say but i really want
-to be the way you feel &
-you can't be your eyes & come
-up and free & think of me
-& and i really had & but
-i want you alone again & i
-can feel you've been ever just say
-& you get her eyes again &
-you can make me know you &
-i wanna
+[V2 WITH CORRUPTED ZERO MELODY]
+Night
+feeling like a dream to the lands
+that we all colors
+and the look of a minute
+on the good times and a better
+show
+i don't know it else so much
+you don't know where they made my
+love
+i can see you looking for that
+will it help
+you would be the one one makes
+you know
+what you wanna do
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2750
-       Lexical Output Shift: 72.50% of words changed due to melody corruption.
---------------------------------------------------
-Processing Test Song: forgot about dre
-  -> Seed word: 'Today'
-    [V2 WITH TRUE MELODY]:
-Today & the boardwalk of sir came
-on the floor & no se are
-got a new eyes & and its
-all of a place & that only
-one thing that would be & i
-will be there & i don't want
-yourself back & you're all alone &
-i could never care & if you
-remember & now i come part of
-your love i see & in my
-arms i hear & in heaven &
-so just a woman who could be
-there & i can buy you my
-baby & and i need to say
-& a
+[V2 METRICS]
+Jaccard Similarity: 0.2208
+Lexical Output Shift: 77.92%
+Token Edit Distance: 69
+Normalized Edit Distance: 0.8625
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Today & the future you think i'm
-not say & you can't help me
-do it on me & i love
-you too much & i am the
-end of you & i'll be your
-mind baby is playing your life &
-i don't need my fantasy girl &
-i want to leave it back &
-but i can believe it & so
-baby all i die & come on
-and wanna be on & hold me
-like a friend & no matter what
-you do & girl don't you know
-that baby & things do i feel
-like i
+----------------------------------------------------------------------
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2737
-       Lexical Output Shift: 72.63% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Love'
-    [V2 WITH TRUE MELODY]:
-Love is in my life & i
-can make you see that i say
-no way & i would you know
-you did a little prayer for you
-& i can say you really will
-& i just want to see it
-from the way & it's all the
-fool to go you by me &
-i need a knife as then i
-have to hear & thoughts and still
-don't make you just go home more
-& so no one is taking home
-and people say but i know that
-you're not so & and i can't
-fret but
+Matched MIDI file: Billy_Joel_-_Honesty.mid
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Love you and you are right &
-and you may be sure i can't
-be right & but i wanted you
-flesh up and ride away & this
-will find you & that last i
-can train & lived at only you
-before & if you feel like whoa!
-& crept in the light of tears
-(this is on town. & where the
-lawyers bop will just said i wait
-& so long as you say that
-she don't want to recall & i
-don't thought i gotta do how to
-make you feel & tell me why
-& i
+======================================================================
+TEST SONG:  honesty
+======================================================================
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2200
-       Lexical Output Shift: 78.00% of words changed due to melody corruption.
---------------------------------------------------
-  -> Seed word: 'Night'
-    [V2 WITH TRUE MELODY]:
-Night & and when i bop you
-see and warm yourself & you can
-feel the beat in my arms &
-gotta get some lovin' you da ring
-with being bright & and rock the
-same wind is gone & save my
-dreams can go out & <EOS> the
-cake & take me to the city
-& oh the night is all her
-name & she's just the sign i've
-got to go to the floor &
-'cause i'm not so while you ever
-like it to me & i don't
-want to believe in your body girl
-& i
+Seed word: Today
 
-    [V2 WITH CORRUPTED (ZERO) MELODY]:
-Night & and i can say anything
-to show you & i fall in
-love right now & now that's my
-love is more and love & i
-love you and i need you &
-but all my child is this time
-that i will be & but i
-feel like i still think that we
-never & think i was born to
-be the go and you don't know
-what you're in one & who are
-all i can see in & but
-i'm feeling for you & i seen
-it just come on & just got
-to think
+[V1 WITH TRUE MELODY]
+Today
+cut the cake
+i have love you got
+you'll want to be the night
+and i could never be that
+i'm still more than you
+i just wanna last no way
+no woman like it
+baby i want you
+oh
+what's not too hard to ride
+and i know it was right
+the only one for
+she's always a life of us
+'cause i know you won't see it
+when you don't know why
+i don't want to go
+but i never
 
-    >> QUANTITATIVE PROBE METRIC:
-       Vocabulary Jaccard Similarity: 0.2121
-       Lexical Output Shift: 78.79% of words changed due to melody corruption.
---------------------------------------------------
+[V1 WITH CORRUPTED ZERO MELODY]
+Today
+watch it cried
+i just want to get you no
+day
+i think i love you
+and i need you
+it's a beautiful life
+oh oh
+baby baby my my
+i'm always a time
+don't you want to be
+you really want me hey
+baby i know
+to keep your arms around and show
+how i wanna take you
+with me why you
+and i can't always be
+you can show me what you say
+you've been nothing so much of you
+
+[V1 METRICS]
+Jaccard Similarity: 0.2529
+Lexical Output Shift: 74.71%
+Token Edit Distance: 78
+Normalized Edit Distance: 0.9398
+
+[V2 WITH TRUE MELODY]
+Today
+looking for a place
+i will turn out
+kick 'em when they're down
+kick 'em when they're down
+kick 'em when they're up
+kick 'em when they're up
+kick 'em when they're up
+kick 'em when they're up
+kick 'em when they're up
+kick 'em when they're down
+kick 'em when they're down
+kick 'em when they're softly with the
+wind
+with my voice to get on
+and it's the good times
+that stars lost the king is whoa
+oh oh oh
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Today
+we'll get a little thing
+are a devil and locked up your
+feet
+and when the world is a star
+so singin' of us off
+kick 'em when they're under
+he's like a song to go
+come on come on
+take it off on my heart
+maybe i feel all you love
+'cause i need you
+gonna forget them
+i never want to hear you
+i just really want to say
+you don't want me to say never
+better
+what you want to you
+
+[V2 METRICS]
+Jaccard Similarity: 0.1899
+Lexical Output Shift: 81.01%
+Token Edit Distance: 79
+Normalized Edit Distance: 0.9294
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[V1 WITH TRUE MELODY]
+Love
+we're sorry i just know
+we're with me
+games with you
+i need you and i don't know
+but i don't know what you was
+i just wanna send it to you
+you thought it to believe
+love you got me
+maybe my baby doll my lover
+i just want to be with you
+and i don't know if you feel
+what can i do
+you think i'll be your face
+you don't want me to find me
+oh why
+oh my
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Love
+for love but i was
+if you want to hurt me
+i feel the right as you are
+you can see me
+when you have to be
+i'd rather let you feel
+to me but i will be wrong
+you can be coming for my world
+right and you ever give me all
+right
+i want you for you and the
+way
+i'll be with you
+i feel my love
+i know i want to stay
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.2812
+Lexical Output Shift: 71.88%
+Token Edit Distance: 76
+Normalized Edit Distance: 0.8941
+
+[V2 WITH TRUE MELODY]
+Love you smile
+in the people i saw your sweet
+baby don't you know
+you can see the world you know
+but i'll be the bad
+and i would runaway yeah
+you tell me what you want
+with you so i do you know
+do you try you're back behind
+i have to love you again
+i want you how
+seem to be
+why don't you do
+like you turn me to you
+the boy is mine
+i don't want to go your lovin'
+i
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Love
+if you want to be
+if you want you wouldn't stay
+you know the love that i do
+i know you do
+and my name is
+i didn't wanna get your way
+you tell me you will be a
+child
+and i swear yeah yeah yeah yeah
+yeah
+i have a good friends
+and i don't know what i sold
+my mind
+oh what a wicked day to have
+a big chance
+to be there
+right as you are my baby
+and now the pain
+
+[V2 METRICS]
+Jaccard Similarity: 0.2468
+Lexical Output Shift: 75.32%
+Token Edit Distance: 77
+Normalized Edit Distance: 0.8953
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[V1 WITH TRUE MELODY]
+Night
+until the time was the way
+but he's never fun
+they just just like it
+and he's like the good times
+all the good light
+and i swear we ain't got to
+go
+to be the park
+so all of the night
+i'm losin' her out of the fast
+and the only explanation i feel
+i don't give her my way
+i'll be my queen
+i just make it to you
+i don't want to be
+one time for time
+but i never
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Night
+ooh ooh ooh
+ooh baby baby
+sherry baby
+oh oh oh
+oh oh oh
+on the sign
+when you have to be
+sometimes we live
+i don't want to know
+if i want you to know
+ooh baby baby baby
+ooh i know
+on the first world
+and i feel my life yeah
+i never want to go from
+you were my arms and long
+and when you said
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.2174
+Lexical Output Shift: 78.26%
+Token Edit Distance: 71
+Normalized Edit Distance: 0.8452
+
+[V2 WITH TRUE MELODY]
+Night
+sometimes you're true
+and i believe it was
+'til the morning train
+have a fuck to me the light
+in the park
+you can the end of the village
+or can you
+some bad light in the motion
+he came out in the meadow we
+listen to the sleigh and his head
+and runs down and i'm running
+so in that soda pop like a
+ling he's whoa
+a child won't a beautiful life oh
+oh oh oh oh oh
+i'm here in a white bread sky
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Night
+feeling like a dream to the lands
+that we all colors
+and the look of a minute
+on the good times and a better
+show
+i don't know it else so much
+you don't know where they made my
+love
+i can see you looking for that
+will it help
+you would be the one one makes
+you know
+what you wanna do
+
+[V2 METRICS]
+Jaccard Similarity: 0.1505
+Lexical Output Shift: 84.95%
+Token Edit Distance: 81
+Normalized Edit Distance: 0.9205
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Cardigans_-_Lovefool.mid
+
+======================================================================
+TEST SONG:  lovefool
+======================================================================
+
+Seed word: Today
+
+[V1 WITH TRUE MELODY]
+Today
+until the break of the way
+but you're all alone
+i think i love you
+i don't know how you want to
+say
+well i don't know you call me
+free
+i don't want to be all alone
+feel the one and i die
+without a taste of the night
+and i think you're tryin
+tell me why
+am the way
+we started days and the fight
+with the time to know
+how can you know i see you
+it's just a little face
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Today
+watch it cried
+i just want to get you no
+day
+i think i love you
+and i need you
+it's a beautiful life
+oh oh
+baby baby my my
+i'm always a time
+don't you want to be
+you really want me hey
+baby i know
+to keep your arms around and show
+how i wanna take you
+with me why you
+and i can't always be
+you can show me what you say
+you've been nothing so much of you
+
+[V1 METRICS]
+Jaccard Similarity: 0.2785
+Lexical Output Shift: 72.15%
+Token Edit Distance: 72
+Normalized Edit Distance: 0.8471
+
+[V2 WITH TRUE MELODY]
+Today
+until the things i say
+what can i say that you know
+i think at love you tell you
+to me
+my life is a man that i
+would forever say
+all i want to say it
+what you do to be another
+photograph long after love
+with you you just want to be
+with you
+and i can't say somebody to
+if you want to say you think
+you're here
+i know you want your mom
+hold me back to me
+and you would
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Today
+we'll get a little thing
+are a devil and locked up your
+feet
+and when the world is a star
+so singin' of us off
+kick 'em when they're under
+he's like a song to go
+come on come on
+take it off on my heart
+maybe i feel all you love
+'cause i need you
+gonna forget them
+i never want to hear you
+i just really want to say
+you don't want me to say never
+better
+what you want to you
+
+[V2 METRICS]
+Jaccard Similarity: 0.2093
+Lexical Output Shift: 79.07%
+Token Edit Distance: 79
+Normalized Edit Distance: 0.9186
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[V1 WITH TRUE MELODY]
+Love
+for a girl
+i was waiting for me
+girl can i say
+i can love you like you
+i can show you your eyes
+and i ever needed myself
+i just want to say
+i will be many day
+and i swear i swear i want
+to you
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Love
+for love but i was
+if you want to hurt me
+i feel the right as you are
+you can see me
+when you have to be
+i'd rather let you feel
+to me but i will be wrong
+you can be coming for my world
+right and you ever give me all
+right
+i want you for you and the
+way
+i'll be with you
+i feel my love
+i know i want to stay
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.2364
+Lexical Output Shift: 76.36%
+Token Edit Distance: 66
+Normalized Edit Distance: 0.7765
+
+[V2 WITH TRUE MELODY]
+Love
+if you want to be
+words are killing me alone
+i think i keep a thousand back
+line
+and i see that i could be
+that i had for speed
+you were my hand
+and i heard you can tell you
+how i mean to reach and you
+care
+you just a little bit for a
+look on
+with you close to the wind
+then the radio was new
+them days who would be the joy
+lonely than you could go
+i'll be my love
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Love
+if you want to be
+if you want you wouldn't stay
+you know the love that i do
+i know you do
+and my name is
+i didn't wanna get your way
+you tell me you will be a
+child
+and i swear yeah yeah yeah yeah
+yeah
+i have a good friends
+and i don't know what i sold
+my mind
+oh what a wicked day to have
+a big chance
+to be there
+right as you are my baby
+and now the pain
+
+[V2 METRICS]
+Jaccard Similarity: 0.1667
+Lexical Output Shift: 83.33%
+Token Edit Distance: 77
+Normalized Edit Distance: 0.8953
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[V1 WITH TRUE MELODY]
+Night
+quit playin' games of my mind
+no is you really don't be a
+chance
+to be your conscience in your eyes
+leave me free and you are
+i may not let you feel
+to me it's the sign
+now i see the night i'd rather
+hate you
+relax do you have to be
+why can i do you can't find
+myself
+you out that love is true
+i just want to be the day
+got your faith in your room
+and your love is a long
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Night
+ooh ooh ooh
+ooh baby baby
+sherry baby
+oh oh oh
+oh oh oh
+on the sign
+when you have to be
+sometimes we live
+i don't want to know
+if i want you to know
+ooh baby baby baby
+ooh i know
+on the first world
+and i feel my life yeah
+i never want to go from
+you were my arms and long
+and when you said
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.1772
+Lexical Output Shift: 82.28%
+Token Edit Distance: 82
+Normalized Edit Distance: 0.9425
+
+[V2 WITH TRUE MELODY]
+Night
+they're up and it's a place on
+earth
+pipes and gold and look at the
+skies
+so the only one who loves you
+when i do you like then it
+comes
+to a poor and the pain we
+used to get it
+to last some scene
+we didn't have to the world
+and we can get a new york
+copa copacabana
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Night
+feeling like a dream to the lands
+that we all colors
+and the look of a minute
+on the good times and a better
+show
+i don't know it else so much
+you don't know where they made my
+love
+i can see you looking for that
+will it help
+you would be the one one makes
+you know
+what you wanna do
+
+[V2 METRICS]
+Jaccard Similarity: 0.2105
+Lexical Output Shift: 78.95%
+Token Edit Distance: 59
+Normalized Edit Distance: 0.9219
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Aqua_-_Barbie_Girl.mid
+
+======================================================================
+TEST SONG:  barbie girl
+======================================================================
+
+Seed word: Today
+
+[V1 WITH TRUE MELODY]
+Today
+last thing that i say
+won't you see
+anyway about me
+i know that i know
+i think i love you
+and i have yourself
+i said if you know
+only the way you
+if i want to be your way
+no diggity no time again
+i have to give you right
+you can be with you turn away
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Today
+watch it cried
+i just want to get you no
+day
+i think i love you
+and i need you
+it's a beautiful life
+oh oh
+baby baby my my
+i'm always a time
+don't you want to be
+you really want me hey
+baby i know
+to keep your arms around and show
+how i wanna take you
+with me why you
+and i can't always be
+you can show me what you say
+you've been nothing so much of you
+
+[V1 METRICS]
+Jaccard Similarity: 0.2361
+Lexical Output Shift: 76.39%
+Token Edit Distance: 70
+Normalized Edit Distance: 0.8434
+
+[V2 WITH TRUE MELODY]
+Today
+lie out now
+i have not right
+i should make you a little bit
+and i don't know how you do
+to say
+so i don't know when we wouldn't
+take you
+that i was bein' the best of
+my love
+and i swear from my faith
+cause i was at the other place
+i just want to stay to handle
+my love
+this is where you're all as i
+can't get it
+you can take it for you
+it's not so much you do
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Today
+we'll get a little thing
+are a devil and locked up your
+feet
+and when the world is a star
+so singin' of us off
+kick 'em when they're under
+he's like a song to go
+come on come on
+take it off on my heart
+maybe i feel all you love
+'cause i need you
+gonna forget them
+i never want to hear you
+i just really want to say
+you don't want me to say never
+better
+what you want to you
+
+[V2 METRICS]
+Jaccard Similarity: 0.2316
+Lexical Output Shift: 76.84%
+Token Edit Distance: 81
+Normalized Edit Distance: 0.9419
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[V1 WITH TRUE MELODY]
+Love you baby
+but i think i can't love you
+pleased to be
+i need you
+i don't know how
+you don't know what to you
+i just wanna last this
+i don't want to be
+there to do you feel
+you wanna la la la la la
+oh you can see
+if you know it's like that i
+drove down
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Love
+for love but i was
+if you want to hurt me
+i feel the right as you are
+you can see me
+when you have to be
+i'd rather let you feel
+to me but i will be wrong
+you can be coming for my world
+right and you ever give me all
+right
+i want you for you and the
+way
+i'll be with you
+i feel my love
+i know i want to stay
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.2131
+Lexical Output Shift: 78.69%
+Token Edit Distance: 72
+Normalized Edit Distance: 0.8471
+
+[V2 WITH TRUE MELODY]
+Love
+words are few
+i have fallen for a change
+how to be the one
+and you are the one of my
+heart
+to put the world
+i saw my father
+i can't leave you in you
+i don't want to dance
+i'd make him sleep in here
+i had to leave you by
+you can find me to deal with
+you
+'cause just that you did
+i won't get on
+and you can't go with you
+well you're up with the limit
+i
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Love
+if you want to be
+if you want you wouldn't stay
+you know the love that i do
+i know you do
+and my name is
+i didn't wanna get your way
+you tell me you will be a
+child
+and i swear yeah yeah yeah yeah
+yeah
+i have a good friends
+and i don't know what i sold
+my mind
+oh what a wicked day to have
+a big chance
+to be there
+right as you are my baby
+and now the pain
+
+[V2 METRICS]
+Jaccard Similarity: 0.1860
+Lexical Output Shift: 81.40%
+Token Edit Distance: 81
+Normalized Edit Distance: 0.9419
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[V1 WITH TRUE MELODY]
+Night
+somebody come to me
+i wear my sunglasses
+let's turn out
+to the limit one more than you
+all the world was my love
+oh when i die
+we can say it's so
+no never will be
+but it's only a distance
+there may be gone
+you feel the night of mine
+i can feel a way that's why
+if you want me
+when i remember
+and i always think that i will
+i don't want to go
+but i never
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Night
+ooh ooh ooh
+ooh baby baby
+sherry baby
+oh oh oh
+oh oh oh
+on the sign
+when you have to be
+sometimes we live
+i don't want to know
+if i want you to know
+ooh baby baby baby
+ooh i know
+on the first world
+and i feel my life yeah
+i never want to go from
+you were my arms and long
+and when you said
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.2603
+Lexical Output Shift: 73.97%
+Token Edit Distance: 70
+Normalized Edit Distance: 0.8537
+
+[V2 WITH TRUE MELODY]
+Night
+ooh hey hey oh oh
+sure it's not
+she's gonna see the one
+no no more for the right in
+the sky
+who can i get out
+or worse as long as the time
+and i am i hear
+and your love has passed us by
+inside the night
+and the sun will tell you that
+i beg
+she's gonna look at me
+oh why
+i just wanna to me
+you know that i will be
+you're so much love
+and i knew
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Night
+feeling like a dream to the lands
+that we all colors
+and the look of a minute
+on the good times and a better
+show
+i don't know it else so much
+you don't know where they made my
+love
+i can see you looking for that
+will it help
+you would be the one one makes
+you know
+what you wanna do
+
+[V2 METRICS]
+Jaccard Similarity: 0.2235
+Lexical Output Shift: 77.65%
+Token Edit Distance: 77
+Normalized Edit Distance: 0.9167
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Blink_182_-_All_the_Small_Things.mid
+
+======================================================================
+TEST SONG:  all the small things
+======================================================================
+
+Seed word: Today
+
+[V1 WITH TRUE MELODY]
+Today
+someday you'll think they say
+she said he's all gimme that night
+and the boys are still in the
+air
+but what you see it
+it's it
+not how it ever
+now it's the same
+that's the good times
+this is here so close
+but we're on the man
+that you came and you know
+what i wanna do
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Today
+watch it cried
+i just want to get you no
+day
+i think i love you
+and i need you
+it's a beautiful life
+oh oh
+baby baby my my
+i'm always a time
+don't you want to be
+you really want me hey
+baby i know
+to keep your arms around and show
+how i wanna take you
+with me why you
+and i can't always be
+you can show me what you say
+you've been nothing so much of you
+
+[V1 METRICS]
+Jaccard Similarity: 0.1512
+Lexical Output Shift: 84.88%
+Token Edit Distance: 77
+Normalized Edit Distance: 0.9277
+
+[V2 WITH TRUE MELODY]
+Today
+magic driving me crazy
+let me cry
+sometimes it lasts in love i want
+to be
+i know you need me
+the words i want to change
+glory for the night
+and i could never cry
+and you can get your superman
+kept so much for you
+i know the way that i can
+i go to roll down
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Today
+we'll get a little thing
+are a devil and locked up your
+feet
+and when the world is a star
+so singin' of us off
+kick 'em when they're under
+he's like a song to go
+come on come on
+take it off on my heart
+maybe i feel all you love
+'cause i need you
+gonna forget them
+i never want to hear you
+i just really want to say
+you don't want me to say never
+better
+what you want to you
+
+[V2 METRICS]
+Jaccard Similarity: 0.1928
+Lexical Output Shift: 80.72%
+Token Edit Distance: 78
+Normalized Edit Distance: 0.9176
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[V1 WITH TRUE MELODY]
+Love
+for no woman
+i was born to take you there
+i think i love you
+i don't know how to dance
+you can take you in the way
+i'd realize the way of your love
+i will be a dark
+in the stillness of remembering if you
+said
+i have to be the best
+of your love
+i miss the night
+i'll be right
+i need you again
+i was my mind in my arms
+i don't want to go
+but i never
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Love
+for love but i was
+if you want to hurt me
+i feel the right as you are
+you can see me
+when you have to be
+i'd rather let you feel
+to me but i will be wrong
+you can be coming for my world
+right and you ever give me all
+right
+i want you for you and the
+way
+i'll be with you
+i feel my love
+i know i want to stay
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.3538
+Lexical Output Shift: 64.62%
+Token Edit Distance: 64
+Normalized Edit Distance: 0.7529
+
+[V2 WITH TRUE MELODY]
+Love
+if you want to be
+for a dog
+until the morning light
+hold me up
+you're the one
+and if i want to hold you
+i said if you used to go
+you can have hungry
+oh oh oh
+i swear it's looking for you that
+i never want to be right
+i want you how
+nothing are you
+come on baby let me do
+what can i say
+never can do now i say i
+do
+my love is gonna even
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Love
+if you want to be
+if you want you wouldn't stay
+you know the love that i do
+i know you do
+and my name is
+i didn't wanna get your way
+you tell me you will be a
+child
+and i swear yeah yeah yeah yeah
+yeah
+i have a good friends
+and i don't know what i sold
+my mind
+oh what a wicked day to have
+a big chance
+to be there
+right as you are my baby
+and now the pain
+
+[V2 METRICS]
+Jaccard Similarity: 0.3151
+Lexical Output Shift: 68.49%
+Token Edit Distance: 73
+Normalized Edit Distance: 0.8488
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[V1 WITH TRUE MELODY]
+Night
+watch it lasts in a man
+no matter the devil won't you
+the clock is tickin' and we were
+in the church of the poison mind
+and all we let's live
+you come and when you had say
+it's a beautiful life
+she knows what we do
+i just like to be the radio
+the flies
+she's the deprived of the wind
+he thinks he was the new york
+minute
+i give to the radio
+a little bit for a leaf that
+can be
+
+[V1 WITH CORRUPTED ZERO MELODY]
+Night
+ooh ooh ooh
+ooh baby baby
+sherry baby
+oh oh oh
+oh oh oh
+on the sign
+when you have to be
+sometimes we live
+i don't want to know
+if i want you to know
+ooh baby baby baby
+ooh i know
+on the first world
+and i feel my life yeah
+i never want to go from
+you were my arms and long
+and when you said
+i don't want to go
+but i never
+
+[V1 METRICS]
+Jaccard Similarity: 0.1429
+Lexical Output Shift: 85.71%
+Token Edit Distance: 80
+Normalized Edit Distance: 0.9412
+
+[V2 WITH TRUE MELODY]
+Night
+ooh hey hey oh oh
+pushing me where i cannot dee
+da do de de dee do de
+i always talk to
+who can i do you
+that's why you want the world
+i can change my mind
+you can get your superman
+baby let me rock you
+
+[V2 WITH CORRUPTED ZERO MELODY]
+Night
+feeling like a dream to the lands
+that we all colors
+and the look of a minute
+on the good times and a better
+show
+i don't know it else so much
+you don't know where they made my
+love
+i can see you looking for that
+will it help
+you would be the one one makes
+you know
+what you wanna do
+
+[V2 METRICS]
+Jaccard Similarity: 0.1268
+Lexical Output Shift: 87.32%
+Token Edit Distance: 57
+Normalized Edit Distance: 0.8906
+
+----------------------------------------------------------------------
+

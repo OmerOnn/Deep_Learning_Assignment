@@ -4,6 +4,7 @@ import time
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
+from torch.utils.tensorboard import SummaryWriter
 
 # ==========================================
 # FIXED: Dynamic Path Resolution for New Structure
@@ -20,18 +21,27 @@ if MODELS_DIR not in sys.path:
 
 # Clean and correct imports
 from data.data_preprocessing_baseline import prepare_baseline_pipeline, collate_fn
+from data.word2vec_utils import load_word2vec_model, build_embedding_matrix
 from classes.LyricsBaselineLSTM import LyricsBaselineLSTM
 from classes.Logger import Logger
 
 # FIXED: Using PROJECT_ROOT instead of PARENT_DIR
 RESULTS_DIR = os.path.join(PROJECT_ROOT, 'results')
 CHECKPOINT_DIR = os.path.join(PROJECT_ROOT, 'checkpoints')
+TENSORBOARD_DIR = os.path.join(RESULTS_DIR, 'tensorboard')
+
 os.makedirs(RESULTS_DIR, exist_ok=True)
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+os.makedirs(TENSORBOARD_DIR, exist_ok=True)
+
 log_filename = os.path.join(RESULTS_DIR, f"baseline_train_log.txt")
 sys.stdout = Logger(log_filename)
 
 print(f"--- Output is being saved to: {log_filename} ---")
+
+writer = SummaryWriter(
+    log_dir=os.path.join(TENSORBOARD_DIR, "baseline")
+)
 
 # ==========================================
 # 1. Configuration and Hyperparameters
@@ -41,25 +51,44 @@ EMBEDDING_DIM = 300
 HIDDEN_DIM = 256
 NUM_LAYERS = 2
 LEARNING_RATE = 0.001
-EPOCHS = 30
+EPOCHS = 50
 MAX_LEN = 20
 VALIDATION_SPLIT = 0.2  # 20% of data for validation
 
 # ==========================================
-# 2. Setup Device (GPU if available, else CPU)
+# 2. Setup Device
 # ==========================================
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
+
 print(f"Using device: {device}")
 
 # ==========================================
 # 3. Load Data, Build Vocabulary
 # ==========================================
-# FIXED: Using PROJECT_ROOT instead of PARENT_DIR
 CSV_PATH = os.path.join(PROJECT_ROOT, 'data', 'lyrics_train_set.csv')
 
-# Using the lyrics-only clean pipeline function
 dataset, word_to_idx, idx_to_word = prepare_baseline_pipeline(CSV_PATH, max_len=MAX_LEN)
 vocab_size = len(word_to_idx)
+
+WORD2VEC_PATH = os.path.join(
+    PROJECT_ROOT,
+    'data',
+    'word2vec',
+    'GoogleNews-vectors-negative300.bin'
+)
+
+word2vec_model = load_word2vec_model(WORD2VEC_PATH)
+
+embedding_matrix = build_embedding_matrix(
+    word_to_idx=word_to_idx,
+    word2vec_model=word2vec_model,
+    embedding_dim=EMBEDDING_DIM
+)
 
 # ==========================================
 # 4. Split Dataset and Create DataLoaders
@@ -68,18 +97,41 @@ total_size = len(dataset)
 val_size = int(total_size * VALIDATION_SPLIT)
 train_size = total_size - val_size
 
-# Randomly split the data into training and validation sets
-train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+generator = torch.Generator().manual_seed(42)
+train_dataset, val_dataset = random_split(
+    dataset,
+    [train_size, val_size],
+    generator=generator
+)
 
 print(f"Total samples: {total_size} | Training: {train_size} | Validation: {val_size}")
 
-train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, collate_fn=collate_fn)
-val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, collate_fn=collate_fn)
+train_loader = DataLoader(
+    train_dataset,
+    batch_size=BATCH_SIZE,
+    shuffle=True,
+    collate_fn=collate_fn
+)
+
+val_loader = DataLoader(
+    val_dataset,
+    batch_size=BATCH_SIZE,
+    shuffle=False,
+    collate_fn=collate_fn
+)
 
 # ==========================================
 # 5. Initialize Model, Loss, and Optimizer
 # ==========================================
-model = LyricsBaselineLSTM(vocab_size, EMBEDDING_DIM, HIDDEN_DIM, NUM_LAYERS).to(device)
+model = LyricsBaselineLSTM(
+    vocab_size=vocab_size,
+    embedding_dim=EMBEDDING_DIM,
+    hidden_dim=HIDDEN_DIM,
+    num_layers=NUM_LAYERS,
+    pretrained_embeddings=embedding_matrix,
+    freeze_embeddings=False
+).to(device)
+
 criterion = nn.CrossEntropyLoss(ignore_index=0)
 optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 
@@ -89,84 +141,110 @@ optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 print("\nStarting training...\n")
 start_time = time.time()
 
-best_val_ppl = float('inf')  # Start with infinity so any first epoch will be better
-patience = 3                 # Number of epochs to wait for improvement before stopping
-patience_counter = 0         # Tracks consecutive epochs without improvement
+best_val_ppl = float('inf')
+best_train_loss = None
+best_val_loss = None
+best_train_ppl = None
 best_epoch = 0
 
+patience = 5
+patience_counter = 0
+
+model_save_filename = os.path.join(CHECKPOINT_DIR, f"baseline_model_best.pth")
+
 for epoch in range(EPOCHS):
-    
+
     # -------------------------
     # Training Phase
     # -------------------------
     model.train()
     total_train_loss = 0
-    
+
     for batch_inputs, batch_targets in train_loader:
         batch_inputs = batch_inputs.to(device)
         batch_targets = batch_targets.to(device)
-        
+
         optimizer.zero_grad()
-        
+
         logits, _ = model(batch_inputs)
-        
+
         logits_flat = logits.view(-1, vocab_size)
         targets_flat = batch_targets.view(-1)
-        
+
         loss = criterion(logits_flat, targets_flat)
         loss.backward()
         optimizer.step()
-        
+
         total_train_loss += loss.item()
-        
+
     avg_train_loss = total_train_loss / len(train_loader)
-    
+
     # -------------------------
     # Validation Phase
     # -------------------------
     model.eval()
     total_val_loss = 0
-    
-    # Disable gradient calculation for validation to save memory and compute
+
     with torch.no_grad():
         for batch_inputs, batch_targets in val_loader:
             batch_inputs = batch_inputs.to(device)
             batch_targets = batch_targets.to(device)
-            
+
             logits, _ = model(batch_inputs)
-            
+
             logits_flat = logits.view(-1, vocab_size)
             targets_flat = batch_targets.view(-1)
-            
+
             loss = criterion(logits_flat, targets_flat)
             total_val_loss += loss.item()
-            
+
     avg_val_loss = total_val_loss / len(val_loader)
-    
-    # Calculate Perplexity for both train and validation
+
     train_ppl = torch.exp(torch.tensor(avg_train_loss)).item()
     val_ppl = torch.exp(torch.tensor(avg_val_loss)).item()
-    
-    print(f"\nEpoch [{epoch+1}/{EPOCHS}] - Train Loss: {avg_train_loss:.4f} (PPL: {train_ppl:.2f}) | Val Loss: {avg_val_loss:.4f} (PPL: {val_ppl:.2f})")
+
+    print(
+        f"\nEpoch [{epoch+1}/{EPOCHS}] - "
+        f"Train Loss: {avg_train_loss:.4f} (PPL: {train_ppl:.2f}) | "
+        f"Val Loss: {avg_val_loss:.4f} (PPL: {val_ppl:.2f})"
+    )
+
+    writer.add_scalar("Loss/train", avg_train_loss, epoch + 1)
+    writer.add_scalar("Loss/validation", avg_val_loss, epoch + 1)
+    writer.add_scalar("Perplexity/train", train_ppl, epoch + 1)
+    writer.add_scalar("Perplexity/validation", val_ppl, epoch + 1)
 
     if val_ppl < best_val_ppl:
         best_val_ppl = val_ppl
+        best_train_loss = avg_train_loss
+        best_val_loss = avg_val_loss
+        best_train_ppl = train_ppl
         best_epoch = epoch + 1
-        patience_counter = 0  # Reset counter because we found a better model
-        
-        # Save the best model weights
-        model_save_filename = os.path.join(CHECKPOINT_DIR, f"baseline_model_best.pth")
+        patience_counter = 0
+
+        writer.add_scalar("Best/validation_loss", best_val_loss, best_epoch)
+        writer.add_scalar("Best/validation_perplexity", best_val_ppl, best_epoch)
+
         torch.save(model.state_dict(), model_save_filename)
-        print(f"--> [SAVED] New best Validation Perplexity ({best_val_ppl:.2f}) achieved at Epoch {best_epoch}!")
+
+        print(
+            f"--> [SAVED] New best model at Epoch {best_epoch} | "
+            f"Train Loss: {best_train_loss:.4f} (PPL: {best_train_ppl:.2f}) | "
+            f"Val Loss: {best_val_loss:.4f} (PPL: {best_val_ppl:.2f})"
+        )
     else:
         patience_counter += 1
-        print(f"--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: {patience_counter}/{patience}")
-        
-    # Check if we should stop early
-    if patience_counter >= patience:
-        print(f"\n[EARLY STOPPING] Training stopped early at Epoch {epoch+1}. Best Model was at Epoch {best_epoch} with Val PPL: {best_val_ppl:.2f}")
-        break
+        print(
+            f"--> [NO IMPROVEMENT] Validation Perplexity did not improve. "
+            f"Patience: {patience_counter}/{patience}"
+        )
 
+    if patience_counter >= patience:
+        print(
+            f"\n[EARLY STOPPING] Training stopped early at Epoch {epoch+1}. "
+            f"Best Model was at Epoch {best_epoch} with Val PPL: {best_val_ppl:.2f}"
+        )
+        break
 
 print("\nTraining Baseline finished successfully!")
 
@@ -174,19 +252,18 @@ end_time = time.time()
 total_duration = end_time - start_time
 minutes = int(total_duration // 60)
 seconds = int(total_duration % 60)
+
 print(f"Total Training Time: {minutes} minutes and {seconds} seconds ({total_duration:.2f} seconds total)")
 
-
 print(f"\n==========================================")
-print(f"BEST MODEL TRAINING METRICS:")
+print(f"BEST BASELINE MODEL TRAINING METRICS:")
 print(f"==========================================")
-print(f"Best Model caught at Epoch: {best_epoch}")
+print(f"Best Model Epoch: {best_epoch}")
+print(f"Best Model Train Loss: {best_train_loss:.4f}")
+print(f"Best Model Train Perplexity: {best_train_ppl:.2f}")
+print(f"Best Model Validation Loss: {best_val_loss:.4f}")
 print(f"Best Model Validation Perplexity: {best_val_ppl:.2f}")
+print(f"Best checkpoint saved to: /checkpoints/baseline_model_best.pth")
 print(f"==========================================\n")
 
-# ==========================================
-# SAVE FEATURE: Saving trained model weights
-# ==========================================
-model_save_filename = os.path.join(CHECKPOINT_DIR, f"baseline_model.pth")
-torch.save(model.state_dict(), model_save_filename)
-print(f"\n--- Model weights successfully saved to: {model_save_filename} ---")
+writer.close()

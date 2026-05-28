@@ -1,0 +1,160 @@
+--- Output is being saved to: /Users/omeronn/University/Master/First Year/Deep Learning/Deep_Learning_Assignment/Assignment3/Archive/results/melody_v3_train_log.txt ---
+Using device: mps
+
+Finished preprocessing Melody
+Vocabulary size: 7509
+Dataset samples: 9345
+Loading pretrained Word2Vec model...
+Finished loading pretrained Word2Vec model.
+Word2Vec embedding matrix created.
+Vocabulary size: 7509
+Found in Word2Vec: 6578/7504
+Coverage: 87.66%
+Missing words: 926
+Total samples: 9345 | Training: 7476 | Validation: 1869
+
+Starting Melody Variant 3 training...
+
+
+Epoch [1/50] - Train Loss: 6.2142 (PPL: 499.78) | Val Loss: 5.9796 (PPL: 395.28)
+--> [SAVED] New best model at Epoch 1 | Train Loss: 6.2142 (PPL: 499.78) | Val Loss: 5.9796 (PPL: 395.28)
+
+Epoch [2/50] - Train Loss: 5.9288 (PPL: 375.72) | Val Loss: 5.8483 (PPL: 346.63)
+--> [SAVED] New best model at Epoch 2 | Train Loss: 5.9288 (PPL: 375.72) | Val Loss: 5.8483 (PPL: 346.63)
+
+Epoch [3/50] - Train Loss: 5.7404 (PPL: 311.18) | Val Loss: 5.7006 (PPL: 299.05)
+--> [SAVED] New best model at Epoch 3 | Train Loss: 5.7404 (PPL: 311.18) | Val Loss: 5.7006 (PPL: 299.05)
+
+Epoch [4/50] - Train Loss: 5.5311 (PPL: 252.41) | Val Loss: 5.5119 (PPL: 247.61)
+--> [SAVED] New best model at Epoch 4 | Train Loss: 5.5311 (PPL: 252.41) | Val Loss: 5.5119 (PPL: 247.61)
+
+Epoch [5/50] - Train Loss: 5.3048 (PPL: 201.29) | Val Loss: 5.2872 (PPL: 197.79)
+--> [SAVED] New best model at Epoch 5 | Train Loss: 5.3048 (PPL: 201.29) | Val Loss: 5.2872 (PPL: 197.79)
+
+Epoch [6/50] - Train Loss: 5.0912 (PPL: 162.59) | Val Loss: 5.1473 (PPL: 171.97)
+--> [SAVED] New best model at Epoch 6 | Train Loss: 5.0912 (PPL: 162.59) | Val Loss: 5.1473 (PPL: 171.97)
+
+Epoch [7/50] - Train Loss: 4.9221 (PPL: 137.30) | Val Loss: 5.0436 (PPL: 155.03)
+--> [SAVED] New best model at Epoch 7 | Train Loss: 4.9221 (PPL: 137.30) | Val Loss: 5.0436 (PPL: 155.03)
+
+Epoch [8/50] - Train Loss: 4.7787 (PPL: 118.96) | Val Loss: 4.9698 (PPL: 143.99)
+--> [SAVED] New best model at Epoch 8 | Train Loss: 4.7787 (PPL: 118.96) | Val Loss: 4.9698 (PPL: 143.99)
+
+Epoch [9/50] - Train Loss: 4.6531 (PPL: 104.91) | Val Loss: 4.9010 (PPL: 134.42)
+--> [SAVED] New best model at Epoch 9 | Train Loss: 4.6531 (PPL: 104.91) | Val Loss: 4.9010 (PPL: 134.42)
+
+Epoch [10/50] - Train Loss: 4.5501 (PPL: 94.64) | Val Loss: 4.8499 (PPL: 127.73)
+--> [SAVED] New best model at Epoch 10 | Train Loss: 4.5501 (PPL: 94.64) | Val Loss: 4.8499 (PPL: 127.73)
+
+Epoch [11/50] - Train Loss: 4.4525 (PPL: 85.84) | Val Loss: 4.8070 (PPL: 122.36)
+--> [SAVED] New best model at Epoch 11 | Train Loss: 4.4525 (PPL: 85.84) | Val Loss: 4.8070 (PPL: 122.36)
+
+Epoch [12/50] - Train Loss: 4.3701 (PPL: 79.05) | Val Loss: 4.7668 (PPL: 117.54)
+--> [SAVED] New best model at Epoch 12 | Train Loss: 4.3701 (PPL: 79.05) | Val Loss: 4.7668 (PPL: 117.54)
+
+Epoch [13/50] - Train Loss: 4.2896 (PPL: 72.94) | Val Loss: 4.7328 (PPL: 113.61)
+--> [SAVED] New best model at Epoch 13 | Train Loss: 4.2896 (PPL: 72.94) | Val Loss: 4.7328 (PPL: 113.61)
+
+Epoch [14/50] - Train Loss: 4.2170 (PPL: 67.83) | Val Loss: 4.7102 (PPL: 111.08)
+--> [SAVED] New best model at Epoch 14 | Train Loss: 4.2170 (PPL: 67.83) | Val Loss: 4.7102 (PPL: 111.08)
+
+Epoch [15/50] - Train Loss: 4.1494 (PPL: 63.40) | Val Loss: 4.6789 (PPL: 107.65)
+--> [SAVED] New best model at Epoch 15 | Train Loss: 4.1494 (PPL: 63.40) | Val Loss: 4.6789 (PPL: 107.65)
+
+Epoch [16/50] - Train Loss: 4.0865 (PPL: 59.53) | Val Loss: 4.6576 (PPL: 105.38)
+--> [SAVED] New best model at Epoch 16 | Train Loss: 4.0865 (PPL: 59.53) | Val Loss: 4.6576 (PPL: 105.38)
+
+Epoch [17/50] - Train Loss: 4.0269 (PPL: 56.09) | Val Loss: 4.6352 (PPL: 103.05)
+--> [SAVED] New best model at Epoch 17 | Train Loss: 4.0269 (PPL: 56.09) | Val Loss: 4.6352 (PPL: 103.05)
+
+Epoch [18/50] - Train Loss: 3.9721 (PPL: 53.09) | Val Loss: 4.6211 (PPL: 101.60)
+--> [SAVED] New best model at Epoch 18 | Train Loss: 3.9721 (PPL: 53.09) | Val Loss: 4.6211 (PPL: 101.60)
+
+Epoch [19/50] - Train Loss: 3.9212 (PPL: 50.46) | Val Loss: 4.6058 (PPL: 100.06)
+--> [SAVED] New best model at Epoch 19 | Train Loss: 3.9212 (PPL: 50.46) | Val Loss: 4.6058 (PPL: 100.06)
+
+Epoch [20/50] - Train Loss: 3.8701 (PPL: 47.95) | Val Loss: 4.5954 (PPL: 99.03)
+--> [SAVED] New best model at Epoch 20 | Train Loss: 3.8701 (PPL: 47.95) | Val Loss: 4.5954 (PPL: 99.03)
+
+Epoch [21/50] - Train Loss: 3.8239 (PPL: 45.78) | Val Loss: 4.5799 (PPL: 97.51)
+--> [SAVED] New best model at Epoch 21 | Train Loss: 3.8239 (PPL: 45.78) | Val Loss: 4.5799 (PPL: 97.51)
+
+Epoch [22/50] - Train Loss: 3.7786 (PPL: 43.76) | Val Loss: 4.5730 (PPL: 96.83)
+--> [SAVED] New best model at Epoch 22 | Train Loss: 3.7786 (PPL: 43.76) | Val Loss: 4.5730 (PPL: 96.83)
+
+Epoch [23/50] - Train Loss: 3.7348 (PPL: 41.88) | Val Loss: 4.5634 (PPL: 95.91)
+--> [SAVED] New best model at Epoch 23 | Train Loss: 3.7348 (PPL: 41.88) | Val Loss: 4.5634 (PPL: 95.91)
+
+Epoch [24/50] - Train Loss: 3.6961 (PPL: 40.29) | Val Loss: 4.5533 (PPL: 94.95)
+--> [SAVED] New best model at Epoch 24 | Train Loss: 3.6961 (PPL: 40.29) | Val Loss: 4.5533 (PPL: 94.95)
+
+Epoch [25/50] - Train Loss: 3.6611 (PPL: 38.90) | Val Loss: 4.5509 (PPL: 94.72)
+--> [SAVED] New best model at Epoch 25 | Train Loss: 3.6611 (PPL: 38.90) | Val Loss: 4.5509 (PPL: 94.72)
+
+Epoch [26/50] - Train Loss: 3.6263 (PPL: 37.57) | Val Loss: 4.5428 (PPL: 93.95)
+--> [SAVED] New best model at Epoch 26 | Train Loss: 3.6263 (PPL: 37.57) | Val Loss: 4.5428 (PPL: 93.95)
+
+Epoch [27/50] - Train Loss: 3.5967 (PPL: 36.48) | Val Loss: 4.5368 (PPL: 93.39)
+--> [SAVED] New best model at Epoch 27 | Train Loss: 3.5967 (PPL: 36.48) | Val Loss: 4.5368 (PPL: 93.39)
+
+Epoch [28/50] - Train Loss: 3.5602 (PPL: 35.17) | Val Loss: 4.5355 (PPL: 93.27)
+--> [SAVED] New best model at Epoch 28 | Train Loss: 3.5602 (PPL: 35.17) | Val Loss: 4.5355 (PPL: 93.27)
+
+Epoch [29/50] - Train Loss: 3.5254 (PPL: 33.97) | Val Loss: 4.5322 (PPL: 92.96)
+--> [SAVED] New best model at Epoch 29 | Train Loss: 3.5254 (PPL: 33.97) | Val Loss: 4.5322 (PPL: 92.96)
+
+Epoch [30/50] - Train Loss: 3.4979 (PPL: 33.05) | Val Loss: 4.5320 (PPL: 92.95)
+--> [SAVED] New best model at Epoch 30 | Train Loss: 3.4979 (PPL: 33.05) | Val Loss: 4.5320 (PPL: 92.95)
+
+Epoch [31/50] - Train Loss: 3.4697 (PPL: 32.13) | Val Loss: 4.5252 (PPL: 92.31)
+--> [SAVED] New best model at Epoch 31 | Train Loss: 3.4697 (PPL: 32.13) | Val Loss: 4.5252 (PPL: 92.31)
+
+Epoch [32/50] - Train Loss: 3.4358 (PPL: 31.06) | Val Loss: 4.5251 (PPL: 92.30)
+--> [SAVED] New best model at Epoch 32 | Train Loss: 3.4358 (PPL: 31.06) | Val Loss: 4.5251 (PPL: 92.30)
+
+Epoch [33/50] - Train Loss: 3.4130 (PPL: 30.36) | Val Loss: 4.5246 (PPL: 92.26)
+--> [SAVED] New best model at Epoch 33 | Train Loss: 3.4130 (PPL: 30.36) | Val Loss: 4.5246 (PPL: 92.26)
+
+Epoch [34/50] - Train Loss: 3.3887 (PPL: 29.63) | Val Loss: 4.5224 (PPL: 92.06)
+--> [SAVED] New best model at Epoch 34 | Train Loss: 3.3887 (PPL: 29.63) | Val Loss: 4.5224 (PPL: 92.06)
+
+Epoch [35/50] - Train Loss: 3.3622 (PPL: 28.85) | Val Loss: 4.5261 (PPL: 92.39)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 1/5
+
+Epoch [36/50] - Train Loss: 3.3406 (PPL: 28.24) | Val Loss: 4.5281 (PPL: 92.59)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 2/5
+
+Epoch [37/50] - Train Loss: 3.3146 (PPL: 27.51) | Val Loss: 4.5203 (PPL: 91.86)
+--> [SAVED] New best model at Epoch 37 | Train Loss: 3.3146 (PPL: 27.51) | Val Loss: 4.5203 (PPL: 91.86)
+
+Epoch [38/50] - Train Loss: 3.2983 (PPL: 27.07) | Val Loss: 4.5309 (PPL: 92.84)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 1/5
+
+Epoch [39/50] - Train Loss: 3.2727 (PPL: 26.38) | Val Loss: 4.5286 (PPL: 92.63)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 2/5
+
+Epoch [40/50] - Train Loss: 3.2571 (PPL: 25.97) | Val Loss: 4.5295 (PPL: 92.71)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 3/5
+
+Epoch [41/50] - Train Loss: 3.2351 (PPL: 25.41) | Val Loss: 4.5327 (PPL: 93.01)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 4/5
+
+Epoch [42/50] - Train Loss: 3.2198 (PPL: 25.02) | Val Loss: 4.5442 (PPL: 94.09)
+--> [NO IMPROVEMENT] Validation Perplexity did not improve. Patience: 5/5
+
+[EARLY STOPPING] Training stopped early at Epoch 42. Best Model was at Epoch 37 with Val PPL: 91.86
+
+Training Melody Variant 3 finished successfully!
+Total Training Time: 1 minutes and 10 seconds (70.74 seconds total)
+
+==========================================
+BEST MELODY_V3 MODEL TRAINING METRICS:
+==========================================
+Best Model Epoch: 37
+Best Model Train Loss: 3.3146
+Best Model Train Perplexity: 27.51
+Best Model Validation Loss: 4.5203
+Best Model Validation Perplexity: 91.86
+Best checkpoint saved to: /checkpoints/melody_v3_model_best.pth
+==========================================
+
