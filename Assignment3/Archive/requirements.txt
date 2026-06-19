@@ -1,0 +1,6 @@
+torch
+numpy
+pandas
+gensim
+pretty_midi
+tensorboard

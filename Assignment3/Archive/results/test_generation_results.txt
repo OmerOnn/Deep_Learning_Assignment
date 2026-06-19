@@ -1,0 +1,903 @@
+======================================================================
+EXPERIMENT 1: STANDARD TEST GENERATION
+Generation strategy: Temperature sampling, temperature = 0.7
+Models: Baseline, Melody Variant 1, Melody Variant 2
+======================================================================
+
+Matched MIDI file: The_Bangles_-_Eternal_Flame.mid
+
+======================================================================
+TEST SONG:  eternal flame
+======================================================================
+
+Seed word: Today
+
+[BASELINE OUTPUT]
+Today
+ooh ooh yeah
+i can see the best of my
+own
+and i want you to get without
+you
+you better make you try to stop
+'cause i did i have to get
+you
+for you and you are
+it's just a best love
+i love you for
+and i can't have you
+i will give you by
+you can love you to do
+i feel for you
+but i can't believe it
+i'm just forgotten
+i want to be the be
+now
+
+[MELODY V1 OUTPUT]
+Today
+i'm bad too so much it's good
+gotta be a band of cars
+while the boys are the queen of
+hollywood
+the bombs and the love was dry
+we got the nice waters pass
+and the days will be thirty
+five night in the sky o and
+i say
+since the canvas don't be a friend
+how you know that i can show
+i can let the one last timin'
+that's where i won't
+what your love is to me
+i'm gonna break me on the
+
+[MELODY V2 OUTPUT]
+Today
+i'll be the way you tell me
+what a thing is who one is
+right
+you may never be alright
+i just wanna see you
+and when i need you
+think you know
+will you take your chance
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[BASELINE OUTPUT]
+Love
+i put your security away
+i don't know the way you walk
+away
+don't love you baby
+and can't you feel the way you
+work
+to love you
+i really want to do
+there must be be here
+i want to have the reason to
+you
+maybe i want to be with you
+the only be falling for you
+i don't have to be a same
+i will be your love
+it's just a fool to every people
+if you want to be my best
+
+[MELODY V1 OUTPUT]
+Love no sound
+i feel for you
+i don't have to be my heart
+and i need to do it
+just you know they did
+but if you don't know what you
+think that i
+but i said won't feel your
+photograph i felt born for you
+i'll be the light
+this is the time i'd found you
+just no matter
+a helping heart that she could have
+no matter what i'm here
+all in the time
+and they never knew so
+at the killers
+
+[MELODY V2 OUTPUT]
+Love
+a dream you believed
+you can't understand
+you take me down
+love's a beautiful life
+i want to hear you dawn
+get a chance on me
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[BASELINE OUTPUT]
+Night
+but i want to be your father
+i love you for love
+love can't you let me cry
+i just want to stay with you
+i know i love you
+and i want it there
+i love you
+and i have to fight
+i can si if you ain't it
+but it's not hard to lose
+and i can't go at
+i can't be not
+for all the way it's mine
+you may be right
+i will buy you a new day
+
+[MELODY V1 OUTPUT]
+Night in town
+all we can
+i don't like the same train to
+be
+and the holdin' that we could be
+the same
+and she was with the radio
+he said i came on the radio
+whoa i'm working
+thinking that you'll let him know
+we know i can reach to the
+show
+somewhere on the heat now
+oh oh oh oh oh oh oh
+oh oh oh oh oh oh
+oh
+it's the only one who loves you
+i'm still the same day
+
+[MELODY V2 OUTPUT]
+Night
+but i would be a fool to
+wait
+you haven't got a place to save
+it
+when you think that you don't want
+to touch
+it's just a little bit for you
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Billy_Joel_-_Honesty.mid
+
+======================================================================
+TEST SONG:  honesty
+======================================================================
+
+Seed word: Today
+
+[BASELINE OUTPUT]
+Today
+here is something in the place of
+dawn
+i know you can't get back to
+the limit take a noise
+where you just still like a woman
+to learn
+and just the way to say
+what can i do
+if you call me know i know
+for least i can give you
+and if i could take you alone
+i can tell you i want to
+you
+i've got to dance without you
+you know that i don't want to
+have a chance
+i want to hold
+
+[MELODY V1 OUTPUT]
+Today
+i don't know what you mean
+to hold me alone
+you're not words when i never stumble
+and you know how love to play
+i thought you're leaving
+i don't have to know but your
+love
+i need to dance with you
+i need you and make it tears
+you better to hear it
+tell me i want you anymore
+do you have a love baby baby
+i love you
+i want it yeah
+i want them
+you're apart you don't do
+you let
+
+[MELODY V2 OUTPUT]
+Today
+by my dreams are few
+and if you want to find me
+i can get you in the way
+you were my song
+just the way to go
+it's tearing me crazy
+i can say
+wasn't it true
+i just want to hear you say
+it's gonna get it
+but now i just say
+what can i say
+but i love you when you like
+i do
+what can i say
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[BASELINE OUTPUT]
+Love
+i put your security away
+i don't know the way you walk
+away
+don't love you baby
+and can't you feel the way you
+work
+to love you
+i really want to do
+there must be be here
+i want to have the reason to
+you
+maybe i want to be with you
+the only be falling for you
+i don't have to be a same
+i will be your love
+it's just a fool to every people
+if you want to be my best
+
+[MELODY V1 OUTPUT]
+Love is in his place
+living in the night of all the
+world
+but i can't be your superman
+can't be your first face
+i miss you by my side
+the super birth that i knew that
+i said goodbye
+you made me love or really is
+it
+i'm in the dark away
+and i want them all more
+place in a mind
+for a hero and the world keeps
+a cure
+so you're a place in the world
+i can never have it
+i want to
+
+[MELODY V2 OUTPUT]
+Love
+a dream never are
+this thing leads to me
+to dance
+soon you'll love me
+i thought that you don't know why
+you want to be a fool
+i like you can't take it
+and you were my style
+oh i can do you baby
+i have no long on my own
+to one thing for you
+i'm a star of all the wide
+of the deep
+that i have found me we are
+the one
+'cause i've waited in a kiss
+that's
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[BASELINE OUTPUT]
+Night
+but i want to be your father
+i love you for love
+love can't you let me cry
+i just want to stay with you
+i know i love you
+and i want it there
+i love you
+and i have to fight
+i can si if you ain't it
+but it's not hard to lose
+and i can't go at
+i can't be not
+for all the way it's mine
+you may be right
+i will buy you a new day
+
+[MELODY V1 OUTPUT]
+Night that we are
+i will buy you the same
+the time is a look
+you love me right
+you can me say
+i swear i hate you
+and the brightest day that i
+like the sushi
+almost can have some feelin' to a
+hero
+you gotta be just a glimpse
+on the floor tonight
+well i'm apart
+there's a lot of mine
+if you want me my heart
+will you be the same
+and you love me
+i can't be the bad
+
+[MELODY V2 OUTPUT]
+Night
+just the way in my heart
+ooh what you do
+it seems you really really get me
+i think it doesn't matter what i'm
+looking for me
+i need to you
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Cardigans_-_Lovefool.mid
+
+======================================================================
+TEST SONG:  lovefool
+======================================================================
+
+Seed word: Today
+
+[BASELINE OUTPUT]
+Today
+here is something in the place of
+dawn
+i know you can't get back to
+the limit take a noise
+where you just still like a woman
+to learn
+and just the way to say
+what can i do
+if you call me know i know
+for least i can give you
+and if i could take you alone
+i can tell you i want to
+you
+i've got to dance without you
+you know that i don't want to
+have a chance
+i want to hold
+
+[MELODY V1 OUTPUT]
+Today
+i don't know what you mean
+to hold me alone
+you're not free
+you were here for a new day
+i'm gone come on
+i follow you
+i don't have to know it
+i don't need to hear your shit
+but i can think i swear
+if you don't know what you know
+i to show you if you're gone
+
+[MELODY V2 OUTPUT]
+Today
+you really wanna take it
+that's my my heart
+oh my baby
+blue dancin' oh oh
+now i'm gonna be with you
+if you want it to take me
+tight
+you were my life
+and i don't say
+what you did
+what you do
+i love you so
+girl you need me
+and i would runaway and you know
+i got a fool to me
+so you want to be a fool
+i like you can't take it
+and you were so
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[BASELINE OUTPUT]
+Love
+i put your security away
+i don't know the way you walk
+away
+don't love you baby
+and can't you feel the way you
+work
+to love you
+i really want to do
+there must be be here
+i want to have the reason to
+you
+maybe i want to be with you
+the only be falling for you
+i don't have to be a same
+i will be your love
+it's just a fool to every people
+if you want to be my best
+
+[MELODY V1 OUTPUT]
+Love like a friend
+i will be all the time
+i can see you the same
+and you're not forgotten
+you were so many night
+and if you take me crazy
+i don't need you to say
+there will be all alone
+gimme gimme gimme in this days
+and when she says is
+no diggity i got a hero
+the only one for too
+for a poor boy that time
+she don't know it that
+that is the good way
+where you found me
+
+[MELODY V2 OUTPUT]
+Love
+a dream i want to hear
+kiss the rain
+and you were
+there must be so so
+and a troubled mind beat for this
+room
+a dream and she knew
+i like a boys were the good
+times
+and the lights are the only one
+who loves me
+i don't have to praise you in
+the round
+turning out right now
+all the rain
+and i know is you have you
+so long for me
+you held me through that's gonna get
+it
+wrap
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[BASELINE OUTPUT]
+Night
+but i want to be your father
+i love you for love
+love can't you let me cry
+i just want to stay with you
+i know i love you
+and i want it there
+i love you
+and i have to fight
+i can si if you ain't it
+but it's not hard to lose
+and i can't go at
+i can't be not
+for all the way it's mine
+you may be right
+i will buy you a new day
+
+[MELODY V1 OUTPUT]
+Night and both
+all the sign but i have no
+never to get it in the middle
+of the love i will be just
+who is it alright
+hey hey hey yeah
+well i don't know goodbye
+you said or won't you
+yes you belong me
+to find my style
+and if you want to do somebody
+no matter what to do
+they gotta stand back to the radio
+'cause he walked my mind and you
+
+[MELODY V2 OUTPUT]
+Night
+who always goes at
+and the look of town
+just the way they get from me
+but you can't be a place
+lie like a little bit
+and when the fear is right
+and just a little bit
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Aqua_-_Barbie_Girl.mid
+
+======================================================================
+TEST SONG:  barbie girl
+======================================================================
+
+Seed word: Today
+
+[BASELINE OUTPUT]
+Today
+here is something in the place of
+dawn
+i know you can't get back to
+the limit take a noise
+where you just still like a woman
+to learn
+and just the way to say
+what can i do
+if you call me know i know
+for least i can give you
+and if i could take you alone
+i can tell you i want to
+you
+i've got to dance without you
+you know that i don't want to
+have a chance
+i want to hold
+
+[MELODY V1 OUTPUT]
+Today
+i don't know what you mean
+to hold me alone
+tell me what you want to run
+to me
+you don't wanna let me go
+i will be all you come
+i see your attention and you need
+me
+'cause i'm not free
+the love of truth of my heart
+never gonna get it
+but i want you too
+if you and not it again
+what you want me
+you see my baby
+i want for you
+if you want me to be
+
+[MELODY V2 OUTPUT]
+Today
+if you want to play it
+don't let me get you lovin'
+so when i want you
+i'll be the light you know
+i knew in his world
+maybe to the real can't you say
+sometimes that much is who i say
+there's a chance for a chance
+to think that you
+i have all for you
+i can love you to be with
+you
+i want to make you feel
+and i don't believe it
+you can get my love tonight
+i have
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[BASELINE OUTPUT]
+Love
+i put your security away
+i don't know the way you walk
+away
+don't love you baby
+and can't you feel the way you
+work
+to love you
+i really want to do
+there must be be here
+i want to have the reason to
+you
+maybe i want to be with you
+the only be falling for you
+i don't have to be a same
+i will be your love
+it's just a fool to every people
+if you want to be my best
+
+[MELODY V1 OUTPUT]
+Love this time
+i feel for you
+i don't have to know that i
+say
+i know it's leaving you
+when i thought you think i'd be
+too much no more
+but i don't need you that i
+will believe this
+
+[MELODY V2 OUTPUT]
+Love is a heartbreaker
+yeah
+you don't know where you try
+now i want is you so hey
+over me and you can't let me
+touch
+when you want to play in
+you got me
+but you know that
+i gotta love you
+so i don't know you
+i want to hurt me
+do you want to hold me tight
+you know i need you in my
+soul
+you want to know
+you don't have to say
+what can i say
+but i love
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[BASELINE OUTPUT]
+Night
+but i want to be your father
+i love you for love
+love can't you let me cry
+i just want to stay with you
+i know i love you
+and i want it there
+i love you
+and i have to fight
+i can si if you ain't it
+but it's not hard to lose
+and i can't go at
+i can't be not
+for all the way it's mine
+you may be right
+i will buy you a new day
+
+[MELODY V1 OUTPUT]
+Night of christmas
+and i will be
+you don't to be shining through
+i don't need to hear your sweet
+heart
+i can be your superman
+please don't see it
+than you could be
+then i really miss your my
+baby now baby baby
+i love you
+i want a christmas girl
+that lies the good days and life
+your love is very hot hot hot
+hot hot hot hot hot hot hot
+hot more
+and still that way in the man
+i got to get up
+
+[MELODY V2 OUTPUT]
+Night
+that i would be wrong but you
+really want to go
+as i never wanna let me go
+i give a world in love
+you're so much more
+and you and i would never can't
+get it
+but you were my style
+oh i love you
+where you were
+oh i don't believe at
+you can do what you mean it
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Blink_182_-_All_the_Small_Things.mid
+
+======================================================================
+TEST SONG:  all the small things
+======================================================================
+
+Seed word: Today
+
+[BASELINE OUTPUT]
+Today
+here is something in the place of
+dawn
+i know you can't get back to
+the limit take a noise
+where you just still like a woman
+to learn
+and just the way to say
+what can i do
+if you call me know i know
+for least i can give you
+and if i could take you alone
+i can tell you i want to
+you
+i've got to dance without you
+you know that i don't want to
+have a chance
+i want to hold
+
+[MELODY V1 OUTPUT]
+Today
+i don't know what you mean
+to hold me alone
+you're not free
+you were here for a new day
+i'm gone inside of the night
+but i was born
+i can do you goodbye
+i need a flower
+and the day that i say this
+come on my own
+and i can't be
+oh in my arms
+you like no one lies or right
+and if i ever wanted that you've
+been to move her
+it's good enough to take it
+take
+
+[MELODY V2 OUTPUT]
+Today
+if you want to play it
+don't don't be wrong
+no i want to be our life
+let me be a miser
+and i have known
+that of heaven was a voice
+but i knew what i've been so
+many day
+but when you were gone
+in the world of love you
+i like i can't don't know
+oh my baby
+oh my baby
+oh my baby
+oh oh
+it's the big route that i will
+be bop a lula she's that
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[BASELINE OUTPUT]
+Love
+i put your security away
+i don't know the way you walk
+away
+don't love you baby
+and can't you feel the way you
+work
+to love you
+i really want to do
+there must be be here
+i want to have the reason to
+you
+maybe i want to be with you
+the only be falling for you
+i don't have to be a same
+i will be your love
+it's just a fool to every people
+if you want to be my best
+
+[MELODY V1 OUTPUT]
+Love me my heart
+i listen to you
+but i think you want to be
+you know you're not forgotten
+you were so many people baby
+i'm not forgotten
+you can be better and i don't
+know for me
+i never really want to escape the
+night
+i'm gonna be a preacher man
+i don't wanna be with you
+than the sun in the middle of
+a white day
+so i'm sorry time to leave
+oh you can go and go
+
+[MELODY V2 OUTPUT]
+Love to all you just let me
+take you
+so it's no hard no get it
+out
+but i never wanna let it
+i just want to hear you say
+it's no not that i got to
+hold
+i like that you're so long
+and i can love you more
+and i want to hear you
+it's all that you're left to me
+in my love tonight
+i have to hold you alone
+you may never leave
+i don't want to go away
+i don't want my
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[BASELINE OUTPUT]
+Night
+but i want to be your father
+i love you for love
+love can't you let me cry
+i just want to stay with you
+i know i love you
+and i want it there
+i love you
+and i have to fight
+i can si if you ain't it
+but it's not hard to lose
+and i can't go at
+i can't be not
+for all the way it's mine
+you may be right
+i will buy you a new day
+
+[MELODY V1 OUTPUT]
+Night to make it
+you make me all the world
+i can do you like it
+you don't want me that way
+to be the gift you work it
+just a little bit
+and i don't know if my true
+love
+baby you belong me my love
+if i feel love baby oh oh
+it's giving you a sleep
+how it is a strong thing
+if you want to hear it what
+you're no never
+no i don't want to be
+i don't want to be with
+
+[MELODY V2 OUTPUT]
+Night
+so i was born to wear
+mr jones and me
+the way i swear
+that i just need to get away
+i swear oh my baby
+you know you're all the way
+time after time
+and the people you're so much no
+when you want me to me
+it's the sign for your go
+and the cynics they saw me
+i was all i want you
+is all where i was for you
+oh don't you know when your girlfriends
+the good times the stars
+
+----------------------------------------------------------------------
+

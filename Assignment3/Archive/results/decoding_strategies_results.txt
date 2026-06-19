@@ -1,0 +1,619 @@
+======================================================================
+EXPERIMENT 2: DECODING STRATEGIES COMPARISON
+Compared strategies: proportional, temperature, top-k
+Model used for comparison: Melody Variant 1
+======================================================================
+
+Matched MIDI file: The_Bangles_-_Eternal_Flame.mid
+
+======================================================================
+TEST SONG:  eternal flame
+======================================================================
+
+Seed word: Today
+
+[PROPORTIONAL SAMPLING]
+Today
+relax she passing on the ground
+offer up my money with an hotel
+california
+free our arm in a world passes
+by hours
+they didn't stop at the park
+all the sun makes it just an
+river out
+we remember all to noise
+they play up from the word was
+where we used to ride
+we drank a obsession
+you wait her mind in my world
+
+[LOW TEMPERATURE: 0.2]
+Today
+and i want to be the way
+and i can show you the way
+and i can love you
+i don't want to be
+i don't want to be
+i don't want to be
+but i don't want to be
+i don't want to be
+you know i love you
+i don't want to be
+i don't want to be
+to you
+i don't know what you do
+i want to be with you
+i don't want to be
+you can show
+
+[MEDIUM TEMPERATURE: 0.7]
+Today
+and i feel all alone
+i gotta feel your chance
+i know a little girl
+i never have to be your love
+show me a lonely girl
+i need to be the night
+and you'd be all
+i'll be with you
+it's a lucky thing somewhere
+and it was my way
+and it was when you can say
+that's the way that i used to
+be
+you turn out can turn around
+you can be your superman
+kiss my eyes
+so no
+
+[HIGH TEMPERATURE: 1.5]
+Today
+rudolph y'all walkin' tequila lot just reply
+they drive fast together clout out he
+is doing good down undressed again
+maggie lives 'round guitar
+as wide band love lips won't soon
+like right
+ale oh with tired and money
+es cupid um sacks nobody need key
+turning 'em along every life still all
+crackle repeats incredible today
+consideration beckoning to rising blue story
+were ignorant for same running earl starts
+around me here leavin'
+jingle recently up edge
+grapped as bo mask
+we promised blow us cleanin' away
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Today
+and i want to hear your side
+i don't want to be the way
+i can love you
+i don't want to be a fool
+i can feel a fool
+you can tell me what you do
+if you need a hero and you
+know what you do
+you know i can love you like
+you can say
+i can love you like you do
+me
+i don't want to know you want
+to be
+you can tell you
+i can show you what you say
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[PROPORTIONAL SAMPLING]
+Love
+i had we can't love
+that you're on the white of my
+life
+love so falling for the way a
+life in heaven fast
+for a middle after night i sleep
+i just to say what i know
+a
+that's a look in my shelter with
+an guy
+took up asking a good religion these
+answer this and five
+you belong to a two defense
+sometimes i know you're spinning away
+look around
+someday you'll make him before
+i stand down go out
+they said
+
+[LOW TEMPERATURE: 0.2]
+Love
+i love you
+i don't want to be
+i don't want to be
+i don't want to be
+i know i love you
+i don't want to be
+you know that i want to be
+it's a beautiful life
+i don't want to be with you
+i don't want to be the way
+i think i love you
+i don't want to be the same
+and i can't be your superman
+i don't want to be with you
+i don't want to be a
+
+[MEDIUM TEMPERATURE: 0.7]
+Love passages
+the feeling gone for you
+i said that i don't want to
+this do
+do you really want to believe you
+don't do it
+i had to love you
+if i love you
+and i'll stay your sweet heart
+and that's what i do
+i say i feel
+this is the law and the way
+i was still the way
+in the world that i
+it's only the best of the night
+oh the way of the world
+but my name is
+
+[HIGH TEMPERATURE: 1.5]
+Love laugh let's looked here
+we're searching but he has i believed
+at me
+save we fall ahead days of clothes
+began instinctively
+in a glass hour livin' this debutantes
+up in me dream at night
+now but aw a dirty ting expired
+live feelin' witchy fat corvette
+and depends torn right two
+let's look in that full of mind
+where not still make which just settle
+but it durst
+let's lovin' fallen laughing every guy got
+i'm jumped jimmy duke made round mm
+you're the fuel guy tha super rent
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Love
+i was so many day
+i know i love you
+and i want you to be with
+me
+but i don't want to be
+to find you
+i want to be the love
+but i don't want to know
+i love you
+i can love you
+but i want to know
+if you need me baby
+i want you like you
+i know you know that i love
+my
+i want you
+and i don't want to be
+i want you to be
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[PROPORTIONAL SAMPLING]
+Night
+wine old both day
+what you want to play it
+well my met empty under the man
+tell her up and if you don't
+wanna know or shit
+i just had to learn the same
+queen i went out
+if still you'll go back to the
+wheel from september
+and lookin' in us hours but we
+both just fucked away and the china
+thick
+beer and peace eya black
+he's so much than keep my drunk
+quick to us
+'cause it's close to all you hurts
+and
+
+[LOW TEMPERATURE: 0.2]
+Night
+and i don't want to be with
+you
+i don't want to be the way
+i don't want to be the way
+i want to be with you
+i want to be with you
+i don't want to be the way
+i want to be the way
+i can love you
+i don't want to be with you
+i don't want to be with you
+i don't want to be
+i don't want to be
+but i could be the day
+i can show you
+
+[MEDIUM TEMPERATURE: 0.7]
+Night
+i'll age for the bad
+she yea
+he said me
+i'm gonna get it by
+so if you feel the same as
+that i have
+and the only one or ever i
+do
+but what she did do
+who can carry on
+everything you say
+i say i want to be with
+you
+i think i light i feel
+i want you to be
+i don't want to make it
+you can't let it to change
+everything you want it
+i don't want
+
+[HIGH TEMPERATURE: 1.5]
+Night we will say they gave it
+down
+i can face your love imagine i'm
+pimpin' bleedin' not out people sweet confusion
+the girl that grey few is chung
+who before you leave yourself in our
+every balloon
+must be murdered of lord hopeless foggy
+babe
+something sign fernando our she'll party de
+and they hear about from the shadows
+moon the nice clothes fell norma boogie
+but spitten in toward your fill each
+arms up that fuck redo above master
+and climbin' fed around the spell pass
+completely down myself in it
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Night
+i know that she wants to be
+the same
+who i want you to be the
+way
+that i was born to the end
+you can be the day
+and the time is mine
+the boy is the way
+and the only thing to say
+i want to be the love
+i want to be your life
+i love you
+i want to hear it all
+i know how you do it
+it's not a way
+i don't want to go
+i know i
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Billy_Joel_-_Honesty.mid
+
+======================================================================
+TEST SONG:  honesty
+======================================================================
+
+Seed word: Today
+
+[PROPORTIONAL SAMPLING]
+Today
+birchmount proud to make it gonna hell
+it wanting shame
+i never knew i'm like to try
+because you feel love my hot saying
+oh in my arms babe more
+honey oh baby
+oh hey baby
+somebody come back to send me
+god knowing a virgin sensations
+everywhere it
+but with us alright around
+i'm the lips in greed and quiet
+star
+singin' the its jesus goodbye
+we still have proceeding
+ride up giddy meaning with the door
+he's gonna admit i go
+
+[LOW TEMPERATURE: 0.2]
+Today
+i don't want to be the way
+but i can't be there
+you know that i love you
+i don't want to be
+but i want to be the way
+i feel my love
+i can love you
+and i can't be there
+i don't want to be
+it's a beautiful life
+oh my baby
+oh my baby
+my baby doll
+my baby doll
+my baby doll
+my baby doll
+my baby doll
+my baby doll
+
+[MEDIUM TEMPERATURE: 0.7]
+Today
+'cause you're not a way
+and your love is lookin' on me
+i could believe my life
+i know the fat my soul is
+a cold
+and you were my soul
+my heart is shining in
+you can be the day
+i love you in the dark
+i will buy you to see
+you know a ray of mind the
+same
+and it comes out of the crowd
+you look at you
+i know i will give it right
+i want to let
+
+[HIGH TEMPERATURE: 1.5]
+Today was in one old hair strong
+new stayin' alive
+loneliness in white first who are a
+lamb
+da da 5'9
+light 'er smiled makin' me it's blame
+direction to everywhere
+chanting could tell me hey who still
+might know for your questions that
+i'll find the drapes no welcome to
+eternal beer poor extreme day
+gloria instinctively heed vibe alright pretending i
+while we didn't hurt
+hit and a dancin' across fire new
+moving flair
+jede war touched full on christ my
+bones who's but she placed ooh and
+ee mo
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Today
+i can love you and i can
+and i can show you the shape
+of my heart
+and i can feel my love
+i don't want to feel it
+i feel the same and i don't
+care
+you can make you feel
+but i don't need permission
+do my baby doll
+you can me
+i don't know what you do
+but i can show you the way
+i don't want to be with you
+and i can show you
+but i can love you
+
+----------------------------------------------------------------------
+
+Seed word: Love
+
+[PROPORTIONAL SAMPLING]
+Love part of my heart
+without a sign
+sonny get you close
+but sometimes i'd play this time
+it may always break my life
+i want to judge you
+you make me crazy
+i'm out inside oh
+i wo da can't simply victorious
+she's a little secrets of a eagle
+in the middle of the night
+for a rebel since that simon goes
+
+[LOW TEMPERATURE: 0.2]
+Love
+i want to be the way
+i can love you like you
+i can show you the way
+i can love you
+and i don't want to be
+i don't want to be
+i don't want to be
+you don't know what you do
+i love you
+i don't want to be
+you can show you
+i don't want to be
+i don't want to be
+you know i can
+i know i can
+i can feel the way you
+i want
+
+[MEDIUM TEMPERATURE: 0.7]
+Love
+got to love it
+i will be your sorrows undone
+i want to you
+i feel the world i need to
+you
+i think i used to be
+i can feel the love that i
+can't give
+i'm letting
+i don't want to be
+but when i need to you
+so if i can feel the love
+you just to
+and i need you baby
+your sister don't have to know
+but i need you and i know
+my heart
+i feel the way i
+
+[HIGH TEMPERATURE: 1.5]
+Love who who cameras
+are no bullshit to read earl rico
+shall see you tonight baby we remember
+like carry on me stand again
+it opened from mask of in feeling
+stop on the cahoots on bone
+mean trouble alone again come when helps
+bodied ham as rapp'in usher stupid faking
+ass hot bringing always how's me like
+me near we make that shared
+whoa let me off your troubles asked
+it thinkin' no won't teach control the
+accusation called on love your century
+midnight copacabana
+right where she seems again walk any
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Love
+you can see you
+i don't know how you know
+i want to make you cry
+but i don't want to be a
+heartbreaker
+oh i just want to be with
+you
+
+----------------------------------------------------------------------
+
+Seed word: Night
+
+[PROPORTIONAL SAMPLING]
+Night
+holding as still around
+this night is dry
+dance at night our hand needs keep
+to dance
+right darling this is here
+how does it longhorn friendship it
+they knew the job
+who comes all slowly go
+we let her fantasy lay
+on a length pane
+do that i'm selling faith that red
+and her looked for your prerogative
+
+[LOW TEMPERATURE: 0.2]
+Night
+and i don't want to be the
+way
+i want to be the way
+i can show you the way
+and i feel the way you can
+i don't want to be with you
+i need you and i can't be
+your superman
+i know i can love you
+i don't want to be the same
+and i won't be with you
+and i want to be with you
+and i want to be with you
+i know that i can do
+i don't want to
+
+[MEDIUM TEMPERATURE: 0.7]
+Night in broadway
+singin' me looks again
+i can bloom listen to the limit
+light in the ocean
+i have been waiting undisturbed
+turning up with our love
+and c knows it knows it's still
+he said he's gonna show it
+there is the way that we don't
+know
+i think that i need a heart
+i'll be just so very
+if you know that we can say
+to the woman you and i see
+and if i could feel the way
+i feel the way you
+
+[HIGH TEMPERATURE: 1.5]
+Night and must we disappear
+er flags no jubilee pregnant
+this simon grew cold
+stay here old running card i'm life
+all fog mary boogie born and green
+runs in you're the fight
+he's would telling him her dial a
+star 'cause i'm talkin myself and stay
+than none goes down operate oh just
+like they know
+that plays ready chaka crazy monday right
+crushed out over choirs shit rise in
+your torso make call follow your toys
+it's left it's easy to call it
+passed out land buyin' name
+in the
+
+[TOP-K SAMPLING: k=5, temperature=0.7]
+Night of night
+and if we have to go
+i can be the fool of the
+night
+and the way of the world
+i was born to make you feel
+to make you happy
+i know i can be your superman
+don't be the same
+and if you want to be with
+you
+and if i ever need to be
+with you
+i want you like the way you
+feel
+if you want to say
+what you do
+to hold you tight
+and i don't want
+
+----------------------------------------------------------------------
+
+Matched MIDI file: Cardigans_-_Lovefool.mid
+
+======================================================================
+TEST SONG:  lovefool
+======================================================================
+
+Matched MIDI file: Aqua_-_Barbie_Girl.mid
+
+======================================================================
+TEST SONG:  barbie girl
+======================================================================
+
+Matched MIDI file: Blink_182_-_All_the_Small_Things.mid
+
+======================================================================
+TEST SONG:  all the small things
+======================================================================
+
