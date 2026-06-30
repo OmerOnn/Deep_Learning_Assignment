@@ -1,0 +1,68 @@
+STEP 6: Evaluation and reported results
+================================================================================
+
+Evaluation setup:
+- Detection metric: 4-fold Random Forest real-vs-synthetic classification.
+- Detection interpretation: lower AUC is better, with 0.5 being ideal.
+- Efficacy metric: Random Forest trained on synthetic data and evaluated on the real test set.
+- Efficacy interpretation: synthetic AUC / real AUC, higher is better, with 1.0 being ideal.
+- Random Forest n_estimators: 200
+- Random Forest max_depth: None
+
+Seed: 42
+--------------------------------------------------------------------------------
+Model: GAN
+- Detection AUC mean: 0.999999
+- Detection AUC std: 0.000001
+- Real-train efficacy AUC: 0.907381
+- Synthetic-train efficacy AUC: 0.838122
+- Efficacy ratio: 0.923671
+
+Model: cGAN
+- Detection AUC mean: 0.999993
+- Detection AUC std: 0.000002
+- Real-train efficacy AUC: 0.907381
+- Synthetic-train efficacy AUC: 0.834680
+- Efficacy ratio: 0.919878
+
+
+Seed: 123
+--------------------------------------------------------------------------------
+Model: GAN
+- Detection AUC mean: 1.000000
+- Detection AUC std: 0.000000
+- Real-train efficacy AUC: 0.901861
+- Synthetic-train efficacy AUC: 0.790337
+- Efficacy ratio: 0.876340
+
+Model: cGAN
+- Detection AUC mean: 0.999999
+- Detection AUC std: 0.000002
+- Real-train efficacy AUC: 0.901861
+- Synthetic-train efficacy AUC: 0.806568
+- Efficacy ratio: 0.894337
+
+
+Seed: 2026
+--------------------------------------------------------------------------------
+Model: GAN
+- Detection AUC mean: 1.000000
+- Detection AUC std: 0.000000
+- Real-train efficacy AUC: 0.903751
+- Synthetic-train efficacy AUC: 0.849306
+- Efficacy ratio: 0.939757
+
+Model: cGAN
+- Detection AUC mean: 0.999999
+- Detection AUC std: 0.000001
+- Real-train efficacy AUC: 0.903751
+- Synthetic-train efficacy AUC: 0.834552
+- Efficacy ratio: 0.923432
+
+
+================================================================================
+Aggregate results across seeds
+================================================================================
+model  detection_auc_mean  detection_auc_std_across_seeds  efficacy_ratio_mean  efficacy_ratio_std  real_train_auc_mean  synthetic_train_auc_mean
+  GAN            0.999999                    1.440451e-07             0.913256            0.032967             0.904331                  0.825922
+ cGAN            0.999997                    3.201607e-06             0.912549            0.015872             0.904331                  0.825267

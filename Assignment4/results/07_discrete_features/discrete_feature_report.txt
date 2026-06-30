@@ -1,0 +1,64 @@
+STEP 7: Discrete feature generation experiments
+================================================================================
+
+Why argmax blocks gradient flow:
+If the generator outputs categorical logits and we apply argmax before passing the sample to the discriminator, the selected category becomes a discrete index. Argmax is piecewise constant and has zero or undefined gradients almost everywhere. Therefore, the discriminator loss cannot provide useful gradients back to the generator's categorical logits, preventing the generator from learning how to adjust category probabilities.
+
+Strategies:
+- softmax: discriminator receives soft categorical probability vectors; gradients flow through softmax.
+- gumbel_st: discriminator receives hard / near-discrete one-hot vectors, while the backward pass uses the straight-through estimator so gradients flow through the soft Gumbel-Softmax probabilities.
+
+Strategy: softmax
+--------------------------------------------------------------------------------
+Final discriminator loss: 0.648601
+Final generator loss: 2.531578
+Final D(real): 0.785342
+Final D(fake): 0.219822
+Detection AUC mean: 0.999988
+Detection AUC std: 0.000009
+Real-train AUC: 0.907381
+Synthetic-train AUC: 0.844019
+Efficacy ratio: 0.930170
+
+Entropy comparison:
+         block  num_categories  real_frequency_entropy  max_entropy_uniform  real_entropy_ratio_of_uniform  generated_average_entropy_before_decoding  generated_entropy_ratio_of_uniform  generated_minus_real_entropy
+     workclass               9                1.148107             2.197225                       0.522526                                   0.028236                            0.012851                     -1.119871
+     education              17                2.037270             2.833213                       0.719067                                   0.088146                            0.031112                     -1.949124
+marital-status               8                1.272594             2.079442                       0.611988                                   0.046820                            0.022515                     -1.225774
+    occupation              15                2.439677             2.708050                       0.900898                                   0.070980                            0.026211                     -2.368697
+  relationship               7                1.490714             1.945910                       0.766075                                   0.051268                            0.026347                     -1.439446
+          race               6                0.551262             1.791759                       0.307665                                   0.006352                            0.003545                     -0.544910
+           sex               3                0.634644             1.098612                       0.577678                                   0.018065                            0.016443                     -0.616579
+native-country              42                0.653081             3.737670                       0.174729                                   0.000755                            0.000202                     -0.652326
+        income               2                0.552029             0.693147                       0.796409                                   0.020837                            0.030062                     -0.531192
+
+Strategy: gumbel_st
+--------------------------------------------------------------------------------
+Final discriminator loss: 0.236836
+Final generator loss: 16.418020
+Final D(real): 0.930410
+Final D(fake): 0.070593
+Detection AUC mean: 0.999939
+Detection AUC std: 0.000008
+Real-train AUC: 0.907381
+Synthetic-train AUC: 0.855017
+Efficacy ratio: 0.942291
+
+Entropy comparison:
+         block  num_categories  real_frequency_entropy  max_entropy_uniform  real_entropy_ratio_of_uniform  generated_average_entropy_before_decoding  generated_entropy_ratio_of_uniform  generated_minus_real_entropy
+     workclass               9                1.148107             2.197225                       0.522526                                   0.542072                            0.246707                     -0.606035
+     education              17                2.037270             2.833213                       0.719067                                   0.515423                            0.181922                     -1.521846
+marital-status               8                1.272594             2.079442                       0.611988                                   1.215914                            0.584731                     -0.056680
+    occupation              15                2.439677             2.708050                       0.900898                                   1.858544                            0.686303                     -0.581133
+  relationship               7                1.490714             1.945910                       0.766075                                   1.133797                            0.582657                     -0.356916
+          race               6                0.551262             1.791759                       0.307665                                   0.603232                            0.336670                      0.051970
+           sex               3                0.634644             1.098612                       0.577678                                   0.523089                            0.476136                     -0.111556
+native-country              42                0.653081             3.737670                       0.174729                                   0.692967                            0.185401                      0.039886
+        income               2                0.552029             0.693147                       0.796409                                   0.241456                            0.348348                     -0.310572
+
+================================================================================
+Summary
+================================================================================
+ strategy  seed  epochs  final_discriminator_loss  final_generator_loss  final_d_real_score  final_d_fake_score  detection_auc_mean  detection_auc_std  real_train_auc  synthetic_train_auc  efficacy_ratio  average_generated_entropy_ratio_of_uniform
+  softmax    42     300                  0.648601              2.531578            0.785342            0.219822            0.999988           0.000009        0.907381             0.844019        0.930170                                    0.018810
+gumbel_st    42     300                  0.236836             16.418020            0.930410            0.070593            0.999939           0.000008        0.907381             0.855017        0.942291                                    0.403208

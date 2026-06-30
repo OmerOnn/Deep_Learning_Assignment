@@ -1,0 +1,4 @@
+seed,raw_train_rows,raw_test_rows,raw_columns,train_missing_cells_before,test_missing_cells_before,numeric_dim,categorical_onehot_dim,feature_dim_without_target,target_onehot_dim,gan_data_dim_with_target,train_features_rows,test_features_rows
+42,26048,6513,15,3410,852,6,107,113,2,115,26048,6513
+123,26048,6513,15,3459,803,6,107,113,2,115,26048,6513
+2026,26048,6513,15,3425,837,6,107,113,2,115,26048,6513

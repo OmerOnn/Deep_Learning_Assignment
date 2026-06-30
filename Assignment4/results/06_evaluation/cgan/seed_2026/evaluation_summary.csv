@@ -1,0 +1,2 @@
+model,seed,detection_auc_mean,detection_auc_std,real_train_auc,synthetic_train_auc,efficacy_ratio,real_train_rows,synthetic_rows,gan_data_dim,feature_dim,condition_dim
+cGAN,2026,0.9999990567404572,7.311529168322613e-07,0.9037512123150575,0.8345524622892635,0.9234316379520711,26048,26048,115,113,2

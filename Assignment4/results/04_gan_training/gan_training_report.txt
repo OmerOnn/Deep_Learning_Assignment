@@ -1,0 +1,68 @@
+STEP 4: Standard GAN training
+================================================================================
+
+Architecture and training decisions:
+- Generator: MLP that maps random Gaussian noise to a synthetic tabular vector.
+- Discriminator: MLP that receives either real or synthetic tabular vectors and outputs a real/fake logit.
+- Loss function: BCEWithLogitsLoss.
+- Optimizer: Adam.
+- Numeric generator outputs use tanh to match the [-1, 1] preprocessing range.
+- Categorical and target outputs use sigmoid to produce values in [0, 1].
+
+Hyperparameters:
+- Latent dim: 64
+- Batch size: 256
+- Epochs: 300
+- Learning rate: 0.0002
+- Adam betas: (0.5, 0.999)
+
+Seed: 42
+--------------------------------------------------------------------------------
+Device: cpu
+Train GAN shape: (26048, 115)
+Numeric dim: 6
+GAN data dim: 115
+
+Final training metrics:
+- Final discriminator loss: 0.4247
+- Final generator loss: 2.9157
+- Final D(real): 0.8693
+- Final D(fake): 0.1358
+
+Synthetic dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_42
+
+Seed: 123
+--------------------------------------------------------------------------------
+Device: cpu
+Train GAN shape: (26048, 115)
+Numeric dim: 6
+GAN data dim: 115
+
+Final training metrics:
+- Final discriminator loss: 0.3789
+- Final generator loss: 3.0773
+- Final D(real): 0.8846
+- Final D(fake): 0.1187
+
+Synthetic dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_123
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_123
+
+Seed: 2026
+--------------------------------------------------------------------------------
+Device: cpu
+Train GAN shape: (26048, 115)
+Numeric dim: 6
+GAN data dim: 115
+
+Final training metrics:
+- Final discriminator loss: 0.4016
+- Final generator loss: 3.0070
+- Final D(real): 0.8761
+- Final D(fake): 0.1264
+
+Synthetic dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_2026
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_2026

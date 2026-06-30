@@ -1,0 +1,101 @@
+STEP 5: Conditional GAN training
+================================================================================
+
+Architecture and training decisions:
+- Generator: MLP that receives Gaussian noise concatenated with a one-hot income condition.
+- Generator output: synthetic feature vector without the target label.
+- Discriminator: MLP that receives features concatenated with the same income condition and outputs a real/fake logit.
+- Real samples are always paired with their true income label as the condition.
+- Fake samples are generated using a requested income condition and evaluated with the same condition.
+- Loss function: BCEWithLogitsLoss.
+- Optimizer: Adam.
+- Numeric generator outputs use tanh to match the [-1, 1] preprocessing range.
+- Categorical outputs use sigmoid to produce values in [0, 1].
+
+Hyperparameters:
+- Latent dim: 64
+- Batch size: 256
+- Epochs: 300
+- Learning rate: 0.0002
+- Adam betas: (0.5, 0.999)
+
+Seed: 42
+--------------------------------------------------------------------------------
+Device: cpu
+Train features shape: (26048, 113)
+Train conditions shape: (26048, 2)
+Numeric dim: 6
+Feature dim: 113
+Condition dim: 2
+
+Training condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Final training metrics:
+- Final discriminator loss: 0.4627
+- Final generator loss: 2.9939
+- Final D(real | condition): 0.8534
+- Final D(fake | condition): 0.1491
+
+Synthetic condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Synthetic cGAN dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_42
+
+Seed: 123
+--------------------------------------------------------------------------------
+Device: cpu
+Train features shape: (26048, 113)
+Train conditions shape: (26048, 2)
+Numeric dim: 6
+Feature dim: 113
+Condition dim: 2
+
+Training condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Final training metrics:
+- Final discriminator loss: 0.4194
+- Final generator loss: 3.2587
+- Final D(real | condition): 0.8686
+- Final D(fake | condition): 0.1346
+
+Synthetic condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Synthetic cGAN dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_123
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_123
+
+Seed: 2026
+--------------------------------------------------------------------------------
+Device: cpu
+Train features shape: (26048, 113)
+Train conditions shape: (26048, 2)
+Numeric dim: 6
+Feature dim: 113
+Condition dim: 2
+
+Training condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Final training metrics:
+- Final discriminator loss: 0.4843
+- Final generator loss: 3.1302
+- Final D(real | condition): 0.8425
+- Final D(fake | condition): 0.1565
+
+Synthetic condition distribution:
+- income__<=50K: count=19775, ratio=0.759175
+- income__>50K: count=6273, ratio=0.240825
+
+Synthetic cGAN dataset shape: (26048, 115)
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_2026
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_2026

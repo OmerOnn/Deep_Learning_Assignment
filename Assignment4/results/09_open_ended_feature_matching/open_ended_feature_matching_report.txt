@@ -1,0 +1,33 @@
+STEP 9: Open-ended contribution - Feature Matching GAN
+================================================================================
+
+Modification:
+We modify the standard GAN training objective by adding a feature matching loss to the generator. Instead of optimizing only the discriminator's final real/fake output, the generator is also encouraged to match the mean intermediate discriminator representation of real samples.
+
+Motivation:
+The baseline GAN achieved high efficacy but very poor detection performance, meaning that synthetic samples were useful for prediction but still easy to distinguish from real samples. This suggests that the generated samples do not fully match the real data distribution. Feature matching targets this limitation by giving the generator a smoother distribution-level signal rather than only the discriminator's final binary decision.
+
+Prediction:
+If feature matching works, the Detection AUC should decrease compared to the baseline GAN, because synthetic samples should become less distinguishable from real samples. The efficacy ratio should remain similar or improve, and the generator training curve may become smoother due to the additional feature-level objective.
+
+Results:
+--------------------------------------------------------------------------------
+Final discriminator loss: 0.456876
+Final generator total loss: 60.749841
+Final generator adversarial loss: 3.364607
+Final feature matching loss: 5.738523
+Final D(real): 0.850603
+Final D(fake): 0.147267
+Detection AUC mean: 0.999995
+Detection AUC std: 0.000004
+Real-train AUC: 0.907381
+Synthetic-train AUC: 0.861217
+Efficacy ratio: 0.949124
+
+Comparison with baseline:
+             model  seed  detection_auc_mean  detection_auc_std  real_train_auc  synthetic_train_auc  efficacy_ratio
+       BaselineGAN    42            0.999999       6.255024e-07        0.907381             0.838122        0.923671
+FeatureMatchingGAN    42            0.999995       3.658014e-06        0.907381             0.861217        0.949124
+
+Interpretation placeholder:
+After running the experiment, compare the Feature Matching GAN to the baseline GAN. If Detection AUC decreases, the prediction is supported. If Efficacy improves or remains stable, the modification preserved useful predictive information. If the results do not improve, explain that matching only the mean discriminator features may be insufficient for complex tabular distributions.

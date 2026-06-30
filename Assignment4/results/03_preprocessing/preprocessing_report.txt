@@ -1,0 +1,100 @@
+STEP 3: Preprocessing train/test splits
+================================================================================
+
+Preprocessing decisions:
+- Numeric features: median imputation + MinMax scaling to [-1, 1].
+- Categorical features: missing values replaced with 'Missing' + one-hot encoding.
+- Target feature income: one-hot encoding.
+- One-hot encoders use the ARFF-declared categories to keep stable dimensions across all seeds.
+
+Numeric columns:
+- age
+- fnlwgt
+- education-num
+- capital-gain
+- capital-loss
+- hours-per-week
+
+Categorical columns and number of categories:
+- workclass: 9
+- education: 17
+- marital-status: 8
+- occupation: 15
+- relationship: 7
+- race: 6
+- sex: 3
+- native-country: 42
+
+Target categories: ['<=50K', '>50K']
+
+Seed: 42
+--------------------------------------------------------------------------------
+Raw train shape: (26048, 15)
+Raw test shape: (6513, 15)
+Train missing cells before preprocessing: 3410
+Test missing cells before preprocessing: 852
+
+Processed shapes:
+- Train features: (26048, 113)
+- Test features: (6513, 113)
+- Train target one-hot: (26048, 2)
+- Test target one-hot: (6513, 2)
+- Train GAN data: (26048, 115)
+- Test GAN data: (6513, 115)
+
+Dimensionality:
+- Numeric dim: 6
+- Categorical one-hot dim: 107
+- Feature dim without target: 113
+- Target one-hot dim: 2
+- GAN data dim with target: 115
+
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_42
+
+Seed: 123
+--------------------------------------------------------------------------------
+Raw train shape: (26048, 15)
+Raw test shape: (6513, 15)
+Train missing cells before preprocessing: 3459
+Test missing cells before preprocessing: 803
+
+Processed shapes:
+- Train features: (26048, 113)
+- Test features: (6513, 113)
+- Train target one-hot: (26048, 2)
+- Test target one-hot: (6513, 2)
+- Train GAN data: (26048, 115)
+- Test GAN data: (6513, 115)
+
+Dimensionality:
+- Numeric dim: 6
+- Categorical one-hot dim: 107
+- Feature dim without target: 113
+- Target one-hot dim: 2
+- GAN data dim with target: 115
+
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_123
+
+Seed: 2026
+--------------------------------------------------------------------------------
+Raw train shape: (26048, 15)
+Raw test shape: (6513, 15)
+Train missing cells before preprocessing: 3425
+Test missing cells before preprocessing: 837
+
+Processed shapes:
+- Train features: (26048, 113)
+- Test features: (6513, 113)
+- Train target one-hot: (26048, 2)
+- Test target one-hot: (6513, 2)
+- Train GAN data: (26048, 115)
+- Test GAN data: (6513, 115)
+
+Dimensionality:
+- Numeric dim: 6
+- Categorical one-hot dim: 107
+- Feature dim without target: 113
+- Target one-hot dim: 2
+- GAN data dim with target: 115
+
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_2026

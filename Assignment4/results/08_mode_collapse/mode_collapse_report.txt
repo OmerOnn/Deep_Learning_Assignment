@@ -1,0 +1,71 @@
+STEP 8: Mode collapse - induce, diagnose, and mitigate
+================================================================================
+
+Collapse indicators:
+1. Categorical combination coverage = number of unique synthetic categorical-value combinations divided by the number of unique real categorical-value combinations. Lower coverage indicates that the generator covers fewer discrete modes.
+2. Mean numeric variance ratio = average over numeric features of synthetic variance divided by real variance. Lower values indicate reduced numeric diversity.
+
+Collapse induction:
+We deliberately reduce the generator latent dimension and capacity, and train the discriminator multiple times for each generator update. This is expected to make the discriminator too strong and push the generator toward a narrow set of outputs.
+
+Mitigation prediction:
+We apply an explicit diversity penalty to the generator objective. If the mitigation works, categorical combination coverage, mean numeric variance ratio, and the generated batch diversity score should increase compared to the collapsed setup.
+
+Experiment: collapsed
+--------------------------------------------------------------------------------
+Diversity weight: 0.0
+
+Collapse indicators:
+- real_unique_categorical_combinations: 8296
+- synthetic_unique_categorical_combinations: 27
+- categorical_combination_coverage: 0.0032545805207328834
+- mean_numeric_variance_ratio: 0.41496312618255615
+- min_numeric_variance_ratio: 0.001438042032532394
+- max_numeric_variance_ratio: 1.3059762716293335
+
+Final training metrics:
+- Final discriminator loss: 0.057188
+- Final generator adversarial loss: 5.900643
+- Final generator total loss: 5.900643
+- Final batch diversity score: 0.045376
+- Final D(real): 0.986887
+- Final D(fake): 0.013520
+
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\08_mode_collapse\collapsed
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\mode_collapse\collapsed\seed_42
+
+Experiment: mitigated_diversity_penalty
+--------------------------------------------------------------------------------
+Diversity weight: 0.5
+
+Collapse indicators:
+- real_unique_categorical_combinations: 8296
+- synthetic_unique_categorical_combinations: 23
+- categorical_combination_coverage: 0.002772420443587271
+- mean_numeric_variance_ratio: 0.2939291298389435
+- min_numeric_variance_ratio: 8.472302397422027e-06
+- max_numeric_variance_ratio: 0.7401533722877502
+
+Final training metrics:
+- Final discriminator loss: 0.069399
+- Final generator adversarial loss: 4.887757
+- Final generator total loss: 4.865808
+- Final batch diversity score: 0.043899
+- Final D(real): 0.983830
+- Final D(fake): 0.016689
+
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\08_mode_collapse\mitigated_diversity_penalty
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\mode_collapse\mitigated_diversity_penalty\seed_42
+
+================================================================================
+Summary
+================================================================================
+                 experiment  seed  epochs  latent_dim generator_hidden_dims discriminator_hidden_dims  d_updates_per_g_update  diversity_weight  final_discriminator_loss  final_generator_adversarial_loss  final_generator_total_loss  final_batch_diversity_score  final_d_real_score  final_d_fake_score  real_unique_categorical_combinations  synthetic_unique_categorical_combinations  categorical_combination_coverage  mean_numeric_variance_ratio  min_numeric_variance_ratio  max_numeric_variance_ratio
+                  collapsed    42     150           4                 (32,)            (256, 128, 64)                       5               0.0                  0.057188                          5.900643                    5.900643                     0.045376            0.986887            0.013520                                  8296                                         27                          0.003255                     0.414963                    0.001438                    1.305976
+mitigated_diversity_penalty    42     150           4                 (32,)            (256, 128, 64)                       5               0.5                  0.069399                          4.887757                    4.865808                     0.043899            0.983830            0.016689                                  8296                                         23                          0.002772                     0.293929                    0.000008                    0.740153
+
+Mitigation analysis:
+--------------------------------------------------------------------------------
+Categorical coverage changed from 0.003255 to 0.002772.
+Mean numeric variance ratio changed from 0.414963 to 0.293929.
+Batch diversity score changed from 0.045376 to 0.043899.

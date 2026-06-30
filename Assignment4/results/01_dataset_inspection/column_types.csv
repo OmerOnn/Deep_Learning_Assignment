@@ -1,0 +1,16 @@
+column,role
+age,numeric_feature
+fnlwgt,numeric_feature
+education-num,numeric_feature
+capital-gain,numeric_feature
+capital-loss,numeric_feature
+hours-per-week,numeric_feature
+workclass,categorical_feature
+education,categorical_feature
+marital-status,categorical_feature
+occupation,categorical_feature
+relationship,categorical_feature
+race,categorical_feature
+sex,categorical_feature
+native-country,categorical_feature
+income,target

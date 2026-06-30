@@ -1,0 +1,3 @@
+condition,count,ratio
+income__<=50K,19775,0.75917536
+income__>50K,6273,0.24082462
