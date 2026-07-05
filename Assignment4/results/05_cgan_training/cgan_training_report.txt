@@ -43,8 +43,8 @@ Synthetic condition distribution:
 - income__>50K: count=6273, ratio=0.240825
 
 Synthetic cGAN dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_42
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_42
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\conditional_gan\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\05_cgan_training\seed_42
 
 Seed: 123
 --------------------------------------------------------------------------------
@@ -70,8 +70,8 @@ Synthetic condition distribution:
 - income__>50K: count=6273, ratio=0.240825
 
 Synthetic cGAN dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_123
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_123
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\conditional_gan\seed_123
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\05_cgan_training\seed_123
 
 Seed: 2026
 --------------------------------------------------------------------------------
@@ -97,5 +97,5 @@ Synthetic condition distribution:
 - income__>50K: count=6273, ratio=0.240825
 
 Synthetic cGAN dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\conditional_gan\seed_2026
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\05_cgan_training\seed_2026
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\conditional_gan\seed_2026
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\05_cgan_training\seed_2026

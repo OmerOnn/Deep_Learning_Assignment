@@ -30,8 +30,8 @@ Final training metrics:
 - Final D(fake): 0.1358
 
 Synthetic dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_42
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_42
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\standard_gan\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\04_gan_training\seed_42
 
 Seed: 123
 --------------------------------------------------------------------------------
@@ -47,8 +47,8 @@ Final training metrics:
 - Final D(fake): 0.1187
 
 Synthetic dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_123
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_123
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\standard_gan\seed_123
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\04_gan_training\seed_123
 
 Seed: 2026
 --------------------------------------------------------------------------------
@@ -64,5 +64,5 @@ Final training metrics:
 - Final D(fake): 0.1264
 
 Synthetic dataset shape: (26048, 115)
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\standard_gan\seed_2026
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\04_gan_training\seed_2026
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\standard_gan\seed_2026
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\04_gan_training\seed_2026

@@ -31,8 +31,8 @@ Final training metrics:
 - Final D(real): 0.986887
 - Final D(fake): 0.013520
 
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\08_mode_collapse\collapsed
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\mode_collapse\collapsed\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\08_mode_collapse\collapsed
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\mode_collapse\collapsed\seed_42
 
 Experiment: mitigated_diversity_penalty
 --------------------------------------------------------------------------------
@@ -54,8 +54,8 @@ Final training metrics:
 - Final D(real): 0.983830
 - Final D(fake): 0.016689
 
-Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\results\08_mode_collapse\mitigated_diversity_penalty
-Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\models\mode_collapse\mitigated_diversity_penalty\seed_42
+Saved result files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\results\08_mode_collapse\mitigated_diversity_penalty
+Saved model files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\models\mode_collapse\mitigated_diversity_penalty\seed_42
 
 ================================================================================
 Summary

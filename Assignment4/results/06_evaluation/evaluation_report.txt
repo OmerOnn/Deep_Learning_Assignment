@@ -23,7 +23,7 @@ Model: cGAN
 - Detection AUC std: 0.000002
 - Real-train efficacy AUC: 0.907381
 - Synthetic-train efficacy AUC: 0.834680
-- Efficacy ratio: 0.919878
+- Efficacy ratio: 0.919877
 
 
 Seed: 123

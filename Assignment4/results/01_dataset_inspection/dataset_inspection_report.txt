@@ -1,7 +1,7 @@
 STEP 1: Adult ARFF dataset inspection
 ================================================================================
 
-Dataset path: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\raw\adult.arff
+Dataset path: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\raw\adult.arff
 Number of rows: 32561
 Number of columns: 15
 Target column: income

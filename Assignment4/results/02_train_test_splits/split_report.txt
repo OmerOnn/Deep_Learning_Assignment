@@ -1,7 +1,7 @@
 STEP 2: Stratified 80/20 train-test splits
 ================================================================================
 
-Dataset path: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\raw\adult.arff
+Dataset path: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\raw\adult.arff
 Full dataset shape: (32561, 15)
 Target column: income
 Test size: 0.2
@@ -28,8 +28,8 @@ Test target distribution:
    42    test <=50K   4945 0.759251
    42    test  >50K   1568 0.240749
 
-Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_42\train.csv
-Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_42\test.csv
+Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_42\train.csv
+Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_42\test.csv
 
 Seed: 123
 --------------------------------------------------------------------------------
@@ -46,8 +46,8 @@ Test target distribution:
   123    test <=50K   4945 0.759251
   123    test  >50K   1568 0.240749
 
-Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_123\train.csv
-Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_123\test.csv
+Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_123\train.csv
+Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_123\test.csv
 
 Seed: 2026
 --------------------------------------------------------------------------------
@@ -64,5 +64,5 @@ Test target distribution:
  2026    test <=50K   4945 0.759251
  2026    test  >50K   1568 0.240749
 
-Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_2026\train.csv
-Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\splits\seed_2026\test.csv
+Saved train split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_2026\train.csv
+Saved test split to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\splits\seed_2026\test.csv

@@ -49,7 +49,7 @@ Dimensionality:
 - Target one-hot dim: 2
 - GAN data dim with target: 115
 
-Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_42
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\preprocessed\seed_42
 
 Seed: 123
 --------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ Dimensionality:
 - Target one-hot dim: 2
 - GAN data dim with target: 115
 
-Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_123
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\preprocessed\seed_123
 
 Seed: 2026
 --------------------------------------------------------------------------------
@@ -97,4 +97,4 @@ Dimensionality:
 - Target one-hot dim: 2
 - GAN data dim with target: 115
 
-Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\A4\data\processed\preprocessed\seed_2026
+Saved files to: C:\Users\יהונתן סגל\Projects\M.Sc - SISE\First year\Semester B\Deep learning\Works\Deep_Learning_Assignment\Assignment4\data\processed\preprocessed\seed_2026
